@@ -4,9 +4,9 @@
   <subtitle>我，在這裡，享受等你的時光。</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://georgiowan.github.io/"/>
   <updated>2016-05-24T20:04:06.224Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://georgiowan.github.io/</id>
   
   <author>
     <name>OAwan</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>[資訊] 超好用換幣神器！教你怎麼到韓國換錢最划算</title>
-    <link href="http://yoursite.com/2016/travel-to-korea-money-exchange/"/>
-    <id>http://yoursite.com/2016/travel-to-korea-money-exchange/</id>
+    <link href="http://georgiowan.github.io/2016/travel-to-korea-money-exchange/"/>
+    <id>http://georgiowan.github.io/2016/travel-to-korea-money-exchange/</id>
     <published>2016-05-24T17:07:00.000Z</published>
     <updated>2016-05-24T20:04:06.224Z</updated>
     
@@ -66,25 +66,25 @@
     
     </summary>
     
-      <category term="Travel" scheme="http://yoursite.com/categories/Travel/"/>
+      <category term="Travel" scheme="http://georgiowan.github.io/categories/Travel/"/>
     
     
-      <category term="korea" scheme="http://yoursite.com/tags/korea/"/>
+      <category term="korea" scheme="http://georgiowan.github.io/tags/korea/"/>
     
-      <category term="tool" scheme="http://yoursite.com/tags/tool/"/>
+      <category term="tool" scheme="http://georgiowan.github.io/tags/tool/"/>
     
-      <category term="換錢神器" scheme="http://yoursite.com/tags/%E6%8F%9B%E9%8C%A2%E7%A5%9E%E5%99%A8/"/>
+      <category term="換錢神器" scheme="http://georgiowan.github.io/tags/%E6%8F%9B%E9%8C%A2%E7%A5%9E%E5%99%A8/"/>
     
-      <category term="韓國" scheme="http://yoursite.com/tags/%E9%9F%93%E5%9C%8B/"/>
+      <category term="韓國" scheme="http://georgiowan.github.io/tags/%E9%9F%93%E5%9C%8B/"/>
     
-      <category term="旅遊" scheme="http://yoursite.com/tags/%E6%97%85%E9%81%8A/"/>
+      <category term="旅遊" scheme="http://georgiowan.github.io/tags/%E6%97%85%E9%81%8A/"/>
     
   </entry>
   
   <entry>
     <title>[Rails] 讓 URL 不顯示 id 的方法 - via Friendly_id</title>
-    <link href="http://yoursite.com/2015/seo-via-friendly-id/"/>
-    <id>http://yoursite.com/2015/seo-via-friendly-id/</id>
+    <link href="http://georgiowan.github.io/2015/seo-via-friendly-id/"/>
+    <id>http://georgiowan.github.io/2015/seo-via-friendly-id/</id>
     <published>2015-11-02T17:46:00.000Z</published>
     <updated>2016-05-24T16:24:29.139Z</updated>
     
@@ -133,20 +133,20 @@
     
     </summary>
     
-      <category term="Programmer" scheme="http://yoursite.com/categories/Programmer/"/>
+      <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
     
     
-      <category term="rails" scheme="http://yoursite.com/tags/rails/"/>
+      <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
     
-      <category term="rubyonrails" scheme="http://yoursite.com/tags/rubyonrails/"/>
+      <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
     
-      <category term="friendly_id" scheme="http://yoursite.com/tags/friendly-id/"/>
+      <category term="friendly_id" scheme="http://georgiowan.github.io/tags/friendly-id/"/>
     
-      <category term="babosa" scheme="http://yoursite.com/tags/babosa/"/>
+      <category term="babosa" scheme="http://georgiowan.github.io/tags/babosa/"/>
     
-      <category term="gem" scheme="http://yoursite.com/tags/gem/"/>
+      <category term="gem" scheme="http://georgiowan.github.io/tags/gem/"/>
     
-      <category term="to_params" scheme="http://yoursite.com/tags/to-params/"/>
+      <category term="to_params" scheme="http://georgiowan.github.io/tags/to-params/"/>
     
   </entry>
   
