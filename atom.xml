@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-05-24T10:02:13.981Z</updated>
+  <updated>2016-05-24T10:11:58.193Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2015/seo-via-friendly-id/"/>
     <id>http://yoursite.com/2015/seo-via-friendly-id/</id>
     <published>2015-11-02T17:46:00.000Z</published>
-    <updated>2016-05-24T10:02:13.981Z</updated>
+    <updated>2016-05-24T10:11:58.193Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;/img/program/friend-fingers.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;h1 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;&lt;strong&gt;目的&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;　　本篇來記錄一下怎麼使用 &lt;a href=&quot;https://github.com/norman/friendly_id&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;Friendly_id&lt;/strong&gt;&lt;/a&gt; 以及使用 &lt;a href=&quot;https://github.com/norman/babosa&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;Babosa&lt;/strong&gt;&lt;/a&gt; 這兩個 gem 來達到美化 URL 的效果。&lt;/p&gt;
@@ -57,6 +57,8 @@
 &lt;li&gt;Friendly URLs: &lt;a href=&quot;https://gist.github.com/cdmwebs/1209732&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://gist.github.com/cdmwebs/1209732&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Update slug automatically: &lt;a href=&quot;http://stackoverflow.com/questions/19072432/friendly-id-slug-not-changing-on-update&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://stackoverflow.com/questions/19072432/friendly-id-slug-not-changing-on-update&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;!-- ad start --&gt;
+&lt;p&gt;  &amp;lt;%- partial(‘_custom_ad/google_adsense’) %&amp;gt;&lt;br&gt;&lt;!-- ad end --&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
