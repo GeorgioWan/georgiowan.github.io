@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://georgiowan.github.io/2016/rails-url-seo-methods-via-meta-tags/</loc>
+    
+    <lastmod>2016-05-25T06:23:46.803Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://georgiowan.github.io/2015/rails-solving-modal-update-fb-plugin-share-like-reload/</loc>
+    
+    <lastmod>2016-05-25T06:17:13.371Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://georgiowan.github.io/2015/rails-how-do-i-render-js-respond-small-note/</loc>
+    
+    <lastmod>2016-05-25T06:10:52.959Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://georgiowan.github.io/2015/rails-supports-markdown-editor-via-pagedown-bootstrap-rails/</loc>
+    
+    <lastmod>2016-05-25T05:58:06.767Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://georgiowan.github.io/2015/rails-upload-pictures-via-carrierwave/</loc>
     
     <lastmod>2016-05-25T05:41:38.552Z</lastmod>
