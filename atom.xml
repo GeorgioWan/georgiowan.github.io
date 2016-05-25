@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://georgiowan.github.io/"/>
-  <updated>2016-05-25T02:42:33.162Z</updated>
+  <updated>2016-05-25T06:33:00.951Z</updated>
   <id>http://georgiowan.github.io/</id>
   
   <author>
@@ -16,14 +16,14 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>[資訊] 超好用換幣神器！教你怎麼到韓國換錢最划算</title>
+    <title>[資訊] 超好用換幣神器！教你怎麼換韓元最划算</title>
     <link href="http://georgiowan.github.io/2016/travel-to-korea-money-exchange/"/>
     <id>http://georgiowan.github.io/2016/travel-to-korea-money-exchange/</id>
     <published>2016-05-24T17:07:00.000Z</published>
-    <updated>2016-05-25T02:42:33.162Z</updated>
+    <updated>2016-05-25T06:33:00.951Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;/img/travel/money.jpg&quot; alt=&quot;Money Exchange&quot; title=&quot;Pic by Bill Pirraglia&quot;&gt;&lt;/p&gt;
-&lt;p&gt;到韓國自由行，&lt;span style=&quot;font-size: 20px; color: #009688&quot;&gt;怎麼換韓幣最划算呢？&lt;/span&gt;&lt;br&gt;讓我們一起用&lt;strong&gt;換幣 (Money Exchange)&lt;/strong&gt; 來小賺一點交通費吧！&lt;/p&gt;
+&lt;p&gt;到韓國自由行，&lt;span style=&quot;font-size: 20px; color: #009688&quot;&gt;怎麼換韓元最划算呢？&lt;/span&gt;&lt;br&gt;讓我們一起用&lt;strong&gt;換幣 (Money Exchange)&lt;/strong&gt; 來小賺一點交通費吧！&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h1 id=&quot;最划算的換幣方式是？&quot;&gt;&lt;a href=&quot;#最划算的換幣方式是？&quot; class=&quot;headerlink&quot; title=&quot;最划算的換幣方式是？&quot;&gt;&lt;/a&gt;最划算的換幣方式是？&lt;/h1&gt;&lt;p&gt;相信在前往韓國自由行前，最重要的事情除了訂機票、住宿和安排行程活動外，就是&lt;span style=&quot;color: #009688&quot;&gt;研究如何換幣&lt;/span&gt;了！&lt;br&gt;這邊不囉嗦，馬上告訴你一些划算的小心得：&lt;/p&gt;
 &lt;ul&gt;
@@ -58,7 +58,7 @@
     <summary type="html">
     
       &lt;p&gt;&lt;img src=&quot;/img/travel/money.jpg&quot; alt=&quot;Money Exchange&quot; title=&quot;Pic by Bill Pirraglia&quot;&gt;&lt;/p&gt;
-&lt;p&gt;到韓國自由行，&lt;span style=&quot;font-size: 20px; color: #009688&quot;&gt;怎麼換韓幣最划算呢？&lt;/span&gt;&lt;br&gt;讓我們一起用&lt;strong&gt;換幣 (Money Exchange)&lt;/strong&gt; 來小賺一點交通費吧！&lt;/p&gt;
+&lt;p&gt;到韓國自由行，&lt;span style=&quot;font-size: 20px; color: #009688&quot;&gt;怎麼換韓元最划算呢？&lt;/span&gt;&lt;br&gt;讓我們一起用&lt;strong&gt;換幣 (Money Exchange)&lt;/strong&gt; 來小賺一點交通費吧！&lt;/p&gt;
     
     </summary>
     
@@ -74,6 +74,84 @@
       <category term="韓國" scheme="http://georgiowan.github.io/tags/%E9%9F%93%E5%9C%8B/"/>
     
       <category term="旅遊" scheme="http://georgiowan.github.io/tags/%E6%97%85%E9%81%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Rails] 寄信小札記 - via ActionMailer</title>
+    <link href="http://georgiowan.github.io/2016/rails-send-email-via-actionmailer/"/>
+    <id>http://georgiowan.github.io/2016/rails-send-email-via-actionmailer/</id>
+    <published>2016-05-12T10:34:00.000Z</published>
+    <updated>2016-05-25T06:30:01.955Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;/img/program/responsive-emails-intro.png&quot; alt=&quot;寄信小札記 - via ActionMailer&quot; title=&quot;Pic by foundation.zurb.com&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;&lt;strong&gt;目的&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;　　在很多情況下都需要透過 E-mail 的功能，而我目前是需要寄送&lt;strong&gt;註冊認證信&lt;/strong&gt;給使用者，我們使用 ActionMailer 來整合 E-mail！&lt;/p&gt;
+&lt;h1 id=&quot;開發版本與環境&quot;&gt;&lt;a href=&quot;#開發版本與環境&quot; class=&quot;headerlink&quot; title=&quot;開發版本與環境&quot;&gt;&lt;/a&gt;&lt;strong&gt;開發版本與環境&lt;/strong&gt;&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;Ruby ：v2.3.0
+Rails：v4.2.5
+IDE  ：Cloud 9
+&lt;/code&gt;&lt;/pre&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;    
+&lt;h1 id=&quot;筆記&quot;&gt;&lt;a href=&quot;#筆記&quot; class=&quot;headerlink&quot; title=&quot;筆記&quot;&gt;&lt;/a&gt;&lt;strong&gt;筆記&lt;/strong&gt;&lt;/h1&gt;&lt;h3 id=&quot;1-Devise-設定&quot;&gt;&lt;a href=&quot;#1-Devise-設定&quot; class=&quot;headerlink&quot; title=&quot;1. Devise 設定&quot;&gt;&lt;/a&gt;1. Devise 設定&lt;/h3&gt;&lt;p&gt;　　這邊我們只講寄信時，devise 需注意的設定，最簡單的方式，就是開啟 &lt;code&gt;Devise::Mailer&lt;/code&gt;&lt;br&gt;&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;figcaption&gt;&lt;span&gt;devise.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;config.mailer_sender = &lt;span class=&quot;string&quot;&gt;&#39;yourname &amp;lt;whateveryouwant@domain.com&amp;gt;&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&lt;span class=&quot;comment&quot;&gt;# 設定 mailer_sender 會顯示在寄件人 (任何格式都可，但這種格式較不會被當作垃圾信件處理)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;config.mailer = &lt;span class=&quot;string&quot;&gt;&#39;Devise::Mailer&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&lt;span class=&quot;comment&quot;&gt;# 將註解拿掉後，就會由 devise 預設的 Mailer 寄信 (從 Devise::Mailer 作 deliver 調用 ActionMailer)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;2-ActionMailer-設定&quot;&gt;&lt;a href=&quot;#2-ActionMailer-設定&quot; class=&quot;headerlink&quot; title=&quot;2. ActionMailer 設定&quot;&gt;&lt;/a&gt;2. ActionMailer 設定&lt;/h3&gt;&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;figcaption&gt;&lt;span&gt;development.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;config.action_mailer.raise_delivery_errors = &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&lt;span class=&quot;comment&quot;&gt;# rails_delivery_errors 設定為 false 可讓寄信時的錯誤被忽略，如果要 debug 就設 true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;config.action_mailer.default_url_options = &amp;#123; &lt;span class=&quot;symbol&quot;&gt;host:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;http://localhost:3000&#39;&lt;/span&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&lt;span class=&quot;comment&quot;&gt;# 這邊填入的網址須要注意一下，他必須是絕對網址，且會被預設為 mail 中的 resource link&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&lt;span class=&quot;comment&quot;&gt;# 像我是用 devise 寄發驗證信，所以 confirmation_url(&lt;span class=&quot;doctag&quot;&gt;@resource&lt;/span&gt;, confirmation_token: &lt;span class=&quot;doctag&quot;&gt;@token&lt;/span&gt;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&lt;span class=&quot;comment&quot;&gt;# 中的 &lt;span class=&quot;doctag&quot;&gt;@resource&lt;/span&gt; 就會是 http://localhost:3000&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;config.action_mailer.delivery_method = &lt;span class=&quot;symbol&quot;&gt;:smtp&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&lt;span class=&quot;comment&quot;&gt;# delivery_method 有三種寄信方式 :test、:sendmail 和 :smtp&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&lt;span class=&quot;comment&quot;&gt;# sendmail 須搭配 server 的 /user/bin/sendmail application&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&lt;span class=&quot;comment&quot;&gt;# 而這邊我是透過 mailgun(and gmail) 的 smtp 協定作寄信&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;config.action_mailer.smtp_settings = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　&lt;span class=&quot;symbol&quot;&gt;:address&lt;/span&gt; =&amp;gt; &lt;span class=&quot;string&quot;&gt;&quot;smtp.gmail.com&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  　&lt;span class=&quot;symbol&quot;&gt;:port&lt;/span&gt; =&amp;gt; &lt;span class=&quot;string&quot;&gt;&quot;587&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;symbol&quot;&gt;:domain&lt;/span&gt; =&amp;gt; &lt;span class=&quot;string&quot;&gt;&quot;yourdomain.com&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;symbol&quot;&gt;:authentication&lt;/span&gt; =&amp;gt; &lt;span class=&quot;string&quot;&gt;&quot;plain&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;symbol&quot;&gt;:user_name&lt;/span&gt; =&amp;gt; &lt;span class=&quot;string&quot;&gt;&quot;yourgmail@gmail.com&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;symbol&quot;&gt;:password&lt;/span&gt; =&amp;gt; &lt;span class=&quot;string&quot;&gt;&quot;yourpassword&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;symbol&quot;&gt;:enable_starttls_auto&lt;/span&gt; =&amp;gt; &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;　　其實一般來說，我們不會將 smtp_settings 寫在程式碼裡，而是拆成另一個設定檔，便於管理在不同狀態下的設定：&lt;br&gt;&lt;figure class=&quot;highlight yaml&quot;&gt;&lt;figcaption&gt;&lt;span&gt;config/email.yml&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;development:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;  address:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;smtp.gmail.com&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;  port:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;587&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;  domain:&lt;/span&gt; &amp;lt;%=&lt;span class=&quot;ruby&quot;&gt;ENV[&lt;span class=&quot;string&quot;&gt;&#39;DOMAIN&#39;&lt;/span&gt;]&lt;/span&gt;%&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;  authentication:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;plain&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;  user_name:&lt;/span&gt; &amp;lt;%=&lt;span class=&quot;ruby&quot;&gt;ENV[&lt;span class=&quot;string&quot;&gt;&#39;GMAIL_USERNAME&#39;&lt;/span&gt;]&lt;/span&gt;%&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;  password:&lt;/span&gt; &amp;lt;%=&lt;span class=&quot;ruby&quot;&gt;ENV[&lt;span class=&quot;string&quot;&gt;&#39;GMAIL_PASSWORD&#39;&lt;/span&gt;]&lt;/span&gt;%&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;  enable_starttls_auto:&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;production:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;  address:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;smtp.mailgun.org&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;  port:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;587&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;  domain:&lt;/span&gt; &amp;lt;%=&lt;span class=&quot;ruby&quot;&gt;ENV[&lt;span class=&quot;string&quot;&gt;&#39;DOMAIN&#39;&lt;/span&gt;]&lt;/span&gt;%&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;  authentication:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;plain&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;  user_name:&lt;/span&gt; &amp;lt;%=&lt;span class=&quot;ruby&quot;&gt;ENV[&lt;span class=&quot;string&quot;&gt;&#39;MAILGUN_USERNAME&#39;&lt;/span&gt;]&lt;/span&gt;%&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;  password:&lt;/span&gt; &amp;lt;%=&lt;span class=&quot;ruby&quot;&gt;ENV[&lt;span class=&quot;string&quot;&gt;&#39;MAILGUN_PASSWORD&#39;&lt;/span&gt;]&lt;/span&gt;%&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;  enable_starttls_auto:&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;註：cloud 9 中，多數 port 預設是 blocked，但依我自己的測試， mailgun 可透過 2525、587 來寄出信件，而 gmail 只能由 587 寄信。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;　　smtp_settings 的部分就可以修改成：&lt;br&gt;&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;config.action_mailer.smtp_settings = config_for(&lt;span class=&quot;symbol&quot;&gt;:email&lt;/span&gt;).symbolize_keys&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&lt;span class=&quot;comment&quot;&gt;# config_for 會讀取 config 目錄下的 YAML 設定檔，由於 smtp_settings 需帶入 Symbol key&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&lt;span class=&quot;comment&quot;&gt;# 所以透過 .symbolize_keys 將 Hash 中的 String key 轉成 Symbol key&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;3-關於-email-yml&quot;&gt;&lt;a href=&quot;#3-關於-email-yml&quot; class=&quot;headerlink&quot; title=&quot;3. 關於 email.yml&quot;&gt;&lt;/a&gt;3. 關於 email.yml&lt;/h3&gt;&lt;p&gt;　　這邊來聊聊上面的 email.yml。&lt;/p&gt;
+&lt;p&gt;　　ROR 環境預設有三個，&lt;code&gt;development&lt;/code&gt;、&lt;code&gt;production&lt;/code&gt;和&lt;code&gt;test&lt;/code&gt;，一般 &lt;code&gt;rails server&lt;/code&gt; 開啟環境預設是 development，我們可以透過 &lt;code&gt;-e&lt;/code&gt; 來變更啟動環境，例如 &lt;code&gt;rails s -e test&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;　　範例 email.yml 中，則表示：&lt;br&gt;　　　　&lt;strong&gt;development&lt;/strong&gt; 時，使用 &lt;strong&gt;gmail&lt;/strong&gt; 寄信。&lt;br&gt;　　　　&lt;strong&gt;production&lt;/strong&gt;  時，使用 &lt;strong&gt;mailgun&lt;/strong&gt; 寄信。&lt;/p&gt;
+&lt;p&gt;　　在帳號(user_name)及密碼(password)這邊需要注意的是，如果你是將密碼寫死在設定中，記得一定要將 email.yml 加到 .gitignore 中，避免上傳到 github 自曝帳密；比較好的方法是使用 &lt;strong&gt;RAILS_ENV&lt;/strong&gt; 來取得環境設的變數，由於是寫在 yaml 中，所以我們寫成 &lt;code&gt;&amp;lt;%=ENV[&amp;#39;GMAIL_USERNAME&amp;#39;]%&amp;gt;&lt;/code&gt;，如果是寫在 .rb 中，則使用 &lt;code&gt;ENV[&amp;#39;GMAIL_USERNAME&amp;#39;]&lt;/code&gt; 即可。這樣我們就可以透過環境設的值作設定。&lt;/p&gt;
+&lt;h3 id=&quot;4-設定-RAILS-ENV-變數&quot;&gt;&lt;a href=&quot;#4-設定-RAILS-ENV-變數&quot; class=&quot;headerlink&quot; title=&quot;4. 設定 RAILS_ENV 變數&quot;&gt;&lt;/a&gt;4. 設定 RAILS_ENV 變數&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;在 Ubuntu 下，可以編輯 &lt;strong&gt;~/.bashrc&lt;/strong&gt; 並加入以下作環境變數的設定 (在 Mac 下，則編輯 &lt;strong&gt;~/.profile&lt;/strong&gt;)：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;　　export GMAIL_USERNAME=&amp;quot;yourgmail@gmail.com&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;　　以此類推，自行添加。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Heroku 的話，可直接在 &lt;code&gt;Settings &amp;gt; Config Variables&lt;/code&gt; 中添加，或用以下指令作設定：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;　　heroku config:add GMAIL_USERNAME=&amp;quot;yourgmail@gmail.com&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Cloud 9 的話，在 Runner 中有 ENV 可直接添加，或用 Ubuntu 的方式添加亦可 (因為 c9 的 ROR 環境是 Ubuntu )&lt;br&gt;&lt;img src=&quot;http://user-image.logdown.io/user/15003/blog/14192/post/732233/afBDlcF4QeWwP8kQZnF0_c9env.png&quot; alt=&quot;c9env.png&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;5-Gmail-密碼問題&quot;&gt;&lt;a href=&quot;#5-Gmail-密碼問題&quot; class=&quot;headerlink&quot; title=&quot;5. Gmail 密碼問題&quot;&gt;&lt;/a&gt;5. Gmail 密碼問題&lt;/h3&gt;&lt;p&gt;　　其實上述四個步驟後，就可以成功的寄出信件，但還是補充一下關於 gmail 有可能寄不出信的設定問題。&lt;br&gt;　　請先到 gmail 中作安全性設定，並取得密碼： &lt;code&gt;設定安全性&lt;/code&gt; → &lt;code&gt;二階段驗證&lt;/code&gt; → &lt;code&gt;應用程式密碼&lt;/code&gt;&lt;br&gt;　　而取得的&lt;strong&gt;應用程式密碼&lt;/strong&gt;就是要填入的密碼囉！&lt;/p&gt;
+&lt;h1 id=&quot;後記&quot;&gt;&lt;a href=&quot;#後記&quot; class=&quot;headerlink&quot; title=&quot;後記&quot;&gt;&lt;/a&gt;&lt;strong&gt;後記&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;　　一開始我是想用 sendgrid 來作 smtp 送信，但真的試不出來也不知道什麼問題，有興趣的人可看&lt;a href=&quot;http://hyperneetprogrammer.hatenablog.com/entry/2016/03/01/080000&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;這篇文章&lt;/a&gt;，雖然是阿本仔寫的，但也是很清楚明瞭！&lt;/p&gt;
+&lt;p&gt;That’s it, &lt;strong&gt;DONE!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;【參考資料】&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ruby on Rails 實戰聖經：&lt;a href=&quot;https://ihower.tw/rails4/actionmailer.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://ihower.tw/rails4/actionmailer.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;安全地設定 Rails 郵件密碼：&lt;a href=&quot;http://tsaith.github.io/an-quan-di-she-ding-rails-you-jian-mi-ma.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://tsaith.github.io/an-quan-di-she-ding-rails-you-jian-mi-ma.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Rails Environment Variables：&lt;a href=&quot;http://railsapps.github.io/rails-environment-variables.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://railsapps.github.io/rails-environment-variables.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;官方討論：&lt;a href=&quot;https://community.c9.io/t/how-can-i-send-email-from-my-app/1262&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://community.c9.io/t/how-can-i-send-email-from-my-app/1262&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/img/program/responsive-emails-intro.png&quot; alt=&quot;寄信小札記 - via ActionMailer&quot; title=&quot;Pic by foundation.zurb.com&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;&lt;strong&gt;目的&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;　　在很多情況下都需要透過 E-mail 的功能，而我目前是需要寄送&lt;strong&gt;註冊認證信&lt;/strong&gt;給使用者，我們使用 ActionMailer 來整合 E-mail！&lt;/p&gt;
+&lt;h1 id=&quot;開發版本與環境&quot;&gt;&lt;a href=&quot;#開發版本與環境&quot; class=&quot;headerlink&quot; title=&quot;開發版本與環境&quot;&gt;&lt;/a&gt;&lt;strong&gt;開發版本與環境&lt;/strong&gt;&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;Ruby ：v2.3.0
+Rails：v4.2.5
+IDE  ：Cloud 9
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
+    
+    
+      <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
+    
+      <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
+    
+      <category term="actionmailer" scheme="http://georgiowan.github.io/tags/actionmailer/"/>
+    
+      <category term="gmail" scheme="http://georgiowan.github.io/tags/gmail/"/>
+    
+      <category term="mailgun" scheme="http://georgiowan.github.io/tags/mailgun/"/>
+    
+      <category term="cloud9" scheme="http://georgiowan.github.io/tags/cloud9/"/>
+    
+      <category term="devise" scheme="http://georgiowan.github.io/tags/devise/"/>
     
   </entry>
   
