@@ -1,0 +1,749 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="rubyonrails,rails,omniauth,devise,koala,facebook," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="新樂街口的三角窗" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="目的　　在 Devise 下，使用 Facebook 註冊與登入。
+前言　　相信大家都很熟練 Devise 這個 Gem 的使用者機制，當然除了一般的註冊申請帳號外，最方便是要能與各大社交平台有所連結；而 Devise 中透過 OmniAuth 快速地串接 Facebook、google、github… 等，以下就筆記一下如何使用 Facebook 註冊登入！
+開發版本與環境123　　Ruby">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Rails] Devise 使用 Facebook 註冊與登入">
+<meta property="og:url" content="http://georgiowan.github.io/2016/rails-devise-using-facebook-signup-login/index.html">
+<meta property="og:site_name" content="新樂街口的三角窗">
+<meta property="og:description" content="目的　　在 Devise 下，使用 Facebook 註冊與登入。
+前言　　相信大家都很熟練 Devise 這個 Gem 的使用者機制，當然除了一般的註冊申請帳號外，最方便是要能與各大社交平台有所連結；而 Devise 中透過 OmniAuth 快速地串接 Facebook、google、github… 等，以下就筆記一下如何使用 Facebook 註冊登入！
+開發版本與環境123　　Ruby">
+<meta property="og:image" content="http://georgiowan.github.io/img/program/Facebookcoke.jpg">
+<meta property="og:updated_time" content="2016-05-25T07:03:13.739Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Rails] Devise 使用 Facebook 註冊與登入">
+<meta name="twitter:description" content="目的　　在 Devise 下，使用 Facebook 註冊與登入。
+前言　　相信大家都很熟練 Devise 這個 Gem 的使用者機制，當然除了一般的註冊申請帳號外，最方便是要能與各大社交平台有所連結；而 Devise 中透過 OmniAuth 快速地串接 Facebook、google、github… 等，以下就筆記一下如何使用 Facebook 註冊登入！
+開發版本與環境123　　Ruby">
+<meta name="twitter:image" content="http://georgiowan.github.io/img/program/Facebookcoke.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '作者'
+    }
+  };
+</script>
+
+  <title> [Rails] Devise 使用 Facebook 註冊與登入 | 新樂街口的三角窗 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-72706538-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">新樂街口的三角窗</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">我，在這裡，享受等你的時光。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [Rails] Devise 使用 Facebook 註冊與登入
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2016-05-20T11:28:00+00:00" content="2016-05-20">
+              2016-05-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Programmer/" itemprop="url" rel="index">
+                    <span itemprop="name">Programmer</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/rails-devise-using-facebook-signup-login/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/rails-devise-using-facebook-signup-login/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-eye"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/img/program/Facebookcoke.jpg" alt="Devise 使用 Facebook 註冊與登入" title="Pic by Facebookcoke"></p>
+<h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a><strong>目的</strong></h1><p>　　在 Devise 下，使用 Facebook 註冊與登入。</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p>　　相信大家都很熟練 <a href="https://github.com/plataformatec/devise" target="_blank" rel="external"><strong>Devise</strong></a> 這個 Gem 的使用者機制，當然除了一般的註冊申請帳號外，最方便是要能與各大社交平台有所連結；而 Devise 中透過 <a href="https://github.com/intridea/omniauth" target="_blank" rel="external"><strong>OmniAuth</strong></a> 快速地串接 Facebook、google、github… 等，以下就筆記一下如何使用 Facebook 註冊登入！</p>
+<h1 id="開發版本與環境"><a href="#開發版本與環境" class="headerlink" title="開發版本與環境"></a><strong>開發版本與環境</strong></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">　　Ruby  : v2.3.0</span><br><span class="line">　　Rails : v4.2.5</span><br><span class="line">　　IDE   : Cloud 9</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h1 id="筆記"><a href="#筆記" class="headerlink" title="筆記"></a><strong>筆記</strong></h1><h3 id="1-什麼是-OmniAuth"><a href="#1-什麼是-OmniAuth" class="headerlink" title="1. 什麼是 OmniAuth ?"></a>1. 什麼是 OmniAuth ?</h3><p>　　OmniAuth 是一個提供多方認證，且不被限定於特定框架的認證方案，主要架構如下：</p>
+<h4 id="Provider"><a href="#Provider" class="headerlink" title="Provider"></a><em>Provider</em></h4><p>　　OmniAuth 將所有的認證方視為不同的 Provider，而每種 Provider 都有各自的 Strategy。</p>
+<h4 id="Strategy"><a href="#Strategy" class="headerlink" title="Strategy"></a><em>Strategy</em></h4><p>　　每個 Strategy 分為兩個 phase，對應 OmniAuth 提供的 url：</p>
+<ul>
+<li>equest phase　=&gt;　<code>/auth/:provider</code></li>
+<li>callback phase =&gt;　<code>/auth/:provider/callback</code></li>
+</ul>
+<p>　　而它的流程是，透過 <code>/auth/:provider</code> 重導去認證，認證成功後 redirect 到 <code>/auth/:provider/callback</code> 作 session create 動作 ( 透過拿回來的資料 find_or_create user )</p>
+<blockquote>
+<p>註： :provider 就是 facebook、github，所以 url 看起來會是 /auth/facebook、/auth/facebook/callback。</p>
+</blockquote>
+<h3 id="2-一起來實作"><a href="#2-一起來實作" class="headerlink" title="2. 一起來實作"></a>2. 一起來實作</h3><h4 id="步驟零、-Install-gem"><a href="#步驟零、-Install-gem" class="headerlink" title="步驟零、 Install gem"></a><strong>步驟零、 Install gem</strong></h4><figure class="highlight ruby"><figcaption><span>Gemfile</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gem <span class="string">'omniauth'</span></span><br><span class="line">gem <span class="string">'omniauth-facebook'</span></span><br><span class="line">gem <span class="string">'koala'</span>, <span class="string">"~-&gt; 2.2"</span>  <span class="comment"># 為了讓授權失敗時，刪除 permission session 使用</span></span><br></pre></td></tr></table></figure>
+<h4 id="步驟一、-建立-Facebook-Application"><a href="#步驟一、-建立-Facebook-Application" class="headerlink" title="步驟一、 建立 Facebook Application"></a><strong>步驟一、 建立 Facebook Application</strong></h4><p>　　使用 Facebook 應用服務前，需先到 <a href="https://developers.facebook.com/" target="_blank" rel="external">Facebook developer</a> 建立應用程式，只要按照步驟就可以順利建立完成。</p>
+<h4 id="步驟二、-於-devise-rb-中設定-config-omniauth"><a href="#步驟二、-於-devise-rb-中設定-config-omniauth" class="headerlink" title="步驟二、 於 devise.rb 中設定 config.omniauth"></a><strong>步驟二、 於 devise.rb 中設定 config.omniauth</strong></h4><figure class="highlight ruby"><figcaption><span>devise.rb</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">config.omniauth <span class="symbol">:facebook</span>, ENB[<span class="string">'FB_KEY'</span>], ENV[<span class="string">'FB_SECRET'</span>],</span><br><span class="line">                <span class="symbol">scope:</span> <span class="string">'email'</span>,</span><br><span class="line">                <span class="symbol">info_fields:</span> <span class="string">'email, name, link'</span>,</span><br><span class="line">                <span class="symbol">secure_image_url:</span> <span class="literal">true</span>,</span><br><span class="line">                <span class="symbol">image_size:</span>  <span class="string">'large'</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>這邊使用 Rails_ENV 確保我們的資料隱密性，可參考 <a href="http://georgiowan.logdown.com/notes/732233/rails-send-small-notes-via-actionmailer" target="_blank" rel="external">這篇的 Rails_ENV 小筆記</a></p>
+</blockquote>
+<ul>
+<li><strong>FB_KEY</strong>：Facebook 應用程式<em>編號</em></li>
+<li><strong>FB_SECRET</strong>：Facebook 應用程式<em>密鑰</em></li>
+<li><strong>scope</strong>：表示將取得使用者的什麼<em>權限</em>，email 為預設，即取得使用者公開的資訊 ( public_profile ) 權限</li>
+<li><strong>info_fields</strong>：表示在擁有權限下，取得使用者的什麼<em>資訊</em>，這邊我們取得使用者的 Email、名稱和 FB 連結</li>
+<li><strong>secure_image_url</strong>：為 true，表示我們透過 https 取得使用者大頭貼</li>
+<li><strong>image_size</strong>：此為取得大頭貼的 size，<code>square</code>(50x50)、<code>small</code>(50 px width, ariable height)、<code>normal</code>(100 px width, variable height)、<code>large</code>(約 200 px wide, variable height)</li>
+</ul>
+<blockquote>
+<p>以上設定，我們可以從 <a href="https://github.com/mkdynamic/omniauth-facebook#configuring" target="_blank" rel="external"><strong>omniauth-facebook</strong></a> 清楚的了解。<br>若是想取得其他的<strong>權限與資訊</strong>，可以先到 <a href="https://developers.facebook.com/docs/facebook-login/permissions" target="_blank" rel="external">Facebook developer permissions</a> 查看。</p>
+</blockquote>
+<h4 id="步驟三、-於-user-rb-中設定-omniauth"><a href="#步驟三、-於-user-rb-中設定-omniauth" class="headerlink" title="步驟三、 於 user.rb 中設定 omniauth"></a><strong>步驟三、 於 user.rb 中設定 omniauth</strong></h4><figure class="highlight ruby"><figcaption><span>user.rb</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">devise <span class="symbol">:omniauthable</span>, <span class="symbol">:omniauth_providers</span> =&gt; [<span class="symbol">:facebook</span>]</span><br></pre></td></tr></table></figure>
+<p>　　定義認證後的創建行為，會在取得使用者 Facebook 權限與資訊後執行：<br><figure class="highlight ruby"><figcaption><span>user.rb</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">from_omniauth</span><span class="params">(auth)</span></span></span><br><span class="line">  where(<span class="symbol">provider:</span> auth.provider, <span class="symbol">uid:</span> auth.uid).first_or_create <span class="keyword">do</span> <span class="params">|user|</span></span><br><span class="line">    user.provider = auth.provider</span><br><span class="line">    user.uid      = auth.uid</span><br><span class="line">    user.email    = auth.info.email</span><br><span class="line">    user.name     = auth.info.name</span><br><span class="line">    user.facebook = auth.info.urls.Facebook</span><br><span class="line">    user.password = Devise.friendly_token[<span class="number">0</span>,<span class="number">20</span>]</span><br><span class="line">    user.remote_avatar_url   = auth.info.image</span><br><span class="line">    user.skip_confirmation!  <span class="comment"># 如果 devise 有使用 confirmable，記得 skip！</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></p>
+<p>　　授權失敗時，透過 <code>koala</code> 刪除使用者授權的 session，以便重新授權。<br><figure class="highlight ruby"><figcaption><span>user.rb</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">delete_access_token</span><span class="params">(auth)</span></span></span><br><span class="line">  @graph <span class="params">||</span>= Koala::Facebook::API.new(auth.credentials.token)</span><br><span class="line">  @graph.delete_connections(auth.uid, <span class="string">"permissions"</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="步驟四、-定義-omniauth-callback-controller"><a href="#步驟四、-定義-omniauth-callback-controller" class="headerlink" title="步驟四、 定義 omniauth callback controller"></a><strong>步驟四、 定義 omniauth callback controller</strong></h4><p>　　新增一個 <code>Users::OmniauthCallBacksController</code>，我們在這個地方定義兩個 action：facebook 和 failure。</p>
+<ul>
+<li><strong>facebook</strong> method 作的三件事：</li>
+</ul>
+<p>　　　1. 使用者授權後，依取得的資訊創建新的 user。<br>　　　2. 如果此使用者已經存在網站中，直接登入。<br>　　　3. 授權後，未取得 email 者，重新要求授權。(這是因為我的網站使用者 email 為必填項目，且為登入憑據)</p>
+<ul>
+<li><strong>failure</strong>：重新導向註冊頁，並告知使用者授權錯誤。</li>
+</ul>
+<figure class="highlight ruby"><figcaption><span>omniauth_callback.rb</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Users::OmniauthCallbacksController</span> &lt; Devise::OmniauthCallbacksController</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">facebook</span></span></span><br><span class="line">    @user = User.from_omniauth(request.env[<span class="string">"omniauth.auth"</span>])  <span class="comment"># 這邊會呼叫我們在 user 中定義的創建行為</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> @user.persisted?</span><br><span class="line">      sign_in_and_redirect @user, <span class="symbol">:event</span> =&gt; <span class="symbol">:authentication</span></span><br><span class="line">      set_flash_message(<span class="symbol">:notice</span>, <span class="symbol">:success</span>, <span class="symbol">:kind</span> =&gt; <span class="string">"Facebook"</span>) <span class="keyword">if</span> is_navigational_format?</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      </span><br><span class="line">      <span class="keyword">if</span> @user.email.<span class="literal">nil</span>?</span><br><span class="line">        <span class="comment"># 如果 User 沒有提供 email 刪除 User 的 app 讓 User 重新授權</span></span><br><span class="line">        @user.delete_access_token(request.env[<span class="string">"omniauth.auth"</span>])</span><br><span class="line">        redirect_to new_user_registration_url, <span class="symbol">alert:</span> <span class="string">"需要您同意 Email 授權唷！"</span></span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">        session[<span class="string">"devise.facebook_data"</span>] = request.env[<span class="string">"omniauth.auth"</span>]</span><br><span class="line">        redirect_to new_user_registration_url</span><br><span class="line">      <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">failure</span></span></span><br><span class="line">    redirect_to new_user_session_path, <span class="symbol">alert:</span> <span class="string">"無法獲得驗證！"</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h4 id="步驟五、-到-routes-rb-設定-devise-omniauth-callback-該用哪個-controller"><a href="#步驟五、-到-routes-rb-設定-devise-omniauth-callback-該用哪個-controller" class="headerlink" title="步驟五、 到 routes.rb 設定 devise omniauth callback 該用哪個 controller"></a><strong>步驟五、 到 routes.rb 設定 devise omniauth callback 該用哪個 controller</strong></h4><p>　　我們要讓 omniauth callback 時使用我們定義的 controller：<br><figure class="highlight ruby"><figcaption><span>routes.rb</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">devise_for <span class="symbol">:users</span>, <span class="symbol">controllers:</span> &#123;<span class="symbol">omniauth_callbacks:</span> <span class="string">"users/omniauth_callbacks"</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Devise 使用 OmniAuth 時，會自動幫你在 <code>registrations#new</code> 產生 provider 登入的 link，所以不必自行添加，或是你也可以在想添加的地方加入：<br>　　<code>&lt;%= link_to &quot;Sign in with Facebook&quot;, user_omniauth_authorize_path(:facebook) %&gt;</code></p>
+<h1 id="後記"><a href="#後記" class="headerlink" title="後記"></a><strong>後記</strong></h1><p>　　授權失敗時，需要重新授權 (Permissions revoke)，這個問題看似很簡單，卻花了我不少時間；原因是不想為了解決這個小問題，而多使用一個 gem，但最終我還是選擇用 koala 解決了，如果有不多加使用 gem 的解法請來信或留言，感激不盡！</p>
+<p>That’s it, <strong>DONE!</strong></p>
+<p><strong>【參考資料】</strong></p>
+<ul>
+<li>XDITE OmniAuth 系列文章：<a href="http://blog.xdite.net/posts/2011/11/19/omniauth-clean-auth-provider-1" target="_blank" rel="external">http://blog.xdite.net/posts/2011/11/19/omniauth-clean-auth-provider-1</a></li>
+<li>devise OmniAuth document：<a href="https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview" target="_blank" rel="external">https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview</a></li>
+<li>Auth Hash Schema：<a href="https://github.com/intridea/omniauth/wiki/Auth-Hash-Schema" target="_blank" rel="external">https://github.com/intridea/omniauth/wiki/Auth-Hash-Schema</a></li>
+<li>OmniAuth Facebook：<a href="https://github.com/mkdynamic/omniauth-facebook" target="_blank" rel="external">https://github.com/mkdynamic/omniauth-facebook</a></li>
+<li>FB Revoking Permissions: <a href="http://azhen.logdown.com/posts/301101-rails-fb-revoking-permissions" target="_blank" rel="external">http://azhen.logdown.com/posts/301101-rails-fb-revoking-permissions</a></li>
+<li>Rails 4 OmniAuth using Devise: <a href="http://sourcey.com/rails-4-omniauth-using-devise-with-twitter-facebook-and-linkedin/" target="_blank" rel="external">有 Facebook, Twitter, Linkedin 的教學文章</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/rubyonrails/" rel="tag">#rubyonrails</a>
+          
+            <a href="/tags/rails/" rel="tag">#rails</a>
+          
+            <a href="/tags/omniauth/" rel="tag">#omniauth</a>
+          
+            <a href="/tags/devise/" rel="tag">#devise</a>
+          
+            <a href="/tags/koala/" rel="tag">#koala</a>
+          
+            <a href="/tags/facebook/" rel="tag">#facebook</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/ruby-rvm-management-ror-development-environment/" rel="next" title="[Ruby] 使用 RVM 管理 ROR 開發環境">
+                <i class="fa fa-chevron-left"></i> [Ruby] 使用 RVM 管理 ROR 開發環境
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/travel-to-korea-money-exchange/" rel="prev" title="[資訊] 超好用換幣神器！教你怎麼換韓元最划算">
+                [資訊] 超好用換幣神器！教你怎麼換韓元最划算 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/oA.jpg"
+               alt="OAwan" />
+          <p class="site-author-name" itemprop="name">OAwan</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分類</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">標籤</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/GeorgioWan" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目的"><span class="nav-number">1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">2.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#開發版本與環境"><span class="nav-number">3.</span> <span class="nav-text">開發版本與環境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#筆記"><span class="nav-number">4.</span> <span class="nav-text">筆記</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-什麼是-OmniAuth"><span class="nav-number">4.0.1.</span> <span class="nav-text">1. 什麼是 OmniAuth ?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Provider"><span class="nav-number">4.0.1.1.</span> <span class="nav-text">Provider</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Strategy"><span class="nav-number">4.0.1.2.</span> <span class="nav-text">Strategy</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-一起來實作"><span class="nav-number">4.0.2.</span> <span class="nav-text">2. 一起來實作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#步驟零、-Install-gem"><span class="nav-number">4.0.2.1.</span> <span class="nav-text">步驟零、 Install gem</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#步驟一、-建立-Facebook-Application"><span class="nav-number">4.0.2.2.</span> <span class="nav-text">步驟一、 建立 Facebook Application</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#步驟二、-於-devise-rb-中設定-config-omniauth"><span class="nav-number">4.0.2.3.</span> <span class="nav-text">步驟二、 於 devise.rb 中設定 config.omniauth</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#步驟三、-於-user-rb-中設定-omniauth"><span class="nav-number">4.0.2.4.</span> <span class="nav-text">步驟三、 於 user.rb 中設定 omniauth</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#步驟四、-定義-omniauth-callback-controller"><span class="nav-number">4.0.2.5.</span> <span class="nav-text">步驟四、 定義 omniauth callback controller</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#步驟五、-到-routes-rb-設定-devise-omniauth-callback-該用哪個-controller"><span class="nav-number">4.0.2.6.</span> <span class="nav-text">步驟五、 到 routes.rb 設定 devise omniauth callback 該用哪個 controller</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#後記"><span class="nav-number">5.</span> <span class="nav-text">後記</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">OAwan</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'oawan';
+      var disqus_identifier = '2016/rails-devise-using-facebook-signup-login/';
+      var disqus_title = '[Rails] Devise 使用 Facebook 註冊與登入';
+      var disqus_url = 'http://georgiowan.github.io/2016/rails-devise-using-facebook-signup-login/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

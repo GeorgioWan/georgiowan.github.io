@@ -78,6 +78,156 @@
   </entry>
   
   <entry>
+    <title>[Rails] Devise 使用 Facebook 註冊與登入</title>
+    <link href="http://georgiowan.github.io/2016/rails-devise-using-facebook-signup-login/"/>
+    <id>http://georgiowan.github.io/2016/rails-devise-using-facebook-signup-login/</id>
+    <published>2016-05-20T11:28:00.000Z</published>
+    <updated>2016-05-25T07:03:13.739Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;/img/program/Facebookcoke.jpg&quot; alt=&quot;Devise 使用 Facebook 註冊與登入&quot; title=&quot;Pic by Facebookcoke&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;&lt;strong&gt;目的&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;　　在 Devise 下，使用 Facebook 註冊與登入。&lt;/p&gt;
+&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;&lt;strong&gt;前言&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;　　相信大家都很熟練 &lt;a href=&quot;https://github.com/plataformatec/devise&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;Devise&lt;/strong&gt;&lt;/a&gt; 這個 Gem 的使用者機制，當然除了一般的註冊申請帳號外，最方便是要能與各大社交平台有所連結；而 Devise 中透過 &lt;a href=&quot;https://github.com/intridea/omniauth&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;OmniAuth&lt;/strong&gt;&lt;/a&gt; 快速地串接 Facebook、google、github… 等，以下就筆記一下如何使用 Facebook 註冊登入！&lt;/p&gt;
+&lt;h1 id=&quot;開發版本與環境&quot;&gt;&lt;a href=&quot;#開發版本與環境&quot; class=&quot;headerlink&quot; title=&quot;開發版本與環境&quot;&gt;&lt;/a&gt;&lt;strong&gt;開發版本與環境&lt;/strong&gt;&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;　　Ruby  : v2.3.0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　Rails : v4.2.5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　IDE   : Cloud 9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h1 id=&quot;筆記&quot;&gt;&lt;a href=&quot;#筆記&quot; class=&quot;headerlink&quot; title=&quot;筆記&quot;&gt;&lt;/a&gt;&lt;strong&gt;筆記&lt;/strong&gt;&lt;/h1&gt;&lt;h3 id=&quot;1-什麼是-OmniAuth&quot;&gt;&lt;a href=&quot;#1-什麼是-OmniAuth&quot; class=&quot;headerlink&quot; title=&quot;1. 什麼是 OmniAuth ?&quot;&gt;&lt;/a&gt;1. 什麼是 OmniAuth ?&lt;/h3&gt;&lt;p&gt;　　OmniAuth 是一個提供多方認證，且不被限定於特定框架的認證方案，主要架構如下：&lt;/p&gt;
+&lt;h4 id=&quot;Provider&quot;&gt;&lt;a href=&quot;#Provider&quot; class=&quot;headerlink&quot; title=&quot;Provider&quot;&gt;&lt;/a&gt;&lt;em&gt;Provider&lt;/em&gt;&lt;/h4&gt;&lt;p&gt;　　OmniAuth 將所有的認證方視為不同的 Provider，而每種 Provider 都有各自的 Strategy。&lt;/p&gt;
+&lt;h4 id=&quot;Strategy&quot;&gt;&lt;a href=&quot;#Strategy&quot; class=&quot;headerlink&quot; title=&quot;Strategy&quot;&gt;&lt;/a&gt;&lt;em&gt;Strategy&lt;/em&gt;&lt;/h4&gt;&lt;p&gt;　　每個 Strategy 分為兩個 phase，對應 OmniAuth 提供的 url：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;equest phase　=&amp;gt;　&lt;code&gt;/auth/:provider&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;callback phase =&amp;gt;　&lt;code&gt;/auth/:provider/callback&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;　　而它的流程是，透過 &lt;code&gt;/auth/:provider&lt;/code&gt; 重導去認證，認證成功後 redirect 到 &lt;code&gt;/auth/:provider/callback&lt;/code&gt; 作 session create 動作 ( 透過拿回來的資料 find_or_create user )&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;註： :provider 就是 facebook、github，所以 url 看起來會是 /auth/facebook、/auth/facebook/callback。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;2-一起來實作&quot;&gt;&lt;a href=&quot;#2-一起來實作&quot; class=&quot;headerlink&quot; title=&quot;2. 一起來實作&quot;&gt;&lt;/a&gt;2. 一起來實作&lt;/h3&gt;&lt;h4 id=&quot;步驟零、-Install-gem&quot;&gt;&lt;a href=&quot;#步驟零、-Install-gem&quot; class=&quot;headerlink&quot; title=&quot;步驟零、 Install gem&quot;&gt;&lt;/a&gt;&lt;strong&gt;步驟零、 Install gem&lt;/strong&gt;&lt;/h4&gt;&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;figcaption&gt;&lt;span&gt;Gemfile&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;gem &lt;span class=&quot;string&quot;&gt;&#39;omniauth&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;gem &lt;span class=&quot;string&quot;&gt;&#39;omniauth-facebook&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;gem &lt;span class=&quot;string&quot;&gt;&#39;koala&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;~-&amp;gt; 2.2&quot;&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;# 為了讓授權失敗時，刪除 permission session 使用&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;步驟一、-建立-Facebook-Application&quot;&gt;&lt;a href=&quot;#步驟一、-建立-Facebook-Application&quot; class=&quot;headerlink&quot; title=&quot;步驟一、 建立 Facebook Application&quot;&gt;&lt;/a&gt;&lt;strong&gt;步驟一、 建立 Facebook Application&lt;/strong&gt;&lt;/h4&gt;&lt;p&gt;　　使用 Facebook 應用服務前，需先到 &lt;a href=&quot;https://developers.facebook.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Facebook developer&lt;/a&gt; 建立應用程式，只要按照步驟就可以順利建立完成。&lt;/p&gt;
+&lt;h4 id=&quot;步驟二、-於-devise-rb-中設定-config-omniauth&quot;&gt;&lt;a href=&quot;#步驟二、-於-devise-rb-中設定-config-omniauth&quot; class=&quot;headerlink&quot; title=&quot;步驟二、 於 devise.rb 中設定 config.omniauth&quot;&gt;&lt;/a&gt;&lt;strong&gt;步驟二、 於 devise.rb 中設定 config.omniauth&lt;/strong&gt;&lt;/h4&gt;&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;figcaption&gt;&lt;span&gt;devise.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;config.omniauth &lt;span class=&quot;symbol&quot;&gt;:facebook&lt;/span&gt;, ENB[&lt;span class=&quot;string&quot;&gt;&#39;FB_KEY&#39;&lt;/span&gt;], ENV[&lt;span class=&quot;string&quot;&gt;&#39;FB_SECRET&#39;&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;symbol&quot;&gt;scope:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;email&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;symbol&quot;&gt;info_fields:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;email, name, link&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;symbol&quot;&gt;secure_image_url:&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;symbol&quot;&gt;image_size:&lt;/span&gt;  &lt;span class=&quot;string&quot;&gt;&#39;large&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;這邊使用 Rails_ENV 確保我們的資料隱密性，可參考 &lt;a href=&quot;http://georgiowan.logdown.com/notes/732233/rails-send-small-notes-via-actionmailer&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;這篇的 Rails_ENV 小筆記&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;FB_KEY&lt;/strong&gt;：Facebook 應用程式&lt;em&gt;編號&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;FB_SECRET&lt;/strong&gt;：Facebook 應用程式&lt;em&gt;密鑰&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;scope&lt;/strong&gt;：表示將取得使用者的什麼&lt;em&gt;權限&lt;/em&gt;，email 為預設，即取得使用者公開的資訊 ( public_profile ) 權限&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;info_fields&lt;/strong&gt;：表示在擁有權限下，取得使用者的什麼&lt;em&gt;資訊&lt;/em&gt;，這邊我們取得使用者的 Email、名稱和 FB 連結&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;secure_image_url&lt;/strong&gt;：為 true，表示我們透過 https 取得使用者大頭貼&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;image_size&lt;/strong&gt;：此為取得大頭貼的 size，&lt;code&gt;square&lt;/code&gt;(50x50)、&lt;code&gt;small&lt;/code&gt;(50 px width, ariable height)、&lt;code&gt;normal&lt;/code&gt;(100 px width, variable height)、&lt;code&gt;large&lt;/code&gt;(約 200 px wide, variable height)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;以上設定，我們可以從 &lt;a href=&quot;https://github.com/mkdynamic/omniauth-facebook#configuring&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;omniauth-facebook&lt;/strong&gt;&lt;/a&gt; 清楚的了解。&lt;br&gt;若是想取得其他的&lt;strong&gt;權限與資訊&lt;/strong&gt;，可以先到 &lt;a href=&quot;https://developers.facebook.com/docs/facebook-login/permissions&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Facebook developer permissions&lt;/a&gt; 查看。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;步驟三、-於-user-rb-中設定-omniauth&quot;&gt;&lt;a href=&quot;#步驟三、-於-user-rb-中設定-omniauth&quot; class=&quot;headerlink&quot; title=&quot;步驟三、 於 user.rb 中設定 omniauth&quot;&gt;&lt;/a&gt;&lt;strong&gt;步驟三、 於 user.rb 中設定 omniauth&lt;/strong&gt;&lt;/h4&gt;&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;figcaption&gt;&lt;span&gt;user.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;devise &lt;span class=&quot;symbol&quot;&gt;:omniauthable&lt;/span&gt;, &lt;span class=&quot;symbol&quot;&gt;:omniauth_providers&lt;/span&gt; =&amp;gt; [&lt;span class=&quot;symbol&quot;&gt;:facebook&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;　　定義認證後的創建行為，會在取得使用者 Facebook 權限與資訊後執行：&lt;br&gt;&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;figcaption&gt;&lt;span&gt;user.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;self&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;from_omniauth&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(auth)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  where(&lt;span class=&quot;symbol&quot;&gt;provider:&lt;/span&gt; auth.provider, &lt;span class=&quot;symbol&quot;&gt;uid:&lt;/span&gt; auth.uid).first_or_create &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;|user|&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    user.provider = auth.provider&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    user.uid      = auth.uid&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    user.email    = auth.info.email&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    user.name     = auth.info.name&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    user.facebook = auth.info.urls.Facebook&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    user.password = Devise.friendly_token[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    user.remote_avatar_url   = auth.info.image&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    user.skip_confirmation!  &lt;span class=&quot;comment&quot;&gt;# 如果 devise 有使用 confirmable，記得 skip！&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;　　授權失敗時，透過 &lt;code&gt;koala&lt;/code&gt; 刪除使用者授權的 session，以便重新授權。&lt;br&gt;&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;figcaption&gt;&lt;span&gt;user.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;delete_access_token&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(auth)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  @graph &lt;span class=&quot;params&quot;&gt;||&lt;/span&gt;= Koala::Facebook::API.new(auth.credentials.token)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  @graph.delete_connections(auth.uid, &lt;span class=&quot;string&quot;&gt;&quot;permissions&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&quot;步驟四、-定義-omniauth-callback-controller&quot;&gt;&lt;a href=&quot;#步驟四、-定義-omniauth-callback-controller&quot; class=&quot;headerlink&quot; title=&quot;步驟四、 定義 omniauth callback controller&quot;&gt;&lt;/a&gt;&lt;strong&gt;步驟四、 定義 omniauth callback controller&lt;/strong&gt;&lt;/h4&gt;&lt;p&gt;　　新增一個 &lt;code&gt;Users::OmniauthCallBacksController&lt;/code&gt;，我們在這個地方定義兩個 action：facebook 和 failure。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;facebook&lt;/strong&gt; method 作的三件事：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;　　　1. 使用者授權後，依取得的資訊創建新的 user。&lt;br&gt;　　　2. 如果此使用者已經存在網站中，直接登入。&lt;br&gt;　　　3. 授權後，未取得 email 者，重新要求授權。(這是因為我的網站使用者 email 為必填項目，且為登入憑據)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;failure&lt;/strong&gt;：重新導向註冊頁，並告知使用者授權錯誤。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;figcaption&gt;&lt;span&gt;omniauth_callback.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Users::OmniauthCallbacksController&lt;/span&gt; &amp;lt; Devise::OmniauthCallbacksController&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;facebook&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    @user = User.from_omniauth(request.env[&lt;span class=&quot;string&quot;&gt;&quot;omniauth.auth&quot;&lt;/span&gt;])  &lt;span class=&quot;comment&quot;&gt;# 這邊會呼叫我們在 user 中定義的創建行為&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; @user.persisted?&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      sign_in_and_redirect @user, &lt;span class=&quot;symbol&quot;&gt;:event&lt;/span&gt; =&amp;gt; &lt;span class=&quot;symbol&quot;&gt;:authentication&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      set_flash_message(&lt;span class=&quot;symbol&quot;&gt;:notice&lt;/span&gt;, &lt;span class=&quot;symbol&quot;&gt;:success&lt;/span&gt;, &lt;span class=&quot;symbol&quot;&gt;:kind&lt;/span&gt; =&amp;gt; &lt;span class=&quot;string&quot;&gt;&quot;Facebook&quot;&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; is_navigational_format?&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; @user.email.&lt;span class=&quot;literal&quot;&gt;nil&lt;/span&gt;?&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;# 如果 User 沒有提供 email 刪除 User 的 app 讓 User 重新授權&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        @user.delete_access_token(request.env[&lt;span class=&quot;string&quot;&gt;&quot;omniauth.auth&quot;&lt;/span&gt;])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        redirect_to new_user_registration_url, &lt;span class=&quot;symbol&quot;&gt;alert:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;需要您同意 Email 授權唷！&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        session[&lt;span class=&quot;string&quot;&gt;&quot;devise.facebook_data&quot;&lt;/span&gt;] = request.env[&lt;span class=&quot;string&quot;&gt;&quot;omniauth.auth&quot;&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        redirect_to new_user_registration_url&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;failure&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    redirect_to new_user_session_path, &lt;span class=&quot;symbol&quot;&gt;alert:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;無法獲得驗證！&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;步驟五、-到-routes-rb-設定-devise-omniauth-callback-該用哪個-controller&quot;&gt;&lt;a href=&quot;#步驟五、-到-routes-rb-設定-devise-omniauth-callback-該用哪個-controller&quot; class=&quot;headerlink&quot; title=&quot;步驟五、 到 routes.rb 設定 devise omniauth callback 該用哪個 controller&quot;&gt;&lt;/a&gt;&lt;strong&gt;步驟五、 到 routes.rb 設定 devise omniauth callback 該用哪個 controller&lt;/strong&gt;&lt;/h4&gt;&lt;p&gt;　　我們要讓 omniauth callback 時使用我們定義的 controller：&lt;br&gt;&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;figcaption&gt;&lt;span&gt;routes.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;devise_for &lt;span class=&quot;symbol&quot;&gt;:users&lt;/span&gt;, &lt;span class=&quot;symbol&quot;&gt;controllers:&lt;/span&gt; &amp;#123;&lt;span class=&quot;symbol&quot;&gt;omniauth_callbacks:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;users/omniauth_callbacks&quot;&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Devise 使用 OmniAuth 時，會自動幫你在 &lt;code&gt;registrations#new&lt;/code&gt; 產生 provider 登入的 link，所以不必自行添加，或是你也可以在想添加的地方加入：&lt;br&gt;　　&lt;code&gt;&amp;lt;%= link_to &amp;quot;Sign in with Facebook&amp;quot;, user_omniauth_authorize_path(:facebook) %&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&quot;後記&quot;&gt;&lt;a href=&quot;#後記&quot; class=&quot;headerlink&quot; title=&quot;後記&quot;&gt;&lt;/a&gt;&lt;strong&gt;後記&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;　　授權失敗時，需要重新授權 (Permissions revoke)，這個問題看似很簡單，卻花了我不少時間；原因是不想為了解決這個小問題，而多使用一個 gem，但最終我還是選擇用 koala 解決了，如果有不多加使用 gem 的解法請來信或留言，感激不盡！&lt;/p&gt;
+&lt;p&gt;That’s it, &lt;strong&gt;DONE!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;【參考資料】&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;XDITE OmniAuth 系列文章：&lt;a href=&quot;http://blog.xdite.net/posts/2011/11/19/omniauth-clean-auth-provider-1&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.xdite.net/posts/2011/11/19/omniauth-clean-auth-provider-1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;devise OmniAuth document：&lt;a href=&quot;https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Auth Hash Schema：&lt;a href=&quot;https://github.com/intridea/omniauth/wiki/Auth-Hash-Schema&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/intridea/omniauth/wiki/Auth-Hash-Schema&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;OmniAuth Facebook：&lt;a href=&quot;https://github.com/mkdynamic/omniauth-facebook&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/mkdynamic/omniauth-facebook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;FB Revoking Permissions: &lt;a href=&quot;http://azhen.logdown.com/posts/301101-rails-fb-revoking-permissions&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://azhen.logdown.com/posts/301101-rails-fb-revoking-permissions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Rails 4 OmniAuth using Devise: &lt;a href=&quot;http://sourcey.com/rails-4-omniauth-using-devise-with-twitter-facebook-and-linkedin/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;有 Facebook, Twitter, Linkedin 的教學文章&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/img/program/Facebookcoke.jpg&quot; alt=&quot;Devise 使用 Facebook 註冊與登入&quot; title=&quot;Pic by Facebookcoke&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;&lt;strong&gt;目的&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;　　在 Devise 下，使用 Facebook 註冊與登入。&lt;/p&gt;
+&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;&lt;strong&gt;前言&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;　　相信大家都很熟練 &lt;a href=&quot;https://github.com/plataformatec/devise&quot;&gt;&lt;strong&gt;Devise&lt;/strong&gt;&lt;/a&gt; 這個 Gem 的使用者機制，當然除了一般的註冊申請帳號外，最方便是要能與各大社交平台有所連結；而 Devise 中透過 &lt;a href=&quot;https://github.com/intridea/omniauth&quot;&gt;&lt;strong&gt;OmniAuth&lt;/strong&gt;&lt;/a&gt; 快速地串接 Facebook、google、github… 等，以下就筆記一下如何使用 Facebook 註冊登入！&lt;/p&gt;
+&lt;h1 id=&quot;開發版本與環境&quot;&gt;&lt;a href=&quot;#開發版本與環境&quot; class=&quot;headerlink&quot; title=&quot;開發版本與環境&quot;&gt;&lt;/a&gt;&lt;strong&gt;開發版本與環境&lt;/strong&gt;&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;　　Ruby  : v2.3.0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　Rails : v4.2.5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　IDE   : Cloud 9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
+    
+    
+      <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
+    
+      <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
+    
+      <category term="omniauth" scheme="http://georgiowan.github.io/tags/omniauth/"/>
+    
+      <category term="devise" scheme="http://georgiowan.github.io/tags/devise/"/>
+    
+      <category term="koala" scheme="http://georgiowan.github.io/tags/koala/"/>
+    
+      <category term="facebook" scheme="http://georgiowan.github.io/tags/facebook/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Ruby] 使用 RVM 管理 ROR 開發環境</title>
+    <link href="http://georgiowan.github.io/2016/ruby-rvm-management-ror-development-environment/"/>
+    <id>http://georgiowan.github.io/2016/ruby-rvm-management-ror-development-environment/</id>
+    <published>2016-05-18T14:37:00.000Z</published>
+    <updated>2016-05-25T06:59:57.611Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;/img/program/rvm-logo-all-happy.png&quot; alt=&quot;使用 RVM 管理 ROR 開發環境&quot; title=&quot;Pic by RVM&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;&lt;strong&gt;目的&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;　　有鑒於一些好朋友想知道怎麼管理 ROR 的開發環境，所以重新整理了一下在 Ubuntu 上使用 RVM 管理 Ruby 和 Rails 的小筆記！希望能幫助到需要的你唷！&lt;/p&gt;
+&lt;h1 id=&quot;開發版本與環境&quot;&gt;&lt;a href=&quot;#開發版本與環境&quot; class=&quot;headerlink&quot; title=&quot;開發版本與環境&quot;&gt;&lt;/a&gt;&lt;strong&gt;開發版本與環境&lt;/strong&gt;&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;　　VMware Workstation 12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　Ubuntu: 15.04(64-bit)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h1 id=&quot;筆記&quot;&gt;&lt;a href=&quot;#筆記&quot; class=&quot;headerlink&quot; title=&quot;筆記&quot;&gt;&lt;/a&gt;&lt;strong&gt;筆記&lt;/strong&gt;&lt;/h1&gt;&lt;h3 id=&quot;1-什麼是-Gem&quot;&gt;&lt;a href=&quot;#1-什麼是-Gem&quot; class=&quot;headerlink&quot; title=&quot;1. 什麼是 Gem ?&quot;&gt;&lt;/a&gt;1. 什麼是 Gem ?&lt;/h3&gt;&lt;p&gt;　　不是鄧紫棋！不是鄧紫棋！不是鄧紫棋！&lt;/p&gt;
+&lt;p&gt;　　不知道大家是不是和我一樣，在什麼都還不了解的情況下，迫切的想知道 Gem 在 ROR 世界裡究竟扮演著什麼角色，一估狗 Gem，卻跑出一堆鄧紫棋XDD&lt;/p&gt;
+&lt;p&gt;　　在 Ruby 的世界裡，Gem 如其名，就是一顆一顆的寶石，而 Ruby 會由很多的 Gem 點綴成你要的樣子，好比如果你想要你的 Ruby 有黃色光芒，你就得裝上會散發黃色光芒的 Gem；我把 Gem 看作是 Ruby 的套件，就像是 npm 中的 module，需要什麼樣的功能，我們就掛上什麼樣的套件。&lt;/p&gt;
+&lt;h3 id=&quot;2-什麼是-RVM&quot;&gt;&lt;a href=&quot;#2-什麼是-RVM&quot; class=&quot;headerlink&quot; title=&quot;2. 什麼是 RVM ?&quot;&gt;&lt;/a&gt;2. 什麼是 RVM ?&lt;/h3&gt;&lt;p&gt;　　Ruby Version Manager ( &lt;a href=&quot;https://rvm.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;RVM&lt;/a&gt; )，顧名思義就是一個&lt;strong&gt;管理 Ruby 版本的工具&lt;/strong&gt;，這是一個 command-line 的工具，也就是說只要下下指令，就能簡單的切換和管理 Ruby 版本；而每個 Ruby 版本都會有自己的 Gemset (就是一堆的 Gem)，所以透過 RVM 也可以管理每個 Ruby 版本下，該用哪一套 Gemset ( 由於 Rails 就是一個 Gem，所以我們可以由安裝的 Rails 版本來分類 Gemset)。&lt;/p&gt;
+&lt;h3 id=&quot;3-安裝-RVM&quot;&gt;&lt;a href=&quot;#3-安裝-RVM&quot; class=&quot;headerlink&quot; title=&quot;3. 安裝 RVM&quot;&gt;&lt;/a&gt;3. 安裝 RVM&lt;/h3&gt;&lt;h4 id=&quot;步驟一、-在安裝-RVM-之前，你應該先裝好-curl。&quot;&gt;&lt;a href=&quot;#步驟一、-在安裝-RVM-之前，你應該先裝好-curl。&quot; class=&quot;headerlink&quot; title=&quot;步驟一、 在安裝 RVM 之前，你應該先裝好 curl。&quot;&gt;&lt;/a&gt;步驟一、 在安裝 RVM 之前，你應該先裝好 curl。&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;　　sudo apt-get update&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　sudo apt-get install -y curl build-essential&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;步驟二、-參考-RVM-官方網站，下這兩道神奇咒語，就安裝好了！&quot;&gt;&lt;a href=&quot;#步驟二、-參考-RVM-官方網站，下這兩道神奇咒語，就安裝好了！&quot; class=&quot;headerlink&quot; title=&quot;步驟二、 參考 RVM 官方網站，下這兩道神奇咒語，就安裝好了！&quot;&gt;&lt;/a&gt;步驟二、 參考 RVM 官方網站，下這兩道神奇咒語，就安裝好了！&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;　　gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　curl -sSL https://get.rvm.io | bash -s stable&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;　　安裝完後記得重開或 reload Terminal。&lt;/p&gt;
+&lt;h3 id=&quot;4-安裝-Ruby-及-RVM-指令&quot;&gt;&lt;a href=&quot;#4-安裝-Ruby-及-RVM-指令&quot; class=&quot;headerlink&quot; title=&quot;4. 安裝 Ruby 及 RVM 指令&quot;&gt;&lt;/a&gt;4. 安裝 Ruby 及 RVM 指令&lt;/h3&gt;&lt;p&gt;　　透過 RVM 安裝 Ruby 很簡單：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;　　rvm install 2.3.0        # 安裝 Ruby 2.3.0 ( 版本號可自選 )&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;　　下面筆記一些 RVM 的指令：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;　　rvm system               # 切回系統安裝的 Ruby ( 不建議使用 )&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　rvm list    　　　　      # 列出已經安裝的 Ruby 版本 (* 預設，=&amp;gt; 正在使用，=* 正在使用且為預設，)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　rvm list known           # 列出 RVM 目前所有可安裝的 Ruby 版本&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　rvm use 2.3.0            # 切換至輸入的版本&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　rvm use 2.3.0 --default  # 切換至輸入的版本，並設為預設&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　rvm reinstall 2.3.0      # 重新安裝該版本&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　rvm info                 # 目前使用的 Ruby 相關資訊&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;　　由於，每個 Ruby 版本下，都各自有不同的 Gem，這時我們就可以透過 RVM 的 Gemset 來作管理和切換：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;　　rvm gemset               # 查看指令說明&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　rvm gemset list          # 列出目前使用 Ruby 的 Gemset&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　rvm gemset list_all      # 列出所有安裝 Ruby 的 Gemset&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　rvm gemset create xxx    # 建立名為 xxx 的 gemset&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　rvm gemset use xxx       # 使用 gemset xxx&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　rvm gemset empty xxx     # 清空 gemset xxx&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　rvm gemset delete xxx    # 刪除 gemset xxx&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　rvm gemset copy xxx yyy  # 將 xxx 的內容 copy 到 yyy (兩者需都要存在)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　rvm gemset rename xxx zzz# 將 xxx 更名為 zzz&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;5-安裝-Rails&quot;&gt;&lt;a href=&quot;#5-安裝-Rails&quot; class=&quot;headerlink&quot; title=&quot;5. 安裝 Rails&quot;&gt;&lt;/a&gt;5. 安裝 Rails&lt;/h3&gt;&lt;p&gt;　　只要選定好要使用的 Gemset 後，下 &lt;code&gt;gem install rails&lt;/code&gt; 安裝 rails 即可。&lt;/p&gt;
+&lt;p&gt;　　這邊稍微提一下，我們可以也利用安裝的 Rails 版本來區分 Gemset，例如：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;　　rvm gemset create rails_4.2.6  # 建立一個　rails_4.2.6 Gemset&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　rvm gemset use rails_4.2.6     # 使用 rails_4.2.6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　gem install rails 4.2.6        # 在此 Gemset 下安裝 Rails 4.2.6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;　　這樣我們就很清楚的知道，這個 Gemset 的 Rails 開發環境是版本 4.2.6。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;註：其實 Ruby 版控上，除了 RVM 外，也很多人使用 rbenv，教學請參考 &lt;a href=&quot;https://ruby-china.org/wiki/rbenv-guide&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Ruby China 這篇&lt;/a&gt;，由於沒用過，就不多提了！&lt;br&gt;　　而我會選擇 RVM，除了簡單易學易用外，還有一點就是，目前我在使用的 Cloud IDE &lt;a href=&quot;https://c9.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Cloud 9&lt;/a&gt; 上預設的就是 RVM，有興趣也可以使用 Cloud 9 作開發喔！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;That’s it, &lt;strong&gt;DONE!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;【參考資料】&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;RailsFun：&lt;a href=&quot;http://railsfun.tw/t/rvm/28&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://railsfun.tw/t/rvm/28&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;RVM：&lt;a href=&quot;https://rvm.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://rvm.io/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Passenger Library：&lt;a href=&quot;https://www.phusionpassenger.com/library/walkthroughs/deploy/ruby/ownserver/standalone/oss/install_language_runtime.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ruby install language runtime&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/img/program/rvm-logo-all-happy.png&quot; alt=&quot;使用 RVM 管理 ROR 開發環境&quot; title=&quot;Pic by RVM&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;&lt;strong&gt;目的&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;　　有鑒於一些好朋友想知道怎麼管理 ROR 的開發環境，所以重新整理了一下在 Ubuntu 上使用 RVM 管理 Ruby 和 Rails 的小筆記！希望能幫助到需要的你唷！&lt;/p&gt;
+&lt;h1 id=&quot;開發版本與環境&quot;&gt;&lt;a href=&quot;#開發版本與環境&quot; class=&quot;headerlink&quot; title=&quot;開發版本與環境&quot;&gt;&lt;/a&gt;&lt;strong&gt;開發版本與環境&lt;/strong&gt;&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;　　VMware Workstation 12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　Ubuntu: 15.04(64-bit)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
+    
+    
+      <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
+    
+      <category term="gem" scheme="http://georgiowan.github.io/tags/gem/"/>
+    
+      <category term="ruby" scheme="http://georgiowan.github.io/tags/ruby/"/>
+    
+      <category term="rvm" scheme="http://georgiowan.github.io/tags/rvm/"/>
+    
+  </entry>
+  
+  <entry>
     <title>[Rails] 寄信小札記 - via ActionMailer</title>
     <link href="http://georgiowan.github.io/2016/rails-send-email-via-actionmailer/"/>
     <id>http://georgiowan.github.io/2016/rails-send-email-via-actionmailer/</id>
@@ -139,9 +289,11 @@ IDE  ：Cloud 9
       <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
     
     
+      <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
+    
       <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
     
-      <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
+      <category term="devise" scheme="http://georgiowan.github.io/tags/devise/"/>
     
       <category term="actionmailer" scheme="http://georgiowan.github.io/tags/actionmailer/"/>
     
@@ -150,8 +302,6 @@ IDE  ：Cloud 9
       <category term="mailgun" scheme="http://georgiowan.github.io/tags/mailgun/"/>
     
       <category term="cloud9" scheme="http://georgiowan.github.io/tags/cloud9/"/>
-    
-      <category term="devise" scheme="http://georgiowan.github.io/tags/devise/"/>
     
   </entry>
   
@@ -268,13 +418,13 @@ IDE  ：Cloud 9
       <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
     
     
-      <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
-    
       <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
     
-      <category term="turbolinks" scheme="http://georgiowan.github.io/tags/turbolinks/"/>
+      <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
     
       <category term="facebook" scheme="http://georgiowan.github.io/tags/facebook/"/>
+    
+      <category term="turbolinks" scheme="http://georgiowan.github.io/tags/turbolinks/"/>
     
       <category term="FacebookPlugin" scheme="http://georgiowan.github.io/tags/FacebookPlugin/"/>
     
@@ -314,9 +464,9 @@ IDE  ：Cloud 9
       <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
     
     
-      <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
-    
       <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
+    
+      <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
     
       <category term="respond_to" scheme="http://georgiowan.github.io/tags/respond-to/"/>
     
@@ -444,9 +594,9 @@ IDE  ：Cloud 9
       <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
     
     
-      <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
-    
       <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
+    
+      <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
     
       <category term="gem" scheme="http://georgiowan.github.io/tags/gem/"/>
     
@@ -515,9 +665,9 @@ IDE  ：Cloud 9
       <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
     
     
-      <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
-    
       <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
+    
+      <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
     
       <category term="gem" scheme="http://georgiowan.github.io/tags/gem/"/>
     
