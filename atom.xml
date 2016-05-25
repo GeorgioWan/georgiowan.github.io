@@ -78,6 +78,67 @@
   </entry>
   
   <entry>
+    <title>[Rails] 上傳圖片功能 - via CarrierWave</title>
+    <link href="http://georgiowan.github.io/2015/rails-upload-pictures-via-carrierwave/"/>
+    <id>http://georgiowan.github.io/2015/rails-upload-pictures-via-carrierwave/</id>
+    <published>2015-11-03T03:22:00.000Z</published>
+    <updated>2016-05-25T05:41:38.552Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;/img/program/rails_image_uploader.png&quot; alt=&quot;上傳圖片功能 - via CarrierWave&quot; title=&quot;Pic by Stanko Krtalić Rusendić&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;&lt;strong&gt;目的&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;　　一個網站在許多地方都需要上傳圖片或照片的功能，例如大頭貼(Avatar)或是商品照片等，而在 rails 中我們有現成的 gem可以使用，你可以使用 &lt;a href=&quot;https://github.com/thoughtbot/paperclip&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;paperclip&lt;/strong&gt;&lt;/a&gt; 或 &lt;a href=&quot;https://github.com/carrierwaveuploader/carrierwave&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;CarrierWave&lt;/strong&gt;&lt;/a&gt; 來實作這個功能，這邊就筆記一下怎麼使用 CarrierWave。&lt;/p&gt;
+&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;&lt;strong&gt;前言&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;　　從完全沒寫過 web app 直接學習 Ruby on Rails，說實在真有點勉強…但接觸 RoR 後我發現這真的是我喜歡的東西，希望能保持這個初衷和熱情！也期待自己能有更多的作品 ccc&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h1 id=&quot;筆記&quot;&gt;&lt;a href=&quot;#筆記&quot; class=&quot;headerlink&quot; title=&quot;筆記&quot;&gt;&lt;/a&gt;&lt;strong&gt;筆記&lt;/strong&gt;&lt;/h1&gt;&lt;h3 id=&quot;1-Gem&quot;&gt;&lt;a href=&quot;#1-Gem&quot; class=&quot;headerlink&quot; title=&quot;1. Gem&quot;&gt;&lt;/a&gt;1. Gem&lt;/h3&gt;&lt;p&gt;　先添加 gem 到 Gemfile 中&lt;br&gt;&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;figcaption&gt;&lt;span&gt;Gemfile&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;gem &lt;span class=&quot;string&quot;&gt;&#39;carrierwave&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;~&amp;gt; 0.10.0&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;gem &lt;span class=&quot;string&quot;&gt;&#39;rmagick&#39;&lt;/span&gt;    , &lt;span class=&quot;string&quot;&gt;&#39;~&amp;gt; 2.15&#39;&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;# 使用 rmagick 作縮放圖片功能&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;then,&lt;br&gt;&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;bundle install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;【提醒】安裝 rmagick 前得先安裝 libmagickwand-dev。&lt;br&gt;　　　　由於我的環境是 Ubuntu 15.04，所以透過 &lt;code&gt;sudo apt-get install libmagickwand-dev&lt;/code&gt; 安裝&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;2-生成-Uploader&quot;&gt;&lt;a href=&quot;#2-生成-Uploader&quot; class=&quot;headerlink&quot; title=&quot;2. 生成 Uploader&quot;&gt;&lt;/a&gt;2. 生成 Uploader&lt;/h3&gt;&lt;p&gt;　bundle install 後，可以在 &lt;code&gt;rails g -h&lt;/code&gt; 看到新增了 uploader，接著&lt;br&gt;&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;rails g uploader Iamge &lt;span class=&quot;comment&quot;&gt;# 會生成 app/uploaders/image_uploader.rb&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;3-添加欄位&quot;&gt;&lt;a href=&quot;#3-添加欄位&quot; class=&quot;headerlink&quot; title=&quot;3. 添加欄位&quot;&gt;&lt;/a&gt;3. 添加欄位&lt;/h3&gt;&lt;p&gt;　在想要上傳圖片的資料表中添加對應的欄位&lt;br&gt;&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;rails g migration add_image_to_users &lt;span class=&quot;symbol&quot;&gt;image:&lt;/span&gt;string &lt;span class=&quot;comment&quot;&gt;# 此例為添加一欄位(image)至 User 中&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;then, 記得 migrate&lt;br&gt;&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;rake &lt;span class=&quot;symbol&quot;&gt;db:&lt;/span&gt;migrate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;4-實作上傳及顯示功能&quot;&gt;&lt;a href=&quot;#4-實作上傳及顯示功能&quot; class=&quot;headerlink&quot; title=&quot;4. 實作上傳及顯示功能&quot;&gt;&lt;/a&gt;4. 實作上傳及顯示功能&lt;/h3&gt;&lt;p&gt;　首先在 model 中掛載 uploader&lt;br&gt;&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;figcaption&gt;&lt;span&gt;app/models/user.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mount_uploader &lt;span class=&quot;symbol&quot;&gt;:image&lt;/span&gt;, ImageUploader&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;　接著 view 即可作上傳跟顯示，以下為上傳、快取、刪除跟顯示的作法&lt;br&gt;&lt;figure class=&quot;highlight erb&quot;&gt;&lt;figcaption&gt;&lt;span&gt;app/views/users/new.html.erb&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;%=&lt;span class=&quot;ruby&quot;&gt; simple_form_for @user &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;|f|&lt;/span&gt; &lt;/span&gt;%&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&amp;lt;%=&lt;span class=&quot;ruby&quot;&gt; f.input &lt;span class=&quot;symbol&quot;&gt;:image&lt;/span&gt; &lt;/span&gt;%&amp;gt; &amp;lt;!-- 上傳 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&amp;lt;%=&lt;span class=&quot;ruby&quot;&gt; f.check_box &lt;span class=&quot;symbol&quot;&gt;:remove_image&lt;/span&gt; &lt;/span&gt;%&amp;gt; &amp;lt;!-- 刪除 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&amp;lt;%=&lt;span class=&quot;ruby&quot;&gt; f.hidden_field &lt;span class=&quot;symbol&quot;&gt;:image_cache&lt;/span&gt; &lt;/span&gt;%&amp;gt; &amp;lt;!-- 快取 _cache (讓填表時若有誤，不用重新選擇圖片) --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&amp;lt;%=&lt;span class=&quot;ruby&quot;&gt; image_tag @user.image &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; @user.image? &lt;/span&gt;%&amp;gt; &amp;lt;!-- 如果 user 已有圖片的話，就顯示 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;%&lt;span class=&quot;ruby&quot;&gt; &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt; &lt;/span&gt;%&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;　最後，controller 中記得加入 strong params&lt;br&gt;&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;figcaption&gt;&lt;span&gt;app/controllers/users_controller.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;params.&lt;span class=&quot;keyword&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;symbol&quot;&gt;:user&lt;/span&gt;).permit( &lt;span class=&quot;symbol&quot;&gt;:image&lt;/span&gt;, &lt;span class=&quot;symbol&quot;&gt;:image_cache&lt;/span&gt;, &lt;span class=&quot;symbol&quot;&gt;:remove_image&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;　以上，就完成用 &lt;strong&gt;CarrierWave&lt;/strong&gt; 上傳圖片及顯示的功能囉！但，上傳後圖片大小為&lt;strong&gt;原始大小&lt;/strong&gt;，所以我們可以透過 &lt;strong&gt;rmagick&lt;/strong&gt; 來作 resize。&lt;/p&gt;
+&lt;h3 id=&quot;5-使用-rmagick&quot;&gt;&lt;a href=&quot;#5-使用-rmagick&quot; class=&quot;headerlink&quot; title=&quot;5. 使用 rmagick&quot;&gt;&lt;/a&gt;5. 使用 rmagick&lt;/h3&gt;&lt;p&gt;　首先在 &lt;code&gt;image_uploader.rb&lt;/code&gt; 中取消註解：&lt;br&gt;&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;figcaption&gt;&lt;span&gt;app/uploaders/image_uploader.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;include&lt;/span&gt; CarrierWave::RMagick &lt;span class=&quot;comment&quot;&gt;# 取消註解&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;version &lt;span class=&quot;symbol&quot;&gt;:thumb&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  process &lt;span class=&quot;symbol&quot;&gt;:resize_to_fit&lt;/span&gt; =&amp;gt; [&lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;　上面透過 &lt;code&gt;thumb&lt;/code&gt;，讓上傳時保存原圖，並且產生一個 resize version，這樣想用&lt;strong&gt;原圖&lt;/strong&gt;或&lt;strong&gt;縮放後的版本&lt;/strong&gt;都很方便！&lt;br&gt;&lt;figure class=&quot;highlight erb&quot;&gt;&lt;figcaption&gt;&lt;span&gt;app/views/users/show.html.erb&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;!-- 原圖尺寸 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;%=&lt;span class=&quot;ruby&quot;&gt; image_tag @user.image &lt;/span&gt;%&amp;gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;!-- 縮放後尺寸 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;%=&lt;span class=&quot;ruby&quot;&gt; image_tag @user.image_url(&lt;span class=&quot;symbol&quot;&gt;:thumb&lt;/span&gt;) &lt;/span&gt;%&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;　從上面可看到，從 &lt;code&gt;_url(:thumb)&lt;/code&gt; 即可取得縮放後的圖片了！&lt;/p&gt;
+&lt;p&gt;That’s it, &lt;strong&gt;DONE!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;【參考資料】&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CarrierWave: &lt;a href=&quot;https://github.com/carrierwaveuploader/carrierwave&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/carrierwaveuploader/carrierwave&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;RMagick: &lt;a href=&quot;https://github.com/rmagick/rmagick&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/rmagick/rmagick&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/img/program/rails_image_uploader.png&quot; alt=&quot;上傳圖片功能 - via CarrierWave&quot; title=&quot;Pic by Stanko Krtalić Rusendić&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;&lt;strong&gt;目的&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;　　一個網站在許多地方都需要上傳圖片或照片的功能，例如大頭貼(Avatar)或是商品照片等，而在 rails 中我們有現成的 gem可以使用，你可以使用 &lt;a href=&quot;https://github.com/thoughtbot/paperclip&quot;&gt;&lt;strong&gt;paperclip&lt;/strong&gt;&lt;/a&gt; 或 &lt;a href=&quot;https://github.com/carrierwaveuploader/carrierwave&quot;&gt;&lt;strong&gt;CarrierWave&lt;/strong&gt;&lt;/a&gt; 來實作這個功能，這邊就筆記一下怎麼使用 CarrierWave。&lt;/p&gt;
+&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;&lt;strong&gt;前言&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;　　從完全沒寫過 web app 直接學習 Ruby on Rails，說實在真有點勉強…但接觸 RoR 後我發現這真的是我喜歡的東西，希望能保持這個初衷和熱情！也期待自己能有更多的作品 ccc&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
+    
+    
+      <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
+    
+      <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
+    
+      <category term="gem" scheme="http://georgiowan.github.io/tags/gem/"/>
+    
+      <category term="ruby" scheme="http://georgiowan.github.io/tags/ruby/"/>
+    
+      <category term="CarrierWave" scheme="http://georgiowan.github.io/tags/CarrierWave/"/>
+    
+      <category term="RMagick" scheme="http://georgiowan.github.io/tags/RMagick/"/>
+    
+      <category term="upload" scheme="http://georgiowan.github.io/tags/upload/"/>
+    
+  </entry>
+  
+  <entry>
     <title>[Rails] 讓 URL 不顯示 id 的方法 - via Friendly_id</title>
     <link href="http://georgiowan.github.io/2015/seo-via-friendly-id/"/>
     <id>http://georgiowan.github.io/2015/seo-via-friendly-id/</id>
@@ -136,11 +197,11 @@
     
       <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
     
+      <category term="gem" scheme="http://georgiowan.github.io/tags/gem/"/>
+    
       <category term="friendly_id" scheme="http://georgiowan.github.io/tags/friendly-id/"/>
     
       <category term="babosa" scheme="http://georgiowan.github.io/tags/babosa/"/>
-    
-      <category term="gem" scheme="http://georgiowan.github.io/tags/gem/"/>
     
       <category term="to_params" scheme="http://georgiowan.github.io/tags/to-params/"/>
     

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://georgiowan.github.io/2015/rails-upload-pictures-via-carrierwave/</loc>
+    
+    <lastmod>2016-05-25T05:41:38.552Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://georgiowan.github.io/2016/travel-to-korea-money-exchange/</loc>
     
     <lastmod>2016-05-25T02:42:33.162Z</lastmod>
