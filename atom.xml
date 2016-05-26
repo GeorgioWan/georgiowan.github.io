@@ -156,17 +156,17 @@
       <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
     
     
-      <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
-    
       <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
     
-      <category term="facebook" scheme="http://georgiowan.github.io/tags/facebook/"/>
-    
-      <category term="devise" scheme="http://georgiowan.github.io/tags/devise/"/>
+      <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
     
       <category term="omniauth" scheme="http://georgiowan.github.io/tags/omniauth/"/>
     
+      <category term="devise" scheme="http://georgiowan.github.io/tags/devise/"/>
+    
       <category term="koala" scheme="http://georgiowan.github.io/tags/koala/"/>
+    
+      <category term="facebook" scheme="http://georgiowan.github.io/tags/facebook/"/>
     
   </entry>
   
@@ -219,11 +219,11 @@
     
       <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
     
+      <category term="gem" scheme="http://georgiowan.github.io/tags/gem/"/>
+    
       <category term="ruby" scheme="http://georgiowan.github.io/tags/ruby/"/>
     
       <category term="rvm" scheme="http://georgiowan.github.io/tags/rvm/"/>
-    
-      <category term="gem" scheme="http://georgiowan.github.io/tags/gem/"/>
     
   </entry>
   
@@ -289,9 +289,11 @@ IDE  ：Cloud 9
       <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
     
     
+      <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
+    
       <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
     
-      <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
+      <category term="devise" scheme="http://georgiowan.github.io/tags/devise/"/>
     
       <category term="actionmailer" scheme="http://georgiowan.github.io/tags/actionmailer/"/>
     
@@ -300,8 +302,6 @@ IDE  ：Cloud 9
       <category term="mailgun" scheme="http://georgiowan.github.io/tags/mailgun/"/>
     
       <category term="cloud9" scheme="http://georgiowan.github.io/tags/cloud9/"/>
-    
-      <category term="devise" scheme="http://georgiowan.github.io/tags/devise/"/>
     
   </entry>
   
@@ -418,13 +418,13 @@ IDE  ：Cloud 9
       <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
     
     
-      <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
-    
       <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
     
-      <category term="turbolinks" scheme="http://georgiowan.github.io/tags/turbolinks/"/>
+      <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
     
       <category term="facebook" scheme="http://georgiowan.github.io/tags/facebook/"/>
+    
+      <category term="turbolinks" scheme="http://georgiowan.github.io/tags/turbolinks/"/>
     
       <category term="FacebookPlugin" scheme="http://georgiowan.github.io/tags/FacebookPlugin/"/>
     
@@ -464,9 +464,9 @@ IDE  ：Cloud 9
       <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
     
     
-      <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
-    
       <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
+    
+      <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
     
       <category term="respond_to" scheme="http://georgiowan.github.io/tags/respond-to/"/>
     
@@ -594,13 +594,13 @@ IDE  ：Cloud 9
       <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
     
     
-      <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
-    
       <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
     
-      <category term="ruby" scheme="http://georgiowan.github.io/tags/ruby/"/>
+      <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
     
       <category term="gem" scheme="http://georgiowan.github.io/tags/gem/"/>
+    
+      <category term="ruby" scheme="http://georgiowan.github.io/tags/ruby/"/>
     
       <category term="CarrierWave" scheme="http://georgiowan.github.io/tags/CarrierWave/"/>
     
@@ -665,9 +665,9 @@ IDE  ：Cloud 9
       <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
     
     
-      <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
-    
       <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
+    
+      <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
     
       <category term="gem" scheme="http://georgiowan.github.io/tags/gem/"/>
     
