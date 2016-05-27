@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://georgiowan.github.io/"/>
-  <updated>2016-05-27T09:11:49.386Z</updated>
+  <updated>2016-05-27T09:20:45.022Z</updated>
   <id>http://georgiowan.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://georgiowan.github.io/2016/easy-hexo-easy-blog/"/>
     <id>http://georgiowan.github.io/2016/easy-hexo-easy-blog/</id>
     <published>2016-05-27T03:42:50.000Z</published>
-    <updated>2016-05-27T09:11:49.386Z</updated>
+    <updated>2016-05-27T09:20:45.022Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;/img/program/github_hexo.png&quot; alt=&quot;輕鬆上手 Hexo 網誌框架&quot; title=&quot;Pic by wsgzao&quot;&gt;&lt;/p&gt;
 &lt;h1 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;&lt;strong&gt;目的&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;　　使用 Hexo 網誌框架，搭配 GitHub Page，快速架設屬於、管理自己的部落格！&lt;/p&gt;
@@ -40,12 +40,15 @@
 &lt;p&gt;&lt;strong&gt;s (server)&lt;/strong&gt;：啟動伺服器&lt;br&gt;  &lt;strong&gt;-p (–port)&lt;/strong&gt;：設定你要的port&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;　　&lt;/p&gt;
-&lt;h2 id=&quot;2-開始用-Hexo-寫網誌&quot;&gt;&lt;a href=&quot;#2-開始用-Hexo-寫網誌&quot; class=&quot;headerlink&quot; title=&quot;2. 開始用 Hexo 寫網誌&quot;&gt;&lt;/a&gt;2. 開始用 Hexo 寫網誌&lt;/h2&gt;&lt;p&gt;　　其實整體流程很簡單：&lt;span style=&quot;border: 1px solid black;border-radius: 4px;padding: 1px 5px;&quot;&gt;創建一篇新文章 (&lt;strong&gt;new&lt;/strong&gt;)&lt;/span&gt; → &lt;span style=&quot;border: 1px solid black;border-radius: 4px;padding: 1px 5px;&quot;&gt;寫完存檔&lt;/span&gt; → &lt;span style=&quot;border: 1px solid black;border-radius: 4px;padding: 1px 5px;&quot;&gt;產生靜態檔 (&lt;strong&gt;generate&lt;/strong&gt;)&lt;/span&gt; → &lt;span style=&quot;border: 1px solid black;border-radius: 4px;padding: 1px 5px;&quot;&gt;佈署到 GitHub (&lt;strong&gt;deploy&lt;/strong&gt;)&lt;/span&gt;&lt;br&gt;　　&lt;br&gt;&lt;span style=&quot;border: 1px solid black;border-radius: 4px;padding: 1px 5px;&quot;&gt;創建一篇新文章 (&lt;strong&gt;new&lt;/strong&gt;)&lt;/span&gt;&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;hexo new [layout] your-article-title&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2-開始用-Hexo-寫網誌&quot;&gt;&lt;a href=&quot;#2-開始用-Hexo-寫網誌&quot; class=&quot;headerlink&quot; title=&quot;2. 開始用 Hexo 寫網誌&quot;&gt;&lt;/a&gt;2. 開始用 Hexo 寫網誌&lt;/h2&gt;&lt;p&gt;　　其實整體流程很簡單：&lt;span style=&quot;border: 1px solid black;border-radius: 4px;padding: 1px 5px;&quot;&gt;創建一篇新文章 (&lt;strong&gt;new&lt;/strong&gt;)&lt;/span&gt; → &lt;span style=&quot;border: 1px solid black;border-radius: 4px;padding: 1px 5px;&quot;&gt;編輯文章&lt;/span&gt; → &lt;span style=&quot;border: 1px solid black;border-radius: 4px;padding: 1px 5px;&quot;&gt;產生靜態檔 (&lt;strong&gt;generate&lt;/strong&gt;)&lt;/span&gt; → &lt;span style=&quot;border: 1px solid black;border-radius: 4px;padding: 1px 5px;&quot;&gt;佈署到 GitHub (&lt;strong&gt;deploy&lt;/strong&gt;)&lt;/span&gt;&lt;br&gt;　　&lt;br&gt;&lt;span style=&quot;border: 1px solid black;border-radius: 4px;padding: 1px 5px;&quot;&gt;創建一篇新文章 (&lt;strong&gt;new&lt;/strong&gt;)&lt;/span&gt;&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;hexo new [layout] your-article-title&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;　　這邊生出來的文章檔案會在 &lt;code&gt;source/_drafts/&lt;/code&gt;、&lt;code&gt;source/_posts/&lt;/code&gt; 或 &lt;code&gt;source/&lt;/code&gt; 下，單看你選擇什麼 layout 的模板。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Hexo 有三種預設 layout: &lt;strong&gt;draft(草稿)&lt;/strong&gt;、&lt;strong&gt;post(公開文章)&lt;/strong&gt; 和&lt;strong&gt;page(頁面)&lt;/strong&gt;，下指令時沒填 layout 預設是 &lt;strong&gt;post&lt;/strong&gt;。&lt;br&gt;  你也可以在 &lt;strong&gt;scaffolds&lt;/strong&gt; 中編輯或添加你要的模板！&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;span style=&quot;border: 1px solid black;border-radius: 4px;padding: 1px 5px;&quot;&gt;寫完存檔&lt;/span&gt;&lt;br&gt;　　產生出來的文章會是 &lt;strong&gt;Markdown(.md)&lt;/strong&gt; 的格式，這也是 Hexo 的一大特點！如果還不是太熟，可以順便看 &lt;a href=&quot;http://markdown.tw/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;文件&lt;/a&gt; 練習一下。&lt;br&gt;　　&lt;br&gt;&lt;span style=&quot;border: 1px solid black;border-radius: 4px;padding: 1px 5px;&quot;&gt;產生靜態檔 (&lt;strong&gt;generate&lt;/strong&gt;)&lt;/span&gt;&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;border: 1px solid black;border-radius: 4px;padding: 1px 5px;&quot;&gt;編輯文章&lt;/span&gt;&lt;br&gt;　　產生出來的文章會是 &lt;strong&gt;Markdown(.md)&lt;/strong&gt; 的格式，這也是 Hexo 的一大特點！如果還不是太熟，可以順便看 &lt;a href=&quot;http://markdown.tw/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;文件&lt;/a&gt; 練習一下。
+　　&lt;/p&gt;
+&lt;h3 id=&quot;如何在文章中插入圖片？&quot;&gt;&lt;a href=&quot;#如何在文章中插入圖片？&quot; class=&quot;headerlink&quot; title=&quot;如何在文章中插入圖片？&quot;&gt;&lt;/a&gt;如何在文章中插入圖片？&lt;/h3&gt;&lt;p&gt;　　我們可以先在 &lt;code&gt;blog/source/&lt;/code&gt; 下建立 &lt;code&gt;img&lt;/code&gt; 資料夾，將你要使用的圖檔放在這資料夾中後，就可以在文章中引用：&lt;br&gt;&lt;figure class=&quot;highlight markdown&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;![](/img/your-image.png)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;　　&lt;br&gt;&lt;span style=&quot;border: 1px solid black;border-radius: 4px;padding: 1px 5px;&quot;&gt;產生靜態檔 (&lt;strong&gt;generate&lt;/strong&gt;)&lt;/span&gt;&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;　　生成的靜態檔案會在 &lt;code&gt;/public/&lt;/code&gt; 下。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;p.s. 寫完網誌準備佈署前，Hexo 得先幫我們生成靜態檔 (因為你的部落格會是靜態網站)。&lt;/p&gt;
