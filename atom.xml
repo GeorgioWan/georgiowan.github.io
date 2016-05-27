@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://georgiowan.github.io/"/>
-  <updated>2016-05-27T08:47:27.662Z</updated>
+  <updated>2016-05-27T09:11:49.386Z</updated>
   <id>http://georgiowan.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://georgiowan.github.io/2016/easy-hexo-easy-blog/"/>
     <id>http://georgiowan.github.io/2016/easy-hexo-easy-blog/</id>
     <published>2016-05-27T03:42:50.000Z</published>
-    <updated>2016-05-27T08:47:27.662Z</updated>
+    <updated>2016-05-27T09:11:49.386Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;/img/program/github_hexo.png&quot; alt=&quot;輕鬆上手 Hexo 網誌框架&quot; title=&quot;Pic by wsgzao&quot;&gt;&lt;/p&gt;
 &lt;h1 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;&lt;strong&gt;目的&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;　　使用 Hexo 網誌框架，搭配 GitHub Page，快速架設屬於、管理自己的部落格！&lt;/p&gt;
@@ -29,7 +29,7 @@
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h1 id=&quot;筆記&quot;&gt;&lt;a href=&quot;#筆記&quot; class=&quot;headerlink&quot; title=&quot;筆記&quot;&gt;&lt;/a&gt;&lt;strong&gt;筆記&lt;/strong&gt;&lt;/h1&gt;&lt;h2 id=&quot;0-Cloud-9-起手式&quot;&gt;&lt;a href=&quot;#0-Cloud-9-起手式&quot; class=&quot;headerlink&quot; title=&quot;0. Cloud 9 起手式&quot;&gt;&lt;/a&gt;0. Cloud 9 起手式&lt;/h2&gt;&lt;p&gt;　　只要在 create new workspace 時選擇 &lt;strong&gt;HTML 5&lt;/strong&gt; 就完成了。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;要選 Node.js 也可以，但它本身有遇設一個 Chat Demo，所以為了乾淨，我選擇 HTML 5 起手&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;要選 Node.js 也可以，但它本身有預設一個 Chat Demo，所以為了乾淨，我選擇 HTML 5 起手&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;/img/program/hexo-html5.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;1-開始-Hexo！&quot;&gt;&lt;a href=&quot;#1-開始-Hexo！&quot; class=&quot;headerlink&quot; title=&quot;1. 開始 Hexo！&quot;&gt;&lt;/a&gt;1. 開始 Hexo！&lt;/h2&gt;&lt;p&gt;　　如果還沒安裝 Node.js，記得先裝 &lt;a href=&quot;https://nodejs.org/en/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Node.js&lt;/a&gt;，使用 Cloud 9 開發的話，Node.js 已經有預設安裝了，所以直接安裝 Hexo 即可：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo-cli -g&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -312,11 +312,11 @@
     
       <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
     
-      <category term="rvm" scheme="http://georgiowan.github.io/tags/rvm/"/>
-    
       <category term="gem" scheme="http://georgiowan.github.io/tags/gem/"/>
     
       <category term="ruby" scheme="http://georgiowan.github.io/tags/ruby/"/>
+    
+      <category term="rvm" scheme="http://georgiowan.github.io/tags/rvm/"/>
     
   </entry>
   
@@ -463,13 +463,13 @@ IDE  ：Cloud 9
     
       <category term="ruby" scheme="http://georgiowan.github.io/tags/ruby/"/>
     
-      <category term="SEO" scheme="http://georgiowan.github.io/tags/SEO/"/>
-    
       <category term="Metadata" scheme="http://georgiowan.github.io/tags/Metadata/"/>
     
       <category term="metatag" scheme="http://georgiowan.github.io/tags/metatag/"/>
     
       <category term="meta-tags" scheme="http://georgiowan.github.io/tags/meta-tags/"/>
+    
+      <category term="SEO" scheme="http://georgiowan.github.io/tags/SEO/"/>
     
       <category term="OpenGraph" scheme="http://georgiowan.github.io/tags/OpenGraph/"/>
     
