@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="rails,rubyonrails,gem,ruby,CarrierWave,RMagick,upload," />
+  <meta name="keywords" content="攻城獅筆記,rubyonrails,rails,gem,ruby,CarrierWave,RMagick,upload," />
 
 
 
@@ -104,7 +104,7 @@
 <meta property="og:description" content="目的　　一個網站在許多地方都需要上傳圖片或照片的功能，例如大頭貼(Avatar)或是商品照片等，而在 rails 中我們有現成的 gem可以使用，你可以使用 paperclip 或 CarrierWave 來實作這個功能，這邊就筆記一下怎麼使用 CarrierWave。
 前言　　從完全沒寫過 web app 直接學習 Ruby on Rails，說實在真有點勉強…但接觸 RoR 後我發現這真的是">
 <meta property="og:image" content="http://georgiowan.github.io/img/program/rails_image_uploader.png">
-<meta property="og:updated_time" content="2016-05-25T05:41:38.552Z">
+<meta property="og:updated_time" content="2016-05-27T08:55:42.110Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Rails] 上傳圖片功能 - via CarrierWave">
 <meta name="twitter:description" content="目的　　一個網站在許多地方都需要上傳圖片或照片的功能，例如大頭貼(Avatar)或是商品照片等，而在 rails 中我們有現成的 gem可以使用，你可以使用 paperclip 或 CarrierWave 來實作這個功能，這邊就筆記一下怎麼使用 CarrierWave。
@@ -384,19 +384,19 @@
 <h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a><strong>目的</strong></h1><p>　　一個網站在許多地方都需要上傳圖片或照片的功能，例如大頭貼(Avatar)或是商品照片等，而在 rails 中我們有現成的 gem可以使用，你可以使用 <a href="https://github.com/thoughtbot/paperclip" target="_blank" rel="external"><strong>paperclip</strong></a> 或 <a href="https://github.com/carrierwaveuploader/carrierwave" target="_blank" rel="external"><strong>CarrierWave</strong></a> 來實作這個功能，這邊就筆記一下怎麼使用 CarrierWave。</p>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p>　　從完全沒寫過 web app 直接學習 Ruby on Rails，說實在真有點勉強…但接觸 RoR 後我發現這真的是我喜歡的東西，希望能保持這個初衷和熱情！也期待自己能有更多的作品 ccc</p>
 <a id="more"></a>
-<h1 id="筆記"><a href="#筆記" class="headerlink" title="筆記"></a><strong>筆記</strong></h1><h3 id="1-Gem"><a href="#1-Gem" class="headerlink" title="1. Gem"></a>1. Gem</h3><p>　先添加 gem 到 Gemfile 中<br><figure class="highlight ruby"><figcaption><span>Gemfile</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gem <span class="string">'carrierwave'</span>, <span class="string">'~&gt; 0.10.0'</span></span><br><span class="line">gem <span class="string">'rmagick'</span>    , <span class="string">'~&gt; 2.15'</span> <span class="comment"># 使用 rmagick 作縮放圖片功能</span></span><br></pre></td></tr></table></figure></p>
-<p>then,<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bundle install</span><br></pre></td></tr></table></figure></p>
+<h1 id="筆記"><a href="#筆記" class="headerlink" title="筆記"></a><strong>筆記</strong></h1><h2 id="1-Gem"><a href="#1-Gem" class="headerlink" title="1. Gem"></a>1. Gem</h2><p>　先添加 gem 到 Gemfile 中<br><figure class="highlight ruby"><figcaption><span>Gemfile</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gem <span class="string">'carrierwave'</span>, <span class="string">'~&gt; 0.10.0'</span></span><br><span class="line">gem <span class="string">'rmagick'</span>    , <span class="string">'~&gt; 2.15'</span> <span class="comment"># 使用 rmagick 作縮放圖片功能</span></span><br></pre></td></tr></table></figure></p>
+<p>then,<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bundle install</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>【提醒】安裝 rmagick 前得先安裝 libmagickwand-dev。<br>　　　　由於我的環境是 Ubuntu 15.04，所以透過 <code>sudo apt-get install libmagickwand-dev</code> 安裝</p>
 </blockquote>
-<h3 id="2-生成-Uploader"><a href="#2-生成-Uploader" class="headerlink" title="2. 生成 Uploader"></a>2. 生成 Uploader</h3><p>　bundle install 後，可以在 <code>rails g -h</code> 看到新增了 uploader，接著<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rails g uploader Iamge <span class="comment"># 會生成 app/uploaders/image_uploader.rb</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="3-添加欄位"><a href="#3-添加欄位" class="headerlink" title="3. 添加欄位"></a>3. 添加欄位</h3><p>　在想要上傳圖片的資料表中添加對應的欄位<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rails g migration add_image_to_users <span class="symbol">image:</span>string <span class="comment"># 此例為添加一欄位(image)至 User 中</span></span><br></pre></td></tr></table></figure></p>
-<p>then, 記得 migrate<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rake <span class="symbol">db:</span>migrate</span><br></pre></td></tr></table></figure></p>
-<h3 id="4-實作上傳及顯示功能"><a href="#4-實作上傳及顯示功能" class="headerlink" title="4. 實作上傳及顯示功能"></a>4. 實作上傳及顯示功能</h3><p>　首先在 model 中掛載 uploader<br><figure class="highlight ruby"><figcaption><span>app/models/user.rb</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount_uploader <span class="symbol">:image</span>, ImageUploader</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-生成-Uploader"><a href="#2-生成-Uploader" class="headerlink" title="2. 生成 Uploader"></a>2. 生成 Uploader</h2><p>　bundle install 後，可以在 <code>rails g -h</code> 看到新增了 uploader，接著<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rails g uploader Iamge <span class="comment"># 會生成 app/uploaders/image_uploader.rb</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="3-添加欄位"><a href="#3-添加欄位" class="headerlink" title="3. 添加欄位"></a>3. 添加欄位</h2><p>　在想要上傳圖片的資料表中添加對應的欄位<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rails g migration add_image_to_users image:string <span class="comment"># 此例為添加一欄位(image)至 User 中</span></span><br></pre></td></tr></table></figure></p>
+<p>then, 記得 migrate<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rake db:migrate</span><br></pre></td></tr></table></figure></p>
+<h2 id="4-實作上傳及顯示功能"><a href="#4-實作上傳及顯示功能" class="headerlink" title="4. 實作上傳及顯示功能"></a>4. 實作上傳及顯示功能</h2><p>　首先在 model 中掛載 uploader<br><figure class="highlight ruby"><figcaption><span>app/models/user.rb</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount_uploader <span class="symbol">:image</span>, ImageUploader</span><br></pre></td></tr></table></figure></p>
 <p>　接著 view 即可作上傳跟顯示，以下為上傳、快取、刪除跟顯示的作法<br><figure class="highlight erb"><figcaption><span>app/views/users/new.html.erb</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">%=</span></span></span><span class="ruby"> simple_form_for @user <span class="keyword">do</span> <span class="params">|f|</span> </span><span class="xml"><span class="tag">%&gt;</span></span><br><span class="line">　<span class="tag">&lt;<span class="name">%=</span></span></span><span class="ruby"> f.input <span class="symbol">:image</span> </span><span class="xml"><span class="tag">%&gt;</span> <span class="comment">&lt;!-- 上傳 --&gt;</span></span><br><span class="line">　<span class="tag">&lt;<span class="name">%=</span></span></span><span class="ruby"> f.check_box <span class="symbol">:remove_image</span> </span><span class="xml"><span class="tag">%&gt;</span> <span class="comment">&lt;!-- 刪除 --&gt;</span></span><br><span class="line">　<span class="tag">&lt;<span class="name">%=</span></span></span><span class="ruby"> f.hidden_field <span class="symbol">:image_cache</span> </span><span class="xml"><span class="tag">%&gt;</span> <span class="comment">&lt;!-- 快取 _cache (讓填表時若有誤，不用重新選擇圖片) --&gt;</span></span><br><span class="line">　<span class="tag">&lt;<span class="name">%=</span></span></span><span class="ruby"> image_tag @user.image <span class="keyword">if</span> @user.image? </span><span class="xml"><span class="tag">%&gt;</span> <span class="comment">&lt;!-- 如果 user 已有圖片的話，就顯示 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span></span></span><span class="ruby"> <span class="keyword">end</span> </span><span class="xml"><span class="tag">%&gt;</span></span></span><br></pre></td></tr></table></figure></p>
 <p>　最後，controller 中記得加入 strong params<br><figure class="highlight ruby"><figcaption><span>app/controllers/users_controller.rb</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">params.<span class="keyword">require</span>(<span class="symbol">:user</span>).permit( <span class="symbol">:image</span>, <span class="symbol">:image_cache</span>, <span class="symbol">:remove_image</span>)</span><br></pre></td></tr></table></figure></p>
 <p>　以上，就完成用 <strong>CarrierWave</strong> 上傳圖片及顯示的功能囉！但，上傳後圖片大小為<strong>原始大小</strong>，所以我們可以透過 <strong>rmagick</strong> 來作 resize。</p>
-<h3 id="5-使用-rmagick"><a href="#5-使用-rmagick" class="headerlink" title="5. 使用 rmagick"></a>5. 使用 rmagick</h3><p>　首先在 <code>image_uploader.rb</code> 中取消註解：<br><figure class="highlight ruby"><figcaption><span>app/uploaders/image_uploader.rb</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">include</span> CarrierWave::RMagick <span class="comment"># 取消註解</span></span><br><span class="line">version <span class="symbol">:thumb</span> <span class="keyword">do</span></span><br><span class="line">  process <span class="symbol">:resize_to_fit</span> =&gt; [<span class="number">200</span>, <span class="number">200</span>]</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="5-使用-rmagick"><a href="#5-使用-rmagick" class="headerlink" title="5. 使用 rmagick"></a>5. 使用 rmagick</h2><p>　首先在 <code>image_uploader.rb</code> 中取消註解：<br><figure class="highlight ruby"><figcaption><span>app/uploaders/image_uploader.rb</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">include</span> CarrierWave::RMagick <span class="comment"># 取消註解</span></span><br><span class="line">version <span class="symbol">:thumb</span> <span class="keyword">do</span></span><br><span class="line">  process <span class="symbol">:resize_to_fit</span> =&gt; [<span class="number">200</span>, <span class="number">200</span>]</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></p>
 <p>　上面透過 <code>thumb</code>，讓上傳時保存原圖，並且產生一個 resize version，這樣想用<strong>原圖</strong>或<strong>縮放後的版本</strong>都很方便！<br><figure class="highlight erb"><figcaption><span>app/views/users/show.html.erb</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="comment">&lt;!-- 原圖尺寸 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%=</span></span></span><span class="ruby"> image_tag @user.image </span><span class="xml"><span class="tag">%&gt;</span> </span><br><span class="line"><span class="comment">&lt;!-- 縮放後尺寸 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%=</span></span></span><span class="ruby"> image_tag @user.image_url(<span class="symbol">:thumb</span>) </span><span class="xml"><span class="tag">%&gt;</span></span></span><br></pre></td></tr></table></figure></p>
 <p>　從上面可看到，從 <code>_url(:thumb)</code> 即可取得縮放後的圖片了！</p>
 <p>That’s it, <strong>DONE!</strong></p>
@@ -426,9 +426,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/rails/" rel="tag">#rails</a>
+            <a href="/tags/攻城獅筆記/" rel="tag">#攻城獅筆記</a>
           
             <a href="/tags/rubyonrails/" rel="tag">#rubyonrails</a>
+          
+            <a href="/tags/rails/" rel="tag">#rails</a>
           
             <a href="/tags/gem/" rel="tag">#gem</a>
           
@@ -532,7 +534,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -549,7 +551,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-count">45</span>
                 <span class="site-state-item-name">標籤</span>
               </a>
             </div>
@@ -605,7 +607,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目的"><span class="nav-number">1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">2.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#筆記"><span class="nav-number">3.</span> <span class="nav-text">筆記</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Gem"><span class="nav-number">3.0.1.</span> <span class="nav-text">1. Gem</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-生成-Uploader"><span class="nav-number">3.0.2.</span> <span class="nav-text">2. 生成 Uploader</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-添加欄位"><span class="nav-number">3.0.3.</span> <span class="nav-text">3. 添加欄位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-實作上傳及顯示功能"><span class="nav-number">3.0.4.</span> <span class="nav-text">4. 實作上傳及顯示功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-使用-rmagick"><span class="nav-number">3.0.5.</span> <span class="nav-text">5. 使用 rmagick</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目的"><span class="nav-number">1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">2.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#筆記"><span class="nav-number">3.</span> <span class="nav-text">筆記</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Gem"><span class="nav-number">3.1.</span> <span class="nav-text">1. Gem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-生成-Uploader"><span class="nav-number">3.2.</span> <span class="nav-text">2. 生成 Uploader</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-添加欄位"><span class="nav-number">3.3.</span> <span class="nav-text">3. 添加欄位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-實作上傳及顯示功能"><span class="nav-number">3.4.</span> <span class="nav-text">4. 實作上傳及顯示功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-使用-rmagick"><span class="nav-number">3.5.</span> <span class="nav-text">5. 使用 rmagick</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

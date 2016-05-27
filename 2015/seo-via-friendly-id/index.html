@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="rails,rubyonrails,gem,friendly_id,babosa,to_params," />
+  <meta name="keywords" content="攻城獅筆記,rubyonrails,rails,gem,SEO,friendly_id,babosa,to_params," />
 
 
 
@@ -104,7 +104,7 @@
 <meta property="og:description" content="目的　　本篇來記錄一下怎麼使用 Friendly_id 以及使用 Babosa 這兩個 gem 來達到美化 URL 的效果。
 前言　　目前學習 Ruby on Rails 大約一個月半了，從學習的開始，打了一篇安裝文後，就被別的有趣的事情吸引去了，例如追韓劇、Running man、康熙、中國好聲音4、爸爸去哪兒3… 跑題了:P　　總而言之！現在開始使用 Logdown 作筆記跟分享，希望能幫助">
 <meta property="og:image" content="http://georgiowan.github.io/img/program/friend-fingers.png">
-<meta property="og:updated_time" content="2016-05-24T16:24:29.139Z">
+<meta property="og:updated_time" content="2016-05-27T09:03:14.170Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Rails] 讓 URL 不顯示 id 的方法 - via Friendly_id">
 <meta name="twitter:description" content="目的　　本篇來記錄一下怎麼使用 Friendly_id 以及使用 Babosa 這兩個 gem 來達到美化 URL 的效果。
@@ -384,16 +384,16 @@
 <h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a><strong>目的</strong></h1><p>　　本篇來記錄一下怎麼使用 <a href="https://github.com/norman/friendly_id" target="_blank" rel="external"><strong>Friendly_id</strong></a> 以及使用 <a href="https://github.com/norman/babosa" target="_blank" rel="external"><strong>Babosa</strong></a> 這兩個 gem 來達到美化 URL 的效果。</p>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p>　　目前學習 <strong>Ruby on Rails</strong> 大約一個月半了，從學習的開始，打了一篇<a href="https://georgiosky2000.wordpress.com/2015/09/07/ruby-on-rails-%E4%BD%BF%E7%94%A8-rvm-%E7%AE%A1%E7%90%86-ruby-rails-%E7%92%B0%E5%A2%83/" target="_blank" rel="external"><strong>安裝文</strong></a>後，就被別的有趣的事情吸引去了，例如追韓劇、Running man、康熙、中國好聲音4、爸爸去哪兒3… 跑題了:P<br>　　<strong>總而言之！</strong>現在開始使用 Logdown 作筆記跟分享，希望能幫助到需要的人。</p>
 <a id="more"></a>
-<h1 id="筆記"><a href="#筆記" class="headerlink" title="筆記"></a><strong>筆記</strong></h1><h3 id="1-Gem"><a href="#1-Gem" class="headerlink" title="1. Gem :"></a>1. Gem :</h3><p>　先添加 gem 到 Gemfile 中<br><figure class="highlight ruby"><figcaption><span>Gemfile</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gem <span class="string">'friendly_id'</span>, <span class="string">'~&gt; 5.1.0'</span></span><br><span class="line">gem <span class="string">'babosa'</span></span><br></pre></td></tr></table></figure></p>
-<p>　記得在 console bundle 一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bundle install</span><br></pre></td></tr></table></figure></p>
-<h3 id="2-生成資料表"><a href="#2-生成資料表" class="headerlink" title="2. 生成資料表"></a>2. 生成資料表</h3><p>　在 console 下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rails g friendly_id</span><br><span class="line">rails g migration add_slug_to_users slug:string:uniq</span><br><span class="line">rake db:migrate</span><br></pre></td></tr></table></figure></p>
+<h1 id="筆記"><a href="#筆記" class="headerlink" title="筆記"></a><strong>筆記</strong></h1><h2 id="1-Gem"><a href="#1-Gem" class="headerlink" title="1. Gem :"></a>1. Gem :</h2><p>　先添加 gem 到 Gemfile 中<br><figure class="highlight ruby"><figcaption><span>Gemfile</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gem <span class="string">'friendly_id'</span>, <span class="string">'~&gt; 5.1.0'</span></span><br><span class="line">gem <span class="string">'babosa'</span></span><br></pre></td></tr></table></figure></p>
+<p>　記得在 console bundle 一下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bundle install</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-生成資料表"><a href="#2-生成資料表" class="headerlink" title="2. 生成資料表"></a>2. 生成資料表</h2><p>　在 console 下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rails g friendly_id</span><br><span class="line">rails g migration add_slug_to_users slug:string:uniq</span><br><span class="line">rake db:migrate</span><br></pre></td></tr></table></figure></p>
 <p>　上面的 <code>add_slug_to_users</code> 意思是，加入一個 slug 欄位到資料表 <strong>User</strong> 中。</p>
-<h3 id="3-撰寫-Model"><a href="#3-撰寫-Model" class="headerlink" title="3. 撰寫 Model"></a>3. 撰寫 Model</h3><figure class="highlight ruby"><figcaption><span>app/models/user.rb</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">extend FriendlyId</span><br><span class="line">friendly_id <span class="symbol">:name</span>, <span class="symbol">use:</span> <span class="symbol">:slugged</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-撰寫-Model"><a href="#3-撰寫-Model" class="headerlink" title="3. 撰寫 Model"></a>3. 撰寫 Model</h2><figure class="highlight ruby"><figcaption><span>app/models/user.rb</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">extend FriendlyId</span><br><span class="line">friendly_id <span class="symbol">:name</span>, <span class="symbol">use:</span> <span class="symbol">:slugged</span></span><br></pre></td></tr></table></figure>
 <p>　以上，就完成單純使用 <strong>name</strong> 來當作路徑，若想自訂路徑格式，就來覆寫 <code>normalize_friendly_id</code> :<br><figure class="highlight ruby"><figcaption><span>app/models/user.rb</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">normalize_friendly_id</span><span class="params">(input)</span></span></span><br><span class="line">  input.to_s.to_slug.normalize.to_s</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p><em>如果有使用 babosa gem 的話，就可以透過覆寫 <code>normalize_friendly_id</code> 支援<strong>中文</strong>囉！</em></p>
 </blockquote>
-<h3 id="4-Friendly-find"><a href="#4-Friendly-find" class="headerlink" title="4. Friendly.find"></a>4. Friendly.find</h3><p>　這邊有兩個方法來讓 id 被 friendly 查找：</p>
+<h2 id="4-Friendly-find"><a href="#4-Friendly-find" class="headerlink" title="4. Friendly.find"></a>4. Friendly.find</h2><p>　這邊有兩個方法來讓 id 被 friendly 查找：</p>
 <ul>
 <li><p>修改 controller 中的 find </p>
 <figure class="highlight ruby"><figcaption><span>app/controller/users_controller.rb   </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@user = User.friendly.find(params[<span class="symbol">:id</span>])</span><br><span class="line"><span class="comment"># <span class="doctag">@user</span> = User.find(params[:id])</span></span><br></pre></td></tr></table></figure>
@@ -404,8 +404,8 @@
 </ul>
 <p>以上，就完成功能囉！<br>如果已經有資料了，想直接更新 slug，就直接在 rails console 中執行：<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">User.find_each(&amp;<span class="symbol">:save</span>)</span><br></pre></td></tr></table></figure></p>
 <p>這樣就會自動把 slug 填上了！</p>
-<h2 id="2015-12-31-新增"><a href="#2015-12-31-新增" class="headerlink" title="2015.12.31 新增"></a>2015.12.31 新增</h2><p>若想讓 slug 隨著資料變更時作 update，我們可以透過定義 <code>should_generate_new_friendly_id?</code> 達到目的<br><figure class="highlight ruby"><figcaption><span>app/models/user.rb</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">　　<span class="function"><span class="keyword">def</span> <span class="title">should_generate_new_friendly_id?</span></span></span><br><span class="line">　　　slug.blank? <span class="params">||</span> name_changed? <span class="comment"># slug 為 nil 或 name column 變更時更新</span></span><br><span class="line">　　<span class="keyword">end</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="5-補充"><a href="#5-補充" class="headerlink" title="5. 補充"></a>5. 補充</h3><p>　如果想符合 <a href="https://zh.wikipedia.org/wiki/%E6%90%9C%E5%B0%8B%E5%BC%95%E6%93%8E%E6%9C%80%E4%BD%B3%E5%8C%96" target="_blank" rel="external"><strong>SEO</strong></a>，可以在 <code>normalize_friendly_id</code> 裡定義路徑名稱，例如：<br><figure class="highlight ruby"><figcaption><span>app/models/user.rb</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">normalize_friendly_id</span><span class="params">(input)</span></span></span><br><span class="line">  <span class="string">"<span class="subst">#&#123;id&#125;</span>-<span class="subst">#&#123;input.to_s.to_slug.normalize.to_s&#125;</span>"</span> <span class="comment"># what ever you want</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="2015-12-31-新增"><a href="#2015-12-31-新增" class="headerlink" title="2015.12.31 新增"></a>2015.12.31 新增</h3><p>若想讓 slug 隨著資料變更時作 update，我們可以透過定義 <code>should_generate_new_friendly_id?</code> 達到目的<br><figure class="highlight ruby"><figcaption><span>app/models/user.rb</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">　　<span class="function"><span class="keyword">def</span> <span class="title">should_generate_new_friendly_id?</span></span></span><br><span class="line">　　　slug.blank? <span class="params">||</span> name_changed? <span class="comment"># slug 為 nil 或 name column 變更時更新</span></span><br><span class="line">　　<span class="keyword">end</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="5-補充"><a href="#5-補充" class="headerlink" title="5. 補充"></a>5. 補充</h2><p>　如果想符合 <a href="https://zh.wikipedia.org/wiki/%E6%90%9C%E5%B0%8B%E5%BC%95%E6%93%8E%E6%9C%80%E4%BD%B3%E5%8C%96" target="_blank" rel="external"><strong>SEO</strong></a>，可以在 <code>normalize_friendly_id</code> 裡定義路徑名稱，例如：<br><figure class="highlight ruby"><figcaption><span>app/models/user.rb</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">normalize_friendly_id</span><span class="params">(input)</span></span></span><br><span class="line">  <span class="string">"<span class="subst">#&#123;id&#125;</span>-<span class="subst">#&#123;input.to_s.to_slug.normalize.to_s&#125;</span>"</span> <span class="comment"># what ever you want</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></p>
 <p>　以上面程式碼為例，路徑名稱就變成類似像 <code>xxx/users/1-georgio</code>。<br>　另外，除了透過 <strong>friendly_id</strong> 去改變 url path 外，其實 rails 本身的解法是覆寫 model <code>to_params</code> method：<br><figure class="highlight ruby"><figcaption><span>app/models/user.rb</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">to_params</span></span></span><br><span class="line">  <span class="string">"<span class="subst">#&#123;id&#125;</span>-<span class="subst">#&#123;name&#125;</span>"</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></p>
 <p>　就端看想用什麼方案解決囉 :D<br>　<br>That’s it, <strong>DONE!</strong></p>
 <p><strong>【參考資料】</strong></p>
@@ -436,11 +436,15 @@
       
         <div class="post-tags">
           
-            <a href="/tags/rails/" rel="tag">#rails</a>
+            <a href="/tags/攻城獅筆記/" rel="tag">#攻城獅筆記</a>
           
             <a href="/tags/rubyonrails/" rel="tag">#rubyonrails</a>
           
+            <a href="/tags/rails/" rel="tag">#rails</a>
+          
             <a href="/tags/gem/" rel="tag">#gem</a>
+          
+            <a href="/tags/SEO/" rel="tag">#SEO</a>
           
             <a href="/tags/friendly-id/" rel="tag">#friendly_id</a>
           
@@ -536,7 +540,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -553,7 +557,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-count">45</span>
                 <span class="site-state-item-name">標籤</span>
               </a>
             </div>
@@ -609,7 +613,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目的"><span class="nav-number">1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">2.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#筆記"><span class="nav-number">3.</span> <span class="nav-text">筆記</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Gem"><span class="nav-number">3.0.1.</span> <span class="nav-text">1. Gem :</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-生成資料表"><span class="nav-number">3.0.2.</span> <span class="nav-text">2. 生成資料表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-撰寫-Model"><span class="nav-number">3.0.3.</span> <span class="nav-text">3. 撰寫 Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Friendly-find"><span class="nav-number">3.0.4.</span> <span class="nav-text">4. Friendly.find</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2015-12-31-新增"><span class="nav-number">3.1.</span> <span class="nav-text">2015.12.31 新增</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-補充"><span class="nav-number">3.1.1.</span> <span class="nav-text">5. 補充</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目的"><span class="nav-number">1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">2.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#筆記"><span class="nav-number">3.</span> <span class="nav-text">筆記</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Gem"><span class="nav-number">3.1.</span> <span class="nav-text">1. Gem :</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-生成資料表"><span class="nav-number">3.2.</span> <span class="nav-text">2. 生成資料表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-撰寫-Model"><span class="nav-number">3.3.</span> <span class="nav-text">3. 撰寫 Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Friendly-find"><span class="nav-number">3.4.</span> <span class="nav-text">4. Friendly.find</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2015-12-31-新增"><span class="nav-number">3.4.1.</span> <span class="nav-text">2015.12.31 新增</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-補充"><span class="nav-number">3.5.</span> <span class="nav-text">5. 補充</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

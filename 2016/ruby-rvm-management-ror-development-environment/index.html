@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="rubyonrails,gem,ruby,rvm," />
+  <meta name="keywords" content="攻城獅筆記,rubyonrails,rvm,gem,ruby," />
 
 
 
@@ -104,7 +104,7 @@
 <meta property="og:description" content="目的　　有鑒於一些好朋友想知道怎麼管理 ROR 的開發環境，所以重新整理了一下在 Ubuntu 上使用 RVM 管理 Ruby 和 Rails 的小筆記！希望能幫助到需要的你唷！
 開發版本與環境12　　VMware Workstation 12　　Ubuntu: 15.04(64-bit)">
 <meta property="og:image" content="http://georgiowan.github.io/img/program/rvm-logo-all-happy.png">
-<meta property="og:updated_time" content="2016-05-25T06:59:57.611Z">
+<meta property="og:updated_time" content="2016-05-27T08:58:49.126Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Ruby] 使用 RVM 管理 ROR 開發環境">
 <meta name="twitter:description" content="目的　　有鑒於一些好朋友想知道怎麼管理 ROR 的開發環境，所以重新整理了一下在 Ubuntu 上使用 RVM 管理 Ruby 和 Rails 的小筆記！希望能幫助到需要的你唷！
@@ -384,18 +384,18 @@
 <h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a><strong>目的</strong></h1><p>　　有鑒於一些好朋友想知道怎麼管理 ROR 的開發環境，所以重新整理了一下在 Ubuntu 上使用 RVM 管理 Ruby 和 Rails 的小筆記！希望能幫助到需要的你唷！</p>
 <h1 id="開發版本與環境"><a href="#開發版本與環境" class="headerlink" title="開發版本與環境"></a><strong>開發版本與環境</strong></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">　　VMware Workstation 12</span><br><span class="line">　　Ubuntu: 15.04(64-bit)</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h1 id="筆記"><a href="#筆記" class="headerlink" title="筆記"></a><strong>筆記</strong></h1><h3 id="1-什麼是-Gem"><a href="#1-什麼是-Gem" class="headerlink" title="1. 什麼是 Gem ?"></a>1. 什麼是 Gem ?</h3><p>　　不是鄧紫棋！不是鄧紫棋！不是鄧紫棋！</p>
+<h1 id="筆記"><a href="#筆記" class="headerlink" title="筆記"></a><strong>筆記</strong></h1><h2 id="1-什麼是-Gem"><a href="#1-什麼是-Gem" class="headerlink" title="1. 什麼是 Gem ?"></a>1. 什麼是 Gem ?</h2><p>　　不是鄧紫棋！不是鄧紫棋！不是鄧紫棋！</p>
 <p>　　不知道大家是不是和我一樣，在什麼都還不了解的情況下，迫切的想知道 Gem 在 ROR 世界裡究竟扮演著什麼角色，一估狗 Gem，卻跑出一堆鄧紫棋XDD</p>
 <p>　　在 Ruby 的世界裡，Gem 如其名，就是一顆一顆的寶石，而 Ruby 會由很多的 Gem 點綴成你要的樣子，好比如果你想要你的 Ruby 有黃色光芒，你就得裝上會散發黃色光芒的 Gem；我把 Gem 看作是 Ruby 的套件，就像是 npm 中的 module，需要什麼樣的功能，我們就掛上什麼樣的套件。</p>
-<h3 id="2-什麼是-RVM"><a href="#2-什麼是-RVM" class="headerlink" title="2. 什麼是 RVM ?"></a>2. 什麼是 RVM ?</h3><p>　　Ruby Version Manager ( <a href="https://rvm.io/" target="_blank" rel="external">RVM</a> )，顧名思義就是一個<strong>管理 Ruby 版本的工具</strong>，這是一個 command-line 的工具，也就是說只要下下指令，就能簡單的切換和管理 Ruby 版本；而每個 Ruby 版本都會有自己的 Gemset (就是一堆的 Gem)，所以透過 RVM 也可以管理每個 Ruby 版本下，該用哪一套 Gemset ( 由於 Rails 就是一個 Gem，所以我們可以由安裝的 Rails 版本來分類 Gemset)。</p>
-<h3 id="3-安裝-RVM"><a href="#3-安裝-RVM" class="headerlink" title="3. 安裝 RVM"></a>3. 安裝 RVM</h3><h4 id="步驟一、-在安裝-RVM-之前，你應該先裝好-curl。"><a href="#步驟一、-在安裝-RVM-之前，你應該先裝好-curl。" class="headerlink" title="步驟一、 在安裝 RVM 之前，你應該先裝好 curl。"></a>步驟一、 在安裝 RVM 之前，你應該先裝好 curl。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">　　sudo apt-get update</span><br><span class="line">　　sudo apt-get install -y curl build-essential</span><br></pre></td></tr></table></figure>
-<h4 id="步驟二、-參考-RVM-官方網站，下這兩道神奇咒語，就安裝好了！"><a href="#步驟二、-參考-RVM-官方網站，下這兩道神奇咒語，就安裝好了！" class="headerlink" title="步驟二、 參考 RVM 官方網站，下這兩道神奇咒語，就安裝好了！"></a>步驟二、 參考 RVM 官方網站，下這兩道神奇咒語，就安裝好了！</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">　　gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3</span><br><span class="line">　　curl -sSL https://get.rvm.io | bash -s stable</span><br></pre></td></tr></table></figure>
+<h2 id="2-什麼是-RVM"><a href="#2-什麼是-RVM" class="headerlink" title="2. 什麼是 RVM ?"></a>2. 什麼是 RVM ?</h2><p>　　Ruby Version Manager ( <a href="https://rvm.io/" target="_blank" rel="external">RVM</a> )，顧名思義就是一個<strong>管理 Ruby 版本的工具</strong>，這是一個 command-line 的工具，也就是說只要下下指令，就能簡單的切換和管理 Ruby 版本；而每個 Ruby 版本都會有自己的 Gemset (就是一堆的 Gem)，所以透過 RVM 也可以管理每個 Ruby 版本下，該用哪一套 Gemset ( 由於 Rails 就是一個 Gem，所以我們可以由安裝的 Rails 版本來分類 Gemset)。</p>
+<h2 id="3-安裝-RVM"><a href="#3-安裝-RVM" class="headerlink" title="3. 安裝 RVM"></a>3. 安裝 RVM</h2><h3 id="步驟一、-在安裝-RVM-之前，你應該先裝好-curl。"><a href="#步驟一、-在安裝-RVM-之前，你應該先裝好-curl。" class="headerlink" title="步驟一、 在安裝 RVM 之前，你應該先裝好 curl。"></a>步驟一、 在安裝 RVM 之前，你應該先裝好 curl。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">　　sudo apt-get update</span><br><span class="line">　　sudo apt-get install -y curl build-essential</span><br></pre></td></tr></table></figure>
+<h3 id="步驟二、-參考-RVM-官方網站，下這兩道神奇咒語，就安裝好了！"><a href="#步驟二、-參考-RVM-官方網站，下這兩道神奇咒語，就安裝好了！" class="headerlink" title="步驟二、 參考 RVM 官方網站，下這兩道神奇咒語，就安裝好了！"></a>步驟二、 參考 RVM 官方網站，下這兩道神奇咒語，就安裝好了！</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">　　gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3</span><br><span class="line">　　curl <span class="_">-s</span>SL https://get.rvm.io | bash <span class="_">-s</span> stable</span><br></pre></td></tr></table></figure>
 <p>　　安裝完後記得重開或 reload Terminal。</p>
-<h3 id="4-安裝-Ruby-及-RVM-指令"><a href="#4-安裝-Ruby-及-RVM-指令" class="headerlink" title="4. 安裝 Ruby 及 RVM 指令"></a>4. 安裝 Ruby 及 RVM 指令</h3><p>　　透過 RVM 安裝 Ruby 很簡單：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">　　rvm install 2.3.0        # 安裝 Ruby 2.3.0 ( 版本號可自選 )</span><br></pre></td></tr></table></figure></p>
-<p>　　下面筆記一些 RVM 的指令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">　　rvm system               # 切回系統安裝的 Ruby ( 不建議使用 )</span><br><span class="line">　　rvm list    　　　　      # 列出已經安裝的 Ruby 版本 (* 預設，=&gt; 正在使用，=* 正在使用且為預設，)</span><br><span class="line">　　rvm list known           # 列出 RVM 目前所有可安裝的 Ruby 版本</span><br><span class="line">　　rvm use 2.3.0            # 切換至輸入的版本</span><br><span class="line">　　rvm use 2.3.0 --default  # 切換至輸入的版本，並設為預設</span><br><span class="line">　　rvm reinstall 2.3.0      # 重新安裝該版本</span><br><span class="line">　　rvm info                 # 目前使用的 Ruby 相關資訊</span><br></pre></td></tr></table></figure></p>
-<p>　　由於，每個 Ruby 版本下，都各自有不同的 Gem，這時我們就可以透過 RVM 的 Gemset 來作管理和切換：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">　　rvm gemset               # 查看指令說明</span><br><span class="line">　　rvm gemset list          # 列出目前使用 Ruby 的 Gemset</span><br><span class="line">　　rvm gemset list_all      # 列出所有安裝 Ruby 的 Gemset</span><br><span class="line">　　rvm gemset create xxx    # 建立名為 xxx 的 gemset</span><br><span class="line">　　rvm gemset use xxx       # 使用 gemset xxx</span><br><span class="line">　　rvm gemset empty xxx     # 清空 gemset xxx</span><br><span class="line">　　rvm gemset delete xxx    # 刪除 gemset xxx</span><br><span class="line">　　rvm gemset copy xxx yyy  # 將 xxx 的內容 copy 到 yyy (兩者需都要存在)</span><br><span class="line">　　rvm gemset rename xxx zzz# 將 xxx 更名為 zzz</span><br></pre></td></tr></table></figure></p>
-<h3 id="5-安裝-Rails"><a href="#5-安裝-Rails" class="headerlink" title="5. 安裝 Rails"></a>5. 安裝 Rails</h3><p>　　只要選定好要使用的 Gemset 後，下 <code>gem install rails</code> 安裝 rails 即可。</p>
-<p>　　這邊稍微提一下，我們可以也利用安裝的 Rails 版本來區分 Gemset，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">　　rvm gemset create rails_4.2.6  # 建立一個　rails_4.2.6 Gemset</span><br><span class="line">　　rvm gemset use rails_4.2.6     # 使用 rails_4.2.6</span><br><span class="line">　　gem install rails 4.2.6        # 在此 Gemset 下安裝 Rails 4.2.6</span><br></pre></td></tr></table></figure></p>
+<h2 id="4-安裝-Ruby-及-RVM-指令"><a href="#4-安裝-Ruby-及-RVM-指令" class="headerlink" title="4. 安裝 Ruby 及 RVM 指令"></a>4. 安裝 Ruby 及 RVM 指令</h2><p>　　透過 RVM 安裝 Ruby 很簡單：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">　　rvm install 2.3.0        <span class="comment"># 安裝 Ruby 2.3.0 ( 版本號可自選 )</span></span><br></pre></td></tr></table></figure></p>
+<p>　　下面筆記一些 RVM 的指令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">　　rvm system               <span class="comment"># 切回系統安裝的 Ruby ( 不建議使用 )</span></span><br><span class="line">　　rvm list    　　　　      <span class="comment"># 列出已經安裝的 Ruby 版本 (* 預設，=&gt; 正在使用，=* 正在使用且為預設，)</span></span><br><span class="line">　　rvm list known           <span class="comment"># 列出 RVM 目前所有可安裝的 Ruby 版本</span></span><br><span class="line">　　rvm use 2.3.0            <span class="comment"># 切換至輸入的版本</span></span><br><span class="line">　　rvm use 2.3.0 --default  <span class="comment"># 切換至輸入的版本，並設為預設</span></span><br><span class="line">　　rvm reinstall 2.3.0      <span class="comment"># 重新安裝該版本</span></span><br><span class="line">　　rvm info                 <span class="comment"># 目前使用的 Ruby 相關資訊</span></span><br></pre></td></tr></table></figure></p>
+<p>　　由於，每個 Ruby 版本下，都各自有不同的 Gem，這時我們就可以透過 RVM 的 Gemset 來作管理和切換：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">　　rvm gemset               <span class="comment"># 查看指令說明</span></span><br><span class="line">　　rvm gemset list          <span class="comment"># 列出目前使用 Ruby 的 Gemset</span></span><br><span class="line">　　rvm gemset list_all      <span class="comment"># 列出所有安裝 Ruby 的 Gemset</span></span><br><span class="line">　　rvm gemset create xxx    <span class="comment"># 建立名為 xxx 的 gemset</span></span><br><span class="line">　　rvm gemset use xxx       <span class="comment"># 使用 gemset xxx</span></span><br><span class="line">　　rvm gemset empty xxx     <span class="comment"># 清空 gemset xxx</span></span><br><span class="line">　　rvm gemset delete xxx    <span class="comment"># 刪除 gemset xxx</span></span><br><span class="line">　　rvm gemset copy xxx yyy  <span class="comment"># 將 xxx 的內容 copy 到 yyy (兩者需都要存在)</span></span><br><span class="line">　　rvm gemset rename xxx zzz<span class="comment"># 將 xxx 更名為 zzz</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="5-安裝-Rails"><a href="#5-安裝-Rails" class="headerlink" title="5. 安裝 Rails"></a>5. 安裝 Rails</h2><p>　　只要選定好要使用的 Gemset 後，下 <code>gem install rails</code> 安裝 rails 即可。</p>
+<p>　　這邊稍微提一下，我們可以也利用安裝的 Rails 版本來區分 Gemset，例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">　　rvm gemset create rails_4.2.6  <span class="comment"># 建立一個　rails_4.2.6 Gemset</span></span><br><span class="line">　　rvm gemset use rails_4.2.6     <span class="comment"># 使用 rails_4.2.6</span></span><br><span class="line">　　gem install rails 4.2.6        <span class="comment"># 在此 Gemset 下安裝 Rails 4.2.6</span></span><br></pre></td></tr></table></figure></p>
 <p>　　這樣我們就很清楚的知道，這個 Gemset 的 Rails 開發環境是版本 4.2.6。</p>
 <blockquote>
 <p>註：其實 Ruby 版控上，除了 RVM 外，也很多人使用 rbenv，教學請參考 <a href="https://ruby-china.org/wiki/rbenv-guide" target="_blank" rel="external">Ruby China 這篇</a>，由於沒用過，就不多提了！<br>　　而我會選擇 RVM，除了簡單易學易用外，還有一點就是，目前我在使用的 Cloud IDE <a href="https://c9.io" target="_blank" rel="external">Cloud 9</a> 上預設的就是 RVM，有興趣也可以使用 Cloud 9 作開發喔！</p>
@@ -428,13 +428,15 @@
       
         <div class="post-tags">
           
+            <a href="/tags/攻城獅筆記/" rel="tag">#攻城獅筆記</a>
+          
             <a href="/tags/rubyonrails/" rel="tag">#rubyonrails</a>
+          
+            <a href="/tags/rvm/" rel="tag">#rvm</a>
           
             <a href="/tags/gem/" rel="tag">#gem</a>
           
             <a href="/tags/ruby/" rel="tag">#ruby</a>
-          
-            <a href="/tags/rvm/" rel="tag">#rvm</a>
           
         </div>
       
@@ -528,7 +530,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -545,7 +547,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-count">45</span>
                 <span class="site-state-item-name">標籤</span>
               </a>
             </div>
@@ -601,7 +603,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目的"><span class="nav-number">1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#開發版本與環境"><span class="nav-number">2.</span> <span class="nav-text">開發版本與環境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#筆記"><span class="nav-number">3.</span> <span class="nav-text">筆記</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-什麼是-Gem"><span class="nav-number">3.0.1.</span> <span class="nav-text">1. 什麼是 Gem ?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-什麼是-RVM"><span class="nav-number">3.0.2.</span> <span class="nav-text">2. 什麼是 RVM ?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-安裝-RVM"><span class="nav-number">3.0.3.</span> <span class="nav-text">3. 安裝 RVM</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#步驟一、-在安裝-RVM-之前，你應該先裝好-curl。"><span class="nav-number">3.0.3.1.</span> <span class="nav-text">步驟一、 在安裝 RVM 之前，你應該先裝好 curl。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#步驟二、-參考-RVM-官方網站，下這兩道神奇咒語，就安裝好了！"><span class="nav-number">3.0.3.2.</span> <span class="nav-text">步驟二、 參考 RVM 官方網站，下這兩道神奇咒語，就安裝好了！</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-安裝-Ruby-及-RVM-指令"><span class="nav-number">3.0.4.</span> <span class="nav-text">4. 安裝 Ruby 及 RVM 指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-安裝-Rails"><span class="nav-number">3.0.5.</span> <span class="nav-text">5. 安裝 Rails</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目的"><span class="nav-number">1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#開發版本與環境"><span class="nav-number">2.</span> <span class="nav-text">開發版本與環境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#筆記"><span class="nav-number">3.</span> <span class="nav-text">筆記</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-什麼是-Gem"><span class="nav-number">3.1.</span> <span class="nav-text">1. 什麼是 Gem ?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-什麼是-RVM"><span class="nav-number">3.2.</span> <span class="nav-text">2. 什麼是 RVM ?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-安裝-RVM"><span class="nav-number">3.3.</span> <span class="nav-text">3. 安裝 RVM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步驟一、-在安裝-RVM-之前，你應該先裝好-curl。"><span class="nav-number">3.3.1.</span> <span class="nav-text">步驟一、 在安裝 RVM 之前，你應該先裝好 curl。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步驟二、-參考-RVM-官方網站，下這兩道神奇咒語，就安裝好了！"><span class="nav-number">3.3.2.</span> <span class="nav-text">步驟二、 參考 RVM 官方網站，下這兩道神奇咒語，就安裝好了！</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-安裝-Ruby-及-RVM-指令"><span class="nav-number">3.4.</span> <span class="nav-text">4. 安裝 Ruby 及 RVM 指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-安裝-Rails"><span class="nav-number">3.5.</span> <span class="nav-text">5. 安裝 Rails</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
