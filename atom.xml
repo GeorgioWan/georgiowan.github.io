@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://georgiowan.github.io/"/>
-  <updated>2016-05-27T10:18:04.125Z</updated>
+  <updated>2016-05-31T05:53:06.920Z</updated>
   <id>http://georgiowan.github.io/</id>
   
   <author>
@@ -16,11 +16,108 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>[Git] 命令筆記本</title>
+    <link href="http://georgiowan.github.io/2016/all-about-git-command/"/>
+    <id>http://georgiowan.github.io/2016/all-about-git-command/</id>
+    <published>2016-05-30T09:14:09.000Z</published>
+    <updated>2016-05-31T05:53:06.920Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;/img/program/Git.jpg&quot; alt=&quot;命令筆記本&quot; title=&quot;Pic by ChristianEngvall&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;&lt;strong&gt;目的&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;　　快來翻翻你要的 Git Command 喔！&lt;/p&gt;
+&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;&lt;strong&gt;前言&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;　　一開始接觸 Git 是使用 &lt;a href=&quot;https://desktop.github.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;GitHub Desktop&lt;/strong&gt;&lt;/a&gt;，但隨著開發環境轉到 Linux 上後，就習慣用 Command-line 的方式操作了，這篇就來筆記一下常用的命令；說來也怪，有時後就是會突然想不起來，如果你也有這種&lt;strong&gt;腦容量有限&lt;/strong&gt;的老症頭，歡迎隨時來翻翻XDD&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h1 id=&quot;筆記&quot;&gt;&lt;a href=&quot;#筆記&quot; class=&quot;headerlink&quot; title=&quot;筆記&quot;&gt;&lt;/a&gt;&lt;strong&gt;筆記&lt;/strong&gt;&lt;/h1&gt;&lt;h2 id=&quot;Git-設定&quot;&gt;&lt;a href=&quot;#Git-設定&quot; class=&quot;headerlink&quot; title=&quot; Git 設定&quot;&gt;&lt;/a&gt;&lt;i class=&quot;fa fa-code-fork&quot; style=&quot;text-align:center; width:20px; padding: 4px 1px 0 3px; background: #F04F33; color: white;border-radius:4px;transform: rotate(135deg);margin-right: 6px;&quot;&gt;&lt;/i&gt; Git 設定&lt;/h2&gt;&lt;h3 id=&quot;設定名稱-amp-電子郵件&quot;&gt;&lt;a href=&quot;#設定名稱-amp-電子郵件&quot; class=&quot;headerlink&quot; title=&quot;設定名稱 &amp;amp; 電子郵件&quot;&gt;&lt;/a&gt;設定&lt;strong&gt;名稱&lt;/strong&gt; &amp;amp; &lt;strong&gt;電子郵件&lt;/strong&gt;&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.name &amp;lt;username&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.email &amp;lt;email@address&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Git-ui-顏色&quot;&gt;&lt;a href=&quot;#Git-ui-顏色&quot; class=&quot;headerlink&quot; title=&quot;Git ui 顏色&quot;&gt;&lt;/a&gt;Git ui 顏色&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git config --global color.ui &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;命令設定別名&quot;&gt;&lt;a href=&quot;#命令設定別名&quot; class=&quot;headerlink&quot; title=&quot;命令設定別名&quot;&gt;&lt;/a&gt;命令設定別名&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git config --global alias.&amp;lt;aliasname&amp;gt; &amp;lt;命令名稱&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;例如：&lt;code&gt;git config --global alias.st status&lt;/code&gt;&lt;br&gt;之後只要下 &lt;code&gt;git st&lt;/code&gt; 就等於是 &lt;code&gt;git status&lt;/code&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;列出設定清單&quot;&gt;&lt;a href=&quot;#列出設定清單&quot; class=&quot;headerlink&quot; title=&quot;列出設定清單&quot;&gt;&lt;/a&gt;列出設定清單&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git config --global --list&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;Git-基本功&quot;&gt;&lt;a href=&quot;#Git-基本功&quot; class=&quot;headerlink&quot; title=&quot; Git 基本功&quot;&gt;&lt;/a&gt;&lt;i class=&quot;fa fa-code-fork&quot; style=&quot;text-align:center; width:20px; padding: 4px 1px 0 3px; background: #F04F33; color: white;border-radius:4px;transform: rotate(135deg);margin-right: 6px;&quot;&gt;&lt;/i&gt; Git 基本功&lt;/h2&gt;&lt;h3 id=&quot;建立數據庫-init&quot;&gt;&lt;a href=&quot;#建立數據庫-init&quot; class=&quot;headerlink&quot; title=&quot;建立數據庫 ( init )&quot;&gt;&lt;/a&gt;建立數據庫 ( init )&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git init&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;複製數據庫到本地端-clone&quot;&gt;&lt;a href=&quot;#複製數據庫到本地端-clone&quot; class=&quot;headerlink&quot; title=&quot;複製數據庫到本地端 ( clone )&quot;&gt;&lt;/a&gt;複製數據庫到本地端 ( clone )&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git &lt;span class=&quot;built_in&quot;&gt;clone&lt;/span&gt; &amp;lt;repo 連結&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;顯示修改檔案清單-status&quot;&gt;&lt;a href=&quot;#顯示修改檔案清單-status&quot; class=&quot;headerlink&quot; title=&quot;顯示修改檔案清單 ( status )&quot;&gt;&lt;/a&gt;顯示修改檔案清單 ( status )&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git status&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;-s&lt;/code&gt;：僅顯示已修改檔案名稱&lt;br&gt;&lt;code&gt;-s -b&lt;/code&gt;：顯示分支名稱&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;將檔案加入索引-add&quot;&gt;&lt;a href=&quot;#將檔案加入索引-add&quot; class=&quot;headerlink&quot; title=&quot;將檔案加入索引 ( add )&quot;&gt;&lt;/a&gt;將檔案加入索引 ( add )&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git add &amp;lt;file&amp;gt;...&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;可以使用 &lt;code&gt;git add .&lt;/code&gt; 將當前目錄下的所有修改檔案加入索引&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;還原已修改檔案-checkout-–&quot;&gt;&lt;a href=&quot;#還原已修改檔案-checkout-–&quot; class=&quot;headerlink&quot; title=&quot;還原已修改檔案 ( checkout – )&quot;&gt;&lt;/a&gt;還原已修改檔案 ( checkout – )&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git checkout -- &amp;lt;file&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;提交檔案-commit&quot;&gt;&lt;a href=&quot;#提交檔案-commit&quot; class=&quot;headerlink&quot; title=&quot;提交檔案 ( commit )&quot;&gt;&lt;/a&gt;提交檔案 ( commit )&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git commit&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;-m &amp;lt;message&amp;gt;&lt;/code&gt;：訊息提交&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;上傳-或更新-本地端分支&quot;&gt;&lt;a href=&quot;#上傳-或更新-本地端分支&quot; class=&quot;headerlink&quot; title=&quot;上傳(或更新)本地端分支&quot;&gt;&lt;/a&gt;上傳(或更新)本地端分支&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git push&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;合併-或更新-遠端至本地端分支&quot;&gt;&lt;a href=&quot;#合併-或更新-遠端至本地端分支&quot; class=&quot;headerlink&quot; title=&quot;合併(或更新)遠端至本地端分支&quot;&gt;&lt;/a&gt;合併(或更新)遠端至本地端分支&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git pull&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;顯示提交紀錄-log&quot;&gt;&lt;a href=&quot;#顯示提交紀錄-log&quot; class=&quot;headerlink&quot; title=&quot;顯示提交紀錄 ( log )&quot;&gt;&lt;/a&gt;顯示提交紀錄 ( log )&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git &lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;Git-分支-Branch&quot;&gt;&lt;a href=&quot;#Git-分支-Branch&quot; class=&quot;headerlink&quot; title=&quot; Git 分支 (Branch)&quot;&gt;&lt;/a&gt;&lt;i class=&quot;fa fa-code-fork&quot; style=&quot;text-align:center; width:20px; padding: 4px 1px 0 3px; background: #F04F33; color: white;border-radius:4px;transform: rotate(135deg);margin-right: 6px;&quot;&gt;&lt;/i&gt; Git 分支 (Branch)&lt;/h2&gt;&lt;h3 id=&quot;顯示分支清單&quot;&gt;&lt;a href=&quot;#顯示分支清單&quot; class=&quot;headerlink&quot; title=&quot;顯示分支清單&quot;&gt;&lt;/a&gt;顯示分支清單&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git branch&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;-r&lt;/strong&gt;：顯示&lt;strong&gt;遠端分支&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;-a&lt;/strong&gt;：顯示&lt;strong&gt;所有分支&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;建立分支&quot;&gt;&lt;a href=&quot;#建立分支&quot; class=&quot;headerlink&quot; title=&quot;建立分支&quot;&gt;&lt;/a&gt;建立分支&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git branch &amp;lt;分支名稱&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;修改分支名稱&quot;&gt;&lt;a href=&quot;#修改分支名稱&quot; class=&quot;headerlink&quot; title=&quot;修改分支名稱&quot;&gt;&lt;/a&gt;修改分支名稱&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git branch -m &amp;lt;舊分支名稱&amp;gt; &amp;lt;新分支名稱&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;刪除分支&quot;&gt;&lt;a href=&quot;#刪除分支&quot; class=&quot;headerlink&quot; title=&quot;刪除分支&quot;&gt;&lt;/a&gt;刪除分支&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git branch &lt;span class=&quot;_&quot;&gt;-d&lt;/span&gt; &amp;lt;分支名稱&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;切換分支-checkout&quot;&gt;&lt;a href=&quot;#切換分支-checkout&quot; class=&quot;headerlink&quot; title=&quot;切換分支 ( checkout )&quot;&gt;&lt;/a&gt;切換分支 ( checkout )&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git checkout&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;-b &amp;lt;分支名稱&amp;gt;&lt;/strong&gt;：表示 &lt;strong&gt;建立並切換&lt;/strong&gt; 至該分支&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;合併分支&quot;&gt;&lt;a href=&quot;#合併分支&quot; class=&quot;headerlink&quot; title=&quot;合併分支&quot;&gt;&lt;/a&gt;合併分支&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git merge &amp;lt;分支名稱&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;遠端操作&quot;&gt;&lt;a href=&quot;#遠端操作&quot; class=&quot;headerlink&quot; title=&quot; 遠端操作&quot;&gt;&lt;/a&gt;&lt;i class=&quot;fa fa-code-fork&quot; style=&quot;text-align:center; width:20px; padding: 4px 1px 0 3px; background: #F04F33; color: white;border-radius:4px;transform: rotate(135deg);margin-right: 6px;&quot;&gt;&lt;/i&gt; 遠端操作&lt;/h2&gt;&lt;h3 id=&quot;顯示遠端數據庫列表&quot;&gt;&lt;a href=&quot;#顯示遠端數據庫列表&quot; class=&quot;headerlink&quot; title=&quot;顯示遠端數據庫列表&quot;&gt;&lt;/a&gt;顯示遠端數據庫列表&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git remote&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;添加遠端數據庫&quot;&gt;&lt;a href=&quot;#添加遠端數據庫&quot; class=&quot;headerlink&quot; title=&quot;添加遠端數據庫&quot;&gt;&lt;/a&gt;添加遠端數據庫&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git remote add &amp;lt;名稱&amp;gt; &amp;lt;repo 連結&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;取遠端分支建立本地端分支&quot;&gt;&lt;a href=&quot;#取遠端分支建立本地端分支&quot; class=&quot;headerlink&quot; title=&quot;取遠端分支建立本地端分支&quot;&gt;&lt;/a&gt;取遠端分支建立本地端分支&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git checkout &amp;lt;本地分支名稱&amp;gt; origin/&amp;lt;遠端分支名稱&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;在遠端建立分支-上傳-或更新-內容至遠端分支&quot;&gt;&lt;a href=&quot;#在遠端建立分支-上傳-或更新-內容至遠端分支&quot; class=&quot;headerlink&quot; title=&quot;在遠端建立分支 / 上傳(或更新)內容至遠端分支&quot;&gt;&lt;/a&gt;在遠端建立分支 / 上傳(或更新)內容至遠端分支&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git push &amp;lt;repo 名稱&amp;gt; &amp;lt;分支名稱&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;查看遠端數據庫分支的修改內容&quot;&gt;&lt;a href=&quot;#查看遠端數據庫分支的修改內容&quot; class=&quot;headerlink&quot; title=&quot;查看遠端數據庫分支的修改內容&quot;&gt;&lt;/a&gt;查看遠端數據庫分支的修改內容&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git fetch &amp;lt;repo 名稱&amp;gt; &amp;lt;分支名稱&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;可以透過 &lt;code&gt;git fetch -p&lt;/code&gt; 來更新遠端分支資訊&lt;br&gt;例如在 GitHub 上操作玩一套 merge 流程後，已經在 GitHub 上刪除該分支&lt;br&gt;就可以利用這到命令更新本地端的遠端分支資訊&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;合併-或更新-遠端至本地端分支-1&quot;&gt;&lt;a href=&quot;#合併-或更新-遠端至本地端分支-1&quot; class=&quot;headerlink&quot; title=&quot;合併(或更新)遠端至本地端分支&quot;&gt;&lt;/a&gt;合併(或更新)遠端至本地端分支&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git pull &amp;lt;repo 名稱&amp;gt; &amp;lt;分支名稱&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;註：&lt;code&gt;pull&lt;/code&gt; = &lt;code&gt;fetch&lt;/code&gt; + &lt;code&gt;merge&lt;/code&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;刪除遠端分支&quot;&gt;&lt;a href=&quot;#刪除遠端分支&quot; class=&quot;headerlink&quot; title=&quot;刪除遠端分支&quot;&gt;&lt;/a&gt;刪除遠端分支&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git push &amp;lt;repo 名稱&amp;gt; :&amp;lt;分支名稱&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;修該遠端數據庫位址&quot;&gt;&lt;a href=&quot;#修該遠端數據庫位址&quot; class=&quot;headerlink&quot; title=&quot;修該遠端數據庫位址&quot;&gt;&lt;/a&gt;修該遠端數據庫位址&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git remote &lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt;-url &amp;lt;名稱&amp;gt; &amp;lt;新連結位址&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;修改遠端數據庫名稱&quot;&gt;&lt;a href=&quot;#修改遠端數據庫名稱&quot; class=&quot;headerlink&quot; title=&quot;修改遠端數據庫名稱&quot;&gt;&lt;/a&gt;修改遠端數據庫名稱&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git remote rename &amp;lt;舊名稱&amp;gt; &amp;lt;新名稱&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;暫存-Stash&quot;&gt;&lt;a href=&quot;#暫存-Stash&quot; class=&quot;headerlink&quot; title=&quot; 暫存 (Stash)&quot;&gt;&lt;/a&gt;&lt;i class=&quot;fa fa-code-fork&quot; style=&quot;text-align:center; width:20px; padding: 4px 1px 0 3px; background: #F04F33; color: white;border-radius:4px;transform: rotate(135deg);margin-right: 6px;&quot;&gt;&lt;/i&gt; 暫存 (Stash)&lt;/h2&gt;&lt;h3 id=&quot;暫存現在的修改狀況&quot;&gt;&lt;a href=&quot;#暫存現在的修改狀況&quot; class=&quot;headerlink&quot; title=&quot;暫存現在的修改狀況&quot;&gt;&lt;/a&gt;暫存現在的修改狀況&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git stash&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;列出暫存清單&quot;&gt;&lt;a href=&quot;#列出暫存清單&quot; class=&quot;headerlink&quot; title=&quot;列出暫存清單&quot;&gt;&lt;/a&gt;列出暫存清單&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git stash list&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;取出上一次暫存&quot;&gt;&lt;a href=&quot;#取出上一次暫存&quot; class=&quot;headerlink&quot; title=&quot;取出上一次暫存&quot;&gt;&lt;/a&gt;取出上一次暫存&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git stash apply&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;取出上一次暫存-該暫存會被移除&quot;&gt;&lt;a href=&quot;#取出上一次暫存-該暫存會被移除&quot; class=&quot;headerlink&quot; title=&quot;取出上一次暫存(該暫存會被移除)&quot;&gt;&lt;/a&gt;取出上一次暫存(該暫存會被移除)&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git stash pop&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;可利用 &lt;code&gt;stash@{id}&lt;/code&gt; 指定特定暫存&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;清空所有暫存&quot;&gt;&lt;a href=&quot;#清空所有暫存&quot; class=&quot;headerlink&quot; title=&quot;清空所有暫存&quot;&gt;&lt;/a&gt;清空所有暫存&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git stash clear&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;以上，是目前常用的命令，有什麼疑問都歡迎留言提問！&lt;/p&gt;
+&lt;p&gt;That’s it, &lt;strong&gt;DONE!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;【參考資料】&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub Help：&lt;a href=&quot;https://help.github.com/articles/set-up-git/#platform-linux&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://help.github.com/articles/set-up-git/#platform-linux&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Basic Git commands：&lt;a href=&quot;https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/img/program/Git.jpg&quot; alt=&quot;命令筆記本&quot; title=&quot;Pic by ChristianEngvall&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;&lt;strong&gt;目的&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;　　快來翻翻你要的 Git Command 喔！&lt;/p&gt;
+&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;&lt;strong&gt;前言&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;　　一開始接觸 Git 是使用 &lt;a href=&quot;https://desktop.github.com/&quot;&gt;&lt;strong&gt;GitHub Desktop&lt;/strong&gt;&lt;/a&gt;，但隨著開發環境轉到 Linux 上後，就習慣用 Command-line 的方式操作了，這篇就來筆記一下常用的命令；說來也怪，有時後就是會突然想不起來，如果你也有這種&lt;strong&gt;腦容量有限&lt;/strong&gt;的老症頭，歡迎隨時來翻翻XDD&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
+    
+    
+      <category term="攻城獅筆記" scheme="http://georgiowan.github.io/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
+    
+      <category term="Git" scheme="http://georgiowan.github.io/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
     <title>[Hexo] 快速上手 Hexo 網誌框架</title>
     <link href="http://georgiowan.github.io/2016/easy-hexo-easy-blog/"/>
     <id>http://georgiowan.github.io/2016/easy-hexo-easy-blog/</id>
     <published>2016-05-27T03:42:50.000Z</published>
-    <updated>2016-05-27T10:18:04.125Z</updated>
+    <updated>2016-05-29T18:27:10.385Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;/img/program/github_hexo.png&quot; alt=&quot;輕鬆上手 Hexo 網誌框架&quot; title=&quot;Pic by wsgzao&quot;&gt;&lt;/p&gt;
 &lt;h1 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;&lt;strong&gt;目的&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;　　使用 Hexo 網誌框架，搭配 GitHub Page，快速架設屬於、管理自己的部落格！&lt;/p&gt;
@@ -107,15 +204,15 @@
       <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
     
     
-      <category term="Cloud9" scheme="http://georgiowan.github.io/tags/Cloud9/"/>
-    
-      <category term="攻城獅筆記" scheme="http://georgiowan.github.io/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
-    
       <category term="Hexo" scheme="http://georgiowan.github.io/tags/Hexo/"/>
     
       <category term="NodeJS" scheme="http://georgiowan.github.io/tags/NodeJS/"/>
     
       <category term="Blog" scheme="http://georgiowan.github.io/tags/Blog/"/>
+    
+      <category term="Cloud9" scheme="http://georgiowan.github.io/tags/Cloud9/"/>
+    
+      <category term="攻城獅筆記" scheme="http://georgiowan.github.io/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
   </entry>
   
@@ -260,9 +357,13 @@
       <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
     
     
-      <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
+      <category term="Cloud9" scheme="http://georgiowan.github.io/tags/Cloud9/"/>
+    
+      <category term="攻城獅筆記" scheme="http://georgiowan.github.io/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
       <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
+    
+      <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
     
       <category term="omniauth" scheme="http://georgiowan.github.io/tags/omniauth/"/>
     
@@ -271,10 +372,6 @@
       <category term="koala" scheme="http://georgiowan.github.io/tags/koala/"/>
     
       <category term="facebook" scheme="http://georgiowan.github.io/tags/facebook/"/>
-    
-      <category term="Cloud9" scheme="http://georgiowan.github.io/tags/Cloud9/"/>
-    
-      <category term="攻城獅筆記" scheme="http://georgiowan.github.io/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
   </entry>
   
@@ -325,9 +422,9 @@
       <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
     
     
-      <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
-    
       <category term="攻城獅筆記" scheme="http://georgiowan.github.io/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
+    
+      <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
     
       <category term="gem" scheme="http://georgiowan.github.io/tags/gem/"/>
     
@@ -399,15 +496,15 @@ IDE  ：Cloud 9
       <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
     
     
-      <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
-    
-      <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
-    
-      <category term="devise" scheme="http://georgiowan.github.io/tags/devise/"/>
-    
       <category term="Cloud9" scheme="http://georgiowan.github.io/tags/Cloud9/"/>
     
       <category term="攻城獅筆記" scheme="http://georgiowan.github.io/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
+    
+      <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
+    
+      <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
+    
+      <category term="devise" scheme="http://georgiowan.github.io/tags/devise/"/>
     
       <category term="actionmailer" scheme="http://georgiowan.github.io/tags/actionmailer/"/>
     
@@ -472,11 +569,11 @@ IDE  ：Cloud 9
       <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
     
     
+      <category term="攻城獅筆記" scheme="http://georgiowan.github.io/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
+    
       <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
     
       <category term="facebook" scheme="http://georgiowan.github.io/tags/facebook/"/>
-    
-      <category term="攻城獅筆記" scheme="http://georgiowan.github.io/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
       <category term="ruby" scheme="http://georgiowan.github.io/tags/ruby/"/>
     
@@ -534,13 +631,13 @@ IDE  ：Cloud 9
       <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
     
     
-      <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
+      <category term="攻城獅筆記" scheme="http://georgiowan.github.io/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
       <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
     
-      <category term="facebook" scheme="http://georgiowan.github.io/tags/facebook/"/>
+      <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
     
-      <category term="攻城獅筆記" scheme="http://georgiowan.github.io/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
+      <category term="facebook" scheme="http://georgiowan.github.io/tags/facebook/"/>
     
       <category term="turbolinks" scheme="http://georgiowan.github.io/tags/turbolinks/"/>
     
@@ -582,11 +679,11 @@ IDE  ：Cloud 9
       <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
     
     
-      <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
+      <category term="攻城獅筆記" scheme="http://georgiowan.github.io/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
       <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
     
-      <category term="攻城獅筆記" scheme="http://georgiowan.github.io/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
+      <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
     
       <category term="respond_to" scheme="http://georgiowan.github.io/tags/respond-to/"/>
     
@@ -655,9 +752,9 @@ IDE  ：Cloud 9
       <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
     
     
-      <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
-    
       <category term="攻城獅筆記" scheme="http://georgiowan.github.io/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
+    
+      <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
     
       <category term="rails4" scheme="http://georgiowan.github.io/tags/rails4/"/>
     
@@ -716,11 +813,11 @@ IDE  ：Cloud 9
       <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
     
     
-      <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
+      <category term="攻城獅筆記" scheme="http://georgiowan.github.io/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
       <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
     
-      <category term="攻城獅筆記" scheme="http://georgiowan.github.io/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
+      <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
     
       <category term="gem" scheme="http://georgiowan.github.io/tags/gem/"/>
     
@@ -789,11 +886,11 @@ IDE  ：Cloud 9
       <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
     
     
-      <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
+      <category term="攻城獅筆記" scheme="http://georgiowan.github.io/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
       <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
     
-      <category term="攻城獅筆記" scheme="http://georgiowan.github.io/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
+      <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
     
       <category term="gem" scheme="http://georgiowan.github.io/tags/gem/"/>
     
