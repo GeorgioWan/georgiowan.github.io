@@ -323,8 +323,6 @@
       <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
     
     
-      <category term="攻城獅筆記" scheme="http://georgiowan.github.io/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
-    
       <category term="Hexo" scheme="http://georgiowan.github.io/tags/Hexo/"/>
     
       <category term="NodeJS" scheme="http://georgiowan.github.io/tags/NodeJS/"/>
@@ -332,6 +330,8 @@
       <category term="Blog" scheme="http://georgiowan.github.io/tags/Blog/"/>
     
       <category term="Cloud9" scheme="http://georgiowan.github.io/tags/Cloud9/"/>
+    
+      <category term="攻城獅筆記" scheme="http://georgiowan.github.io/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
   </entry>
   
@@ -476,21 +476,21 @@
       <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
     
     
-      <category term="攻城獅筆記" scheme="http://georgiowan.github.io/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
-    
       <category term="Cloud9" scheme="http://georgiowan.github.io/tags/Cloud9/"/>
+    
+      <category term="攻城獅筆記" scheme="http://georgiowan.github.io/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
       <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
     
       <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
-    
-      <category term="facebook" scheme="http://georgiowan.github.io/tags/facebook/"/>
     
       <category term="omniauth" scheme="http://georgiowan.github.io/tags/omniauth/"/>
     
       <category term="devise" scheme="http://georgiowan.github.io/tags/devise/"/>
     
       <category term="koala" scheme="http://georgiowan.github.io/tags/koala/"/>
+    
+      <category term="facebook" scheme="http://georgiowan.github.io/tags/facebook/"/>
     
   </entry>
   
@@ -615,9 +615,9 @@ IDE  ：Cloud 9
       <category term="Programmer" scheme="http://georgiowan.github.io/categories/Programmer/"/>
     
     
-      <category term="攻城獅筆記" scheme="http://georgiowan.github.io/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
-    
       <category term="Cloud9" scheme="http://georgiowan.github.io/tags/Cloud9/"/>
+    
+      <category term="攻城獅筆記" scheme="http://georgiowan.github.io/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
       <category term="rails" scheme="http://georgiowan.github.io/tags/rails/"/>
     
@@ -696,13 +696,13 @@ IDE  ：Cloud 9
     
       <category term="ruby" scheme="http://georgiowan.github.io/tags/ruby/"/>
     
-      <category term="SEO" scheme="http://georgiowan.github.io/tags/SEO/"/>
-    
       <category term="Metadata" scheme="http://georgiowan.github.io/tags/Metadata/"/>
     
       <category term="metatag" scheme="http://georgiowan.github.io/tags/metatag/"/>
     
       <category term="meta-tags" scheme="http://georgiowan.github.io/tags/meta-tags/"/>
+    
+      <category term="SEO" scheme="http://georgiowan.github.io/tags/SEO/"/>
     
       <category term="OpenGraph" scheme="http://georgiowan.github.io/tags/OpenGraph/"/>
     
@@ -756,9 +756,9 @@ IDE  ：Cloud 9
     
       <category term="rubyonrails" scheme="http://georgiowan.github.io/tags/rubyonrails/"/>
     
-      <category term="turbolinks" scheme="http://georgiowan.github.io/tags/turbolinks/"/>
-    
       <category term="facebook" scheme="http://georgiowan.github.io/tags/facebook/"/>
+    
+      <category term="turbolinks" scheme="http://georgiowan.github.io/tags/turbolinks/"/>
     
       <category term="FacebookPlugin" scheme="http://georgiowan.github.io/tags/FacebookPlugin/"/>
     
