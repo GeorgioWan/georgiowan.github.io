@@ -330,13 +330,13 @@
     
       <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
+      <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
+    
       <category term="Hexo" scheme="https://oawan.me/tags/Hexo/"/>
     
       <category term="NodeJS" scheme="https://oawan.me/tags/NodeJS/"/>
     
       <category term="Blog" scheme="https://oawan.me/tags/Blog/"/>
-    
-      <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
     
   </entry>
   
@@ -483,11 +483,9 @@
     
       <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
-      <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
+      <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
     
       <category term="rails" scheme="https://oawan.me/tags/rails/"/>
-    
-      <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
     
       <category term="omniauth" scheme="https://oawan.me/tags/omniauth/"/>
     
@@ -496,6 +494,8 @@
       <category term="koala" scheme="https://oawan.me/tags/koala/"/>
     
       <category term="facebook" scheme="https://oawan.me/tags/facebook/"/>
+    
+      <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
     
   </entry>
   
@@ -622,13 +622,13 @@ IDE  ：Cloud 9
     
       <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
-      <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
+      <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
     
       <category term="rails" scheme="https://oawan.me/tags/rails/"/>
     
-      <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
-    
       <category term="devise" scheme="https://oawan.me/tags/devise/"/>
+    
+      <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
     
       <category term="actionmailer" scheme="https://oawan.me/tags/actionmailer/"/>
     
@@ -701,13 +701,13 @@ IDE  ：Cloud 9
     
       <category term="ruby" scheme="https://oawan.me/tags/ruby/"/>
     
-      <category term="SEO" scheme="https://oawan.me/tags/SEO/"/>
-    
       <category term="Metadata" scheme="https://oawan.me/tags/Metadata/"/>
     
       <category term="metatag" scheme="https://oawan.me/tags/metatag/"/>
     
       <category term="meta-tags" scheme="https://oawan.me/tags/meta-tags/"/>
+    
+      <category term="SEO" scheme="https://oawan.me/tags/SEO/"/>
     
       <category term="OpenGraph" scheme="https://oawan.me/tags/OpenGraph/"/>
     
@@ -757,9 +757,9 @@ IDE  ：Cloud 9
     
       <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
-      <category term="rails" scheme="https://oawan.me/tags/rails/"/>
-    
       <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
+    
+      <category term="rails" scheme="https://oawan.me/tags/rails/"/>
     
       <category term="facebook" scheme="https://oawan.me/tags/facebook/"/>
     
@@ -805,9 +805,9 @@ IDE  ：Cloud 9
     
       <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
-      <category term="rails" scheme="https://oawan.me/tags/rails/"/>
-    
       <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
+    
+      <category term="rails" scheme="https://oawan.me/tags/rails/"/>
     
       <category term="respond_to" scheme="https://oawan.me/tags/respond-to/"/>
     
@@ -912,11 +912,11 @@ IDE  ：Cloud 9
 &lt;h2 id=&quot;3-添加欄位&quot;&gt;&lt;a href=&quot;#3-添加欄位&quot; class=&quot;headerlink&quot; title=&quot;3. 添加欄位&quot;&gt;&lt;/a&gt;3. 添加欄位&lt;/h2&gt;&lt;p&gt;　在想要上傳圖片的資料表中添加對應的欄位&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;rails g migration add_image_to_users image:string &lt;span class=&quot;comment&quot;&gt;# 此例為添加一欄位(image)至 User 中&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;then, 記得 migrate&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;rake db:migrate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h2 id=&quot;4-實作上傳及顯示功能&quot;&gt;&lt;a href=&quot;#4-實作上傳及顯示功能&quot; class=&quot;headerlink&quot; title=&quot;4. 實作上傳及顯示功能&quot;&gt;&lt;/a&gt;4. 實作上傳及顯示功能&lt;/h2&gt;&lt;p&gt;　首先在 model 中掛載 uploader&lt;br&gt;&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;figcaption&gt;&lt;span&gt;app/models/user.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mount_uploader &lt;span class=&quot;symbol&quot;&gt;:image&lt;/span&gt;, ImageUploader&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;　接著 view 即可作上傳跟顯示，以下為上傳、快取、刪除跟顯示的作法&lt;br&gt;&lt;figure class=&quot;highlight erb&quot;&gt;&lt;figcaption&gt;&lt;span&gt;app/views/users/new.html.erb&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;%=&lt;span class=&quot;ruby&quot;&gt; simple_form_for @user &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;|f|&lt;/span&gt; &lt;/span&gt;%&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&amp;lt;%=&lt;span class=&quot;ruby&quot;&gt; f.input &lt;span class=&quot;symbol&quot;&gt;:image&lt;/span&gt; &lt;/span&gt;%&amp;gt; &amp;lt;!-- 上傳 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&amp;lt;%=&lt;span class=&quot;ruby&quot;&gt; f.check_box &lt;span class=&quot;symbol&quot;&gt;:remove_image&lt;/span&gt; &lt;/span&gt;%&amp;gt; &amp;lt;!-- 刪除 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&amp;lt;%=&lt;span class=&quot;ruby&quot;&gt; f.hidden_field &lt;span class=&quot;symbol&quot;&gt;:image_cache&lt;/span&gt; &lt;/span&gt;%&amp;gt; &amp;lt;!-- 快取 _cache (讓填表時若有誤，不用重新選擇圖片) --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&amp;lt;%=&lt;span class=&quot;ruby&quot;&gt; image_tag @user.image &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; @user.image? &lt;/span&gt;%&amp;gt; &amp;lt;!-- 如果 user 已有圖片的話，就顯示 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;%&lt;span class=&quot;ruby&quot;&gt; &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt; &lt;/span&gt;%&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;　接著 view 即可作上傳跟顯示，以下為上傳、快取、刪除跟顯示的作法&lt;br&gt;&lt;figure class=&quot;highlight erb&quot;&gt;&lt;figcaption&gt;&lt;span&gt;app/views/users/new.html.erb&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;%=&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;ruby&quot;&gt; simple_form_for @user &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;|f|&lt;/span&gt; &lt;/span&gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;%&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;%=&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;ruby&quot;&gt; f.input &lt;span class=&quot;symbol&quot;&gt;:image&lt;/span&gt; &lt;/span&gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;%&amp;gt;&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- 上傳 --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;%=&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;ruby&quot;&gt; f.check_box &lt;span class=&quot;symbol&quot;&gt;:remove_image&lt;/span&gt; &lt;/span&gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;%&amp;gt;&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- 刪除 --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;%=&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;ruby&quot;&gt; f.hidden_field &lt;span class=&quot;symbol&quot;&gt;:image_cache&lt;/span&gt; &lt;/span&gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;%&amp;gt;&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- 快取 _cache (讓填表時若有誤，不用重新選擇圖片) --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;%=&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;ruby&quot;&gt; image_tag @user.image &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; @user.image? &lt;/span&gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;%&amp;gt;&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- 如果 user 已有圖片的話，就顯示 --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;%&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;ruby&quot;&gt; &lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt; &lt;/span&gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;%&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;　最後，controller 中記得加入 strong params&lt;br&gt;&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;figcaption&gt;&lt;span&gt;app/controllers/users_controller.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;params.&lt;span class=&quot;keyword&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;symbol&quot;&gt;:user&lt;/span&gt;).permit( &lt;span class=&quot;symbol&quot;&gt;:image&lt;/span&gt;, &lt;span class=&quot;symbol&quot;&gt;:image_cache&lt;/span&gt;, &lt;span class=&quot;symbol&quot;&gt;:remove_image&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;　以上，就完成用 &lt;strong&gt;CarrierWave&lt;/strong&gt; 上傳圖片及顯示的功能囉！但，上傳後圖片大小為&lt;strong&gt;原始大小&lt;/strong&gt;，所以我們可以透過 &lt;strong&gt;rmagick&lt;/strong&gt; 來作 resize。&lt;/p&gt;
 &lt;h2 id=&quot;5-使用-rmagick&quot;&gt;&lt;a href=&quot;#5-使用-rmagick&quot; class=&quot;headerlink&quot; title=&quot;5. 使用 rmagick&quot;&gt;&lt;/a&gt;5. 使用 rmagick&lt;/h2&gt;&lt;p&gt;　首先在 &lt;code&gt;image_uploader.rb&lt;/code&gt; 中取消註解：&lt;br&gt;&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;figcaption&gt;&lt;span&gt;app/uploaders/image_uploader.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;include&lt;/span&gt; CarrierWave::RMagick &lt;span class=&quot;comment&quot;&gt;# 取消註解&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;version &lt;span class=&quot;symbol&quot;&gt;:thumb&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  process &lt;span class=&quot;symbol&quot;&gt;:resize_to_fit&lt;/span&gt; =&amp;gt; [&lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;　上面透過 &lt;code&gt;thumb&lt;/code&gt;，讓上傳時保存原圖，並且產生一個 resize version，這樣想用&lt;strong&gt;原圖&lt;/strong&gt;或&lt;strong&gt;縮放後的版本&lt;/strong&gt;都很方便！&lt;br&gt;&lt;figure class=&quot;highlight erb&quot;&gt;&lt;figcaption&gt;&lt;span&gt;app/views/users/show.html.erb&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;!-- 原圖尺寸 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;%=&lt;span class=&quot;ruby&quot;&gt; image_tag @user.image &lt;/span&gt;%&amp;gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;!-- 縮放後尺寸 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;%=&lt;span class=&quot;ruby&quot;&gt; image_tag @user.image_url(&lt;span class=&quot;symbol&quot;&gt;:thumb&lt;/span&gt;) &lt;/span&gt;%&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;　上面透過 &lt;code&gt;thumb&lt;/code&gt;，讓上傳時保存原圖，並且產生一個 resize version，這樣想用&lt;strong&gt;原圖&lt;/strong&gt;或&lt;strong&gt;縮放後的版本&lt;/strong&gt;都很方便！&lt;br&gt;&lt;figure class=&quot;highlight erb&quot;&gt;&lt;figcaption&gt;&lt;span&gt;app/views/users/show.html.erb&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- 原圖尺寸 --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;%=&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;ruby&quot;&gt; image_tag @user.image &lt;/span&gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;%&amp;gt;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- 縮放後尺寸 --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;%=&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;ruby&quot;&gt; image_tag @user.image_url(&lt;span class=&quot;symbol&quot;&gt;:thumb&lt;/span&gt;) &lt;/span&gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;%&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;　從上面可看到，從 &lt;code&gt;_url(:thumb)&lt;/code&gt; 即可取得縮放後的圖片了！&lt;/p&gt;
 &lt;p&gt;That’s it, &lt;strong&gt;DONE!&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;【參考資料】&lt;/strong&gt;&lt;/p&gt;
@@ -939,9 +939,9 @@ IDE  ：Cloud 9
     
       <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
-      <category term="rails" scheme="https://oawan.me/tags/rails/"/>
-    
       <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
+    
+      <category term="rails" scheme="https://oawan.me/tags/rails/"/>
     
       <category term="gem" scheme="https://oawan.me/tags/gem/"/>
     
@@ -1012,9 +1012,9 @@ IDE  ：Cloud 9
     
       <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
-      <category term="rails" scheme="https://oawan.me/tags/rails/"/>
-    
       <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
+    
+      <category term="rails" scheme="https://oawan.me/tags/rails/"/>
     
       <category term="gem" scheme="https://oawan.me/tags/gem/"/>
     
