@@ -139,7 +139,7 @@
     <link href="https://oawan.me/2016/all-about-git-command/"/>
     <id>https://oawan.me/2016/all-about-git-command/</id>
     <published>2016-05-30T09:14:09.000Z</published>
-    <updated>2016-06-06T07:10:34.628Z</updated>
+    <updated>2016-06-06T07:32:32.647Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;/img/program/Git.jpg&quot; alt=&quot;命令筆記本&quot; title=&quot;Pic by ChristianEngvall&quot;&gt;&lt;/p&gt;
 &lt;h1 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;&lt;strong&gt;目的&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;　　快來翻翻你要的 Git Command 喔！&lt;/p&gt;
@@ -208,7 +208,7 @@
 &lt;h2 id=&quot;操作提交紀錄&quot;&gt;&lt;a href=&quot;#操作提交紀錄&quot; class=&quot;headerlink&quot; title=&quot; 操作提交紀錄&quot;&gt;&lt;/a&gt;&lt;i class=&quot;fa fa-code-fork&quot; style=&quot;text-align:center; width:20px; padding: 4px 1px 0 3px; background: #F04F33; color: white;border-radius:4px;transform: rotate(135deg);margin-right: 6px;&quot;&gt;&lt;/i&gt; 操作提交紀錄&lt;/h2&gt;&lt;h3 id=&quot;修改上一次-commit&quot;&gt;&lt;a href=&quot;#修改上一次-commit&quot; class=&quot;headerlink&quot; title=&quot;修改上一次 commit&quot;&gt;&lt;/a&gt;修改上一次 commit&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git commit --amend&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h3 id=&quot;放棄修改紀錄-reset&quot;&gt;&lt;a href=&quot;#放棄修改紀錄-reset&quot; class=&quot;headerlink&quot; title=&quot;放棄修改紀錄 (reset)&quot;&gt;&lt;/a&gt;放棄修改紀錄 (reset)&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git reset HEAD^&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;–soft&lt;/strong&gt;：取消上一次 commit，並 &lt;strong&gt;保留&lt;/strong&gt; 修改紀錄&lt;br&gt;&lt;strong&gt;–hard&lt;/strong&gt;：取消上一次 commit，並 &lt;strong&gt;刪除&lt;/strong&gt; 修改紀錄&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;--soft&lt;/code&gt;：取消上一次 commit，並 &lt;strong&gt;保留&lt;/strong&gt; 修改紀錄&lt;br&gt;&lt;code&gt;--hard&lt;/code&gt;：取消上一次 commit，並 &lt;strong&gt;刪除&lt;/strong&gt; 修改紀錄&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;以上，是目前常用的命令，有什麼疑問都歡迎留言提問！&lt;/p&gt;
 &lt;p&gt;That’s it, &lt;strong&gt;DONE!&lt;/strong&gt;&lt;/p&gt;
@@ -489,9 +489,9 @@
     
       <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
     
-      <category term="devise" scheme="https://oawan.me/tags/devise/"/>
-    
       <category term="omniauth" scheme="https://oawan.me/tags/omniauth/"/>
+    
+      <category term="devise" scheme="https://oawan.me/tags/devise/"/>
     
       <category term="koala" scheme="https://oawan.me/tags/koala/"/>
     
@@ -550,9 +550,9 @@
     
       <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
     
-      <category term="ruby" scheme="https://oawan.me/tags/ruby/"/>
-    
       <category term="gem" scheme="https://oawan.me/tags/gem/"/>
+    
+      <category term="ruby" scheme="https://oawan.me/tags/ruby/"/>
     
       <category term="rvm" scheme="https://oawan.me/tags/rvm/"/>
     
@@ -628,6 +628,8 @@ IDE  ：Cloud 9
     
       <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
     
+      <category term="devise" scheme="https://oawan.me/tags/devise/"/>
+    
       <category term="actionmailer" scheme="https://oawan.me/tags/actionmailer/"/>
     
       <category term="gmail" scheme="https://oawan.me/tags/gmail/"/>
@@ -635,8 +637,6 @@ IDE  ：Cloud 9
       <category term="mailgun" scheme="https://oawan.me/tags/mailgun/"/>
     
       <category term="cloud9" scheme="https://oawan.me/tags/cloud9/"/>
-    
-      <category term="devise" scheme="https://oawan.me/tags/devise/"/>
     
   </entry>
   
@@ -701,13 +701,13 @@ IDE  ：Cloud 9
     
       <category term="ruby" scheme="https://oawan.me/tags/ruby/"/>
     
+      <category term="SEO" scheme="https://oawan.me/tags/SEO/"/>
+    
       <category term="Metadata" scheme="https://oawan.me/tags/Metadata/"/>
     
       <category term="metatag" scheme="https://oawan.me/tags/metatag/"/>
     
       <category term="meta-tags" scheme="https://oawan.me/tags/meta-tags/"/>
-    
-      <category term="SEO" scheme="https://oawan.me/tags/SEO/"/>
     
       <category term="OpenGraph" scheme="https://oawan.me/tags/OpenGraph/"/>
     
@@ -943,9 +943,9 @@ IDE  ：Cloud 9
     
       <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
     
-      <category term="ruby" scheme="https://oawan.me/tags/ruby/"/>
-    
       <category term="gem" scheme="https://oawan.me/tags/gem/"/>
+    
+      <category term="ruby" scheme="https://oawan.me/tags/ruby/"/>
     
       <category term="CarrierWave" scheme="https://oawan.me/tags/CarrierWave/"/>
     
@@ -1016,9 +1016,9 @@ IDE  ：Cloud 9
     
       <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
     
-      <category term="SEO" scheme="https://oawan.me/tags/SEO/"/>
-    
       <category term="gem" scheme="https://oawan.me/tags/gem/"/>
+    
+      <category term="SEO" scheme="https://oawan.me/tags/SEO/"/>
     
       <category term="friendly_id" scheme="https://oawan.me/tags/friendly-id/"/>
     
