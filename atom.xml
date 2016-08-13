@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://oawan.me/"/>
-  <updated>2016-08-13T21:40:14.985Z</updated>
+  <updated>2016-08-13T21:43:31.105Z</updated>
   <id>https://oawan.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://oawan.me/2016/%E9%AB%98%E9%9B%84%E5%89%8D%E9%8E%AE-%E8%A0%94%E8%A0%94%E5%85%88%E7%94%9F-%E6%B0%A3%E6%B0%9B%E8%B6%85%E5%A5%BD%E7%9A%84%E7%94%9F%E8%A0%94%E6%B5%B7%E6%99%AF%E7%B4%84%E6%9C%83%E5%9C%B0/"/>
     <id>https://oawan.me/2016/高雄前鎮-蠔蠔先生-氣氛超好的生蠔海景約會地/</id>
     <published>2016-08-13T15:20:05.000Z</published>
-    <updated>2016-08-13T21:40:14.985Z</updated>
+    <updated>2016-08-13T21:43:31.105Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;/img/food/2016/Kaohsiung/Qianzhen/Mr.Oyster/綜合海鮮拼盤-3.jpg&quot; alt=&quot;蠔蠔先生&quot;&gt;&lt;br&gt;　　今年的 &lt;span class=&quot;oaspan oaspan-red&quot;&gt;父親節大餐&lt;/span&gt; 想來點不一樣的，有別於以往的 &lt;strong&gt;飲茶&lt;/strong&gt;、&lt;strong&gt;西餐廳&lt;/strong&gt; 等，今年我們一起到新的幽會地點約會囉！&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -875,9 +875,9 @@
     
       <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
     
-      <category term="gem" scheme="https://oawan.me/tags/gem/"/>
-    
       <category term="ruby" scheme="https://oawan.me/tags/ruby/"/>
+    
+      <category term="gem" scheme="https://oawan.me/tags/gem/"/>
     
       <category term="rvm" scheme="https://oawan.me/tags/rvm/"/>
     
@@ -1268,9 +1268,9 @@ IDE  ：Cloud 9
     
       <category term="rails" scheme="https://oawan.me/tags/rails/"/>
     
-      <category term="gem" scheme="https://oawan.me/tags/gem/"/>
-    
       <category term="ruby" scheme="https://oawan.me/tags/ruby/"/>
+    
+      <category term="gem" scheme="https://oawan.me/tags/gem/"/>
     
       <category term="CarrierWave" scheme="https://oawan.me/tags/CarrierWave/"/>
     
@@ -1341,9 +1341,9 @@ IDE  ：Cloud 9
     
       <category term="rails" scheme="https://oawan.me/tags/rails/"/>
     
-      <category term="gem" scheme="https://oawan.me/tags/gem/"/>
-    
       <category term="SEO" scheme="https://oawan.me/tags/SEO/"/>
+    
+      <category term="gem" scheme="https://oawan.me/tags/gem/"/>
     
       <category term="friendly_id" scheme="https://oawan.me/tags/friendly-id/"/>
     
