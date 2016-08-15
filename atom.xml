@@ -886,9 +886,9 @@
     
       <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
     
-      <category term="gem" scheme="https://oawan.me/tags/gem/"/>
-    
       <category term="ruby" scheme="https://oawan.me/tags/ruby/"/>
+    
+      <category term="gem" scheme="https://oawan.me/tags/gem/"/>
     
       <category term="rvm" scheme="https://oawan.me/tags/rvm/"/>
     
@@ -1279,9 +1279,9 @@ IDE  ：Cloud 9
     
       <category term="rails" scheme="https://oawan.me/tags/rails/"/>
     
-      <category term="gem" scheme="https://oawan.me/tags/gem/"/>
-    
       <category term="ruby" scheme="https://oawan.me/tags/ruby/"/>
+    
+      <category term="gem" scheme="https://oawan.me/tags/gem/"/>
     
       <category term="CarrierWave" scheme="https://oawan.me/tags/CarrierWave/"/>
     
@@ -1352,13 +1352,13 @@ IDE  ：Cloud 9
     
       <category term="rails" scheme="https://oawan.me/tags/rails/"/>
     
-      <category term="gem" scheme="https://oawan.me/tags/gem/"/>
-    
       <category term="SEO" scheme="https://oawan.me/tags/SEO/"/>
     
       <category term="friendly_id" scheme="https://oawan.me/tags/friendly-id/"/>
     
       <category term="babosa" scheme="https://oawan.me/tags/babosa/"/>
+    
+      <category term="gem" scheme="https://oawan.me/tags/gem/"/>
     
       <category term="to_params" scheme="https://oawan.me/tags/to-params/"/>
     
