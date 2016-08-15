@@ -664,8 +664,6 @@
       <category term="Programmer" scheme="https://oawan.me/categories/Programmer/"/>
     
     
-      <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
-    
       <category term="Hexo" scheme="https://oawan.me/tags/Hexo/"/>
     
       <category term="NodeJS" scheme="https://oawan.me/tags/NodeJS/"/>
@@ -673,6 +671,8 @@
       <category term="Blog" scheme="https://oawan.me/tags/Blog/"/>
     
       <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
+    
+      <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
   </entry>
   
@@ -817,9 +817,9 @@
       <category term="Programmer" scheme="https://oawan.me/categories/Programmer/"/>
     
     
-      <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
-    
       <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
+    
+      <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
       <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
     
@@ -886,9 +886,9 @@
     
       <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
     
-      <category term="ruby" scheme="https://oawan.me/tags/ruby/"/>
-    
       <category term="gem" scheme="https://oawan.me/tags/gem/"/>
+    
+      <category term="ruby" scheme="https://oawan.me/tags/ruby/"/>
     
       <category term="rvm" scheme="https://oawan.me/tags/rvm/"/>
     
@@ -956,9 +956,9 @@ IDE  ：Cloud 9
       <category term="Programmer" scheme="https://oawan.me/categories/Programmer/"/>
     
     
-      <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
-    
       <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
+    
+      <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
       <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
     
@@ -1037,13 +1037,13 @@ IDE  ：Cloud 9
     
       <category term="ruby" scheme="https://oawan.me/tags/ruby/"/>
     
+      <category term="SEO" scheme="https://oawan.me/tags/SEO/"/>
+    
       <category term="Metadata" scheme="https://oawan.me/tags/Metadata/"/>
     
       <category term="metatag" scheme="https://oawan.me/tags/metatag/"/>
     
       <category term="meta-tags" scheme="https://oawan.me/tags/meta-tags/"/>
-    
-      <category term="SEO" scheme="https://oawan.me/tags/SEO/"/>
     
       <category term="OpenGraph" scheme="https://oawan.me/tags/OpenGraph/"/>
     
@@ -1279,9 +1279,9 @@ IDE  ：Cloud 9
     
       <category term="rails" scheme="https://oawan.me/tags/rails/"/>
     
-      <category term="ruby" scheme="https://oawan.me/tags/ruby/"/>
-    
       <category term="gem" scheme="https://oawan.me/tags/gem/"/>
+    
+      <category term="ruby" scheme="https://oawan.me/tags/ruby/"/>
     
       <category term="CarrierWave" scheme="https://oawan.me/tags/CarrierWave/"/>
     
@@ -1352,13 +1352,13 @@ IDE  ：Cloud 9
     
       <category term="rails" scheme="https://oawan.me/tags/rails/"/>
     
+      <category term="gem" scheme="https://oawan.me/tags/gem/"/>
+    
       <category term="SEO" scheme="https://oawan.me/tags/SEO/"/>
     
       <category term="friendly_id" scheme="https://oawan.me/tags/friendly-id/"/>
     
       <category term="babosa" scheme="https://oawan.me/tags/babosa/"/>
-    
-      <category term="gem" scheme="https://oawan.me/tags/gem/"/>
     
       <category term="to_params" scheme="https://oawan.me/tags/to-params/"/>
     
