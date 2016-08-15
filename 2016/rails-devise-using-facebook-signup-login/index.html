@@ -76,7 +76,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="攻城獅筆記,Cloud9,rails,rubyonrails,facebook,omniauth,devise,koala," />
+  <meta name="keywords" content="攻城獅筆記,Cloud9,rubyonrails,rails,omniauth,devise,koala,facebook," />
 
 
 
@@ -133,7 +133,11 @@
 </script>
 
 
-<link rel="canonical" href="https://oawan.me/2016/rails-devise-using-facebook-signup-login/"/>
+
+
+  <link rel="canonical" href="https://oawan.me/2016/rails-devise-using-facebook-signup-login/"/>
+
+
   <title> [Rails] Devise 使用 Facebook 註冊與登入 | 新樂街口的三角窗 </title>
 </head>
 
@@ -145,7 +149,7 @@
     FB.init({
       appId      : '1600131456966147',
       xfbml      : true,
-      version    : 'v2.5'
+      version    : 'v2.6'
     });
   };
 
@@ -440,6 +444,7 @@
     <div>
       
         
+
       
     </div>
 
@@ -458,17 +463,17 @@
           
             <a href="/tags/Cloud9/" rel="tag">#Cloud9</a>
           
-            <a href="/tags/rails/" rel="tag">#rails</a>
-          
             <a href="/tags/rubyonrails/" rel="tag">#rubyonrails</a>
           
-            <a href="/tags/facebook/" rel="tag">#facebook</a>
+            <a href="/tags/rails/" rel="tag">#rails</a>
           
             <a href="/tags/omniauth/" rel="tag">#omniauth</a>
           
             <a href="/tags/devise/" rel="tag">#devise</a>
           
             <a href="/tags/koala/" rel="tag">#koala</a>
+          
+            <a href="/tags/facebook/" rel="tag">#facebook</a>
           
         </div>
       
@@ -513,11 +518,11 @@
           
   <div class="comments" id="comments">
     
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
+      <div class="fb-comments"
+           data-href="https://oawan.me/2016/rails-devise-using-facebook-signup-login/"
+           data-numposts="10"
+           data-width="100%"
+           data-colorscheme="light">
       </div>
     
   </div>
@@ -662,7 +667,7 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 強力驅動
 </div>
 
 <div class="theme-info">
@@ -770,7 +775,7 @@
     <script type="text/javascript">
       var disqus_shortname = 'oawan';
       var disqus_identifier = '2016/rails-devise-using-facebook-signup-login/';
-      var disqus_title = '[Rails] Devise 使用 Facebook 註冊與登入';
+      var disqus_title = "[Rails] Devise 使用 Facebook 註冊與登入";
       var disqus_url = 'https://oawan.me/2016/rails-devise-using-facebook-signup-login/';
 
       function run_disqus_script(disqus_script){
@@ -790,8 +795,10 @@
 
 
 
+
   
   
+
   
 
   
