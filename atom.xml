@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://oawan.me/"/>
-  <updated>2016-09-29T19:41:43.864Z</updated>
+  <updated>2016-09-29T19:45:42.884Z</updated>
   <id>https://oawan.me/</id>
   
   <author>
@@ -20,16 +20,18 @@
     <link href="https://oawan.me/2016/%E7%94%9F%E6%B4%BB-%E9%97%9C%E6%96%BC%E6%9C%80%E8%BF%91%E5%9C%A8%E5%BF%99%E7%9A%84%E4%BA%8B/"/>
     <id>https://oawan.me/2016/生活-關於最近在忙的事/</id>
     <published>2016-09-29T02:46:01.000Z</published>
-    <updated>2016-09-29T19:41:43.864Z</updated>
+    <updated>2016-09-29T19:45:42.884Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;/img/program/For-Oi.jpg&quot; alt=&quot;Oi&quot;&gt;&lt;br&gt;　　嗯～已經 &lt;strong&gt;富奸&lt;/strong&gt; 了幾個多月，拖欠了一拖拉庫想寫的 Blog 文章還沒打，在趕稿前，就先來說說這個月究竟都在忙些什麼，也順便紀錄當個 &lt;span class=&quot;oaspan oaspan-reverse&quot;&gt;里程碑&lt;/span&gt;！&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;hr&gt;
 &lt;h1 id=&quot;關於想寫的文章&quot;&gt;&lt;a href=&quot;#關於想寫的文章&quot; class=&quot;headerlink&quot; title=&quot;# 關於想寫的文章&quot;&gt;&lt;/a&gt;&lt;strong&gt;# 關於想寫的文章&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;　　其實從 &lt;strong&gt;七月&lt;/strong&gt; 開始，就已經積欠了幾篇想寫的 Blog 文章，包含七月 &lt;span class=&quot;oaspan oaspan-red&quot;&gt;小凱蘿生日&lt;/span&gt; 的台東遊、各地的&lt;strong&gt;美食食記&lt;/strong&gt;、&lt;strong&gt;每月看電影&lt;/strong&gt; 的心得整理和一些技術相關的心得文章等。太多想寫的東西，但也太懶太拖了，嗯 … 繼續加油吧！&lt;/p&gt;
+&lt;hr&gt;
 &lt;h1 id=&quot;最近在忙的事&quot;&gt;&lt;a href=&quot;#最近在忙的事&quot; class=&quot;headerlink&quot; title=&quot;# 最近在忙的事&quot;&gt;&lt;/a&gt;&lt;strong&gt;# 最近在忙的事&lt;/strong&gt;&lt;/h1&gt;&lt;h2 id=&quot;投影片-Framework&quot;&gt;&lt;a href=&quot;#投影片-Framework&quot; class=&quot;headerlink&quot; title=&quot;投影片 Framework&quot;&gt;&lt;/a&gt;投影片 Framework&lt;/h2&gt;&lt;p&gt;　　上個月在臉書的 &lt;a href=&quot;https://www.facebook.com/groups/f2e.tw/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;span class=&quot;oaspan oaspan-reverse&quot;&gt;Front-End Developers Taiwan&lt;/span&gt;&lt;/a&gt; 看到幾位大大推薦幾個有趣的 &lt;strong&gt;投影片&lt;/strong&gt; framework，最吸引我的就是 &lt;a href=&quot;https://github.com/hakimel/reveal.js&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;reveal.js&lt;/strong&gt;&lt;/a&gt; 和 &lt;a href=&quot;https://github.com/impress/impress.js&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;impress.js&lt;/strong&gt;&lt;/a&gt;！尤其是後者，很容易上手，也很讓人驚嘆，雖然後來我才發現開發者的靈感是來自頗負盛名的 &lt;a href=&quot;https://prezi.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;Prezi&lt;/strong&gt;&lt;/a&gt;，但對於能以這樣的方式呈現投影片，只能說真的 &lt;strong&gt;太　酷　惹！&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&quot;台灣製造！？&quot;&gt;&lt;a href=&quot;#台灣製造！？&quot; class=&quot;headerlink&quot; title=&quot;台灣製造！？&quot;&gt;&lt;/a&gt;台灣製造！？&lt;/h2&gt;&lt;p&gt;　　在玩過 &lt;strong&gt;impress.js&lt;/strong&gt; 後，很想立刻推薦給朋友；不過，對於要製作一個好玩好看 &lt;strong&gt;impress.js&lt;/strong&gt; 投影片，除了要有良好的 &lt;strong&gt;呈現設計&lt;/strong&gt; 外，還要略懂 &lt;strong&gt;HTML&lt;/strong&gt; 和 &lt;strong&gt;CSS&lt;/strong&gt; (嚴格來說…啦)；如果因為這樣就錯過這麼棒的東西實在太可惜了！&lt;/p&gt;
 &lt;p&gt;　　雖然 &lt;strong&gt;impress.js&lt;/strong&gt; 的 &lt;a href=&quot;https://github.com/impress/impress.js/wiki/Examples-and-demos#authoring-tools&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;wiki&lt;/strong&gt;&lt;/a&gt; 有一些製作工具，BUT！基於 &lt;strong&gt;超想分享&lt;/strong&gt;，加上正在學習 &lt;a href=&quot;https://facebook.github.io/react/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React&lt;/a&gt;，再再加上總想來點 &lt;strong&gt;台灣製造&lt;/strong&gt; 的情懷，於是就熱血地展開這個月的開發之路 XDD&lt;/p&gt;
-&lt;p&gt;　　動機已經提過了，現在來聊聊目的，其實很簡單，就是讓想製作 &lt;strong&gt;impress.js&lt;/strong&gt; 投影片的人，能有一個 &lt;strong&gt;WYSIWYG (所見即所得)&lt;/strong&gt; 的編輯器，在不用撰寫任何程式碼 (這裡指的是 HTML、CSS 和 JS) 的情況下，作出作品來 &lt;del&gt;&lt;em&gt;炫耀&lt;/em&gt;&lt;/del&gt; 分享給朋友看！
-　　&lt;/p&gt;
+&lt;p&gt;　　動機已經提過了，現在來聊聊目的，其實很簡單，就是讓想製作 &lt;strong&gt;impress.js&lt;/strong&gt; 投影片的人，能有一個 &lt;strong&gt;WYSIWYG (所見即所得)&lt;/strong&gt; 的編輯器，在不用撰寫任何程式碼 (這裡指的是 HTML、CSS 和 JS) 的情況下，作出作品來 &lt;del&gt;&lt;em&gt;炫耀&lt;/em&gt;&lt;/del&gt; 分享給朋友看！&lt;/p&gt;
+&lt;hr&gt;
 &lt;h1 id=&quot;練習-amp-開發&quot;&gt;&lt;a href=&quot;#練習-amp-開發&quot; class=&quot;headerlink&quot; title=&quot;# 練習 &amp;amp; 開發&quot;&gt;&lt;/a&gt;&lt;strong&gt;# 練習 &amp;amp; 開發&lt;/strong&gt;&lt;/h1&gt;&lt;h2 id=&quot;Start-with…&quot;&gt;&lt;a href=&quot;#Start-with…&quot; class=&quot;headerlink&quot; title=&quot;Start with…&quot;&gt;&lt;/a&gt;Start with…&lt;/h2&gt;&lt;p&gt;　　這個作品主要是以 &lt;strong&gt;React&lt;/strong&gt; 搭配 &lt;a href=&quot;http://redux.js.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;Redux&lt;/strong&gt;&lt;/a&gt; 開發製作 &lt;strong&gt;impress.js&lt;/strong&gt; 的編輯器。&lt;br&gt;　　我的 &lt;strong&gt;開發環境&lt;/strong&gt; 是用 &lt;span class=&quot;oaspan&quot;&gt;Cloud9&lt;/span&gt;，這是近來習慣使用的 Online Editor，原因無它，就是 &lt;strong&gt;方便&lt;/strong&gt; 和 &lt;strong&gt;好 DEMO&lt;/strong&gt;。&lt;br&gt;　　&lt;br&gt;　　而開始的樣板是使用 &lt;a href=&quot;https://github.com/gaearon&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Dan&lt;/a&gt; 的 &lt;a href=&quot;https://github.com/gaearon/react-hot-boilerplate&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;react-hot-boilerplate&lt;/strong&gt;&lt;/a&gt;，為的是它提供的 &lt;strong&gt;Webpack&lt;/strong&gt;、&lt;strong&gt;webpack-dev-server&lt;/strong&gt;、&lt;strong&gt;react-hot-loader&lt;/strong&gt; 等，使用這個樣板省了不少建置開發環境的時間；不過，就在開發到一半時，Dan 在 README 中寫了 &lt;span class=&quot;oaspan oaspan-red&quot;&gt;This Is Experimental and Incomplete!&lt;/span&gt; … 尷尬 XDD&lt;/p&gt;
 &lt;h2 id=&quot;練習項目&quot;&gt;&lt;a href=&quot;#練習項目&quot; class=&quot;headerlink&quot; title=&quot;練習項目&quot;&gt;&lt;/a&gt;練習項目&lt;/h2&gt;&lt;p&gt;　　除了邊學邊寫 &lt;strong&gt;React&lt;/strong&gt; 和 &lt;strong&gt;Redux&lt;/strong&gt; 外，在開發過程中也幾乎使用 &lt;strong&gt;ES6 (ES2015)&lt;/strong&gt; 和 &lt;strong&gt;SCSS (SASS)&lt;/strong&gt; 作撰寫，讓自己更熟悉它們。&lt;br&gt;　　因需求所致，我也選了幾個 framework 和 library 來學習和使用：
 　　&lt;/p&gt;
@@ -40,12 +42,14 @@
 &lt;li&gt;部分動畫呈現：　&lt;a href=&quot;https://daneden.github.io/animate.css/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;Animate.css&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;正在改善&quot;&gt;&lt;a href=&quot;#正在改善&quot; class=&quot;headerlink&quot; title=&quot;正在改善&quot;&gt;&lt;/a&gt;正在改善&lt;/h2&gt;&lt;p&gt;　　在大致的功能上已經完成，但於 &lt;strong&gt;各家瀏覽器&lt;/strong&gt; 和 &lt;strong&gt;螢幕尺寸&lt;/strong&gt; 的支援度上還有很大的問題；而目前在 Mobile 和 Pad 上的體驗不佳，所以基本上目前是不支援的，所以還有很多的問題需要思考和改善！&lt;/p&gt;
+&lt;hr&gt;
 &lt;h1 id=&quot;這就是-Oi&quot;&gt;&lt;a href=&quot;#這就是-Oi&quot; class=&quot;headerlink&quot; title=&quot;# 這就是 [ Oi ]&quot;&gt;&lt;/a&gt;&lt;strong&gt;# 這就是 [ Oi ]&lt;/strong&gt;&lt;/h1&gt;&lt;h2 id=&quot;名字是怎麼回事？&quot;&gt;&lt;a href=&quot;#名字是怎麼回事？&quot; class=&quot;headerlink&quot; title=&quot;名字是怎麼回事？&quot;&gt;&lt;/a&gt;名字是怎麼回事？&lt;/h2&gt;&lt;p&gt;　　為什麼叫作 &lt;strong&gt;[ Oi ]&lt;/strong&gt; 呢？&lt;br&gt;　　是因為在看到 &lt;strong&gt;impress.js&lt;/strong&gt; 當下真的讓我很興奮，我也希望這個編輯器，能讓人感到興奮，而且很 &lt;strong&gt;印象深刻&lt;/strong&gt;！&lt;br&gt;　　所以，&lt;strong&gt;[ Oi ]&lt;/strong&gt; 就是希望能讓人感到 &lt;strong&gt;Oh! impressive!&lt;/strong&gt;，哈。&lt;/p&gt;
 &lt;h2 id=&quot;Made-by-Oi&quot;&gt;&lt;a href=&quot;#Made-by-Oi&quot; class=&quot;headerlink&quot; title=&quot;Made by [ Oi ]&quot;&gt;&lt;/a&gt;Made by &lt;strong&gt;[ Oi ]&lt;/strong&gt;&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;目前僅全力支援 &lt;strong&gt;電腦版 Chrome&lt;/strong&gt; 作良好的體驗，如無法順利預覽請麻煩轉用 Chrome，感恩。&lt;br&gt;操作：在底下畫面中使用 &lt;strong&gt;上下左右&lt;/strong&gt; 或 &lt;strong&gt;空白鍵&lt;/strong&gt; 即可。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;iframe src=&quot;https://oawan.me/Oi&quot; width=&quot;900&quot; height=&quot;500&quot;&gt;&lt;/iframe&gt;
 
+&lt;hr&gt;
 &lt;h1 id=&quot;後記&quot;&gt;&lt;a href=&quot;#後記&quot; class=&quot;headerlink&quot; title=&quot;後記&quot;&gt;&lt;/a&gt;&lt;strong&gt;後記&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;　　以上，就是為什麼會累積這麼多文章沒寫，歡迎捧捧場，可以的話麻煩給些鼓勵和建議唷！ - &lt;a href=&quot;https://oawan.me/Oi&quot;&gt;&lt;span class=&quot;oaspan oaspan-red oaspan-reverse&quot;&gt;&lt;strong&gt;[ Oi ]&lt;/strong&gt;&lt;/span&gt;&lt;/a&gt;。&lt;br&gt;　　也非常感謝給我 &lt;i class=&quot;fa fa-star&quot;&gt;&lt;/i&gt; 的大大們，希望這個作品能讓更多人知道，也希望能有更多人能一起開發！&lt;br&gt;　　&lt;br&gt;That’s it, &lt;strong&gt;DONE!&lt;/strong&gt;&lt;/p&gt;
 </content>
     
@@ -945,9 +949,9 @@
     
       <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
     
-      <category term="gem" scheme="https://oawan.me/tags/gem/"/>
-    
       <category term="ruby" scheme="https://oawan.me/tags/ruby/"/>
+    
+      <category term="gem" scheme="https://oawan.me/tags/gem/"/>
     
       <category term="rvm" scheme="https://oawan.me/tags/rvm/"/>
     
@@ -1127,7 +1131,7 @@ IDE  ：Cloud 9
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;3-Modal-popup-FB-plugin&quot;&gt;&lt;a href=&quot;#3-Modal-popup-FB-plugin&quot; class=&quot;headerlink&quot; title=&quot;3. Modal(popup) + FB plugin&quot;&gt;&lt;/a&gt;3. Modal(popup) + FB plugin&lt;/h2&gt;&lt;p&gt;　　然而，我遇到的問題是，當我使用 Bootstrap modal 作文章 preview 時，FB share button 只有在第一次 modal show 會出現，而檢視其他 modal 時並沒有觸發更新，導致 FB plugin 失效了！目前我的解決辦法就是在 modal show 時，利用 &lt;strong&gt;FB.XFBML.parse()&lt;/strong&gt; 刷新，以以上的程式碼為範例，於 &lt;code&gt;$ -&amp;gt;&lt;/code&gt; 中加入：&lt;br&gt;&lt;figure class=&quot;highlight coffeescript&quot;&gt;&lt;figcaption&gt;&lt;span&gt;fb_plugin.coffee&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ -&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　loadFacebookSDK()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　bindFacebookEvents() &lt;span class=&quot;keyword&quot;&gt;unless&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.fbEventsBound&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　$(&lt;span class=&quot;string&quot;&gt;&#39;#myModal&#39;&lt;/span&gt;).&lt;span class=&quot;literal&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;show.bs.modal&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　FB.XFBML.parse()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  ...&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h2 id=&quot;4-偷吃步？&quot;&gt;&lt;a href=&quot;#4-偷吃步？&quot; class=&quot;headerlink&quot; title=&quot;4. 偷吃步？&quot;&gt;&lt;/a&gt;4. 偷吃步？&lt;/h2&gt;&lt;p&gt;　　當然，如果想快速的達到這個目的，也不用額外寫一支 script，可以在需要用到此 plugin 的頁面直接嵌入 script 就好。&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　// 官方 plugin&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　(function(d, s, id) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　var js, fjs = d.getElementsByTagName(s)[0];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　if (d.getElementById(id)) return;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　js = d.createElement(s); js.id = id;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　js.src = &quot;//connect.facebook.net/zh_TW/sdk.js#xfbml=1&amp;amp;version=v2.5&quot;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　fjs.parentNode.insertBefore(js, fjs);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&amp;#125;(document, &#39;script&#39;, &#39;facebook-jssdk&#39;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　// 讀取此頁時直接利用 FB.XFBML.parse() 刷新&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　$(FB.XFBML.parse());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;4-偷吃步？&quot;&gt;&lt;a href=&quot;#4-偷吃步？&quot; class=&quot;headerlink&quot; title=&quot;4. 偷吃步？&quot;&gt;&lt;/a&gt;4. 偷吃步？&lt;/h2&gt;&lt;p&gt;　　當然，如果想快速的達到這個目的，也不用額外寫一支 script，可以在需要用到此 plugin 的頁面直接嵌入 script 就好。&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;javascript&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&lt;span class=&quot;comment&quot;&gt;// 官方 plugin&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;d, s, id&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; js, fjs = d.getElementsByTagName(s)[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (d.getElementById(id)) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　js = d.createElement(s); js.id = id;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　js.src = &lt;span class=&quot;string&quot;&gt;&quot;//connect.facebook.net/zh_TW/sdk.js#xfbml=1&amp;amp;version=v2.5&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　fjs.parentNode.insertBefore(js, fjs);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&amp;#125;(&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;script&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;facebook-jssdk&#39;&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　&lt;span class=&quot;comment&quot;&gt;// 讀取此頁時直接利用 FB.XFBML.parse() 刷新&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　$(FB.XFBML.parse());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;That’s it, &lt;strong&gt;DONE!&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;【參考資料】&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -1338,9 +1342,9 @@ IDE  ：Cloud 9
     
       <category term="rails" scheme="https://oawan.me/tags/rails/"/>
     
-      <category term="gem" scheme="https://oawan.me/tags/gem/"/>
-    
       <category term="ruby" scheme="https://oawan.me/tags/ruby/"/>
+    
+      <category term="gem" scheme="https://oawan.me/tags/gem/"/>
     
       <category term="CarrierWave" scheme="https://oawan.me/tags/CarrierWave/"/>
     
@@ -1411,9 +1415,9 @@ IDE  ：Cloud 9
     
       <category term="rails" scheme="https://oawan.me/tags/rails/"/>
     
-      <category term="gem" scheme="https://oawan.me/tags/gem/"/>
-    
       <category term="SEO" scheme="https://oawan.me/tags/SEO/"/>
+    
+      <category term="gem" scheme="https://oawan.me/tags/gem/"/>
     
       <category term="friendly_id" scheme="https://oawan.me/tags/friendly-id/"/>
     
