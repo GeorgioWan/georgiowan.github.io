@@ -1003,9 +1003,9 @@
     
       <category term="rails" scheme="https://oawan.me/tags/rails/"/>
     
-      <category term="omniauth" scheme="https://oawan.me/tags/omniauth/"/>
-    
       <category term="devise" scheme="https://oawan.me/tags/devise/"/>
+    
+      <category term="omniauth" scheme="https://oawan.me/tags/omniauth/"/>
     
       <category term="koala" scheme="https://oawan.me/tags/koala/"/>
     
@@ -1064,11 +1064,11 @@
     
       <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
     
+      <category term="rvm" scheme="https://oawan.me/tags/rvm/"/>
+    
       <category term="gem" scheme="https://oawan.me/tags/gem/"/>
     
       <category term="ruby" scheme="https://oawan.me/tags/ruby/"/>
-    
-      <category term="rvm" scheme="https://oawan.me/tags/rvm/"/>
     
   </entry>
   
@@ -1142,8 +1142,6 @@ IDE  ：Cloud 9
     
       <category term="rails" scheme="https://oawan.me/tags/rails/"/>
     
-      <category term="devise" scheme="https://oawan.me/tags/devise/"/>
-    
       <category term="actionmailer" scheme="https://oawan.me/tags/actionmailer/"/>
     
       <category term="gmail" scheme="https://oawan.me/tags/gmail/"/>
@@ -1151,6 +1149,8 @@ IDE  ：Cloud 9
       <category term="mailgun" scheme="https://oawan.me/tags/mailgun/"/>
     
       <category term="cloud9" scheme="https://oawan.me/tags/cloud9/"/>
+    
+      <category term="devise" scheme="https://oawan.me/tags/devise/"/>
     
   </entry>
   
@@ -1215,13 +1215,13 @@ IDE  ：Cloud 9
     
       <category term="ruby" scheme="https://oawan.me/tags/ruby/"/>
     
-      <category term="SEO" scheme="https://oawan.me/tags/SEO/"/>
-    
       <category term="Metadata" scheme="https://oawan.me/tags/Metadata/"/>
     
       <category term="metatag" scheme="https://oawan.me/tags/metatag/"/>
     
       <category term="meta-tags" scheme="https://oawan.me/tags/meta-tags/"/>
+    
+      <category term="SEO" scheme="https://oawan.me/tags/SEO/"/>
     
       <category term="OpenGraph" scheme="https://oawan.me/tags/OpenGraph/"/>
     
