@@ -997,11 +997,11 @@
     
       <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
-      <category term="rails" scheme="https://oawan.me/tags/rails/"/>
+      <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
     
       <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
     
-      <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
+      <category term="rails" scheme="https://oawan.me/tags/rails/"/>
     
       <category term="omniauth" scheme="https://oawan.me/tags/omniauth/"/>
     
@@ -1136,11 +1136,11 @@ IDE  ：Cloud 9
     
       <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
-      <category term="rails" scheme="https://oawan.me/tags/rails/"/>
+      <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
     
       <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
     
-      <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
+      <category term="rails" scheme="https://oawan.me/tags/rails/"/>
     
       <category term="devise" scheme="https://oawan.me/tags/devise/"/>
     
@@ -1215,13 +1215,13 @@ IDE  ：Cloud 9
     
       <category term="ruby" scheme="https://oawan.me/tags/ruby/"/>
     
-      <category term="SEO" scheme="https://oawan.me/tags/SEO/"/>
-    
       <category term="Metadata" scheme="https://oawan.me/tags/Metadata/"/>
     
       <category term="metatag" scheme="https://oawan.me/tags/metatag/"/>
     
       <category term="meta-tags" scheme="https://oawan.me/tags/meta-tags/"/>
+    
+      <category term="SEO" scheme="https://oawan.me/tags/SEO/"/>
     
       <category term="OpenGraph" scheme="https://oawan.me/tags/OpenGraph/"/>
     
@@ -1271,9 +1271,9 @@ IDE  ：Cloud 9
     
       <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
-      <category term="rails" scheme="https://oawan.me/tags/rails/"/>
-    
       <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
+    
+      <category term="rails" scheme="https://oawan.me/tags/rails/"/>
     
       <category term="facebook" scheme="https://oawan.me/tags/facebook/"/>
     
@@ -1319,9 +1319,9 @@ IDE  ：Cloud 9
     
       <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
-      <category term="rails" scheme="https://oawan.me/tags/rails/"/>
-    
       <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
+    
+      <category term="rails" scheme="https://oawan.me/tags/rails/"/>
     
       <category term="respond_to" scheme="https://oawan.me/tags/respond-to/"/>
     
