@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://oawan.me/"/>
-  <updated>2016-10-17T20:44:39.047Z</updated>
+  <updated>2016-10-18T01:54:20.591Z</updated>
   <id>https://oawan.me/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="https://oawan.me/2016/%E7%94%9F%E6%B4%BB-%E7%9F%A5%E9%81%93%E4%BD%A0%E5%80%91%E7%9A%84%E4%BA%8B%E4%B9%8B%E5%BE%8C/"/>
     <id>https://oawan.me/2016/生活-知道你們的事之後/</id>
     <published>2016-10-17T09:47:44.000Z</published>
-    <updated>2016-10-17T20:44:39.047Z</updated>
+    <updated>2016-10-18T01:54:20.591Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;img src=&quot;/img/life/2016/永無島.png&quot; alt=&quot;永無島&quot;&gt;&lt;br&gt;　　&lt;strong&gt;和你一起變老，是我ㄧ生中最快樂的事。&lt;/strong&gt;&lt;br&gt;　　　　　　　　　　　　　　　　－ 安妮朵拉《永無島》&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img src=&quot;/img/life/2016/永無島.png&quot; alt=&quot;永無島&quot;&gt;&lt;br&gt;　　&lt;strong&gt;在這裡和你一起變老，是我ㄧ生中最快樂的事。&lt;/strong&gt;&lt;br&gt;　　　　　　　　　　　　　　　　－ 安妮朵拉《永無島》&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;strong&gt;《永無島》&lt;/strong&gt;是我很喜歡的一首歌和ㄧ支 MV，&lt;br&gt;由於劇本和演員的演技關係，讓我覺得這是ㄧ支很值得記住和分享的 MV：&lt;/p&gt;
@@ -43,7 +43,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;/img/life/2016/永無島.png&quot; alt=&quot;永無島&quot;&gt;&lt;br&gt;　　&lt;strong&gt;和你一起變老，是我ㄧ生中最快樂的事。&lt;/strong&gt;&lt;br&gt;　　　　　　　　　　　　　　　　－ 安妮朵拉《永無島》&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;/img/life/2016/永無島.png&quot; alt=&quot;永無島&quot;&gt;&lt;br&gt;　　&lt;strong&gt;在這裡和你一起變老，是我ㄧ生中最快樂的事。&lt;/strong&gt;&lt;br&gt;　　　　　　　　　　　　　　　　－ 安妮朵拉《永無島》&lt;/p&gt;
     
     </summary>
     
@@ -997,11 +997,11 @@
     
       <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
-      <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
+      <category term="rails" scheme="https://oawan.me/tags/rails/"/>
     
       <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
     
-      <category term="rails" scheme="https://oawan.me/tags/rails/"/>
+      <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
     
       <category term="omniauth" scheme="https://oawan.me/tags/omniauth/"/>
     
@@ -1136,11 +1136,11 @@ IDE  ：Cloud 9
     
       <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
-      <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
+      <category term="rails" scheme="https://oawan.me/tags/rails/"/>
     
       <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
     
-      <category term="rails" scheme="https://oawan.me/tags/rails/"/>
+      <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
     
       <category term="devise" scheme="https://oawan.me/tags/devise/"/>
     
@@ -1271,9 +1271,9 @@ IDE  ：Cloud 9
     
       <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
-      <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
-    
       <category term="rails" scheme="https://oawan.me/tags/rails/"/>
+    
+      <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
     
       <category term="facebook" scheme="https://oawan.me/tags/facebook/"/>
     
@@ -1319,9 +1319,9 @@ IDE  ：Cloud 9
     
       <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
-      <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
-    
       <category term="rails" scheme="https://oawan.me/tags/rails/"/>
+    
+      <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
     
       <category term="respond_to" scheme="https://oawan.me/tags/respond-to/"/>
     
