@@ -5,11 +5,14 @@
   
 
 
-<html class="theme-next muse use-motion">
+<html class="theme-next muse use-motion" lang="zh-tw">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
 
 
 
@@ -29,9 +32,12 @@
 
 
 
+
+
+
   
   
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -71,12 +77,12 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="攻城獅筆記,rubyonrails,rails,facebook,turbolinks,FacebookPlugin,FacebookShare," />
+  <meta name="keywords" content="攻城獅筆記,rails,rubyonrails,turbolinks,facebook,FacebookPlugin,FacebookShare," />
 
 
 
@@ -87,7 +93,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
 
 
 
@@ -97,45 +103,53 @@
 
 
 
-<meta name="description" content="目的　　在開發的作品中，每篇貼文都希望能透過 fb share 的功能，達到分享該文資訊和宣傳本作品的作用，所以決定在貼文中加入此一功能，讓使用者在宣傳自己的貼文時，也能夠替我們宣傳！
-前言　　凡事與社群網站接軌，有好無壞！">
+<meta name="description" content="目的　　在開發的作品中，每篇貼文都希望能透過 fb share 的功能，達到分享該文資訊和宣傳本作品的作用，所以決定在貼文中加入此一功能，讓使用者在宣傳自己的貼文時，也能夠替我們宣傳！ 前言　　凡事與社群網站接軌，有好無壞！">
+<meta name="keywords" content="攻城獅筆記,rails,rubyonrails,turbolinks,facebook,FacebookPlugin,FacebookShare">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Rails] 解決 modal update 時 FB plugin (share, like) reload">
 <meta property="og:url" content="https://oawan.me/2015/rails-solving-modal-update-fb-plugin-share-like-reload/index.html">
 <meta property="og:site_name" content="新樂街口的三角窗">
-<meta property="og:description" content="目的　　在開發的作品中，每篇貼文都希望能透過 fb share 的功能，達到分享該文資訊和宣傳本作品的作用，所以決定在貼文中加入此一功能，讓使用者在宣傳自己的貼文時，也能夠替我們宣傳！
-前言　　凡事與社群網站接軌，有好無壞！">
+<meta property="og:description" content="目的　　在開發的作品中，每篇貼文都希望能透過 fb share 的功能，達到分享該文資訊和宣傳本作品的作用，所以決定在貼文中加入此一功能，讓使用者在宣傳自己的貼文時，也能夠替我們宣傳！ 前言　　凡事與社群網站接軌，有好無壞！">
 <meta property="og:image" content="https://oawan.me/img/program/rzv-illustration-facebook.jpg">
 <meta property="og:updated_time" content="2016-05-27T08:48:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Rails] 解決 modal update 時 FB plugin (share, like) reload">
-<meta name="twitter:description" content="目的　　在開發的作品中，每篇貼文都希望能透過 fb share 的功能，達到分享該文資訊和宣傳本作品的作用，所以決定在貼文中加入此一功能，讓使用者在宣傳自己的貼文時，也能夠替我們宣傳！
-前言　　凡事與社群網站接軌，有好無壞！">
+<meta name="twitter:description" content="目的　　在開發的作品中，每篇貼文都希望能透過 fb share 的功能，達到分享該文資訊和宣傳本作品的作用，所以決定在貼文中加入此一功能，讓使用者在宣傳自己的貼文時，也能夠替我們宣傳！ 前言　　凡事與社群網站接軌，有好無壞！">
 <meta name="twitter:image" content="https://oawan.me/img/program/rzv-illustration-facebook.jpg">
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '作者'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
 
 
-
   <link rel="canonical" href="https://oawan.me/2015/rails-solving-modal-update-fb-plugin-share-like-reload/"/>
 
 
-  <title> [Rails] 解決 modal update 時 FB plugin (share, like) reload | 新樂街口的三角窗 </title>
+
+
+
+  <title>[Rails] 解決 modal update 時 FB plugin (share, like) reload | 新樂街口的三角窗</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
@@ -161,14 +175,18 @@
 
 
 
+
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-72706538-2', 'auto');
   ga('send', 'pageview');
 </script>
+
+
 
 
 
@@ -183,29 +201,33 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">新樂街口的三角窗</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">新樂街口的三角窗</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">我，在這裡，享受等你的時光。</p>
+      
   </div>
-  <p class="site-subtitle">我，在這裡，享受等你的時光。</p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -273,6 +295,8 @@
   
 </nav>
 
+
+
  </div>
     </header>
 
@@ -286,49 +310,64 @@
     
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  
+    <link itemprop="mainEntityOfPage" href="https://oawan.me/2015/rails-solving-modal-update-fb-plugin-share-like-reload/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OAwan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/oA.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新樂街口的三角窗">
+    </span>
+
     
       <header class="post-header">
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                [Rails] 解決 modal update 時 FB plugin (share, like) reload
-              
-            
-          </h1>
+          <h1 class="post-title" itemprop="name headline">[Rails] 解決 modal update 時 FB plugin (share, like) reload</h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2015-12-30T13:58:00+00:00" content="2015-12-30">
-              2015-12-30
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2015-12-30T13:58:00+00:00">
+                2015-12-30
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分類於</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Programmer/" itemprop="url" rel="index">
                     <span itemprop="name">Programmer</span>
                   </a>
@@ -336,7 +375,6 @@
 
                 
                 
-
               
             </span>
           
@@ -344,28 +382,31 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2015/rails-solving-modal-update-fb-plugin-share-like-reload/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2015/rails-solving-modal-update-fb-plugin-share-like-reload/" itemprop="commentsCount">0</span> comments
+                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2015/rails-solving-modal-update-fb-plugin-share-like-reload/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
           
 
           
-            &nbsp; | &nbsp;
-            <div class="fb-like" data-layout="button_count" data-share="true"></div>
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
           
 
           
-              &nbsp; | &nbsp;
-              <span class="page-pv"><i class="fa fa-eye"></i>
-              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-              </span>
+
           
+
         </div>
       </header>
     
@@ -384,11 +425,11 @@
 <h2 id="2-Turbolinks-FB-plugin"><a href="#2-Turbolinks-FB-plugin" class="headerlink" title="2. Turbolinks + FB plugin"></a>2. Turbolinks + FB plugin</h2><p>　　在開發 rails 中常遇到 turbolinks 導致 header 中 js 沒有 reload 的問題，我們可以透過一些方法解決：</p>
 <ul>
 <li>使用 <a href="https://github.com/kossnocorp/jquery.turbolinks" target="_blank" rel="external"><strong>jquery-turbolinks gem</strong></a> 解決 jquery 部份</li>
-<li>而 FB plugin 的解決方法則如下：<figure class="highlight coffeescript"><figcaption><span>fb_plugin.coffee</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">$ -&gt;</span><br><span class="line">　<span class="comment"># 讀取 FB sdk.js</span></span><br><span class="line">　loadFacebookSDK()</span><br><span class="line">　<span class="comment"># 檢查是否 bind 過 fb-root，若否則執行</span></span><br><span class="line">　bindFacebookEvents() <span class="keyword">unless</span> <span class="built_in">window</span>.fbEventsBound</span><br><span class="line"><span class="function"> </span><br><span class="line"><span class="title">bindFacebookEvents</span> = -&gt;</span></span><br><span class="line">　$(<span class="built_in">document</span>)</span><br><span class="line">　　<span class="comment"># 將 fb-root detach 起來</span></span><br><span class="line">　　.<span class="literal">on</span>(<span class="string">'page:fetch'</span>, saveFacebookRoot)</span><br><span class="line">　　<span class="comment"># 放回 fb-root</span></span><br><span class="line">　　.<span class="literal">on</span>(<span class="string">'page:change'</span>, restoreFacebookRoot)</span><br><span class="line">　　<span class="comment"># 用 FB.XFBML.parse() re-parse all of the XFBML on a page</span></span><br><span class="line">　　.<span class="literal">on</span>(<span class="string">'page:load'</span>, <span class="function">-&gt;</span> FB?.XFBML.parse())</span><br><span class="line">　@fbEventsBound = <span class="literal">true</span></span><br><span class="line"><span class="function"></span><br><span class="line"><span class="title">saveFacebookRoot</span> = -&gt;</span></span><br><span class="line">　<span class="keyword">if</span> $(<span class="string">'#fb-root'</span>).length</span><br><span class="line">　　@fbRoot = $(<span class="string">'#fb-root'</span>).detach()</span><br><span class="line"><span class="function"></span><br><span class="line"><span class="title">restoreFacebookRoot</span> = -&gt;</span></span><br><span class="line">　<span class="keyword">if</span> @fbRoot?</span><br><span class="line">　　<span class="keyword">if</span> $(<span class="string">'#fb-root'</span>).length</span><br><span class="line">　　　$(<span class="string">'#fb-root'</span>).replaceWith @fbRoot</span><br><span class="line">　　<span class="keyword">else</span></span><br><span class="line">　　　$(<span class="string">'body'</span>).append @fbRoot</span><br><span class="line"><span class="function"></span><br><span class="line"><span class="title">loadFacebookSDK</span> = -&gt;</span></span><br><span class="line">　<span class="built_in">window</span>.fbAsyncInit = initializeFacebookSDK</span><br><span class="line">　$.getScript(<span class="string">"//connect.facebook.net/zh_TW/all.js#xfbml=1&amp;version=v2.5"</span>)</span><br><span class="line"><span class="function"></span><br><span class="line"><span class="title">initializeFacebookSDK</span> = -&gt;</span></span><br><span class="line">　FB.init</span><br><span class="line">　　appId  : <span class="string">'YOUR_APP_ID'</span></span><br><span class="line">　　status : <span class="literal">true</span></span><br><span class="line">　　cookie : <span class="literal">true</span></span><br><span class="line">　　xfbml  : <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<li>而 FB plugin 的解決方法則如下：<figure class="highlight coffeescript"><figcaption><span>fb_plugin.coffee</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">$ -&gt;</div><div class="line">　<span class="comment"># 讀取 FB sdk.js</span></div><div class="line">　loadFacebookSDK()</div><div class="line">　<span class="comment"># 檢查是否 bind 過 fb-root，若否則執行</span></div><div class="line">　bindFacebookEvents() <span class="keyword">unless</span> <span class="built_in">window</span>.fbEventsBound</div><div class="line"><span class="function"> </span></div><div class="line"><span class="title">bindFacebookEvents</span> = -&gt;</div><div class="line">　$(<span class="built_in">document</span>)</div><div class="line">　　<span class="comment"># 將 fb-root detach 起來</span></div><div class="line">　　.<span class="literal">on</span>(<span class="string">'page:fetch'</span>, saveFacebookRoot)</div><div class="line">　　<span class="comment"># 放回 fb-root</span></div><div class="line">　　.<span class="literal">on</span>(<span class="string">'page:change'</span>, restoreFacebookRoot)</div><div class="line">　　<span class="comment"># 用 FB.XFBML.parse() re-parse all of the XFBML on a page</span></div><div class="line">　　.<span class="literal">on</span>(<span class="string">'page:load'</span>, <span class="function">-&gt;</span> FB?.XFBML.parse())</div><div class="line">　@fbEventsBound = <span class="literal">true</span></div><div class="line"><span class="function"></span></div><div class="line"><span class="title">saveFacebookRoot</span> = -&gt;</div><div class="line">　<span class="keyword">if</span> $(<span class="string">'#fb-root'</span>).length</div><div class="line">　　@fbRoot = $(<span class="string">'#fb-root'</span>).detach()</div><div class="line"><span class="function"></span></div><div class="line"><span class="title">restoreFacebookRoot</span> = -&gt;</div><div class="line">　<span class="keyword">if</span> @fbRoot?</div><div class="line">　　<span class="keyword">if</span> $(<span class="string">'#fb-root'</span>).length</div><div class="line">　　　$(<span class="string">'#fb-root'</span>).replaceWith @fbRoot</div><div class="line">　　<span class="keyword">else</span></div><div class="line">　　　$(<span class="string">'body'</span>).append @fbRoot</div><div class="line"><span class="function"></span></div><div class="line"><span class="title">loadFacebookSDK</span> = -&gt;</div><div class="line">　<span class="built_in">window</span>.fbAsyncInit = initializeFacebookSDK</div><div class="line">　$.getScript(<span class="string">"//connect.facebook.net/zh_TW/all.js#xfbml=1&amp;version=v2.5"</span>)</div><div class="line"><span class="function"></span></div><div class="line"><span class="title">initializeFacebookSDK</span> = -&gt;</div><div class="line">　FB.init</div><div class="line">　　appId  : <span class="string">'YOUR_APP_ID'</span></div><div class="line">　　status : <span class="literal">true</span></div><div class="line">　　cookie : <span class="literal">true</span></div><div class="line">　　xfbml  : <span class="literal">true</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="3-Modal-popup-FB-plugin"><a href="#3-Modal-popup-FB-plugin" class="headerlink" title="3. Modal(popup) + FB plugin"></a>3. Modal(popup) + FB plugin</h2><p>　　然而，我遇到的問題是，當我使用 Bootstrap modal 作文章 preview 時，FB share button 只有在第一次 modal show 會出現，而檢視其他 modal 時並沒有觸發更新，導致 FB plugin 失效了！目前我的解決辦法就是在 modal show 時，利用 <strong>FB.XFBML.parse()</strong> 刷新，以以上的程式碼為範例，於 <code>$ -&gt;</code> 中加入：<br><figure class="highlight coffeescript"><figcaption><span>fb_plugin.coffee</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ -&gt;</span><br><span class="line">　loadFacebookSDK()</span><br><span class="line">　bindFacebookEvents() <span class="keyword">unless</span> <span class="built_in">window</span>.fbEventsBound</span><br><span class="line">　$(<span class="string">'#myModal'</span>).<span class="literal">on</span> <span class="string">'show.bs.modal'</span>, <span class="function">-&gt;</span></span><br><span class="line">　　FB.XFBML.parse()</span><br><span class="line">  </span><br><span class="line">  ...</span><br></pre></td></tr></table></figure></p>
-<h2 id="4-偷吃步？"><a href="#4-偷吃步？" class="headerlink" title="4. 偷吃步？"></a>4. 偷吃步？</h2><p>　　當然，如果想快速的達到這個目的，也不用額外寫一支 script，可以在需要用到此 plugin 的頁面直接嵌入 script 就好。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span><br><span class="line">　<span class="comment">// 官方 plugin</span></span><br><span class="line">　(<span class="function"><span class="keyword">function</span>(<span class="params">d, s, id</span>) </span>&#123;</span><br><span class="line">　　<span class="keyword">var</span> js, fjs = d.getElementsByTagName(s)[<span class="number">0</span>];</span><br><span class="line">　　<span class="keyword">if</span> (d.getElementById(id)) <span class="keyword">return</span>;</span><br><span class="line">　　js = d.createElement(s); js.id = id;</span><br><span class="line">　　js.src = <span class="string">"//connect.facebook.net/zh_TW/sdk.js#xfbml=1&amp;version=v2.5"</span>;</span><br><span class="line">　　fjs.parentNode.insertBefore(js, fjs);</span><br><span class="line">　&#125;(<span class="built_in">document</span>, <span class="string">'script'</span>, <span class="string">'facebook-jssdk'</span>));</span><br><span class="line"></span><br><span class="line">　<span class="comment">// 讀取此頁時直接利用 FB.XFBML.parse() 刷新</span></span><br><span class="line">　$(FB.XFBML.parse());</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="3-Modal-popup-FB-plugin"><a href="#3-Modal-popup-FB-plugin" class="headerlink" title="3. Modal(popup) + FB plugin"></a>3. Modal(popup) + FB plugin</h2><p>　　然而，我遇到的問題是，當我使用 Bootstrap modal 作文章 preview 時，FB share button 只有在第一次 modal show 會出現，而檢視其他 modal 時並沒有觸發更新，導致 FB plugin 失效了！目前我的解決辦法就是在 modal show 時，利用 <strong>FB.XFBML.parse()</strong> 刷新，以以上的程式碼為範例，於 <code>$ -&gt;</code> 中加入：<br><figure class="highlight coffeescript"><figcaption><span>fb_plugin.coffee</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ -&gt;</div><div class="line">　loadFacebookSDK()</div><div class="line">　bindFacebookEvents() <span class="keyword">unless</span> <span class="built_in">window</span>.fbEventsBound</div><div class="line">　$(<span class="string">'#myModal'</span>).<span class="literal">on</span> <span class="string">'show.bs.modal'</span>, <span class="function">-&gt;</span></div><div class="line">　　FB.XFBML.parse()</div><div class="line">  </div><div class="line">  ...</div></pre></td></tr></table></figure></p>
+<h2 id="4-偷吃步？"><a href="#4-偷吃步？" class="headerlink" title="4. 偷吃步？"></a>4. 偷吃步？</h2><p>　　當然，如果想快速的達到這個目的，也不用額外寫一支 script，可以在需要用到此 plugin 的頁面直接嵌入 script 就好。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">　<span class="comment">// 官方 plugin</span></div><div class="line">　(<span class="function"><span class="keyword">function</span>(<span class="params">d, s, id</span>) </span>&#123;</div><div class="line">　　<span class="keyword">var</span> js, fjs = d.getElementsByTagName(s)[<span class="number">0</span>];</div><div class="line">　　<span class="keyword">if</span> (d.getElementById(id)) <span class="keyword">return</span>;</div><div class="line">　　js = d.createElement(s); js.id = id;</div><div class="line">　　js.src = <span class="string">"//connect.facebook.net/zh_TW/sdk.js#xfbml=1&amp;version=v2.5"</span>;</div><div class="line">　　fjs.parentNode.insertBefore(js, fjs);</div><div class="line">　&#125;(<span class="built_in">document</span>, <span class="string">'script'</span>, <span class="string">'facebook-jssdk'</span>));</div><div class="line"></div><div class="line">　<span class="comment">// 讀取此頁時直接利用 FB.XFBML.parse() 刷新</span></div><div class="line">　$(FB.XFBML.parse());</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>That’s it, <strong>DONE!</strong></p>
 <p><strong>【參考資料】</strong></p>
 <ul>
@@ -416,25 +457,46 @@
       
     </div>
 
+    <div>
+      
+        
+
+      
+    </div>
+
     <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/攻城獅筆記/" rel="tag">#攻城獅筆記</a>
+            <a href="/tags/攻城獅筆記/" rel="tag"># 攻城獅筆記</a>
           
-            <a href="/tags/rubyonrails/" rel="tag">#rubyonrails</a>
+            <a href="/tags/rails/" rel="tag"># rails</a>
           
-            <a href="/tags/rails/" rel="tag">#rails</a>
+            <a href="/tags/rubyonrails/" rel="tag"># rubyonrails</a>
           
-            <a href="/tags/facebook/" rel="tag">#facebook</a>
+            <a href="/tags/turbolinks/" rel="tag"># turbolinks</a>
           
-            <a href="/tags/turbolinks/" rel="tag">#turbolinks</a>
+            <a href="/tags/facebook/" rel="tag"># facebook</a>
           
-            <a href="/tags/FacebookPlugin/" rel="tag">#FacebookPlugin</a>
+            <a href="/tags/FacebookPlugin/" rel="tag"># FacebookPlugin</a>
           
-            <a href="/tags/FacebookShare/" rel="tag">#FacebookShare</a>
+            <a href="/tags/FacebookShare/" rel="tag"># FacebookShare</a>
           
         </div>
+      
+
+      
+        
+          <div class="social-like">
+            
+
+            
+              <div class="fb_like">
+                <div class="fb-like" data-layout="button_count" data-share="true"></div>
+              </div>
+            
+          </div>
+        
       
 
       
@@ -446,6 +508,8 @@
               </a>
             
           </div>
+
+          <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
@@ -515,25 +579,32 @@
         </ul>
       
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/oA.jpg"
                alt="OAwan" />
           <p class="site-author-name" itemprop="name">OAwan</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
         </div>
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">22</span>
-              <span class="site-state-item-name">文章</span>
-            </a>
-          </div>
 
           
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">文章</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
             <div class="site-state-item site-state-categories">
-              <a href="/categories">
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分類</span>
               </a>
@@ -541,9 +612,11 @@
           
 
           
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">66</span>
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">68</span>
                 <span class="site-state-item-name">標籤</span>
               </a>
             </div>
@@ -590,19 +663,29 @@
         
         
 
+        
+
+
       </section>
 
       
+      <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
+
             
               
             
+
             
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目的"><span class="nav-number">1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">2.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#筆記"><span class="nav-number">3.</span> <span class="nav-text">筆記</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-FB-plugin"><span class="nav-number">3.1.</span> <span class="nav-text">1. FB plugin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Turbolinks-FB-plugin"><span class="nav-number">3.2.</span> <span class="nav-text">2. Turbolinks + FB plugin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Modal-popup-FB-plugin"><span class="nav-number">3.3.</span> <span class="nav-text">3. Modal(popup) + FB plugin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-偷吃步？"><span class="nav-number">3.4.</span> <span class="nav-text">4. 偷吃步？</span></a></li></ol></li></ol></div>
             
+
           </div>
         </section>
+      <!--/noindex-->
+      
+
       
 
     </div>
@@ -618,12 +701,13 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">OAwan</span>
 </div>
+
 
 <div class="powered-by">
   由 <a class="theme-link" href="https://hexo.io">Hexo</a> 強力驅動
@@ -636,29 +720,34 @@
   </a>
 </div>
 
+
         
-
 <div class="busuanzi-count">
-
   <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 
   
-    <span class="site-pv"><i class="fa fa-street-view"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>人來過這裡。</span>
-  
+    <span class="site-pv">
+      <i class="fa fa-street-view"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      人來過這裡。
+    </span>
   
 </div>
-
 
 
         
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
   </div>
 
   
@@ -681,81 +770,100 @@
 
 
 
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
 
 
 
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
 
 
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
-
-
-
-  
-
-
-
-  
-
-    <script type="text/javascript">
-      var disqus_shortname = 'oawan';
-      var disqus_identifier = '2015/rails-solving-modal-update-fb-plugin-share-like-reload/';
-      var disqus_title = "[Rails] 解決 modal update 時 FB plugin (share, like) reload";
-      var disqus_url = 'https://oawan.me/2015/rails-solving-modal-update-fb-plugin-share-like-reload/';
-
-      function run_disqus_script(disqus_script){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      }
-
-      run_disqus_script('count.js');
-      
-        run_disqus_script('embed.js');
-      
-    </script>
-  
 
 
 
 
   
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
   
 
   

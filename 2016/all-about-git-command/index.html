@@ -5,11 +5,14 @@
   
 
 
-<html class="theme-next muse use-motion">
+<html class="theme-next muse use-motion" lang="zh-tw">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
 
 
 
@@ -29,9 +32,12 @@
 
 
 
+
+
+
   
   
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -71,9 +77,9 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="攻城獅筆記,Git," />
@@ -87,7 +93,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
 
 
 
@@ -97,45 +103,53 @@
 
 
 
-<meta name="description" content="目的　　快來翻翻你要的 Git Command 喔！
-前言　　一開始接觸 Git 是使用 GitHub Desktop，但隨著開發環境轉到 Linux 上後，就習慣用 Command-line 的方式操作了，這篇就來筆記一下常用的命令；說來也怪，有時後就是會突然想不起來，如果你也有這種腦容量有限的老症頭，歡迎隨時來翻翻XDD">
+<meta name="description" content="目的　　快來翻翻你要的 Git Command 喔！ 前言　　一開始接觸 Git 是使用 GitHub Desktop，但隨著開發環境轉到 Linux 上後，就習慣用 Command-line 的方式操作了，這篇就來筆記一下常用的命令；說來也怪，有時後就是會突然想不起來，如果你也有這種腦容量有限的老症頭，歡迎隨時來翻翻XDD">
+<meta name="keywords" content="攻城獅筆記,Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Git] 命令筆記本">
 <meta property="og:url" content="https://oawan.me/2016/all-about-git-command/index.html">
 <meta property="og:site_name" content="新樂街口的三角窗">
-<meta property="og:description" content="目的　　快來翻翻你要的 Git Command 喔！
-前言　　一開始接觸 Git 是使用 GitHub Desktop，但隨著開發環境轉到 Linux 上後，就習慣用 Command-line 的方式操作了，這篇就來筆記一下常用的命令；說來也怪，有時後就是會突然想不起來，如果你也有這種腦容量有限的老症頭，歡迎隨時來翻翻XDD">
+<meta property="og:description" content="目的　　快來翻翻你要的 Git Command 喔！ 前言　　一開始接觸 Git 是使用 GitHub Desktop，但隨著開發環境轉到 Linux 上後，就習慣用 Command-line 的方式操作了，這篇就來筆記一下常用的命令；說來也怪，有時後就是會突然想不起來，如果你也有這種腦容量有限的老症頭，歡迎隨時來翻翻XDD">
 <meta property="og:image" content="https://oawan.me/img/program/Git.jpg">
 <meta property="og:updated_time" content="2016-06-06T07:32:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Git] 命令筆記本">
-<meta name="twitter:description" content="目的　　快來翻翻你要的 Git Command 喔！
-前言　　一開始接觸 Git 是使用 GitHub Desktop，但隨著開發環境轉到 Linux 上後，就習慣用 Command-line 的方式操作了，這篇就來筆記一下常用的命令；說來也怪，有時後就是會突然想不起來，如果你也有這種腦容量有限的老症頭，歡迎隨時來翻翻XDD">
+<meta name="twitter:description" content="目的　　快來翻翻你要的 Git Command 喔！ 前言　　一開始接觸 Git 是使用 GitHub Desktop，但隨著開發環境轉到 Linux 上後，就習慣用 Command-line 的方式操作了，這篇就來筆記一下常用的命令；說來也怪，有時後就是會突然想不起來，如果你也有這種腦容量有限的老症頭，歡迎隨時來翻翻XDD">
 <meta name="twitter:image" content="https://oawan.me/img/program/Git.jpg">
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '作者'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
 
 
-
   <link rel="canonical" href="https://oawan.me/2016/all-about-git-command/"/>
 
 
-  <title> [Git] 命令筆記本 | 新樂街口的三角窗 </title>
+
+
+
+  <title>[Git] 命令筆記本 | 新樂街口的三角窗</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
@@ -161,14 +175,18 @@
 
 
 
+
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-72706538-2', 'auto');
   ga('send', 'pageview');
 </script>
+
+
 
 
 
@@ -183,29 +201,33 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">新樂街口的三角窗</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">新樂街口的三角窗</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">我，在這裡，享受等你的時光。</p>
+      
   </div>
-  <p class="site-subtitle">我，在這裡，享受等你的時光。</p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -273,6 +295,8 @@
   
 </nav>
 
+
+
  </div>
     </header>
 
@@ -286,49 +310,64 @@
     
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  
+    <link itemprop="mainEntityOfPage" href="https://oawan.me/2016/all-about-git-command/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OAwan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/oA.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新樂街口的三角窗">
+    </span>
+
     
       <header class="post-header">
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                [Git] 命令筆記本
-              
-            
-          </h1>
+          <h1 class="post-title" itemprop="name headline">[Git] 命令筆記本</h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-05-30T09:14:09+00:00" content="2016-05-30">
-              2016-05-30
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2016-05-30T09:14:09+00:00">
+                2016-05-30
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分類於</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Programmer/" itemprop="url" rel="index">
                     <span itemprop="name">Programmer</span>
                   </a>
@@ -336,7 +375,6 @@
 
                 
                 
-
               
             </span>
           
@@ -344,28 +382,31 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2016/all-about-git-command/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/all-about-git-command/" itemprop="commentsCount">0</span> comments
+                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/all-about-git-command/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
           
 
           
-            &nbsp; | &nbsp;
-            <div class="fb-like" data-layout="button_count" data-share="true"></div>
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
           
 
           
-              &nbsp; | &nbsp;
-              <span class="page-pv"><i class="fa fa-eye"></i>
-              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-              </span>
+
           
+
         </div>
       </header>
     
@@ -380,68 +421,68 @@
 <h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a><strong>目的</strong></h1><p>　　快來翻翻你要的 Git Command 喔！</p>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p>　　一開始接觸 Git 是使用 <a href="https://desktop.github.com/" target="_blank" rel="external"><strong>GitHub Desktop</strong></a>，但隨著開發環境轉到 Linux 上後，就習慣用 Command-line 的方式操作了，這篇就來筆記一下常用的命令；說來也怪，有時後就是會突然想不起來，如果你也有這種<strong>腦容量有限</strong>的老症頭，歡迎隨時來翻翻XDD</p>
 <a id="more"></a>
-<h1 id="筆記"><a href="#筆記" class="headerlink" title="筆記"></a><strong>筆記</strong></h1><h2 id="Git-設定"><a href="#Git-設定" class="headerlink" title=" Git 設定"></a><i class="fa fa-code-fork" style="text-align:center; width:20px; padding: 4px 1px 0 3px; background: #F04F33; color: white;border-radius:4px;transform: rotate(135deg);margin-right: 6px;"></i> Git 設定</h2><h3 id="設定名稱-amp-電子郵件"><a href="#設定名稱-amp-電子郵件" class="headerlink" title="設定名稱 &amp; 電子郵件"></a>設定<strong>名稱</strong> &amp; <strong>電子郵件</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &lt;username&gt;</span><br><span class="line">git config --global user.email &lt;email@address&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="Git-ui-顏色"><a href="#Git-ui-顏色" class="headerlink" title="Git ui 顏色"></a>Git ui 顏色</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global color.ui <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<h3 id="命令設定別名"><a href="#命令設定別名" class="headerlink" title="命令設定別名"></a>命令設定別名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global alias.&lt;aliasname&gt; &lt;命令名稱&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="筆記"><a href="#筆記" class="headerlink" title="筆記"></a><strong>筆記</strong></h1><h2 id="Git-設定"><a href="#Git-設定" class="headerlink" title=" Git 設定"></a><i class="fa fa-code-fork" style="text-align:center; width:20px; padding: 4px 1px 0 3px; background: #F04F33; color: white;border-radius:4px;transform: rotate(135deg);margin-right: 6px;"></i> Git 設定</h2><h3 id="設定名稱-amp-電子郵件"><a href="#設定名稱-amp-電子郵件" class="headerlink" title="設定名稱 &amp; 電子郵件"></a>設定<strong>名稱</strong> &amp; <strong>電子郵件</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name &lt;username&gt;</div><div class="line">git config --global user.email &lt;email@address&gt;</div></pre></td></tr></table></figure>
+<h3 id="Git-ui-顏色"><a href="#Git-ui-顏色" class="headerlink" title="Git ui 顏色"></a>Git ui 顏色</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global color.ui <span class="literal">true</span></div></pre></td></tr></table></figure>
+<h3 id="命令設定別名"><a href="#命令設定別名" class="headerlink" title="命令設定別名"></a>命令設定別名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global alias.&lt;aliasname&gt; &lt;命令名稱&gt;</div></pre></td></tr></table></figure>
 <blockquote>
 <p>例如：<code>git config --global alias.st status</code><br>之後只要下 <code>git st</code> 就等於是 <code>git status</code>。</p>
 </blockquote>
-<h3 id="列出設定清單"><a href="#列出設定清單" class="headerlink" title="列出設定清單"></a>列出設定清單</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global --list</span><br></pre></td></tr></table></figure>
-<h2 id="Git-基本功"><a href="#Git-基本功" class="headerlink" title=" Git 基本功"></a><i class="fa fa-code-fork" style="text-align:center; width:20px; padding: 4px 1px 0 3px; background: #F04F33; color: white;border-radius:4px;transform: rotate(135deg);margin-right: 6px;"></i> Git 基本功</h2><h3 id="建立數據庫-init"><a href="#建立數據庫-init" class="headerlink" title="建立數據庫 ( init )"></a>建立數據庫 ( init )</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
-<h3 id="複製數據庫到本地端-clone"><a href="#複製數據庫到本地端-clone" class="headerlink" title="複製數據庫到本地端 ( clone )"></a>複製數據庫到本地端 ( clone )</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> &lt;repo 連結&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="顯示修改檔案清單-status"><a href="#顯示修改檔案清單-status" class="headerlink" title="顯示修改檔案清單 ( status )"></a>顯示修改檔案清單 ( status )</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+<h3 id="列出設定清單"><a href="#列出設定清單" class="headerlink" title="列出設定清單"></a>列出設定清單</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global --list</div></pre></td></tr></table></figure>
+<h2 id="Git-基本功"><a href="#Git-基本功" class="headerlink" title=" Git 基本功"></a><i class="fa fa-code-fork" style="text-align:center; width:20px; padding: 4px 1px 0 3px; background: #F04F33; color: white;border-radius:4px;transform: rotate(135deg);margin-right: 6px;"></i> Git 基本功</h2><h3 id="建立數據庫-init"><a href="#建立數據庫-init" class="headerlink" title="建立數據庫 ( init )"></a>建立數據庫 ( init )</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git init</div></pre></td></tr></table></figure>
+<h3 id="複製數據庫到本地端-clone"><a href="#複製數據庫到本地端-clone" class="headerlink" title="複製數據庫到本地端 ( clone )"></a>複製數據庫到本地端 ( clone )</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> &lt;repo 連結&gt;</div></pre></td></tr></table></figure>
+<h3 id="顯示修改檔案清單-status"><a href="#顯示修改檔案清單-status" class="headerlink" title="顯示修改檔案清單 ( status )"></a>顯示修改檔案清單 ( status )</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git status</div></pre></td></tr></table></figure>
 <blockquote>
 <p><code>-s</code>：僅顯示已修改檔案名稱<br><code>-s -b</code>：顯示分支名稱</p>
 </blockquote>
-<h3 id="將檔案加入索引-add"><a href="#將檔案加入索引-add" class="headerlink" title="將檔案加入索引 ( add )"></a>將檔案加入索引 ( add )</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;file&gt;...</span><br></pre></td></tr></table></figure>
+<h3 id="將檔案加入索引-add"><a href="#將檔案加入索引-add" class="headerlink" title="將檔案加入索引 ( add )"></a>將檔案加入索引 ( add )</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git add &lt;file&gt;...</div></pre></td></tr></table></figure>
 <blockquote>
 <p>可以使用 <code>git add .</code> 將當前目錄下的所有修改檔案加入索引</p>
 </blockquote>
-<h3 id="還原已修改檔案-checkout-–"><a href="#還原已修改檔案-checkout-–" class="headerlink" title="還原已修改檔案 ( checkout – )"></a>還原已修改檔案 ( checkout – )</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- &lt;file&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="提交檔案-commit"><a href="#提交檔案-commit" class="headerlink" title="提交檔案 ( commit )"></a>提交檔案 ( commit )</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit</span><br></pre></td></tr></table></figure>
+<h3 id="還原已修改檔案-checkout-–"><a href="#還原已修改檔案-checkout-–" class="headerlink" title="還原已修改檔案 ( checkout – )"></a>還原已修改檔案 ( checkout – )</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout -- &lt;file&gt;</div></pre></td></tr></table></figure>
+<h3 id="提交檔案-commit"><a href="#提交檔案-commit" class="headerlink" title="提交檔案 ( commit )"></a>提交檔案 ( commit )</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git commit</div></pre></td></tr></table></figure>
 <blockquote>
 <p><code>-m &lt;message&gt;</code>：訊息提交<br><code>--amend &lt;message&gt;</code>：修改上一次 commit 內容</p>
 </blockquote>
-<h3 id="上傳-或更新-本地端分支"><a href="#上傳-或更新-本地端分支" class="headerlink" title="上傳(或更新)本地端分支"></a>上傳(或更新)本地端分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
-<h3 id="合併-或更新-遠端至本地端分支"><a href="#合併-或更新-遠端至本地端分支" class="headerlink" title="合併(或更新)遠端至本地端分支"></a>合併(或更新)遠端至本地端分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
-<h3 id="顯示提交紀錄-log"><a href="#顯示提交紀錄-log" class="headerlink" title="顯示提交紀錄 ( log )"></a>顯示提交紀錄 ( log )</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
-<h2 id="Git-分支-Branch"><a href="#Git-分支-Branch" class="headerlink" title=" Git 分支 (Branch)"></a><i class="fa fa-code-fork" style="text-align:center; width:20px; padding: 4px 1px 0 3px; background: #F04F33; color: white;border-radius:4px;transform: rotate(135deg);margin-right: 6px;"></i> Git 分支 (Branch)</h2><h3 id="顯示分支清單"><a href="#顯示分支清單" class="headerlink" title="顯示分支清單"></a>顯示分支清單</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+<h3 id="上傳-或更新-本地端分支"><a href="#上傳-或更新-本地端分支" class="headerlink" title="上傳(或更新)本地端分支"></a>上傳(或更新)本地端分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push</div></pre></td></tr></table></figure>
+<h3 id="合併-或更新-遠端至本地端分支"><a href="#合併-或更新-遠端至本地端分支" class="headerlink" title="合併(或更新)遠端至本地端分支"></a>合併(或更新)遠端至本地端分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git pull</div></pre></td></tr></table></figure>
+<h3 id="顯示提交紀錄-log"><a href="#顯示提交紀錄-log" class="headerlink" title="顯示提交紀錄 ( log )"></a>顯示提交紀錄 ( log )</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">log</span></div></pre></td></tr></table></figure>
+<h2 id="Git-分支-Branch"><a href="#Git-分支-Branch" class="headerlink" title=" Git 分支 (Branch)"></a><i class="fa fa-code-fork" style="text-align:center; width:20px; padding: 4px 1px 0 3px; background: #F04F33; color: white;border-radius:4px;transform: rotate(135deg);margin-right: 6px;"></i> Git 分支 (Branch)</h2><h3 id="顯示分支清單"><a href="#顯示分支清單" class="headerlink" title="顯示分支清單"></a>顯示分支清單</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch</div></pre></td></tr></table></figure>
 <blockquote>
 <p><strong>-r</strong>：顯示<strong>遠端分支</strong><br><strong>-a</strong>：顯示<strong>所有分支</strong></p>
 </blockquote>
-<h3 id="建立分支"><a href="#建立分支" class="headerlink" title="建立分支"></a>建立分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch &lt;分支名稱&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="修改分支名稱"><a href="#修改分支名稱" class="headerlink" title="修改分支名稱"></a>修改分支名稱</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -m &lt;舊分支名稱&gt; &lt;新分支名稱&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="刪除分支"><a href="#刪除分支" class="headerlink" title="刪除分支"></a>刪除分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch <span class="_">-d</span> &lt;分支名稱&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="切換分支-checkout"><a href="#切換分支-checkout" class="headerlink" title="切換分支 ( checkout )"></a>切換分支 ( checkout )</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout</span><br></pre></td></tr></table></figure>
+<h3 id="建立分支"><a href="#建立分支" class="headerlink" title="建立分支"></a>建立分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch &lt;分支名稱&gt;</div></pre></td></tr></table></figure>
+<h3 id="修改分支名稱"><a href="#修改分支名稱" class="headerlink" title="修改分支名稱"></a>修改分支名稱</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -m &lt;舊分支名稱&gt; &lt;新分支名稱&gt;</div></pre></td></tr></table></figure>
+<h3 id="刪除分支"><a href="#刪除分支" class="headerlink" title="刪除分支"></a>刪除分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch <span class="_">-d</span> &lt;分支名稱&gt;</div></pre></td></tr></table></figure>
+<h3 id="切換分支-checkout"><a href="#切換分支-checkout" class="headerlink" title="切換分支 ( checkout )"></a>切換分支 ( checkout )</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout</div></pre></td></tr></table></figure>
 <blockquote>
 <p><strong>-b &lt;分支名稱&gt;</strong>：表示 <strong>建立並切換</strong> 至該分支</p>
 </blockquote>
-<h3 id="合併分支"><a href="#合併分支" class="headerlink" title="合併分支"></a>合併分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge &lt;分支名稱&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="遠端操作"><a href="#遠端操作" class="headerlink" title=" 遠端操作"></a><i class="fa fa-code-fork" style="text-align:center; width:20px; padding: 4px 1px 0 3px; background: #F04F33; color: white;border-radius:4px;transform: rotate(135deg);margin-right: 6px;"></i> 遠端操作</h2><h3 id="顯示遠端數據庫列表"><a href="#顯示遠端數據庫列表" class="headerlink" title="顯示遠端數據庫列表"></a>顯示遠端數據庫列表</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote</span><br></pre></td></tr></table></figure>
-<h3 id="添加遠端數據庫"><a href="#添加遠端數據庫" class="headerlink" title="添加遠端數據庫"></a>添加遠端數據庫</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add &lt;名稱&gt; &lt;repo 連結&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="取遠端分支建立本地端分支"><a href="#取遠端分支建立本地端分支" class="headerlink" title="取遠端分支建立本地端分支"></a>取遠端分支建立本地端分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout &lt;本地分支名稱&gt; origin/&lt;遠端分支名稱&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="在遠端建立分支-上傳-或更新-內容至遠端分支"><a href="#在遠端建立分支-上傳-或更新-內容至遠端分支" class="headerlink" title="在遠端建立分支 / 上傳(或更新)內容至遠端分支"></a>在遠端建立分支 / 上傳(或更新)內容至遠端分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push &lt;repo 名稱&gt; &lt;分支名稱&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="查看遠端數據庫分支的修改內容"><a href="#查看遠端數據庫分支的修改內容" class="headerlink" title="查看遠端數據庫分支的修改內容"></a>查看遠端數據庫分支的修改內容</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch &lt;repo 名稱&gt; &lt;分支名稱&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="合併分支"><a href="#合併分支" class="headerlink" title="合併分支"></a>合併分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git merge &lt;分支名稱&gt;</div></pre></td></tr></table></figure>
+<h2 id="遠端操作"><a href="#遠端操作" class="headerlink" title=" 遠端操作"></a><i class="fa fa-code-fork" style="text-align:center; width:20px; padding: 4px 1px 0 3px; background: #F04F33; color: white;border-radius:4px;transform: rotate(135deg);margin-right: 6px;"></i> 遠端操作</h2><h3 id="顯示遠端數據庫列表"><a href="#顯示遠端數據庫列表" class="headerlink" title="顯示遠端數據庫列表"></a>顯示遠端數據庫列表</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote</div></pre></td></tr></table></figure>
+<h3 id="添加遠端數據庫"><a href="#添加遠端數據庫" class="headerlink" title="添加遠端數據庫"></a>添加遠端數據庫</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote add &lt;名稱&gt; &lt;repo 連結&gt;</div></pre></td></tr></table></figure>
+<h3 id="取遠端分支建立本地端分支"><a href="#取遠端分支建立本地端分支" class="headerlink" title="取遠端分支建立本地端分支"></a>取遠端分支建立本地端分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout &lt;本地分支名稱&gt; origin/&lt;遠端分支名稱&gt;</div></pre></td></tr></table></figure>
+<h3 id="在遠端建立分支-上傳-或更新-內容至遠端分支"><a href="#在遠端建立分支-上傳-或更新-內容至遠端分支" class="headerlink" title="在遠端建立分支 / 上傳(或更新)內容至遠端分支"></a>在遠端建立分支 / 上傳(或更新)內容至遠端分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push &lt;repo 名稱&gt; &lt;分支名稱&gt;</div></pre></td></tr></table></figure>
+<h3 id="查看遠端數據庫分支的修改內容"><a href="#查看遠端數據庫分支的修改內容" class="headerlink" title="查看遠端數據庫分支的修改內容"></a>查看遠端數據庫分支的修改內容</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git fetch &lt;repo 名稱&gt; &lt;分支名稱&gt;</div></pre></td></tr></table></figure>
 <blockquote>
 <p>可以透過 <code>git fetch -p</code> 來更新遠端分支資訊<br>例如在 GitHub 上操作玩一套 merge 流程後，已經在 GitHub 上刪除該分支<br>就可以利用這到命令更新本地端的遠端分支資訊</p>
 </blockquote>
-<h3 id="合併-或更新-遠端至本地端分支-1"><a href="#合併-或更新-遠端至本地端分支-1" class="headerlink" title="合併(或更新)遠端至本地端分支"></a>合併(或更新)遠端至本地端分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull &lt;repo 名稱&gt; &lt;分支名稱&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="合併-或更新-遠端至本地端分支-1"><a href="#合併-或更新-遠端至本地端分支-1" class="headerlink" title="合併(或更新)遠端至本地端分支"></a>合併(或更新)遠端至本地端分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git pull &lt;repo 名稱&gt; &lt;分支名稱&gt;</div></pre></td></tr></table></figure>
 <blockquote>
 <p>註：<code>pull</code> = <code>fetch</code> + <code>merge</code>。</p>
 </blockquote>
-<h3 id="刪除遠端分支"><a href="#刪除遠端分支" class="headerlink" title="刪除遠端分支"></a>刪除遠端分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push &lt;repo 名稱&gt; :&lt;分支名稱&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="修該遠端數據庫位址"><a href="#修該遠端數據庫位址" class="headerlink" title="修該遠端數據庫位址"></a>修該遠端數據庫位址</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote <span class="built_in">set</span>-url &lt;名稱&gt; &lt;新連結位址&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="修改遠端數據庫名稱"><a href="#修改遠端數據庫名稱" class="headerlink" title="修改遠端數據庫名稱"></a>修改遠端數據庫名稱</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote rename &lt;舊名稱&gt; &lt;新名稱&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="暫存-Stash"><a href="#暫存-Stash" class="headerlink" title=" 暫存 (Stash)"></a><i class="fa fa-code-fork" style="text-align:center; width:20px; padding: 4px 1px 0 3px; background: #F04F33; color: white;border-radius:4px;transform: rotate(135deg);margin-right: 6px;"></i> 暫存 (Stash)</h2><h3 id="暫存現在的修改狀況"><a href="#暫存現在的修改狀況" class="headerlink" title="暫存現在的修改狀況"></a>暫存現在的修改狀況</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br></pre></td></tr></table></figure>
-<h3 id="列出暫存清單"><a href="#列出暫存清單" class="headerlink" title="列出暫存清單"></a>列出暫存清單</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash list</span><br></pre></td></tr></table></figure>
-<h3 id="取出上一次暫存"><a href="#取出上一次暫存" class="headerlink" title="取出上一次暫存"></a>取出上一次暫存</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash apply</span><br></pre></td></tr></table></figure>
-<h3 id="取出上一次暫存-該暫存會被移除"><a href="#取出上一次暫存-該暫存會被移除" class="headerlink" title="取出上一次暫存(該暫存會被移除)"></a>取出上一次暫存(該暫存會被移除)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash pop</span><br></pre></td></tr></table></figure>
+<h3 id="刪除遠端分支"><a href="#刪除遠端分支" class="headerlink" title="刪除遠端分支"></a>刪除遠端分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push &lt;repo 名稱&gt; :&lt;分支名稱&gt;</div></pre></td></tr></table></figure>
+<h3 id="修該遠端數據庫位址"><a href="#修該遠端數據庫位址" class="headerlink" title="修該遠端數據庫位址"></a>修該遠端數據庫位址</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote <span class="built_in">set</span>-url &lt;名稱&gt; &lt;新連結位址&gt;</div></pre></td></tr></table></figure>
+<h3 id="修改遠端數據庫名稱"><a href="#修改遠端數據庫名稱" class="headerlink" title="修改遠端數據庫名稱"></a>修改遠端數據庫名稱</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote rename &lt;舊名稱&gt; &lt;新名稱&gt;</div></pre></td></tr></table></figure>
+<h2 id="暫存-Stash"><a href="#暫存-Stash" class="headerlink" title=" 暫存 (Stash)"></a><i class="fa fa-code-fork" style="text-align:center; width:20px; padding: 4px 1px 0 3px; background: #F04F33; color: white;border-radius:4px;transform: rotate(135deg);margin-right: 6px;"></i> 暫存 (Stash)</h2><h3 id="暫存現在的修改狀況"><a href="#暫存現在的修改狀況" class="headerlink" title="暫存現在的修改狀況"></a>暫存現在的修改狀況</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git stash</div></pre></td></tr></table></figure>
+<h3 id="列出暫存清單"><a href="#列出暫存清單" class="headerlink" title="列出暫存清單"></a>列出暫存清單</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git stash list</div></pre></td></tr></table></figure>
+<h3 id="取出上一次暫存"><a href="#取出上一次暫存" class="headerlink" title="取出上一次暫存"></a>取出上一次暫存</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git stash apply</div></pre></td></tr></table></figure>
+<h3 id="取出上一次暫存-該暫存會被移除"><a href="#取出上一次暫存-該暫存會被移除" class="headerlink" title="取出上一次暫存(該暫存會被移除)"></a>取出上一次暫存(該暫存會被移除)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git stash pop</div></pre></td></tr></table></figure>
 <blockquote>
 <p>可利用 <code>stash@{id}</code> 指定特定暫存</p>
 </blockquote>
-<h3 id="清空所有暫存"><a href="#清空所有暫存" class="headerlink" title="清空所有暫存"></a>清空所有暫存</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash clear</span><br></pre></td></tr></table></figure>
-<h2 id="操作提交紀錄"><a href="#操作提交紀錄" class="headerlink" title=" 操作提交紀錄"></a><i class="fa fa-code-fork" style="text-align:center; width:20px; padding: 4px 1px 0 3px; background: #F04F33; color: white;border-radius:4px;transform: rotate(135deg);margin-right: 6px;"></i> 操作提交紀錄</h2><h3 id="修改上一次-commit"><a href="#修改上一次-commit" class="headerlink" title="修改上一次 commit"></a>修改上一次 commit</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
-<h3 id="放棄修改紀錄-reset"><a href="#放棄修改紀錄-reset" class="headerlink" title="放棄修改紀錄 (reset)"></a>放棄修改紀錄 (reset)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD^</span><br></pre></td></tr></table></figure>
+<h3 id="清空所有暫存"><a href="#清空所有暫存" class="headerlink" title="清空所有暫存"></a>清空所有暫存</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git stash clear</div></pre></td></tr></table></figure>
+<h2 id="操作提交紀錄"><a href="#操作提交紀錄" class="headerlink" title=" 操作提交紀錄"></a><i class="fa fa-code-fork" style="text-align:center; width:20px; padding: 4px 1px 0 3px; background: #F04F33; color: white;border-radius:4px;transform: rotate(135deg);margin-right: 6px;"></i> 操作提交紀錄</h2><h3 id="修改上一次-commit"><a href="#修改上一次-commit" class="headerlink" title="修改上一次 commit"></a>修改上一次 commit</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git commit --amend</div></pre></td></tr></table></figure>
+<h3 id="放棄修改紀錄-reset"><a href="#放棄修改紀錄-reset" class="headerlink" title="放棄修改紀錄 (reset)"></a>放棄修改紀錄 (reset)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git reset HEAD^</div></pre></td></tr></table></figure>
 <blockquote>
 <p><code>--soft</code>：取消上一次 commit，並 <strong>保留</strong> 修改紀錄<br><code>--hard</code>：取消上一次 commit，並 <strong>刪除</strong> 修改紀錄</p>
 </blockquote>
@@ -470,15 +511,36 @@
       
     </div>
 
+    <div>
+      
+        
+
+      
+    </div>
+
     <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/攻城獅筆記/" rel="tag">#攻城獅筆記</a>
+            <a href="/tags/攻城獅筆記/" rel="tag"># 攻城獅筆記</a>
           
-            <a href="/tags/Git/" rel="tag">#Git</a>
+            <a href="/tags/Git/" rel="tag"># Git</a>
           
         </div>
+      
+
+      
+        
+          <div class="social-like">
+            
+
+            
+              <div class="fb_like">
+                <div class="fb-like" data-layout="button_count" data-share="true"></div>
+              </div>
+            
+          </div>
+        
       
 
       
@@ -490,6 +552,8 @@
               </a>
             
           </div>
+
+          <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
@@ -559,25 +623,32 @@
         </ul>
       
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/oA.jpg"
                alt="OAwan" />
           <p class="site-author-name" itemprop="name">OAwan</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
         </div>
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">22</span>
-              <span class="site-state-item-name">文章</span>
-            </a>
-          </div>
 
           
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">文章</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
             <div class="site-state-item site-state-categories">
-              <a href="/categories">
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分類</span>
               </a>
@@ -585,9 +656,11 @@
           
 
           
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">66</span>
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">68</span>
                 <span class="site-state-item-name">標籤</span>
               </a>
             </div>
@@ -634,19 +707,29 @@
         
         
 
+        
+
+
       </section>
 
       
+      <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
+
             
               
             
+
             
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目的"><span class="nav-number">1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">2.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#筆記"><span class="nav-number">3.</span> <span class="nav-text">筆記</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-設定"><span class="nav-number">3.1.</span> <span class="nav-text"> Git 設定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#設定名稱-amp-電子郵件"><span class="nav-number">3.1.1.</span> <span class="nav-text">設定名稱 & 電子郵件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git-ui-顏色"><span class="nav-number">3.1.2.</span> <span class="nav-text">Git ui 顏色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令設定別名"><span class="nav-number">3.1.3.</span> <span class="nav-text">命令設定別名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列出設定清單"><span class="nav-number">3.1.4.</span> <span class="nav-text">列出設定清單</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-基本功"><span class="nav-number">3.2.</span> <span class="nav-text"> Git 基本功</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建立數據庫-init"><span class="nav-number">3.2.1.</span> <span class="nav-text">建立數據庫 ( init )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#複製數據庫到本地端-clone"><span class="nav-number">3.2.2.</span> <span class="nav-text">複製數據庫到本地端 ( clone )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#顯示修改檔案清單-status"><span class="nav-number">3.2.3.</span> <span class="nav-text">顯示修改檔案清單 ( status )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#將檔案加入索引-add"><span class="nav-number">3.2.4.</span> <span class="nav-text">將檔案加入索引 ( add )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#還原已修改檔案-checkout-–"><span class="nav-number">3.2.5.</span> <span class="nav-text">還原已修改檔案 ( checkout – )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提交檔案-commit"><span class="nav-number">3.2.6.</span> <span class="nav-text">提交檔案 ( commit )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上傳-或更新-本地端分支"><span class="nav-number">3.2.7.</span> <span class="nav-text">上傳(或更新)本地端分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合併-或更新-遠端至本地端分支"><span class="nav-number">3.2.8.</span> <span class="nav-text">合併(或更新)遠端至本地端分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#顯示提交紀錄-log"><span class="nav-number">3.2.9.</span> <span class="nav-text">顯示提交紀錄 ( log )</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-分支-Branch"><span class="nav-number">3.3.</span> <span class="nav-text"> Git 分支 (Branch)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#顯示分支清單"><span class="nav-number">3.3.1.</span> <span class="nav-text">顯示分支清單</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立分支"><span class="nav-number">3.3.2.</span> <span class="nav-text">建立分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改分支名稱"><span class="nav-number">3.3.3.</span> <span class="nav-text">修改分支名稱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#刪除分支"><span class="nav-number">3.3.4.</span> <span class="nav-text">刪除分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切換分支-checkout"><span class="nav-number">3.3.5.</span> <span class="nav-text">切換分支 ( checkout )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合併分支"><span class="nav-number">3.3.6.</span> <span class="nav-text">合併分支</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遠端操作"><span class="nav-number">3.4.</span> <span class="nav-text"> 遠端操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#顯示遠端數據庫列表"><span class="nav-number">3.4.1.</span> <span class="nav-text">顯示遠端數據庫列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加遠端數據庫"><span class="nav-number">3.4.2.</span> <span class="nav-text">添加遠端數據庫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#取遠端分支建立本地端分支"><span class="nav-number">3.4.3.</span> <span class="nav-text">取遠端分支建立本地端分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在遠端建立分支-上傳-或更新-內容至遠端分支"><span class="nav-number">3.4.4.</span> <span class="nav-text">在遠端建立分支 / 上傳(或更新)內容至遠端分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看遠端數據庫分支的修改內容"><span class="nav-number">3.4.5.</span> <span class="nav-text">查看遠端數據庫分支的修改內容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合併-或更新-遠端至本地端分支-1"><span class="nav-number">3.4.6.</span> <span class="nav-text">合併(或更新)遠端至本地端分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#刪除遠端分支"><span class="nav-number">3.4.7.</span> <span class="nav-text">刪除遠端分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修該遠端數據庫位址"><span class="nav-number">3.4.8.</span> <span class="nav-text">修該遠端數據庫位址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改遠端數據庫名稱"><span class="nav-number">3.4.9.</span> <span class="nav-text">修改遠端數據庫名稱</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#暫存-Stash"><span class="nav-number">3.5.</span> <span class="nav-text"> 暫存 (Stash)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#暫存現在的修改狀況"><span class="nav-number">3.5.1.</span> <span class="nav-text">暫存現在的修改狀況</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列出暫存清單"><span class="nav-number">3.5.2.</span> <span class="nav-text">列出暫存清單</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#取出上一次暫存"><span class="nav-number">3.5.3.</span> <span class="nav-text">取出上一次暫存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#取出上一次暫存-該暫存會被移除"><span class="nav-number">3.5.4.</span> <span class="nav-text">取出上一次暫存(該暫存會被移除)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清空所有暫存"><span class="nav-number">3.5.5.</span> <span class="nav-text">清空所有暫存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作提交紀錄"><span class="nav-number">3.6.</span> <span class="nav-text"> 操作提交紀錄</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改上一次-commit"><span class="nav-number">3.6.1.</span> <span class="nav-text">修改上一次 commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#放棄修改紀錄-reset"><span class="nav-number">3.6.2.</span> <span class="nav-text">放棄修改紀錄 (reset)</span></a></li></ol></li></ol></li></ol></div>
             
+
           </div>
         </section>
+      <!--/noindex-->
+      
+
       
 
     </div>
@@ -662,12 +745,13 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">OAwan</span>
 </div>
+
 
 <div class="powered-by">
   由 <a class="theme-link" href="https://hexo.io">Hexo</a> 強力驅動
@@ -680,29 +764,34 @@
   </a>
 </div>
 
+
         
-
 <div class="busuanzi-count">
-
   <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 
   
-    <span class="site-pv"><i class="fa fa-street-view"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>人來過這裡。</span>
-  
+    <span class="site-pv">
+      <i class="fa fa-street-view"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      人來過這裡。
+    </span>
   
 </div>
-
 
 
         
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
   </div>
 
   
@@ -725,81 +814,100 @@
 
 
 
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
 
 
 
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
 
 
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
-
-
-
-  
-
-
-
-  
-
-    <script type="text/javascript">
-      var disqus_shortname = 'oawan';
-      var disqus_identifier = '2016/all-about-git-command/';
-      var disqus_title = "[Git] 命令筆記本";
-      var disqus_url = 'https://oawan.me/2016/all-about-git-command/';
-
-      function run_disqus_script(disqus_script){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      }
-
-      run_disqus_script('count.js');
-      
-        run_disqus_script('embed.js');
-      
-    </script>
-  
 
 
 
 
   
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
   
 
   

@@ -5,11 +5,14 @@
   
 
 
-<html class="theme-next muse use-motion">
+<html class="theme-next muse use-motion" lang="zh-tw">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
 
 
 
@@ -29,9 +32,12 @@
 
 
 
+
+
+
   
   
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -71,9 +77,9 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="Hexo, NexT" />
@@ -87,7 +93,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
 
 
 
@@ -97,39 +103,46 @@
 
 
 
-<meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="新樂街口的三角窗">
 <meta property="og:url" content="https://oawan.me/index.html">
 <meta property="og:site_name" content="新樂街口的三角窗">
-<meta property="og:description">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="新樂街口的三角窗">
-<meta name="twitter:description">
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '作者'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
 
 
-
   <link rel="canonical" href="https://oawan.me/"/>
 
 
-  <title> 新樂街口的三角窗 </title>
+
+
+
+  <title>新樂街口的三角窗</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
@@ -155,14 +168,18 @@
 
 
 
+
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-72706538-2', 'auto');
   ga('send', 'pageview');
 </script>
+
+
 
 
 
@@ -177,31 +194,35 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
+  <div class="container sidebar-position-left 
    page-home 
  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">新樂街口的三角窗</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">新樂街口的三角窗</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">我，在這裡，享受等你的時光。</p>
+      
   </div>
-  <p class="site-subtitle">我，在這裡，享受等你的時光。</p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -269,6 +290,8 @@
   
 </nav>
 
+
+
  </div>
     </header>
 
@@ -282,60 +305,73 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  
+    <link itemprop="mainEntityOfPage" href="https://oawan.me/2017/台南北區-阿憨鹹粥-免排隊的府城古早味/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OAwan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/oA.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新樂街口的三角窗">
+    </span>
+
     
       <header class="post-header">
 
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2016/生活-知道你們的事之後/" itemprop="url">
-                  [生活] - 知道你們的事之後
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2017/台南北區-阿憨鹹粥-免排隊的府城古早味/" itemprop="url">[台南北區] 阿憨鹹粥 - 免排隊的府城古早味</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-10-17T09:47:44+00:00" content="2016-10-17">
-              2016-10-17
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2017-05-16T15:22:00+00:00">
+                2017-05-16
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分類於</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Life/" itemprop="url" rel="index">
-                    <span itemprop="name">Life</span>
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Food/" itemprop="url" rel="index">
+                    <span itemprop="name">Food</span>
                   </a>
                 </span>
 
                 
                 
-
               
             </span>
           
@@ -343,20 +379,174 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/生活-知道你們的事之後/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/生活-知道你們的事之後/" itemprop="commentsCount">0</span> comments
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/台南北區-阿憨鹹粥-免排隊的府城古早味/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2017/台南北區-阿憨鹹粥-免排隊的府城古早味/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
           
 
           
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="/img/food/2017/Tainan/North District/阿憨鹹粥/虱目魚肚粥-1.jpg" alt="阿憨鹹粥"><br>上次來台南飽到沒胃吃的鹹粥，這次要好好補回來！跟 OA 一起來嚐看看這家頗負盛名的 <span class="oaspan oaspan-red oaspan-reverse">阿憨鹹粥</span> 吧！</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/台南北區-阿憨鹹粥-免排隊的府城古早味/#далее" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://oawan.me/2016/生活-知道你們的事之後/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OAwan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/oA.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新樂街口的三角窗">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/生活-知道你們的事之後/" itemprop="url">[生活] - 知道你們的事之後</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2016-10-17T09:47:44+00:00">
+                2016-10-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Life/" itemprop="url" rel="index">
+                    <span itemprop="name">Life</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/生活-知道你們的事之後/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/生活-知道你們的事之後/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
 
           
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -369,12 +559,18 @@
       
         
           <p><img src="/img/life/2016/永無島.png" alt="永無島"><br>　　<strong>在這裡和你一起變老，是我ㄧ生中最快樂的事。</strong><br>　　　　　　　　　　　　　　　　－ 安妮朵拉《永無島》</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/生活-知道你們的事之後/#more" rel="contents">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/生活-知道你們的事之後/#далее" rel="contents">
               閱讀全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -392,6 +588,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -403,52 +601,66 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  
+    <link itemprop="mainEntityOfPage" href="https://oawan.me/2016/javascript-json-stringify-and-parse/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OAwan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/oA.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新樂街口的三角窗">
+    </span>
+
     
       <header class="post-header">
 
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2016/javascript-json-stringify-and-parse/" itemprop="url">
-                  [JavaScript] JSON stringify and parse
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2016/javascript-json-stringify-and-parse/" itemprop="url">[JavaScript] JSON stringify and parse</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-09-30T03:01:06+00:00" content="2016-09-30">
-              2016-09-30
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2016-09-30T03:01:06+00:00">
+                2016-09-30
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分類於</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Programmer/" itemprop="url" rel="index">
                     <span itemprop="name">Programmer</span>
                   </a>
@@ -456,7 +668,6 @@
 
                 
                 
-
               
             </span>
           
@@ -464,20 +675,26 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2016/javascript-json-stringify-and-parse/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/javascript-json-stringify-and-parse/" itemprop="commentsCount">0</span> comments
+                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/javascript-json-stringify-and-parse/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -490,14 +707,20 @@
       
         
           <p><img src="/img/program/json.png" alt="JSON"></p>
-<h1 id="目的"><a href="#目的" class="headerlink" title="# 目的"></a><strong># 目的</strong></h1><p>　　紀錄一下最近常用的 <span class='oaspan oaspan-reverse'>JSON</span> 和 method。</p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="# 前言"></a><strong># 前言</strong></h1><p>　　<span class='oaspan oaspan-reverse'>JSON</span> 是一個蠻常用到的 <strong>純文字</strong> 格式表示法；本篇就來筆記一下 <span class='oaspan oaspan-reverse'>JSON</span> 與 JS 中兩個好用的方法(<strong>stringify()</strong> 和 <strong>parse()</strong>)。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/javascript-json-stringify-and-parse/#more" rel="contents">
+<h1 id="目的"><a href="#目的" class="headerlink" title="# 目的"></a><strong># 目的</strong></h1><p>　　紀錄一下最近常用的 <span class="oaspan oaspan-reverse">JSON</span> 和 method。</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="# 前言"></a><strong># 前言</strong></h1><p>　　<span class="oaspan oaspan-reverse">JSON</span> 是一個蠻常用到的 <strong>純文字</strong> 格式表示法；本篇就來筆記一下 <span class="oaspan oaspan-reverse">JSON</span> 與 JS 中兩個好用的方法(<strong>stringify()</strong> 和 <strong>parse()</strong>)。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/javascript-json-stringify-and-parse/#далее" rel="contents">
               閱讀全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -515,6 +738,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -526,52 +751,66 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  
+    <link itemprop="mainEntityOfPage" href="https://oawan.me/2016/生活-關於最近在忙的事/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OAwan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/oA.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新樂街口的三角窗">
+    </span>
+
     
       <header class="post-header">
 
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2016/生活-關於最近在忙的事/" itemprop="url">
-                  [生活] 關於最近在忙的事 - [Oi]
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2016/生活-關於最近在忙的事/" itemprop="url">[生活] 關於最近在忙的事 - [Oi]</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-09-29T02:46:01+00:00" content="2016-09-29">
-              2016-09-29
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2016-09-29T02:46:01+00:00">
+                2016-09-29
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分類於</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Programmer/" itemprop="url" rel="index">
                     <span itemprop="name">Programmer</span>
                   </a>
@@ -579,7 +818,6 @@
 
                 
                 
-
               
             </span>
           
@@ -587,20 +825,26 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2016/生活-關於最近在忙的事/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/生活-關於最近在忙的事/" itemprop="commentsCount">0</span> comments
+                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/生活-關於最近在忙的事/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -612,13 +856,19 @@
 
       
         
-          <p><img src="/img/program/For-Oi.jpg" alt="Oi"><br>　　嗯～已經 <strong>富奸</strong> 了幾個多月，拖欠了一拖拉庫想寫的 Blog 文章還沒打，在趕稿前，就先來說說這個月究竟都在忙些什麼，也順便紀錄當個 <span class='oaspan oaspan-reverse'>里程碑</span>！</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/生活-關於最近在忙的事/#more" rel="contents">
+          <p><img src="/img/program/For-Oi.jpg" alt="Oi"><br>　　嗯～已經 <strong>富奸</strong> 了幾個多月，拖欠了一拖拉庫想寫的 Blog 文章還沒打，在趕稿前，就先來說說這個月究竟都在忙些什麼，也順便紀錄當個 <span class="oaspan oaspan-reverse">里程碑</span>！</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/生活-關於最近在忙的事/#далее" rel="contents">
               閱讀全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -636,6 +886,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -647,52 +899,66 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  
+    <link itemprop="mainEntityOfPage" href="https://oawan.me/2016/高雄前鎮-蠔蠔先生-氣氛超好的生蠔海景約會地/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OAwan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/oA.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新樂街口的三角窗">
+    </span>
+
     
       <header class="post-header">
 
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2016/高雄前鎮-蠔蠔先生-氣氛超好的生蠔海景約會地/" itemprop="url">
-                  [高雄前鎮] 蠔蠔先生 - 氣氛超好的生蠔海景約會地
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2016/高雄前鎮-蠔蠔先生-氣氛超好的生蠔海景約會地/" itemprop="url">[高雄前鎮] 蠔蠔先生 - 氣氛超好的生蠔海景約會地</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-08-13T15:20:05+00:00" content="2016-08-13">
-              2016-08-13
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2016-08-13T15:20:05+00:00">
+                2016-08-13
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分類於</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Food/" itemprop="url" rel="index">
                     <span itemprop="name">Food</span>
                   </a>
@@ -700,7 +966,6 @@
 
                 
                 
-
               
             </span>
           
@@ -708,20 +973,26 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2016/高雄前鎮-蠔蠔先生-氣氛超好的生蠔海景約會地/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/高雄前鎮-蠔蠔先生-氣氛超好的生蠔海景約會地/" itemprop="commentsCount">0</span> comments
+                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/高雄前鎮-蠔蠔先生-氣氛超好的生蠔海景約會地/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -734,12 +1005,18 @@
       
         
           <p><img src="/img/food/2016/Kaohsiung/Qianzhen/Mr.Oyster/綜合海鮮拼盤-3.jpg" alt="蠔蠔先生"><br>　　今年的 <span class="oaspan oaspan-red">父親節大餐</span> 想來點不一樣的，有別於以往的 <strong>飲茶</strong>、<strong>西餐廳</strong> 等，今年我們一起到新的幽會地點約會囉！</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/高雄前鎮-蠔蠔先生-氣氛超好的生蠔海景約會地/#more" rel="contents">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/高雄前鎮-蠔蠔先生-氣氛超好的生蠔海景約會地/#далее" rel="contents">
               閱讀全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -757,6 +1034,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -768,52 +1047,66 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  
+    <link itemprop="mainEntityOfPage" href="https://oawan.me/2016/台北松山-漁聞樂-名字很逗趣的無菜單日式料理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OAwan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/oA.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新樂街口的三角窗">
+    </span>
+
     
       <header class="post-header">
 
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2016/台北松山-漁聞樂-名字很逗趣的無菜單日式料理/" itemprop="url">
-                  [台北松山] 漁聞樂 - 名字很逗趣的無菜單日式料理
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2016/台北松山-漁聞樂-名字很逗趣的無菜單日式料理/" itemprop="url">[台北松山] 漁聞樂 - 名字很逗趣的無菜單日式料理</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-07-09T06:16:56+00:00" content="2016-07-09">
-              2016-07-09
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2016-07-09T06:16:56+00:00">
+                2016-07-09
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分類於</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Food/" itemprop="url" rel="index">
                     <span itemprop="name">Food</span>
                   </a>
@@ -821,7 +1114,6 @@
 
                 
                 
-
               
             </span>
           
@@ -829,20 +1121,26 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2016/台北松山-漁聞樂-名字很逗趣的無菜單日式料理/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/台北松山-漁聞樂-名字很逗趣的無菜單日式料理/" itemprop="commentsCount">0</span> comments
+                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/台北松山-漁聞樂-名字很逗趣的無菜單日式料理/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -855,12 +1153,18 @@
       
         
           <p><img src="/img/food/2016/Taipei/SongShan/漁聞樂/生魚片綜合拼盤.jpg" alt="漁聞樂"><br>　　這個月 (六月) 是小凱蘿爸爸媽媽的結婚紀念日 (實際到店是6/26唷！)，有鑑於兩老直接點名想吃 <strong>日式料理</strong>，於是小凱蘿找到了這家名字很逗趣，網友們又大推 CP 值很高的 <span class="oaspan oaspan-red oaspan-reverse">漁聞樂</span> 來享受享受！</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/台北松山-漁聞樂-名字很逗趣的無菜單日式料理/#more" rel="contents">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/台北松山-漁聞樂-名字很逗趣的無菜單日式料理/#далее" rel="contents">
               閱讀全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -878,6 +1182,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -889,52 +1195,66 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  
+    <link itemprop="mainEntityOfPage" href="https://oawan.me/2016/台北大安-Mamak檔-平價必吃的正宗星馬料理！/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OAwan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/oA.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新樂街口的三角窗">
+    </span>
+
     
       <header class="post-header">
 
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2016/台北大安-Mamak檔-平價必吃的正宗星馬料理！/" itemprop="url">
-                  [台北大安] Mamak檔 - 平價必吃的正宗星馬料理！
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2016/台北大安-Mamak檔-平價必吃的正宗星馬料理！/" itemprop="url">[台北大安] Mamak檔 - 平價必吃的正宗星馬料理！</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-06-19T02:55:33+00:00" content="2016-06-19">
-              2016-06-19
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2016-06-19T02:55:33+00:00">
+                2016-06-19
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分類於</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Food/" itemprop="url" rel="index">
                     <span itemprop="name">Food</span>
                   </a>
@@ -942,7 +1262,6 @@
 
                 
                 
-
               
             </span>
           
@@ -950,20 +1269,26 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2016/台北大安-Mamak檔-平價必吃的正宗星馬料理！/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/台北大安-Mamak檔-平價必吃的正宗星馬料理！/" itemprop="commentsCount">0</span> comments
+                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/台北大安-Mamak檔-平價必吃的正宗星馬料理！/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -976,12 +1301,18 @@
       
         
           <p><img src="/img/food/2016/Taipei/Daan/mamak檔/姊弟共騎.jpg" alt="Mamak檔"><br>　　自從試過 <strong>Costco</strong> <del><em>(我都念 Costco，但是我朋友都念 Costco，聽說正解是 Costco)</em></del> 的 <span class="oaspan oaspan-reverse">叻沙鍋</span> 後，就開始喜歡嘗試一些新加坡或大馬料理；有次意外在 <strong>忠孝敦化</strong> 發現這家超道地的星馬料理餐廳，而這次是二訪囉！</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/台北大安-Mamak檔-平價必吃的正宗星馬料理！/#more" rel="contents">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/台北大安-Mamak檔-平價必吃的正宗星馬料理！/#далее" rel="contents">
               閱讀全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -999,6 +1330,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -1010,52 +1343,66 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  
+    <link itemprop="mainEntityOfPage" href="https://oawan.me/2016/基隆-鮮果汁大王、陳記泡泡冰、營養三明治-基隆廟口的小點心/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OAwan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/oA.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新樂街口的三角窗">
+    </span>
+
     
       <header class="post-header">
 
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2016/基隆-鮮果汁大王、陳記泡泡冰、營養三明治-基隆廟口的小點心/" itemprop="url">
-                  [基隆] 鮮果汁大王、陳記泡泡冰、營養三明治 - 基隆廟口的小點心
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2016/基隆-鮮果汁大王、陳記泡泡冰、營養三明治-基隆廟口的小點心/" itemprop="url">[基隆] 鮮果汁大王、陳記泡泡冰、營養三明治 - 基隆廟口的小點心</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-06-12T06:54:11+00:00" content="2016-06-12">
-              2016-06-12
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2016-06-12T06:54:11+00:00">
+                2016-06-12
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分類於</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Food/" itemprop="url" rel="index">
                     <span itemprop="name">Food</span>
                   </a>
@@ -1063,7 +1410,6 @@
 
                 
                 
-
               
             </span>
           
@@ -1071,20 +1417,26 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2016/基隆-鮮果汁大王、陳記泡泡冰、營養三明治-基隆廟口的小點心/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/基隆-鮮果汁大王、陳記泡泡冰、營養三明治-基隆廟口的小點心/" itemprop="commentsCount">0</span> comments
+                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/基隆-鮮果汁大王、陳記泡泡冰、營養三明治-基隆廟口的小點心/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -1097,12 +1449,18 @@
       
         
           <p><img src="/img/food/2016/Keelung/營養三明治.jpg" alt="營養三明治"><br>　　今天來廟口，嘗試了有名的 <span class="oaspan oaspan-red oaspan-reverse">營養三明治</span> 和每次來都一定要吃的 <span class="oaspan oaspan-red oaspan-reverse">陳記泡泡冰</span>，每次吃到泡泡冰都覺得很幸福！</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/基隆-鮮果汁大王、陳記泡泡冰、營養三明治-基隆廟口的小點心/#more" rel="contents">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/基隆-鮮果汁大王、陳記泡泡冰、營養三明治-基隆廟口的小點心/#далее" rel="contents">
               閱讀全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -1120,6 +1478,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -1131,52 +1491,66 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  
+    <link itemprop="mainEntityOfPage" href="https://oawan.me/2016/基隆-十攤。螃蟹羹、油飯-在地人大推的好味道/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OAwan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/oA.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新樂街口的三角窗">
+    </span>
+
     
       <header class="post-header">
 
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2016/基隆-十攤。螃蟹羹、油飯-在地人大推的好味道/" itemprop="url">
-                  [基隆] 十攤。螃蟹羹油飯 - 在地人大推的好味道
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2016/基隆-十攤。螃蟹羹、油飯-在地人大推的好味道/" itemprop="url">[基隆] 十攤。螃蟹羹油飯 - 在地人大推的好味道</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-06-12T06:39:13+00:00" content="2016-06-12">
-              2016-06-12
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2016-06-12T06:39:13+00:00">
+                2016-06-12
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分類於</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Food/" itemprop="url" rel="index">
                     <span itemprop="name">Food</span>
                   </a>
@@ -1184,7 +1558,6 @@
 
                 
                 
-
               
             </span>
           
@@ -1192,20 +1565,26 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2016/基隆-十攤。螃蟹羹、油飯-在地人大推的好味道/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/基隆-十攤。螃蟹羹、油飯-在地人大推的好味道/" itemprop="commentsCount">0</span> comments
+                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/基隆-十攤。螃蟹羹、油飯-在地人大推的好味道/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -1218,12 +1597,18 @@
       
         
           <p><img src="/img/food/2016/Keelung/油飯螃蟹羹-3.jpg" alt="十攤。螃蟹羹油飯"><br>　　基隆廟口夜市有別於其他夜市的地方，就在它沒有過多的 <em>連鎖攤販</em>，而且還可以吃到很多特色美食！<strong>螃蟹羹。油飯</strong> 就是一樣特別的好味道。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/基隆-十攤。螃蟹羹、油飯-在地人大推的好味道/#more" rel="contents">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/基隆-十攤。螃蟹羹、油飯-在地人大推的好味道/#далее" rel="contents">
               閱讀全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -1241,6 +1626,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -1252,52 +1639,66 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  
+    <link itemprop="mainEntityOfPage" href="https://oawan.me/2016/基隆-天一香肉羹順-基隆廟口必吃美食/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OAwan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/oA.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新樂街口的三角窗">
+    </span>
+
     
       <header class="post-header">
 
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2016/基隆-天一香肉羹順-基隆廟口必吃美食/" itemprop="url">
-                  [基隆] 天一香肉羹順 - 基隆廟口必吃美食
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2016/基隆-天一香肉羹順-基隆廟口必吃美食/" itemprop="url">[基隆] 天一香肉羹順 - 基隆廟口必吃美食</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-06-12T06:23:59+00:00" content="2016-06-12">
-              2016-06-12
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2016-06-12T06:23:59+00:00">
+                2016-06-12
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分類於</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Food/" itemprop="url" rel="index">
                     <span itemprop="name">Food</span>
                   </a>
@@ -1305,7 +1706,6 @@
 
                 
                 
-
               
             </span>
           
@@ -1313,20 +1713,26 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2016/基隆-天一香肉羹順-基隆廟口必吃美食/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/基隆-天一香肉羹順-基隆廟口必吃美食/" itemprop="commentsCount">0</span> comments
+                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/基隆-天一香肉羹順-基隆廟口必吃美食/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -1339,12 +1745,18 @@
       
         
           <p><img src="/img/food/2016/Keelung/天一香肉羹順-3.jpg" alt="天一香肉羹順"><br>　　每次到基隆廟口，都有幾樣 <strong>就算很飽也想要吃上一口</strong> 的美食，沒錯，其中一項就是百年老店 <span class="oaspan oaspan-red oaspan-reverse">天一香肉羹順</span>！喜歡吃滷肉飯嗎？如果你也跟我一樣是 <strong>滷飯客</strong>，到基隆別忘了來這扒上一碗喔！</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/基隆-天一香肉羹順-基隆廟口必吃美食/#more" rel="contents">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/基隆-天一香肉羹順-基隆廟口必吃美食/#далее" rel="contents">
               閱讀全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -1359,125 +1771,6 @@
     <footer class="post-footer">
       
 
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/2016-may-movie-list/" itemprop="url">
-                  [5月] 街口的電影院 - 月總覽
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-05-31T15:52:17+00:00" content="2016-05-31">
-              2016-05-31
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Movie/" itemprop="url" rel="index">
-                    <span itemprop="name">Movie</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/2016-may-movie-list/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/2016-may-movie-list/" itemprop="commentsCount">0</span> comments
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="/img/movie/2016/05/2016-05.jpg" alt="5月品影總覽" title="「如果一起老去，我允許你先走。」"><br>　　<strong>5</strong> 部韓國電影，<strong>2</strong> 部好萊塢電影，<strong>2</strong> 部中國電影，<strong>1</strong> 部台灣電影，<strong>1</strong> 部印度電影，共 <strong>11</strong> 部，這個五月看了不少韓國電影呢！下面，就讓我們用 <strong>比較不雷</strong> 的方式，分享這個月看了哪些電影吧！<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/2016-may-movie-list/#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
       
 
       
@@ -1525,25 +1818,32 @@
 
       
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/oA.jpg"
                alt="OAwan" />
           <p class="site-author-name" itemprop="name">OAwan</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
         </div>
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">22</span>
-              <span class="site-state-item-name">文章</span>
-            </a>
-          </div>
 
           
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">文章</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
             <div class="site-state-item site-state-categories">
-              <a href="/categories">
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分類</span>
               </a>
@@ -1551,9 +1851,11 @@
           
 
           
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">66</span>
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">68</span>
                 <span class="site-state-item-name">標籤</span>
               </a>
             </div>
@@ -1600,7 +1902,12 @@
         
         
 
+        
+
+
       </section>
+
+      
 
       
 
@@ -1617,12 +1924,13 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">OAwan</span>
 </div>
+
 
 <div class="powered-by">
   由 <a class="theme-link" href="https://hexo.io">Hexo</a> 強力驅動
@@ -1635,29 +1943,34 @@
   </a>
 </div>
 
+
         
-
 <div class="busuanzi-count">
-
   <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 
   
-    <span class="site-pv"><i class="fa fa-street-view"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>人來過這裡。</span>
-  
+    <span class="site-pv">
+      <i class="fa fa-street-view"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      人來過這裡。
+    </span>
   
 </div>
-
 
 
         
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
   </div>
 
   
@@ -1680,75 +1993,96 @@
 
 
 
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
 
 
 
-  
-  
-
-  
-
-  
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
-
-
-
-  
-
-
-
-  
-
-    <script type="text/javascript">
-      var disqus_shortname = 'oawan';
-      var disqus_identifier = 'index.html';
-      var disqus_title = "";
-      var disqus_url = '';
-
-      function run_disqus_script(disqus_script){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      }
-
-      run_disqus_script('count.js');
-      
-    </script>
-  
 
 
 
 
   
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
   
 
   

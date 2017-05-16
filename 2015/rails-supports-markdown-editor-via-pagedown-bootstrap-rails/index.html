@@ -5,11 +5,14 @@
   
 
 
-<html class="theme-next muse use-motion">
+<html class="theme-next muse use-motion" lang="zh-tw">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
 
 
 
@@ -29,9 +32,12 @@
 
 
 
+
+
+
   
   
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -71,9 +77,9 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="攻城獅筆記,rubyonrails,rails4,pagedown,Markdown,editor,pagedown-bootstrap-rails," />
@@ -87,7 +93,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
 
 
 
@@ -97,46 +103,54 @@
 
 
 
-<meta name="description" content="目的　　為了讓自己寫的網站擁有編輯器的功能，可以使用一些現成的編輯器來實現，如 ckeditor、ckeditor-rails、pagedown 諸如此類，由於已經喜歡上寫 markdown 的感覺，所以選了 pagedown-bootstrap-rails 來實現我的功能。
-前言　　了解 Markdown 怎麼寫之後，就習慣使用支援 markdown 的編輯器了嗎？">
+<meta name="description" content="目的　　為了讓自己寫的網站擁有編輯器的功能，可以使用一些現成的編輯器來實現，如 ckeditor、ckeditor-rails、pagedown 諸如此類，由於已經喜歡上寫 markdown 的感覺，所以選了 pagedown-bootstrap-rails 來實現我的功能。 前言　　了解 Markdown 怎麼寫之後，就習慣使用支援 markdown 的編輯器了嗎？">
+<meta name="keywords" content="攻城獅筆記,rubyonrails,rails4,pagedown,Markdown,editor,pagedown-bootstrap-rails">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Rails] 使用支援markdown編輯器 - via Pagedown-Bootstrap-Rails">
 <meta property="og:url" content="https://oawan.me/2015/rails-supports-markdown-editor-via-pagedown-bootstrap-rails/index.html">
 <meta property="og:site_name" content="新樂街口的三角窗">
-<meta property="og:description" content="目的　　為了讓自己寫的網站擁有編輯器的功能，可以使用一些現成的編輯器來實現，如 ckeditor、ckeditor-rails、pagedown 諸如此類，由於已經喜歡上寫 markdown 的感覺，所以選了 pagedown-bootstrap-rails 來實現我的功能。
-前言　　了解 Markdown 怎麼寫之後，就習慣使用支援 markdown 的編輯器了嗎？">
+<meta property="og:description" content="目的　　為了讓自己寫的網站擁有編輯器的功能，可以使用一些現成的編輯器來實現，如 ckeditor、ckeditor-rails、pagedown 諸如此類，由於已經喜歡上寫 markdown 的感覺，所以選了 pagedown-bootstrap-rails 來實現我的功能。 前言　　了解 Markdown 怎麼寫之後，就習慣使用支援 markdown 的編輯器了嗎？">
 <meta property="og:image" content="https://oawan.me/img/program/markdown-tools.jpg">
 <meta property="og:image" content="https://oawan.me/img/program/pagedown-in-rails.png">
 <meta property="og:updated_time" content="2016-05-27T08:54:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Rails] 使用支援markdown編輯器 - via Pagedown-Bootstrap-Rails">
-<meta name="twitter:description" content="目的　　為了讓自己寫的網站擁有編輯器的功能，可以使用一些現成的編輯器來實現，如 ckeditor、ckeditor-rails、pagedown 諸如此類，由於已經喜歡上寫 markdown 的感覺，所以選了 pagedown-bootstrap-rails 來實現我的功能。
-前言　　了解 Markdown 怎麼寫之後，就習慣使用支援 markdown 的編輯器了嗎？">
+<meta name="twitter:description" content="目的　　為了讓自己寫的網站擁有編輯器的功能，可以使用一些現成的編輯器來實現，如 ckeditor、ckeditor-rails、pagedown 諸如此類，由於已經喜歡上寫 markdown 的感覺，所以選了 pagedown-bootstrap-rails 來實現我的功能。 前言　　了解 Markdown 怎麼寫之後，就習慣使用支援 markdown 的編輯器了嗎？">
 <meta name="twitter:image" content="https://oawan.me/img/program/markdown-tools.jpg">
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '作者'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
 
 
-
   <link rel="canonical" href="https://oawan.me/2015/rails-supports-markdown-editor-via-pagedown-bootstrap-rails/"/>
 
 
-  <title> [Rails] 使用支援markdown編輯器 - via Pagedown-Bootstrap-Rails | 新樂街口的三角窗 </title>
+
+
+
+  <title>[Rails] 使用支援markdown編輯器 - via Pagedown-Bootstrap-Rails | 新樂街口的三角窗</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
@@ -162,14 +176,18 @@
 
 
 
+
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-72706538-2', 'auto');
   ga('send', 'pageview');
 </script>
+
+
 
 
 
@@ -184,29 +202,33 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">新樂街口的三角窗</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">新樂街口的三角窗</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">我，在這裡，享受等你的時光。</p>
+      
   </div>
-  <p class="site-subtitle">我，在這裡，享受等你的時光。</p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -274,6 +296,8 @@
   
 </nav>
 
+
+
  </div>
     </header>
 
@@ -287,49 +311,64 @@
     
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  
+    <link itemprop="mainEntityOfPage" href="https://oawan.me/2015/rails-supports-markdown-editor-via-pagedown-bootstrap-rails/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OAwan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/oA.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新樂街口的三角窗">
+    </span>
+
     
       <header class="post-header">
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                [Rails] 使用支援markdown編輯器 - via Pagedown-Bootstrap-Rails
-              
-            
-          </h1>
+          <h1 class="post-title" itemprop="name headline">[Rails] 使用支援markdown編輯器 - via Pagedown-Bootstrap-Rails</h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2015-11-11T18:16:00+00:00" content="2015-11-11">
-              2015-11-11
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2015-11-11T18:16:00+00:00">
+                2015-11-11
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分類於</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Programmer/" itemprop="url" rel="index">
                     <span itemprop="name">Programmer</span>
                   </a>
@@ -337,7 +376,6 @@
 
                 
                 
-
               
             </span>
           
@@ -345,28 +383,31 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2015/rails-supports-markdown-editor-via-pagedown-bootstrap-rails/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2015/rails-supports-markdown-editor-via-pagedown-bootstrap-rails/" itemprop="commentsCount">0</span> comments
+                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2015/rails-supports-markdown-editor-via-pagedown-bootstrap-rails/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
           
 
           
-            &nbsp; | &nbsp;
-            <div class="fb-like" data-layout="button_count" data-share="true"></div>
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
           
 
           
-              &nbsp; | &nbsp;
-              <span class="page-pv"><i class="fa fa-eye"></i>
-              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-              </span>
+
           
+
         </div>
       </header>
     
@@ -381,31 +422,31 @@
 <h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a><strong>目的</strong></h1><p>　　為了讓自己寫的網站擁有編輯器的功能，可以使用一些現成的編輯器來實現，如 <a href="https://github.com/galetahub/ckeditor" target="_blank" rel="external"><strong>ckeditor</strong></a>、<a href="https://github.com/tsechingho/ckeditor-rails" target="_blank" rel="external"><strong>ckeditor-rails</strong></a>、<a href="https://github.com/ujifgc/pagedown" target="_blank" rel="external"><strong>pagedown</strong></a> 諸如此類，由於已經喜歡上寫 markdown 的感覺，所以選了 <a href="https://github.com/hughevans/pagedown-bootstrap-rails" target="_blank" rel="external"><strong>pagedown-bootstrap-rails</strong></a> 來實現我的功能。</p>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p>　　了解 <a href="http://markdown.tw/" target="_blank" rel="external"><strong>Markdown</strong></a> 怎麼寫之後，就習慣使用支援 markdown 的編輯器了嗎？</p>
 <a id="more"></a>  
-<h1 id="筆記"><a href="#筆記" class="headerlink" title="筆記"></a><strong>筆記</strong></h1><h2 id="1-Gem"><a href="#1-Gem" class="headerlink" title="1. Gem"></a>1. Gem</h2><p>　　在使用 pagedown-bootstrap-rails 這個 gem 時，我們也得裝 <a href="https://github.com/twbs/bootstrap-sass" target="_blank" rel="external"><strong>Bootstrap3(Sass)</strong></a> 和 <a href="https://github.com/bokmann/font-awesome-rails" target="_blank" rel="external"><strong>Font Awesome</strong></a>：<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gem <span class="string">'bootstrap-sass'</span></span><br><span class="line">gem <span class="string">'font-awesome-rails'</span></span><br><span class="line">gem <span class="string">'pagedown-bootstrap-rails'</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="2-scss、js-設定"><a href="#2-scss、js-設定" class="headerlink" title="2. scss、js 設定"></a>2. scss、js 設定</h2><p>　　scss 的設定為：<br><figure class="highlight scss"><figcaption><span>app/assets/stylesheets/application.scss</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">import</span> <span class="string">"bootstrap-sprockets"</span>;</span><br><span class="line">@<span class="keyword">import</span> <span class="string">"bootstrap"</span>;</span><br><span class="line">@<span class="keyword">import</span> <span class="string">"font-awesome"</span>;</span><br><span class="line">@<span class="keyword">import</span> <span class="string">"pagedown_bootstrap"</span>;</span><br></pre></td></tr></table></figure></p>
-<p>　　js 中加入已下：<br><figure class="highlight javascript"><figcaption><span>app/assets/stylesheets/application.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//= require bootstrap-sprockets</span></span><br><span class="line"><span class="comment">//= require pagedown_bootstrap</span></span><br><span class="line"><span class="comment">//= require pagedown_init</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="筆記"><a href="#筆記" class="headerlink" title="筆記"></a><strong>筆記</strong></h1><h2 id="1-Gem"><a href="#1-Gem" class="headerlink" title="1. Gem"></a>1. Gem</h2><p>　　在使用 pagedown-bootstrap-rails 這個 gem 時，我們也得裝 <a href="https://github.com/twbs/bootstrap-sass" target="_blank" rel="external"><strong>Bootstrap3(Sass)</strong></a> 和 <a href="https://github.com/bokmann/font-awesome-rails" target="_blank" rel="external"><strong>Font Awesome</strong></a>：<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gem <span class="string">'bootstrap-sass'</span></div><div class="line">gem <span class="string">'font-awesome-rails'</span></div><div class="line">gem <span class="string">'pagedown-bootstrap-rails'</span></div></pre></td></tr></table></figure></p>
+<h2 id="2-scss、js-設定"><a href="#2-scss、js-設定" class="headerlink" title="2. scss、js 設定"></a>2. scss、js 設定</h2><p>　　scss 的設定為：<br><figure class="highlight scss"><figcaption><span>app/assets/stylesheets/application.scss</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">import</span> <span class="string">"bootstrap-sprockets"</span>;</div><div class="line">@<span class="keyword">import</span> <span class="string">"bootstrap"</span>;</div><div class="line">@<span class="keyword">import</span> <span class="string">"font-awesome"</span>;</div><div class="line">@<span class="keyword">import</span> <span class="string">"pagedown_bootstrap"</span>;</div></pre></td></tr></table></figure></p>
+<p>　　js 中加入已下：<br><figure class="highlight javascript"><figcaption><span>app/assets/stylesheets/application.js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//= require bootstrap-sprockets</span></div><div class="line"><span class="comment">//= require pagedown_bootstrap</span></div><div class="line"><span class="comment">//= require pagedown_init</span></div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>NOTE: bootstrap-sprockets 加在 //= require jquery 後，pagedown_init 加在 pagedown_bootstrap 後</p>
 </blockquote>
-<h2 id="3-SimpleForm-中使用-pagedown"><a href="#3-SimpleForm-中使用-pagedown" class="headerlink" title="3. SimpleForm 中使用 pagedown"></a>3. SimpleForm 中使用 pagedown</h2><p>　　先在 app 中加入 input 與 output 設定：<br><figure class="highlight ruby"><figcaption><span>app/inputs/pagedown_input.rb</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PagedownInput</span> &lt; SimpleForm::Inputs::<span class="title">TextInput</span></span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">input</span></span></span><br><span class="line">    out = <span class="string">"&lt;div id=\"wmd-button-bar-<span class="subst">#&#123;attribute_name&#125;</span>\"&gt;&lt;/div&gt;<span class="subst">#&#123;wmd_input&#125;</span>"</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> input_html_options[<span class="symbol">:preview</span>]</span><br><span class="line">      out &lt;&lt; <span class="string">"&lt;div id=\"wmd-preview-<span class="subst">#&#123;attribute_name&#125;</span>\" class=\"wmd-preview\"&gt;&lt;/div&gt;"</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    out.html_safe</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  private</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">wmd_input</span></span></span><br><span class="line">    @builder.text_area(</span><br><span class="line">      attribute_name,</span><br><span class="line">      input_html_options.merge(</span><br><span class="line">        <span class="class"><span class="keyword">class</span>: '<span class="title">wmd</span>-<span class="title">input</span> <span class="title">form</span>-<span class="title">control</span>', <span class="title">id</span>: "<span class="title">wmd</span>-<span class="title">input</span>-<span class="comment">#&#123;attribute_name&#125;"</span></span></span><br><span class="line">      )</span><br><span class="line">    )</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></p>
-<p>　　如此一來，在 simple form 中就可以透過 <code>as: :pagedown</code> 調用 pagedown editor<br><figure class="highlight haml"><figcaption><span>app/views/examples/_form.html.haml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">=<span class="ruby"> f.input <span class="symbol">:description</span>, <span class="symbol">as:</span> <span class="symbol">:pagedown</span>, <span class="symbol">input_html:</span> &#123; <span class="symbol">preview:</span> <span class="literal">true</span>, <span class="symbol">rows:</span> <span class="number">10</span> &#125;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="3-SimpleForm-中使用-pagedown"><a href="#3-SimpleForm-中使用-pagedown" class="headerlink" title="3. SimpleForm 中使用 pagedown"></a>3. SimpleForm 中使用 pagedown</h2><p>　　先在 app 中加入 input 與 output 設定：<br><figure class="highlight ruby"><figcaption><span>app/inputs/pagedown_input.rb</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PagedownInput</span> &lt; SimpleForm::Inputs::<span class="title">TextInput</span></span></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">input</span></span></div><div class="line">    out = <span class="string">"&lt;div id=\"wmd-button-bar-<span class="subst">#&#123;attribute_name&#125;</span>\"&gt;&lt;/div&gt;<span class="subst">#&#123;wmd_input&#125;</span>"</span></div><div class="line"></div><div class="line">    <span class="keyword">if</span> input_html_options[<span class="symbol">:preview</span>]</div><div class="line">      out &lt;&lt; <span class="string">"&lt;div id=\"wmd-preview-<span class="subst">#&#123;attribute_name&#125;</span>\" class=\"wmd-preview\"&gt;&lt;/div&gt;"</span></div><div class="line">    <span class="keyword">end</span></div><div class="line"></div><div class="line">    out.html_safe</div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  private</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">wmd_input</span></span></div><div class="line">    @builder.text_area(</div><div class="line">      attribute_name,</div><div class="line">      input_html_options.merge(</div><div class="line">        <span class="class"><span class="keyword">class</span>: '<span class="title">wmd</span>-<span class="title">input</span> <span class="title">form</span>-<span class="title">control</span>', <span class="title">id</span>: "<span class="title">wmd</span>-<span class="title">input</span>-<span class="comment">#&#123;attribute_name&#125;"</span></span></div><div class="line">      )</div><div class="line">    )</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
+<p>　　如此一來，在 simple form 中就可以透過 <code>as: :pagedown</code> 調用 pagedown editor<br><figure class="highlight haml"><figcaption><span>app/views/examples/_form.html.haml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">=<span class="ruby"> f.input <span class="symbol">:description</span>, <span class="symbol">as:</span> <span class="symbol">:pagedown</span>, <span class="symbol">input_html:</span> &#123; <span class="symbol">preview:</span> <span class="literal">true</span>, <span class="symbol">rows:</span> <span class="number">10</span> &#125;</span></div></pre></td></tr></table></figure></p>
 <p>　　以上，就可以使用 Pagedown Editor 了！精美如下圖：</p>
 <p><img src="/img/program/pagedown-in-rails.png" alt="pagedown-in-rails.png"></p>
 <h2 id="4-顯示-markdown-型態資料"><a href="#4-顯示-markdown-型態資料" class="headerlink" title="4. 顯示 markdown 型態資料"></a>4. 顯示 markdown 型態資料</h2><p>　　在使用 pagedown editor 輸入完文章或內容後，我們呈現時需要把內容由 <strong>Markdown</strong> 轉成 <strong>HTML</strong>，我們利用 javascript 將內容透過 <code>Mardown.Converter</code> 轉成 html 即可！主要有兩個步驟：</p>
 <p><strong>(1) 於 js 中撰寫 <code>.wmd-output</code> 設定</strong></p>
 <ul>
 <li><p>如果你使用 <strong>javascript</strong>：</p>
-<figure class="highlight javascript"><figcaption><span>app/javascripts/examples.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">　$(<span class="string">'.wmd-output'</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">　　<span class="keyword">var</span> converter = <span class="keyword">new</span> Markdown.Converter();</span><br><span class="line">　　<span class="keyword">var</span> content = $(<span class="keyword">this</span>).html();</span><br><span class="line">　　$(<span class="keyword">this</span>).html(converter.makeHtml(content));</span><br><span class="line">　&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><figcaption><span>app/javascripts/examples.js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">　$(<span class="string">'.wmd-output'</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>) </span>&#123;</div><div class="line">　　<span class="keyword">var</span> converter = <span class="keyword">new</span> Markdown.Converter();</div><div class="line">　　<span class="keyword">var</span> content = $(<span class="keyword">this</span>).html();</div><div class="line">　　$(<span class="keyword">this</span>).html(converter.makeHtml(content));</div><div class="line">　&#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 </li>
 <li><p>如果你使用 <strong>coffeescript</strong>：</p>
-<figure class="highlight coffeescript"><figcaption><span>app/javascripts/examples.coffee</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ -&gt;</span><br><span class="line">　$(<span class="string">'.wmd-output'</span>).each (i) -&gt;</span><br><span class="line">　　converter = <span class="keyword">new</span> Markdown.Converter</span><br><span class="line">　　content = $(<span class="keyword">this</span>).html()</span><br><span class="line">　　$(<span class="keyword">this</span>).html converter.makeHtml(content)</span><br></pre></td></tr></table></figure>
+<figure class="highlight coffeescript"><figcaption><span>app/javascripts/examples.coffee</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ -&gt;</div><div class="line">　$(<span class="string">'.wmd-output'</span>).each (i) -&gt;</div><div class="line">　　converter = <span class="keyword">new</span> Markdown.Converter</div><div class="line">　　content = $(<span class="keyword">this</span>).html()</div><div class="line">　　$(<span class="keyword">this</span>).html converter.makeHtml(content)</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <blockquote>
 <p>注意！以上程式碼縮排請自行重新縮排，以免有全形半形錯誤。</p>
 </blockquote>
-<p><strong>(2) 於 view 中調用 <code>.wmd-output</code></strong><br>　　這樣我們就可以在 view 中調用 <code>.wmd-output</code> 來呈現囉！<br><figure class="highlight haml"><figcaption><span>app/views/examples.html.haml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.wmd-output</span><br><span class="line">　:preserve</span><br><span class="line"> 　　#&#123;<span class="ruby">@example.description&#125;</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="為使輸出為安全性之-html，我們使用-sanitize-作逸出-更新-2015-12-16"><a href="#為使輸出為安全性之-html，我們使用-sanitize-作逸出-更新-2015-12-16" class="headerlink" title="為使輸出為安全性之 html，我們使用 sanitize 作逸出(更新 2015.12.16)"></a><strong>為使輸出為安全性之 html，我們使用 sanitize 作逸出(更新 2015.12.16)</strong></h3><figure class="highlight haml"><figcaption><span>app/views/examples.html.haml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.wmd-output</span><br><span class="line">　:preserve</span><br><span class="line"> 　　#&#123;<span class="ruby">sanitize(@example.description)&#125;</span></span><br></pre></td></tr></table></figure>
+<p><strong>(2) 於 view 中調用 <code>.wmd-output</code></strong><br>　　這樣我們就可以在 view 中調用 <code>.wmd-output</code> 來呈現囉！<br><figure class="highlight haml"><figcaption><span>app/views/examples.html.haml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.wmd-output</div><div class="line">　:preserve</div><div class="line"> 　　#&#123;<span class="ruby">@example.description&#125;</span></div></pre></td></tr></table></figure></p>
+<h3 id="為使輸出為安全性之-html，我們使用-sanitize-作逸出-更新-2015-12-16"><a href="#為使輸出為安全性之-html，我們使用-sanitize-作逸出-更新-2015-12-16" class="headerlink" title="為使輸出為安全性之 html，我們使用 sanitize 作逸出(更新 2015.12.16)"></a><strong>為使輸出為安全性之 html，我們使用 sanitize 作逸出(更新 2015.12.16)</strong></h3><figure class="highlight haml"><figcaption><span>app/views/examples.html.haml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.wmd-output</div><div class="line">　:preserve</div><div class="line"> 　　#&#123;<span class="ruby">sanitize(@example.description)&#125;</span></div></pre></td></tr></table></figure>
 <p>以上，就完成了在 rails 中使用 pagedown editor 和顯示 Markdown 內容囉！</p>
 <p>That’s it, <strong>DONE!</strong></p>
 <p><strong>【參考資料】</strong></p>
@@ -434,25 +475,46 @@
       
     </div>
 
+    <div>
+      
+        
+
+      
+    </div>
+
     <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/攻城獅筆記/" rel="tag">#攻城獅筆記</a>
+            <a href="/tags/攻城獅筆記/" rel="tag"># 攻城獅筆記</a>
           
-            <a href="/tags/rubyonrails/" rel="tag">#rubyonrails</a>
+            <a href="/tags/rubyonrails/" rel="tag"># rubyonrails</a>
           
-            <a href="/tags/rails4/" rel="tag">#rails4</a>
+            <a href="/tags/rails4/" rel="tag"># rails4</a>
           
-            <a href="/tags/pagedown/" rel="tag">#pagedown</a>
+            <a href="/tags/pagedown/" rel="tag"># pagedown</a>
           
-            <a href="/tags/Markdown/" rel="tag">#Markdown</a>
+            <a href="/tags/Markdown/" rel="tag"># Markdown</a>
           
-            <a href="/tags/editor/" rel="tag">#editor</a>
+            <a href="/tags/editor/" rel="tag"># editor</a>
           
-            <a href="/tags/pagedown-bootstrap-rails/" rel="tag">#pagedown-bootstrap-rails</a>
+            <a href="/tags/pagedown-bootstrap-rails/" rel="tag"># pagedown-bootstrap-rails</a>
           
         </div>
+      
+
+      
+        
+          <div class="social-like">
+            
+
+            
+              <div class="fb_like">
+                <div class="fb-like" data-layout="button_count" data-share="true"></div>
+              </div>
+            
+          </div>
+        
       
 
       
@@ -464,6 +526,8 @@
               </a>
             
           </div>
+
+          <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
@@ -533,25 +597,32 @@
         </ul>
       
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/oA.jpg"
                alt="OAwan" />
           <p class="site-author-name" itemprop="name">OAwan</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
         </div>
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">22</span>
-              <span class="site-state-item-name">文章</span>
-            </a>
-          </div>
 
           
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">文章</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
             <div class="site-state-item site-state-categories">
-              <a href="/categories">
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分類</span>
               </a>
@@ -559,9 +630,11 @@
           
 
           
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">66</span>
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">68</span>
                 <span class="site-state-item-name">標籤</span>
               </a>
             </div>
@@ -608,19 +681,29 @@
         
         
 
+        
+
+
       </section>
 
       
+      <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
+
             
               
             
+
             
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目的"><span class="nav-number">1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">2.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#筆記"><span class="nav-number">3.</span> <span class="nav-text">筆記</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Gem"><span class="nav-number">3.1.</span> <span class="nav-text">1. Gem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-scss、js-設定"><span class="nav-number">3.2.</span> <span class="nav-text">2. scss、js 設定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-SimpleForm-中使用-pagedown"><span class="nav-number">3.3.</span> <span class="nav-text">3. SimpleForm 中使用 pagedown</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-顯示-markdown-型態資料"><span class="nav-number">3.4.</span> <span class="nav-text">4. 顯示 markdown 型態資料</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#為使輸出為安全性之-html，我們使用-sanitize-作逸出-更新-2015-12-16"><span class="nav-number">3.4.1.</span> <span class="nav-text">為使輸出為安全性之 html，我們使用 sanitize 作逸出(更新 2015.12.16)</span></a></li></ol></li></ol></li></ol></div>
             
+
           </div>
         </section>
+      <!--/noindex-->
+      
+
       
 
     </div>
@@ -636,12 +719,13 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">OAwan</span>
 </div>
+
 
 <div class="powered-by">
   由 <a class="theme-link" href="https://hexo.io">Hexo</a> 強力驅動
@@ -654,29 +738,34 @@
   </a>
 </div>
 
+
         
-
 <div class="busuanzi-count">
-
   <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 
   
-    <span class="site-pv"><i class="fa fa-street-view"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>人來過這裡。</span>
-  
+    <span class="site-pv">
+      <i class="fa fa-street-view"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      人來過這裡。
+    </span>
   
 </div>
-
 
 
         
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
   </div>
 
   
@@ -699,81 +788,100 @@
 
 
 
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
 
 
 
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
 
 
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
-
-
-
-  
-
-
-
-  
-
-    <script type="text/javascript">
-      var disqus_shortname = 'oawan';
-      var disqus_identifier = '2015/rails-supports-markdown-editor-via-pagedown-bootstrap-rails/';
-      var disqus_title = "[Rails] 使用支援markdown編輯器 - via Pagedown-Bootstrap-Rails";
-      var disqus_url = 'https://oawan.me/2015/rails-supports-markdown-editor-via-pagedown-bootstrap-rails/';
-
-      function run_disqus_script(disqus_script){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      }
-
-      run_disqus_script('count.js');
-      
-        run_disqus_script('embed.js');
-      
-    </script>
-  
 
 
 
 
   
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
   
 
   

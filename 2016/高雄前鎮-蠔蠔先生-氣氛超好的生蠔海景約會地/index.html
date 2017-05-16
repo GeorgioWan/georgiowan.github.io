@@ -5,11 +5,14 @@
   
 
 
-<html class="theme-next muse use-motion">
+<html class="theme-next muse use-motion" lang="zh-tw">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
 
 
 
@@ -29,9 +32,12 @@
 
 
 
+
+
+
   
   
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -71,9 +77,9 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="街口的美食地圖,高雄市,前鎮區," />
@@ -87,7 +93,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
 
 
 
@@ -98,6 +104,7 @@
 
 
 <meta name="description" content="今年的 父親節大餐 想來點不一樣的，有別於以往的 飲茶、西餐廳 等，今年我們一起到新的幽會地點約會囉！">
+<meta name="keywords" content="街口的美食地圖,高雄市,前鎮區">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[高雄前鎮] 蠔蠔先生 - 氣氛超好的生蠔海景約會地">
 <meta property="og:url" content="https://oawan.me/2016/高雄前鎮-蠔蠔先生-氣氛超好的生蠔海景約會地/index.html">
@@ -131,27 +138,37 @@
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '作者'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
 
 
-
   <link rel="canonical" href="https://oawan.me/2016/高雄前鎮-蠔蠔先生-氣氛超好的生蠔海景約會地/"/>
 
 
-  <title> [高雄前鎮] 蠔蠔先生 - 氣氛超好的生蠔海景約會地 | 新樂街口的三角窗 </title>
+
+
+
+  <title>[高雄前鎮] 蠔蠔先生 - 氣氛超好的生蠔海景約會地 | 新樂街口的三角窗</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
@@ -177,14 +194,18 @@
 
 
 
+
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-72706538-2', 'auto');
   ga('send', 'pageview');
 </script>
+
+
 
 
 
@@ -199,29 +220,33 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">新樂街口的三角窗</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">新樂街口的三角窗</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">我，在這裡，享受等你的時光。</p>
+      
   </div>
-  <p class="site-subtitle">我，在這裡，享受等你的時光。</p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -289,6 +314,8 @@
   
 </nav>
 
+
+
  </div>
     </header>
 
@@ -302,49 +329,64 @@
     
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  
+    <link itemprop="mainEntityOfPage" href="https://oawan.me/2016/高雄前鎮-蠔蠔先生-氣氛超好的生蠔海景約會地/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OAwan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/oA.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新樂街口的三角窗">
+    </span>
+
     
       <header class="post-header">
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                [高雄前鎮] 蠔蠔先生 - 氣氛超好的生蠔海景約會地
-              
-            
-          </h1>
+          <h1 class="post-title" itemprop="name headline">[高雄前鎮] 蠔蠔先生 - 氣氛超好的生蠔海景約會地</h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-08-13T15:20:05+00:00" content="2016-08-13">
-              2016-08-13
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2016-08-13T15:20:05+00:00">
+                2016-08-13
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分類於</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Food/" itemprop="url" rel="index">
                     <span itemprop="name">Food</span>
                   </a>
@@ -352,7 +394,6 @@
 
                 
                 
-
               
             </span>
           
@@ -360,28 +401,31 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2016/高雄前鎮-蠔蠔先生-氣氛超好的生蠔海景約會地/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/高雄前鎮-蠔蠔先生-氣氛超好的生蠔海景約會地/" itemprop="commentsCount">0</span> comments
+                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/高雄前鎮-蠔蠔先生-氣氛超好的生蠔海景約會地/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
           
 
           
-            &nbsp; | &nbsp;
-            <div class="fb-like" data-layout="button_count" data-share="true"></div>
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
           
 
           
-              &nbsp; | &nbsp;
-              <span class="page-pv"><i class="fa fa-eye"></i>
-              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-              </span>
+
           
+
         </div>
       </header>
     
@@ -448,17 +492,38 @@
       
     </div>
 
+    <div>
+      
+        
+
+      
+    </div>
+
     <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/街口的美食地圖/" rel="tag">#街口的美食地圖</a>
+            <a href="/tags/街口的美食地圖/" rel="tag"># 街口的美食地圖</a>
           
-            <a href="/tags/高雄市/" rel="tag">#高雄市</a>
+            <a href="/tags/高雄市/" rel="tag"># 高雄市</a>
           
-            <a href="/tags/前鎮區/" rel="tag">#前鎮區</a>
+            <a href="/tags/前鎮區/" rel="tag"># 前鎮區</a>
           
         </div>
+      
+
+      
+        
+          <div class="social-like">
+            
+
+            
+              <div class="fb_like">
+                <div class="fb-like" data-layout="button_count" data-share="true"></div>
+              </div>
+            
+          </div>
+        
       
 
       
@@ -470,6 +535,8 @@
               </a>
             
           </div>
+
+          <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
@@ -539,25 +606,32 @@
         </ul>
       
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/oA.jpg"
                alt="OAwan" />
           <p class="site-author-name" itemprop="name">OAwan</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
         </div>
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">22</span>
-              <span class="site-state-item-name">文章</span>
-            </a>
-          </div>
 
           
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">文章</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
             <div class="site-state-item site-state-categories">
-              <a href="/categories">
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分類</span>
               </a>
@@ -565,9 +639,11 @@
           
 
           
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">66</span>
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">68</span>
                 <span class="site-state-item-name">標籤</span>
               </a>
             </div>
@@ -614,19 +690,29 @@
         
         
 
+        
+
+
       </section>
 
       
+      <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
+
             
               
             
+
             
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#蠔蠔先生-Mr-Oyster"><span class="nav-number">1.</span> <span class="nav-text">蠔蠔先生 Mr. Oyster</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#白酒奶油蛤蜊淡菜-320"><span class="nav-number">1.1.</span> <span class="nav-text">白酒奶油蛤蜊淡菜 $320</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#每日精選湯品-120"><span class="nav-number">1.2.</span> <span class="nav-text">每日精選湯品 $120</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#煙燻三文魚沙拉-260"><span class="nav-number">1.3.</span> <span class="nav-text">煙燻三文魚沙拉 $260</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#焗烤乳酪松露醬薯條佐蘑菇-260"><span class="nav-number">1.4.</span> <span class="nav-text">焗烤乳酪松露醬薯條佐蘑菇 $260</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#酥炸新鮮魷魚-220"><span class="nav-number">1.5.</span> <span class="nav-text">酥炸新鮮魷魚 $220</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#酪悅香檳-Moet-amp-Chandon-2200"><span class="nav-number">1.6.</span> <span class="nav-text">酪悅香檳 Moet & Chandon $2200</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#綜合海鮮拼盤-980-amp-吉拉多生蠔-280-x-8"><span class="nav-number">1.7.</span> <span class="nav-text">綜合海鮮拼盤 $980 & 吉拉多生蠔 $280 x 8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生煎干貝-380"><span class="nav-number">1.8.</span> <span class="nav-text">生煎干貝 $380</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#松露蘑菇義大利麵-320"><span class="nav-number">1.9.</span> <span class="nav-text">松露蘑菇義大利麵 $320</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#煙花女義大利麵-320"><span class="nav-number">1.10.</span> <span class="nav-text">煙花女義大利麵 $320</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#嫩煎豪野鴨胸-680"><span class="nav-number">1.11.</span> <span class="nav-text">嫩煎豪野鴨胸 $680</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#哈根達斯冰淇淋-100"><span class="nav-number">1.12.</span> <span class="nav-text">哈根達斯冰淇淋 $100</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#後記-amp-心得"><span class="nav-number">1.13.</span> <span class="nav-text">後記 & 心得</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#店家資訊"><span class="nav-number">1.14.</span> <span class="nav-text">店家資訊</span></a></li></ol></li></ol></div>
             
+
           </div>
         </section>
+      <!--/noindex-->
+      
+
       
 
     </div>
@@ -642,12 +728,13 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">OAwan</span>
 </div>
+
 
 <div class="powered-by">
   由 <a class="theme-link" href="https://hexo.io">Hexo</a> 強力驅動
@@ -660,29 +747,34 @@
   </a>
 </div>
 
+
         
-
 <div class="busuanzi-count">
-
   <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 
   
-    <span class="site-pv"><i class="fa fa-street-view"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>人來過這裡。</span>
-  
+    <span class="site-pv">
+      <i class="fa fa-street-view"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      人來過這裡。
+    </span>
   
 </div>
-
 
 
         
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
   </div>
 
   
@@ -705,81 +797,100 @@
 
 
 
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
 
 
 
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
 
 
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
-
-
-
-  
-
-
-
-  
-
-    <script type="text/javascript">
-      var disqus_shortname = 'oawan';
-      var disqus_identifier = '2016/高雄前鎮-蠔蠔先生-氣氛超好的生蠔海景約會地/';
-      var disqus_title = "[高雄前鎮] 蠔蠔先生 - 氣氛超好的生蠔海景約會地";
-      var disqus_url = 'https://oawan.me/2016/高雄前鎮-蠔蠔先生-氣氛超好的生蠔海景約會地/';
-
-      function run_disqus_script(disqus_script){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      }
-
-      run_disqus_script('count.js');
-      
-        run_disqus_script('embed.js');
-      
-    </script>
-  
 
 
 
 
   
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
   
 
   

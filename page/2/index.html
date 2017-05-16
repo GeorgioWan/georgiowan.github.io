@@ -5,11 +5,14 @@
   
 
 
-<html class="theme-next muse use-motion">
+<html class="theme-next muse use-motion" lang="zh-tw">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
 
 
 
@@ -29,9 +32,12 @@
 
 
 
+
+
+
   
   
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -71,9 +77,9 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="Hexo, NexT" />
@@ -87,7 +93,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
 
 
 
@@ -97,39 +103,46 @@
 
 
 
-<meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="新樂街口的三角窗">
 <meta property="og:url" content="https://oawan.me/page/2/index.html">
 <meta property="og:site_name" content="新樂街口的三角窗">
-<meta property="og:description">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="新樂街口的三角窗">
-<meta name="twitter:description">
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '作者'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
 
 
-
   <link rel="canonical" href="https://oawan.me/page/2/"/>
 
 
-  <title> 新樂街口的三角窗 </title>
+
+
+
+  <title>新樂街口的三角窗</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
@@ -155,14 +168,18 @@
 
 
 
+
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-72706538-2', 'auto');
   ga('send', 'pageview');
 </script>
+
+
 
 
 
@@ -177,31 +194,35 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
+  <div class="container sidebar-position-left 
    page-home 
  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">新樂街口的三角窗</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">新樂街口的三角窗</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">我，在這裡，享受等你的時光。</p>
+      
   </div>
-  <p class="site-subtitle">我，在這裡，享受等你的時光。</p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -269,6 +290,8 @@
   
 </nav>
 
+
+
  </div>
     </header>
 
@@ -282,60 +305,73 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  
+    <link itemprop="mainEntityOfPage" href="https://oawan.me/2016/2016-may-movie-list/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OAwan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/oA.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新樂街口的三角窗">
+    </span>
+
     
       <header class="post-header">
 
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2016/all-about-git-command/" itemprop="url">
-                  [Git] 命令筆記本
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2016/2016-may-movie-list/" itemprop="url">[5月] 街口的電影院 - 月總覽</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-05-30T09:14:09+00:00" content="2016-05-30">
-              2016-05-30
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2016-05-31T15:52:17+00:00">
+                2016-05-31
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分類於</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Programmer/" itemprop="url" rel="index">
-                    <span itemprop="name">Programmer</span>
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Movie/" itemprop="url" rel="index">
+                    <span itemprop="name">Movie</span>
                   </a>
                 </span>
 
                 
                 
-
               
             </span>
           
@@ -343,20 +379,174 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/all-about-git-command/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/all-about-git-command/" itemprop="commentsCount">0</span> comments
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/2016-may-movie-list/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/2016-may-movie-list/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
           
 
           
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="/img/movie/2016/05/2016-05.jpg" alt="5月品影總覽" title="「如果一起老去，我允許你先走。」"><br>　　<strong>5</strong> 部韓國電影，<strong>2</strong> 部好萊塢電影，<strong>2</strong> 部中國電影，<strong>1</strong> 部台灣電影，<strong>1</strong> 部印度電影，共 <strong>11</strong> 部，這個五月看了不少韓國電影呢！下面，就讓我們用 <strong>比較不雷</strong> 的方式，分享這個月看了哪些電影吧！<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/2016-may-movie-list/#далее" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://oawan.me/2016/all-about-git-command/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OAwan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/oA.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新樂街口的三角窗">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/all-about-git-command/" itemprop="url">[Git] 命令筆記本</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2016-05-30T09:14:09+00:00">
+                2016-05-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Programmer/" itemprop="url" rel="index">
+                    <span itemprop="name">Programmer</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/all-about-git-command/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/all-about-git-command/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
 
           
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -370,13 +560,19 @@
         
           <p><img src="/img/program/Git.jpg" alt="命令筆記本" title="Pic by ChristianEngvall"></p>
 <h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a><strong>目的</strong></h1><p>　　快來翻翻你要的 Git Command 喔！</p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p>　　一開始接觸 Git 是使用 <a href="https://desktop.github.com/"><strong>GitHub Desktop</strong></a>，但隨著開發環境轉到 Linux 上後，就習慣用 Command-line 的方式操作了，這篇就來筆記一下常用的命令；說來也怪，有時後就是會突然想不起來，如果你也有這種<strong>腦容量有限</strong>的老症頭，歡迎隨時來翻翻XDD</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/all-about-git-command/#more" rel="contents">
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p>　　一開始接觸 Git 是使用 <a href="https://desktop.github.com/" target="_blank" rel="external"><strong>GitHub Desktop</strong></a>，但隨著開發環境轉到 Linux 上後，就習慣用 Command-line 的方式操作了，這篇就來筆記一下常用的命令；說來也怪，有時後就是會突然想不起來，如果你也有這種<strong>腦容量有限</strong>的老症頭，歡迎隨時來翻翻XDD</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/all-about-git-command/#далее" rel="contents">
               閱讀全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -394,6 +590,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -405,52 +603,66 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  
+    <link itemprop="mainEntityOfPage" href="https://oawan.me/2016/easy-hexo-easy-blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OAwan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/oA.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新樂街口的三角窗">
+    </span>
+
     
       <header class="post-header">
 
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2016/easy-hexo-easy-blog/" itemprop="url">
-                  [Hexo] 快速上手 Hexo 網誌框架
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2016/easy-hexo-easy-blog/" itemprop="url">[Hexo] 快速上手 Hexo 網誌框架</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-05-27T03:42:50+00:00" content="2016-05-27">
-              2016-05-27
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2016-05-27T03:42:50+00:00">
+                2016-05-27
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分類於</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Programmer/" itemprop="url" rel="index">
                     <span itemprop="name">Programmer</span>
                   </a>
@@ -458,7 +670,6 @@
 
                 
                 
-
               
             </span>
           
@@ -466,20 +677,26 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2016/easy-hexo-easy-blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/easy-hexo-easy-blog/" itemprop="commentsCount">0</span> comments
+                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/easy-hexo-easy-blog/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -493,14 +710,20 @@
         
           <p><img src="/img/program/github_hexo.png" alt="輕鬆上手 Hexo 網誌框架" title="Pic by wsgzao"></p>
 <h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a><strong>目的</strong></h1><p>　　使用 Hexo 網誌框架，搭配 GitHub Page，快速架設屬於、管理自己的部落格！</p>
-<h1 id="開發版本與環境"><a href="#開發版本與環境" class="headerlink" title="開發版本與環境"></a><strong>開發版本與環境</strong></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">　　NodeJS: v4.4.5</span><br><span class="line">　　IDE: Cloud9</span><br></pre></td></tr></table></figure>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p>　　我的攻城獅筆記一路從 <a href="https://georgiosky2000.wordpress.com/author/georgiola/">Wordpress</a> 到 <a href="http://georgiowan.logdown.com/">Logdown</a>，再到現在使用 Hexo 自架，一路走來很有趣，從對於網站相關一竅不通，到現在各方面略懂略懂，真的很開心！至於為什麼一直換呢？只能說是為了滿足自己的爽感，哈，不多說，現在就來筆記一下怎麼使用 Hexo 和 Github Page 自架部落格吧！</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/easy-hexo-easy-blog/#more" rel="contents">
+<h1 id="開發版本與環境"><a href="#開發版本與環境" class="headerlink" title="開發版本與環境"></a><strong>開發版本與環境</strong></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">　　NodeJS: v4.4.5</div><div class="line">　　IDE: Cloud9</div></pre></td></tr></table></figure>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p>　　我的攻城獅筆記一路從 <a href="https://georgiosky2000.wordpress.com/author/georgiola/" target="_blank" rel="external">Wordpress</a> 到 <a href="http://georgiowan.logdown.com/" target="_blank" rel="external">Logdown</a>，再到現在使用 Hexo 自架，一路走來很有趣，從對於網站相關一竅不通，到現在各方面略懂略懂，真的很開心！至於為什麼一直換呢？只能說是為了滿足自己的爽感，哈，不多說，現在就來筆記一下怎麼使用 Hexo 和 Github Page 自架部落格吧！</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/easy-hexo-easy-blog/#далее" rel="contents">
               閱讀全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -518,6 +741,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -529,52 +754,66 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  
+    <link itemprop="mainEntityOfPage" href="https://oawan.me/2016/travel-to-korea-money-exchange/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OAwan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/oA.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新樂街口的三角窗">
+    </span>
+
     
       <header class="post-header">
 
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2016/travel-to-korea-money-exchange/" itemprop="url">
-                  [資訊] 超好用換幣神器！教你怎麼換韓元最划算
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2016/travel-to-korea-money-exchange/" itemprop="url">[資訊] 超好用換幣神器！教你怎麼換韓元最划算</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-05-24T17:07:00+00:00" content="2016-05-24">
-              2016-05-24
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2016-05-24T17:07:00+00:00">
+                2016-05-24
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分類於</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Travel/" itemprop="url" rel="index">
                     <span itemprop="name">Travel</span>
                   </a>
@@ -582,7 +821,6 @@
 
                 
                 
-
               
             </span>
           
@@ -590,20 +828,26 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2016/travel-to-korea-money-exchange/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/travel-to-korea-money-exchange/" itemprop="commentsCount">0</span> comments
+                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/travel-to-korea-money-exchange/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -617,12 +861,18 @@
         
           <p><img src="/img/travel/money.jpg" alt="Money Exchange" title="Pic by Bill Pirraglia"></p>
 <p>到韓國自由行，<span style="font-size: 20px; color: #009688">怎麼換韓元最划算呢？</span><br>讓我們一起用<strong>換幣 (Money Exchange)</strong> 來小賺一點交通費吧！</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/travel-to-korea-money-exchange/#more" rel="contents">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/travel-to-korea-money-exchange/#далее" rel="contents">
               閱讀全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -640,6 +890,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -651,52 +903,66 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  
+    <link itemprop="mainEntityOfPage" href="https://oawan.me/2016/rails-devise-using-facebook-signup-login/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OAwan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/oA.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新樂街口的三角窗">
+    </span>
+
     
       <header class="post-header">
 
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2016/rails-devise-using-facebook-signup-login/" itemprop="url">
-                  [Rails] Devise 使用 Facebook 註冊與登入
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2016/rails-devise-using-facebook-signup-login/" itemprop="url">[Rails] Devise 使用 Facebook 註冊與登入</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-05-20T11:28:00+00:00" content="2016-05-20">
-              2016-05-20
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2016-05-20T11:28:00+00:00">
+                2016-05-20
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分類於</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Programmer/" itemprop="url" rel="index">
                     <span itemprop="name">Programmer</span>
                   </a>
@@ -704,7 +970,6 @@
 
                 
                 
-
               
             </span>
           
@@ -712,20 +977,26 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2016/rails-devise-using-facebook-signup-login/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/rails-devise-using-facebook-signup-login/" itemprop="commentsCount">0</span> comments
+                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/rails-devise-using-facebook-signup-login/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -739,14 +1010,20 @@
         
           <p><img src="/img/program/Facebookcoke.jpg" alt="Devise 使用 Facebook 註冊與登入" title="Pic by Facebookcoke"></p>
 <h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a><strong>目的</strong></h1><p>　　在 Devise 下，使用 Facebook 註冊與登入。</p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p>　　相信大家都很熟練 <a href="https://github.com/plataformatec/devise"><strong>Devise</strong></a> 這個 Gem 的使用者機制，當然除了一般的註冊申請帳號外，最方便是要能與各大社交平台有所連結；而 Devise 中透過 <a href="https://github.com/intridea/omniauth"><strong>OmniAuth</strong></a> 快速地串接 Facebook、google、github… 等，以下就筆記一下如何使用 Facebook 註冊登入！</p>
-<h1 id="開發版本與環境"><a href="#開發版本與環境" class="headerlink" title="開發版本與環境"></a><strong>開發版本與環境</strong></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">　　Ruby  : v2.3.0</span><br><span class="line">　　Rails : v4.2.5</span><br><span class="line">　　IDE   : Cloud 9</span><br></pre></td></tr></table></figure>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/rails-devise-using-facebook-signup-login/#more" rel="contents">
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p>　　相信大家都很熟練 <a href="https://github.com/plataformatec/devise" target="_blank" rel="external"><strong>Devise</strong></a> 這個 Gem 的使用者機制，當然除了一般的註冊申請帳號外，最方便是要能與各大社交平台有所連結；而 Devise 中透過 <a href="https://github.com/intridea/omniauth" target="_blank" rel="external"><strong>OmniAuth</strong></a> 快速地串接 Facebook、google、github… 等，以下就筆記一下如何使用 Facebook 註冊登入！</p>
+<h1 id="開發版本與環境"><a href="#開發版本與環境" class="headerlink" title="開發版本與環境"></a><strong>開發版本與環境</strong></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">　　Ruby  : v2.3.0</div><div class="line">　　Rails : v4.2.5</div><div class="line">　　IDE   : Cloud 9</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/rails-devise-using-facebook-signup-login/#далее" rel="contents">
               閱讀全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -764,6 +1041,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -775,52 +1054,66 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  
+    <link itemprop="mainEntityOfPage" href="https://oawan.me/2016/ruby-rvm-management-ror-development-environment/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OAwan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/oA.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新樂街口的三角窗">
+    </span>
+
     
       <header class="post-header">
 
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2016/ruby-rvm-management-ror-development-environment/" itemprop="url">
-                  [Ruby] 使用 RVM 管理 ROR 開發環境
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2016/ruby-rvm-management-ror-development-environment/" itemprop="url">[Ruby] 使用 RVM 管理 ROR 開發環境</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-05-18T14:37:00+00:00" content="2016-05-18">
-              2016-05-18
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2016-05-18T14:37:00+00:00">
+                2016-05-18
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分類於</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Programmer/" itemprop="url" rel="index">
                     <span itemprop="name">Programmer</span>
                   </a>
@@ -828,7 +1121,6 @@
 
                 
                 
-
               
             </span>
           
@@ -836,20 +1128,26 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2016/ruby-rvm-management-ror-development-environment/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/ruby-rvm-management-ror-development-environment/" itemprop="commentsCount">0</span> comments
+                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/ruby-rvm-management-ror-development-environment/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -863,13 +1161,19 @@
         
           <p><img src="/img/program/rvm-logo-all-happy.png" alt="使用 RVM 管理 ROR 開發環境" title="Pic by RVM"></p>
 <h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a><strong>目的</strong></h1><p>　　有鑒於一些好朋友想知道怎麼管理 ROR 的開發環境，所以重新整理了一下在 Ubuntu 上使用 RVM 管理 Ruby 和 Rails 的小筆記！希望能幫助到需要的你唷！</p>
-<h1 id="開發版本與環境"><a href="#開發版本與環境" class="headerlink" title="開發版本與環境"></a><strong>開發版本與環境</strong></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">　　VMware Workstation 12</span><br><span class="line">　　Ubuntu: 15.04(64-bit)</span><br></pre></td></tr></table></figure>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/ruby-rvm-management-ror-development-environment/#more" rel="contents">
+<h1 id="開發版本與環境"><a href="#開發版本與環境" class="headerlink" title="開發版本與環境"></a><strong>開發版本與環境</strong></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">　　VMware Workstation 12</div><div class="line">　　Ubuntu: 15.04(64-bit)</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/ruby-rvm-management-ror-development-environment/#далее" rel="contents">
               閱讀全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -887,6 +1191,8 @@
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -898,52 +1204,66 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  
+    <link itemprop="mainEntityOfPage" href="https://oawan.me/2016/rails-send-email-via-actionmailer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OAwan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/oA.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新樂街口的三角窗">
+    </span>
+
     
       <header class="post-header">
 
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2016/rails-send-email-via-actionmailer/" itemprop="url">
-                  [Rails] 寄信小札記 - via ActionMailer
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2016/rails-send-email-via-actionmailer/" itemprop="url">[Rails] 寄信小札記 - via ActionMailer</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-05-12T10:34:00+00:00" content="2016-05-12">
-              2016-05-12
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2016-05-12T10:34:00+00:00">
+                2016-05-12
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分類於</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Programmer/" itemprop="url" rel="index">
                     <span itemprop="name">Programmer</span>
                   </a>
@@ -951,7 +1271,6 @@
 
                 
                 
-
               
             </span>
           
@@ -959,20 +1278,26 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2016/rails-send-email-via-actionmailer/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/rails-send-email-via-actionmailer/" itemprop="commentsCount">0</span> comments
+                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/rails-send-email-via-actionmailer/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -990,12 +1315,18 @@
 Rails：v4.2.5
 IDE  ：Cloud 9
 </code></pre>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/rails-send-email-via-actionmailer/#more" rel="contents">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/rails-send-email-via-actionmailer/#далее" rel="contents">
               閱讀全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -1013,6 +1344,8 @@ IDE  ：Cloud 9
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -1024,52 +1357,66 @@ IDE  ：Cloud 9
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  
+    <link itemprop="mainEntityOfPage" href="https://oawan.me/2016/rails-url-seo-methods-via-meta-tags/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OAwan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/oA.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新樂街口的三角窗">
+    </span>
+
     
       <header class="post-header">
 
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2016/rails-url-seo-methods-via-meta-tags/" itemprop="url">
-                  [Rails] 讓 URL SEO 的方法 - via Meta_tags
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2016/rails-url-seo-methods-via-meta-tags/" itemprop="url">[Rails] 讓 URL SEO 的方法 - via Meta_tags</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2016-01-19T10:21:00+00:00" content="2016-01-19">
-              2016-01-19
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2016-01-19T10:21:00+00:00">
+                2016-01-19
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分類於</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Programmer/" itemprop="url" rel="index">
                     <span itemprop="name">Programmer</span>
                   </a>
@@ -1077,7 +1424,6 @@ IDE  ：Cloud 9
 
                 
                 
-
               
             </span>
           
@@ -1085,20 +1431,26 @@ IDE  ：Cloud 9
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2016/rails-url-seo-methods-via-meta-tags/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/rails-url-seo-methods-via-meta-tags/" itemprop="commentsCount">0</span> comments
+                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2016/rails-url-seo-methods-via-meta-tags/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -1111,14 +1463,20 @@ IDE  ：Cloud 9
       
         
           <p><img src="/img/program/SEO.jpg" alt="讓 URL SEO 的方法 - via Meta_tags" title="Pic by thenextweb.com"></p>
-<h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a><strong>目的</strong></h1><p>　　在之前我有筆記一篇<a href="http://georgiowan-note.logdown.com/notes/307467/rails-url-path-without-id-via-friendly-id"><strong>透過 friendly_id 讓 url 不顯示 id</strong></a>，除了美化 url 外，我們也可以透過設定 meta data 讓網站達到 SEO 的目的！</p>
+<h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a><strong>目的</strong></h1><p>　　在之前我有筆記一篇<a href="http://georgiowan-note.logdown.com/notes/307467/rails-url-path-without-id-via-friendly-id" target="_blank" rel="external"><strong>透過 friendly_id 讓 url 不顯示 id</strong></a>，除了美化 url 外，我們也可以透過設定 meta data 讓網站達到 SEO 的目的！</p>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p>　　meta tag 及 data 的設定很重要，通常網站要能快速得被找到，或是透過分享時顯示重要(正確)的資訊，我們都得在這個部分下點功夫，本篇筆記一下在專案中所學到的相關知識和方法。  </p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/rails-url-seo-methods-via-meta-tags/#more" rel="contents">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/rails-url-seo-methods-via-meta-tags/#далее" rel="contents">
               閱讀全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -1136,6 +1494,8 @@ IDE  ：Cloud 9
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -1147,52 +1507,66 @@ IDE  ：Cloud 9
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  
+    <link itemprop="mainEntityOfPage" href="https://oawan.me/2015/rails-solving-modal-update-fb-plugin-share-like-reload/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OAwan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/oA.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新樂街口的三角窗">
+    </span>
+
     
       <header class="post-header">
 
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2015/rails-solving-modal-update-fb-plugin-share-like-reload/" itemprop="url">
-                  [Rails] 解決 modal update 時 FB plugin (share, like) reload
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2015/rails-solving-modal-update-fb-plugin-share-like-reload/" itemprop="url">[Rails] 解決 modal update 時 FB plugin (share, like) reload</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2015-12-30T13:58:00+00:00" content="2015-12-30">
-              2015-12-30
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2015-12-30T13:58:00+00:00">
+                2015-12-30
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分類於</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Programmer/" itemprop="url" rel="index">
                     <span itemprop="name">Programmer</span>
                   </a>
@@ -1200,7 +1574,6 @@ IDE  ：Cloud 9
 
                 
                 
-
               
             </span>
           
@@ -1208,20 +1581,26 @@ IDE  ：Cloud 9
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2015/rails-solving-modal-update-fb-plugin-share-like-reload/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2015/rails-solving-modal-update-fb-plugin-share-like-reload/" itemprop="commentsCount">0</span> comments
+                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2015/rails-solving-modal-update-fb-plugin-share-like-reload/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -1236,12 +1615,18 @@ IDE  ：Cloud 9
           <p><img src="/img/program/rzv-illustration-facebook.jpg" alt="解決 modal update 時 FB plugin (share, like) reload" title="Pic by  Ingrid Hong"></p>
 <h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a><strong>目的</strong></h1><p>　　在開發的作品中，每篇貼文都希望能透過 <strong>fb share</strong> 的功能，達到分享該文資訊和宣傳本作品的作用，所以決定在貼文中加入此一功能，讓使用者在宣傳自己的貼文時，也能夠替我們宣傳！</p>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p>　　凡事與<strong>社群網站</strong>接軌，有好無壞！</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/rails-solving-modal-update-fb-plugin-share-like-reload/#more" rel="contents">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/rails-solving-modal-update-fb-plugin-share-like-reload/#далее" rel="contents">
               閱讀全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -1259,6 +1644,8 @@ IDE  ：Cloud 9
       
 
       
+
+      
       
         <div class="post-eof"></div>
       
@@ -1270,52 +1657,66 @@ IDE  ：Cloud 9
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  
+    <link itemprop="mainEntityOfPage" href="https://oawan.me/2015/rails-how-do-i-render-js-respond-small-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="OAwan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/oA.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="新樂街口的三角窗">
+    </span>
+
     
       <header class="post-header">
 
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2015/rails-how-do-i-render-js-respond-small-note/" itemprop="url">
-                  [Rails] 如何 render .js，respond_to 小筆記
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2015/rails-how-do-i-render-js-respond-small-note/" itemprop="url">[Rails] 如何 render .js，respond_to 小筆記</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2015-12-28T10:53:00+00:00" content="2015-12-28">
-              2015-12-28
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2015-12-28T10:53:00+00:00">
+                2015-12-28
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分類於</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Programmer/" itemprop="url" rel="index">
                     <span itemprop="name">Programmer</span>
                   </a>
@@ -1323,7 +1724,6 @@ IDE  ：Cloud 9
 
                 
                 
-
               
             </span>
           
@@ -1331,20 +1731,26 @@ IDE  ：Cloud 9
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
                 <a href="/2015/rails-how-do-i-render-js-respond-small-note/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2015/rails-how-do-i-render-js-respond-small-note/" itemprop="commentsCount">0</span> comments
+                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2015/rails-how-do-i-render-js-respond-small-note/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -1359,12 +1765,18 @@ IDE  ：Cloud 9
           <p><img src="/img/program/Talk.jpg" alt="respond_to 小筆記" title="Pic by devicepharm.com"></p>
 <h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a><strong>目的</strong></h1><p>　　很多地方都會需要用到 render 的技巧，在這邊由於要實作 <strong>endless page</strong>(或稱<strong>infinite scrolling</strong>)，所以需要動態的透過 ender ujs 來新增頁面中的資料。</p>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p>　　使用 RoR 開發即將步入第四個月，對於 ujs 懵懵懂懂，所以在這邊小筆記一下專案中所學習的！</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/rails-how-do-i-render-js-respond-small-note/#more" rel="contents">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/rails-how-do-i-render-js-respond-small-note/#далее" rel="contents">
               閱讀全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -1379,127 +1791,6 @@ IDE  ：Cloud 9
     <footer class="post-footer">
       
 
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/rails-supports-markdown-editor-via-pagedown-bootstrap-rails/" itemprop="url">
-                  [Rails] 使用支援markdown編輯器 - via Pagedown-Bootstrap-Rails
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">發表於</span>
-            <time itemprop="dateCreated" datetime="2015-11-11T18:16:00+00:00" content="2015-11-11">
-              2015-11-11
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Programmer/" itemprop="url" rel="index">
-                    <span itemprop="name">Programmer</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/rails-supports-markdown-editor-via-pagedown-bootstrap-rails/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="https://oawan.me/2015/rails-supports-markdown-editor-via-pagedown-bootstrap-rails/" itemprop="commentsCount">0</span> comments
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="/img/program/markdown-tools.jpg" alt="上傳圖片功能 - via CarrierWave" title="Pic by mashable.com"></p>
-<h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a><strong>目的</strong></h1><p>　　為了讓自己寫的網站擁有編輯器的功能，可以使用一些現成的編輯器來實現，如 <a href="https://github.com/galetahub/ckeditor"><strong>ckeditor</strong></a>、<a href="https://github.com/tsechingho/ckeditor-rails"><strong>ckeditor-rails</strong></a>、<a href="https://github.com/ujifgc/pagedown"><strong>pagedown</strong></a> 諸如此類，由於已經喜歡上寫 markdown 的感覺，所以選了 <a href="https://github.com/hughevans/pagedown-bootstrap-rails"><strong>pagedown-bootstrap-rails</strong></a> 來實現我的功能。</p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p>　　了解 <a href="http://markdown.tw/"><strong>Markdown</strong></a> 怎麼寫之後，就習慣使用支援 markdown 的編輯器了嗎？</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/rails-supports-markdown-editor-via-pagedown-bootstrap-rails/#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
       
 
       
@@ -1547,25 +1838,32 @@ IDE  ：Cloud 9
 
       
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/oA.jpg"
                alt="OAwan" />
           <p class="site-author-name" itemprop="name">OAwan</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
         </div>
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">22</span>
-              <span class="site-state-item-name">文章</span>
-            </a>
-          </div>
 
           
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">文章</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
             <div class="site-state-item site-state-categories">
-              <a href="/categories">
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分類</span>
               </a>
@@ -1573,9 +1871,11 @@ IDE  ：Cloud 9
           
 
           
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">66</span>
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">68</span>
                 <span class="site-state-item-name">標籤</span>
               </a>
             </div>
@@ -1622,7 +1922,12 @@ IDE  ：Cloud 9
         
         
 
+        
+
+
       </section>
+
+      
 
       
 
@@ -1639,12 +1944,13 @@ IDE  ：Cloud 9
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">OAwan</span>
 </div>
+
 
 <div class="powered-by">
   由 <a class="theme-link" href="https://hexo.io">Hexo</a> 強力驅動
@@ -1657,29 +1963,34 @@ IDE  ：Cloud 9
   </a>
 </div>
 
+
         
-
 <div class="busuanzi-count">
-
   <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 
   
-    <span class="site-pv"><i class="fa fa-street-view"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>人來過這裡。</span>
-  
+    <span class="site-pv">
+      <i class="fa fa-street-view"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      人來過這裡。
+    </span>
   
 </div>
-
 
 
         
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
   </div>
 
   
@@ -1702,75 +2013,96 @@ IDE  ：Cloud 9
 
 
 
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
 
 
 
-  
-  
-
-  
-
-  
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
-
-
-
-  
-
-
-
-  
-
-    <script type="text/javascript">
-      var disqus_shortname = 'oawan';
-      var disqus_identifier = 'page/2/index.html';
-      var disqus_title = "";
-      var disqus_url = '';
-
-      function run_disqus_script(disqus_script){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      }
-
-      run_disqus_script('count.js');
-      
-    </script>
-  
 
 
 
 
   
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
   
 
   
