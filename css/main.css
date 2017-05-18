@@ -1695,7 +1695,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #8aff61;
+  background: #1b50e3;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2595,6 +2595,22 @@ embed {
 }
 .oabadge.oabadge-yellow {
   background: #ffc107;
+}
+.oamap {
+  width: 800px;
+  height: 250px;
+}
+@media screen and (max-width: 970px) {
+  .oamap {
+    width: 95vw;
+    position: relative;
+    left: -15px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .oamap {
+    left: -10px;
+  }
 }
 .imdb {
   background: #ffc107;
