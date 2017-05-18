@@ -17,8 +17,8 @@
   
   <entry>
     <title>[台南中西區] 富盛號碗粿 - 永樂市場的古早味美食</title>
-    <link href="https://oawan.me/2017/%E5%8F%B0%E5%8D%97%E4%B8%AD%E8%A5%BF%E5%8D%80-%E5%AF%8C%E7%9B%9B%E8%99%9F%E7%A2%97%E7%B2%BF-%E6%B0%B8%E6%A8%82%E5%B8%82%E5%A0%B4%E7%9A%84%E5%91%B3%E7%BE%8E%E9%A3%9F/"/>
-    <id>https://oawan.me/2017/台南中西區-富盛號碗粿-永樂市場的味美食/</id>
+    <link href="https://oawan.me/2017/%E5%8F%B0%E5%8D%97%E4%B8%AD%E8%A5%BF%E5%8D%80-%E5%AF%8C%E7%9B%9B%E8%99%9F%E7%A2%97%E7%B2%BF-%E6%B0%B8%E6%A8%82%E5%B8%82%E5%A0%B4%E7%9A%84%E5%8F%A4%E6%97%A9%E5%91%B3%E7%BE%8E%E9%A3%9F/"/>
+    <id>https://oawan.me/2017/台南中西區-富盛號碗粿-永樂市場的古早味美食/</id>
     <published>2017-05-18T08:59:32.000Z</published>
     <updated>2017-05-18T10:50:29.095Z</updated>
     
@@ -944,13 +944,13 @@
     
       <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
+      <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
+    
       <category term="Hexo" scheme="https://oawan.me/tags/Hexo/"/>
     
       <category term="NodeJS" scheme="https://oawan.me/tags/NodeJS/"/>
     
       <category term="Blog" scheme="https://oawan.me/tags/Blog/"/>
-    
-      <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
     
   </entry>
   
@@ -1097,8 +1097,6 @@
     
       <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
-      <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
-    
       <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
     
       <category term="rails" scheme="https://oawan.me/tags/rails/"/>
@@ -1110,6 +1108,8 @@
       <category term="koala" scheme="https://oawan.me/tags/koala/"/>
     
       <category term="facebook" scheme="https://oawan.me/tags/facebook/"/>
+    
+      <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
     
   </entry>
   
@@ -1236,13 +1236,13 @@ IDE  ：Cloud 9
     
       <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
-      <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
-    
       <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
     
       <category term="rails" scheme="https://oawan.me/tags/rails/"/>
     
       <category term="devise" scheme="https://oawan.me/tags/devise/"/>
+    
+      <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
     
       <category term="actionmailer" scheme="https://oawan.me/tags/actionmailer/"/>
     
@@ -1315,13 +1315,13 @@ IDE  ：Cloud 9
     
       <category term="ruby" scheme="https://oawan.me/tags/ruby/"/>
     
-      <category term="SEO" scheme="https://oawan.me/tags/SEO/"/>
-    
       <category term="Metadata" scheme="https://oawan.me/tags/Metadata/"/>
     
       <category term="metatag" scheme="https://oawan.me/tags/metatag/"/>
     
       <category term="meta-tags" scheme="https://oawan.me/tags/meta-tags/"/>
+    
+      <category term="SEO" scheme="https://oawan.me/tags/SEO/"/>
     
       <category term="OpenGraph" scheme="https://oawan.me/tags/OpenGraph/"/>
     
