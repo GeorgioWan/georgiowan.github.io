@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://oawan.me/"/>
-  <updated>2017-05-21T10:09:54.770Z</updated>
+  <updated>2017-05-21T10:56:25.009Z</updated>
   <id>https://oawan.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://oawan.me/2017/%E5%8F%B0%E5%8D%97%E6%9D%B1%E5%8D%80-%E5%8F%B0%E5%8D%97%E8%80%81%E7%88%BA%E8%A1%8C%E6%97%85-%E9%AB%98%E9%90%B5%E4%B8%89%E9%80%B1%E5%B9%B4%E6%88%BF%E5%9E%8B%E4%B8%89%E7%B4%9A%E8%B7%B3/"/>
     <id>https://oawan.me/2017/台南東區-台南老爺行旅-高鐵三週年房型三級跳/</id>
     <published>2017-05-20T03:21:32.000Z</published>
-    <updated>2017-05-21T10:09:54.770Z</updated>
+    <updated>2017-05-21T10:56:25.009Z</updated>
     
     <content type="html"><![CDATA[<img src="/2017/台南東區-台南老爺行旅-高鐵三週年房型三級跳/img/窗外景緻.jpg" alt="img/窗外景緻.jpg" title="">
 <p>超開心又可以到台南玩啦！這次很突然的決定快閃台南，主要是因為賢慧的小凱蘿，在網路上找到一個 <strong>相當實惠</strong> 的住宿方案，讓我們有幸能在 <span class="oaspan oaspan-red oaspan-reverse">台南老爺行旅</span> 以萬元不到的價格享受超高級房型！難得一次的大享受，是一定要記錄分享一下的啦 😍😍</p>
@@ -87,7 +87,7 @@
 <img src="/2017/台南東區-台南老爺行旅-高鐵三週年房型三級跳/img/早餐-3.jpg" alt="img/早餐-3.jpg" title="">
 <p>早餐是 <strong>自助吧</strong> 的方式，餐點從西式的吐司、歐姆蛋到中式的稀飯、豆漿都有，由於是自助的關係，就偷懶沒有每樣都拍了 😅</p>
 <img src="/2017/台南東區-台南老爺行旅-高鐵三週年房型三級跳/img/早餐-4.jpg" alt="img/早餐-4.jpg" title="">
-<p>只要有中式的自助吧，OA 我就一定會盛碗粥配肉鬆、肉枝 (🙋‍♂️國語是什麼阿？)和麵筋，超讚！</p>
+<p>只要有中式的自助吧，OA 我就一定會盛碗粥配肉鬆、豆枝 (🙋‍♂️國語是什麼阿？)和麵筋，超讚！</p>
 <img src="/2017/台南東區-台南老爺行旅-高鐵三週年房型三級跳/img/早餐-5.jpg" alt="img/早餐-5.jpg" title="">
 <p>吃飽喝足後才發現一個很可愛的地方，老爺行旅的碗盤上都印有<strong>「參考線」</strong>，像這碗上就印著 <strong>飽嘟嘟、呷飽、飽</strong></p>
 <img src="/2017/台南東區-台南老爺行旅-高鐵三週年房型三級跳/img/早餐-6.jpg" alt="img/早餐-6.jpg" title="">
@@ -1276,9 +1276,9 @@
     
       <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
     
-      <category term="ruby" scheme="https://oawan.me/tags/ruby/"/>
-    
       <category term="gem" scheme="https://oawan.me/tags/gem/"/>
+    
+      <category term="ruby" scheme="https://oawan.me/tags/ruby/"/>
     
       <category term="rvm" scheme="https://oawan.me/tags/rvm/"/>
     
