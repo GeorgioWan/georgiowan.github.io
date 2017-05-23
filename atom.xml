@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://oawan.me/"/>
-  <updated>2017-05-23T16:22:24.238Z</updated>
+  <updated>2017-05-23T16:30:48.646Z</updated>
   <id>https://oawan.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://oawan.me/2017/%E5%8F%B0%E5%8D%97%E4%BB%81%E5%BE%B7%E5%8D%80-%E9%98%BF%E8%A3%95%E7%89%9B%E8%82%89%E6%B6%AE%E6%B6%AE%E9%8D%8B-%E8%B6%85%E8%B6%8A%E7%89%9B%E8%82%89%E6%B9%AF%E7%9A%84%E5%A4%A7%E4%BA%AB%E5%8F%97/"/>
     <id>https://oawan.me/2017/台南仁德區-阿裕牛肉涮涮鍋-超越牛肉湯的大享受/</id>
     <published>2017-05-22T23:09:57.000Z</published>
-    <updated>2017-05-23T16:22:24.238Z</updated>
+    <updated>2017-05-23T16:30:48.646Z</updated>
     
     <content type="html"><![CDATA[<img src="/2017/台南仁德區-阿裕牛肉涮涮鍋-超越牛肉湯的大享受/img/阿裕牛肉涮涮鍋-3.jpg" alt="img/阿裕牛肉涮涮鍋-3.jpg" title="">
 <p>到台南有什麼美食是一定要吃？OA 覺得 <strong>牛肉湯</strong> 是絕對要嘗試的！這次感謝在地好朋友的招待，讓我們吃到比 <strong>牛肉湯</strong> 更滿足的大享受 <span class="oaspan oaspan-red oaspan-reverse">阿裕牛肉涮涮鍋</span>！</p>
@@ -37,8 +37,8 @@
 <p><strong>WARNING!!</strong> 其實湯底 <strong>香菜味</strong> 還蠻濃的… 香菜 hater 請自行左轉或提醒老闆一下 😂😂😂</p>
 </blockquote>
 <img src="/2017/台南仁德區-阿裕牛肉涮涮鍋-超越牛肉湯的大享受/img/阿裕牛肉涮涮鍋-3.jpg" alt="img/阿裕牛肉涮涮鍋-3.jpg" title="">
-<p>除了湯頭不錯外，最重要的主角就是我們的 <strong>溫體牛肉</strong> 阿！<br>這盤是一般牛肉湯店可以吃到的部位，<strong>肉質鮮嫩</strong>，<strong>油花較少</strong>，而我們有兩盤是這個部位。</p>
-<p>雖然 <strong>阿裕</strong> 的肉盤一盤 <span class="oaspan oaspan-yellow oaspan-reverse">NT$ 300</span>，但我還是建議至少點個 2 - 3 盤<br>因為老闆會根據盤數配 <strong>不同部位</strong> 的牛肉給客官享用！<br>這次多虧有專業在地ㄟ直接點四盤，我們才知道，原來不同部位的牛肉有不同層次的享受<br>這真的是超越以往喝牛肉湯的大享受哪！！</p>
+<p>除了湯頭不錯外，最重要的主角就是我們的 <strong>溫體牛肉</strong> 阿！<br>這盤是一般牛肉湯店可以吃到的部位，<strong>肉質鮮嫩</strong>，<strong>油花較少</strong>。</p>
+<p>雖然 <strong>阿裕</strong> 的肉盤一盤 <span class="oaspan oaspan-yellow oaspan-reverse">NT$ 300</span>，但我還是建議至少點個 2 - 3 盤<br>因為老闆會 <strong>根據盤數配不同部位</strong> 的牛肉給客官享用！<br>這次多虧有專業在地ㄟ直接點四盤，我們才知道，原來不同部位的牛肉有不同層次的享受<br>這真的是超越以往喝牛肉湯的大享受哪！！</p>
 <img src="/2017/台南仁德區-阿裕牛肉涮涮鍋-超越牛肉湯的大享受/img/阿裕牛肉涮涮鍋-4.jpg" alt="img/阿裕牛肉涮涮鍋-4.jpg" title="">
 <p>而第二盤牛肉切成 <strong>長片狀</strong>，油花稍比上面小片狀的多些，咬起來比較 <strong>韌</strong> 一點，不過牛肉香也比較重些。</p>
 <img src="/2017/台南仁德區-阿裕牛肉涮涮鍋-超越牛肉湯的大享受/img/阿裕牛肉涮涮鍋-5.jpg" alt="img/阿裕牛肉涮涮鍋-5.jpg" title="">
@@ -1136,8 +1136,6 @@
       <category term="Programmer" scheme="https://oawan.me/categories/programmer/"/>
     
     
-      <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
-    
       <category term="Hexo" scheme="https://oawan.me/tags/Hexo/"/>
     
       <category term="NodeJS" scheme="https://oawan.me/tags/NodeJS/"/>
@@ -1145,6 +1143,8 @@
       <category term="Blog" scheme="https://oawan.me/tags/Blog/"/>
     
       <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
+    
+      <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
   </entry>
   
@@ -1289,13 +1289,13 @@
       <category term="Programmer" scheme="https://oawan.me/categories/programmer/"/>
     
     
-      <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
-    
       <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
     
-      <category term="rails" scheme="https://oawan.me/tags/rails/"/>
+      <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
       <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
+    
+      <category term="rails" scheme="https://oawan.me/tags/rails/"/>
     
       <category term="omniauth" scheme="https://oawan.me/tags/omniauth/"/>
     
@@ -1428,13 +1428,13 @@ IDE  ：Cloud 9
       <category term="Programmer" scheme="https://oawan.me/categories/programmer/"/>
     
     
-      <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
-    
       <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
     
-      <category term="rails" scheme="https://oawan.me/tags/rails/"/>
+      <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
       <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
+    
+      <category term="rails" scheme="https://oawan.me/tags/rails/"/>
     
       <category term="devise" scheme="https://oawan.me/tags/devise/"/>
     
