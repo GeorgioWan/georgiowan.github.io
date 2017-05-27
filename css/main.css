@@ -1695,7 +1695,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #17360f;
+  background: #af740d;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2544,40 +2544,64 @@ embed {
   padding: 2px 5px;
   margin: 0 1px;
 }
+.oaspan a {
+  border-bottom: 0px;
+}
 .oaspan.oaspan-reverse {
   border: 0px;
   color: #fff;
   background: #555;
+}
+.oaspan.oaspan-reverse a {
+  color: #fff;
 }
 .oaspan.oaspan-green {
   border: 1px solid #009688;
   color: #009688;
   background: transparent;
 }
+.oaspan.oaspan-green a {
+  color: #009688;
+}
 .oaspan.oaspan-green.oaspan-reverse {
   border: 0px;
   color: #fff;
   background: #009688;
+}
+.oaspan.oaspan-green.oaspan-reverse a {
+  color: #fff;
 }
 .oaspan.oaspan-red {
   border: 1px solid #f44336;
   color: #f44336;
   background: transparent;
 }
+.oaspan.oaspan-red a {
+  color: #f44336;
+}
 .oaspan.oaspan-red.oaspan-reverse {
   border: 0px;
   color: #fff;
   background: #f44336;
+}
+.oaspan.oaspan-red.oaspan-reverse a {
+  color: #fff;
 }
 .oaspan.oaspan-yellow {
   border: 1px solid #ffc107;
   color: #ffc107;
   background: transparent;
 }
+.oaspan.oaspan-yellow a {
+  color: #ffc107;
+}
 .oaspan.oaspan-yellow.oaspan-reverse {
   border: 0px;
   color: #fff;
   background: #ffc107;
+}
+.oaspan.oaspan-yellow.oaspan-reverse a {
+  color: #fff;
 }
 .oabadge {
   color: #fff;
