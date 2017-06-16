@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://oawan.me/"/>
-  <updated>2017-05-27T07:35:55.389Z</updated>
+  <updated>2017-06-16T10:02:02.924Z</updated>
   <id>https://oawan.me/</id>
   
   <author>
@@ -16,11 +16,113 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>[React] 用 nwb 快速開發 Components and Libraries</title>
+    <link href="https://oawan.me/2017/react-nwb-create-react-components-and-libraries/"/>
+    <id>https://oawan.me/2017/react-nwb-create-react-components-and-libraries/</id>
+    <published>2017-06-16T04:26:33.000Z</published>
+    <updated>2017-06-16T10:02:02.924Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://i.imgur.com/CaBRleb.jpg" alt="nwb"></p>
+<h1 id="目的"><a href="#目的" class="headerlink" title="# 目的"></a><strong># 目的</strong></h1><p>快速開發 React App or React Components(Libraries)。</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="# 前言"></a><strong># 前言</strong></h1><p>之前曾經使用 React 寫過幾個 Components 和 Library，但都是自己從頭搭建開發環境或是由 <a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="external"><strong>create-react-app</strong></a> 開始，要打包上傳 npm 的過程還蠻繁雜的！而前陣子發現 <span class="oaspan oaspan-red oaspan-reverse"><a href="https://github.com/insin/nwb" target="_blank" rel="external">nwb</a></span> 這個 toolkit，立馬寫了一個 Component 作嘗試，體驗還不錯，現在就來筆記分享一下！</p>
+<a id="more"></a>
+<hr>
+<h1 id="筆記"><a href="#筆記" class="headerlink" title="# 筆記"></a><strong># 筆記</strong></h1><h2 id="什麼是-nwb"><a href="#什麼是-nwb" class="headerlink" title="什麼是 nwb"></a>什麼是 nwb</h2><p><span class="oaspan oaspan-red oaspan-reverse"><a href="https://github.com/insin/nwb" target="_blank" rel="external">nwb</a></span> 是一個開發 <a href="https://facebook.github.io/react/" target="_blank" rel="external"><strong>React</strong></a>、<a href="https://preactjs.com/" target="_blank" rel="external"><strong>Preact</strong></a> 和 <a href="https://infernojs.org/" target="_blank" rel="external"><strong>Inferno</strong></a> 的 toolkit，整合了開發時需要的工具，像是 <a href="https://webpack.js.org/" target="_blank" rel="external"><strong>Webpack</strong></a>、<a href="https://babeljs.io/" target="_blank" rel="external"><strong>Babel</strong></a> 和 <a href="https://karma-runner.github.io/1.0/index.html" target="_blank" rel="external"><strong>Karma</strong></a>。<br>使用最新的 JS 語法(ES2015, ES2016, ES2017)，預設設定上，可供使用 <strong>Promise</strong>、<strong>fetch()</strong>、<strong>async/await</strong> 等。<br>再來是對於 <strong>Sass</strong>、<strong>Less</strong> 和 <strong>Stylus</strong> 的支援，只需額外使用相對應的 plugin 就好，不需要額外設定！</p>
+<blockquote>
+<p><strong>nwb</strong> 強調它是一個 toolkit，<strong>不是一個 boilerplate</strong>。</p>
+</blockquote>
+<h2 id="nwb-的優點"><a href="#nwb-的優點" class="headerlink" title="nwb 的優點"></a>nwb 的優點</h2><p>個人覺得它所整合的開發環境還蠻完整的，從 <strong>安裝</strong>、<strong>開發</strong>、<strong>測試</strong> 到 <strong>打包上傳</strong>，完全不需要額外的設定(當然它也有提供讓開發者自行設定的方法)：</p>
+<ol>
+<li><strong>快速建構開發環境</strong>，大量減少建構環境的時間，把時間留在開發和設計上。</li>
+<li><strong>Hot Module Replacement</strong>，讓開發產品自動更新，這應該已經是大家開發上不可或缺的開發利器。</li>
+<li><strong>顯示建置狀態</strong>，在 CLI 中顯示目前 compile 的狀態或報錯。</li>
+<li><strong>使用 Mocha 和 Expect</strong>，在 Karma(in PhantomJS) 跑單元測試，可以直接專心寫 test 檔就好。</li>
+<li><strong>Travis CI</strong>，使用 Travis Continuous Integration 並將 code coverage 結果提供 Coveralls/codecov.io。</li>
+<li><strong>ES5、ES 和 UMD</strong>，nwb 幫你一次打包三種 builds。</li>
+<li><strong>Single Configuration files</strong>，可在 <code>nwb.config.js</code> 中客製 Webpack、Karma 或 npm builds 的設定。</li>
+</ol>
+<blockquote>
+<p>以上所提及的，是我在原本開發上就會碰到和使用的，當然 nwb 還有 <a href="https://github.com/insin/nwb/blob/master/docs/Features.md#features" target="_blank" rel="external">很多細項的優點</a>！</p>
+</blockquote>
+<h2 id="使用-nwb-開發-React-Components-Libraries"><a href="#使用-nwb-開發-React-Components-Libraries" class="headerlink" title="使用 nwb 開發 React Components/Libraries"></a>使用 nwb 開發 React Components/Libraries</h2><h3 id="1-在環境中加入-nwb"><a href="#1-在環境中加入-nwb" class="headerlink" title="1. 在環境中加入 nwb"></a>1. 在環境中加入 <strong>nwb</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g nwb</div></pre></td></tr></table></figure>
+<h3 id="2-使用-nwb-new-創建-project"><a href="#2-使用-nwb-new-創建-project" class="headerlink" title="2. 使用 nwb new 創建 project"></a>2. 使用 <code>nwb new</code> 創建 project</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nwb new react-component react-ocard</div></pre></td></tr></table></figure>
+<p>在建置時，nwb 一定會 build 一個 ES5 的版本在 <code>lib/</code> 中，所以在創建 component 時會跳提醒問你是否還要建置 <strong>ES6 module</strong>(看個人需求)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Creating a react-component project...</div><div class="line">? Do you want to create an ES6 module build? (Y/n)</div></pre></td></tr></table></figure></p>
+<p>接著，會問你是否需要建置 <strong>Universal Module Definition (UMD)</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">? Do you want to create a UMD build? (y/N)</div></pre></td></tr></table></figure></p>
+<p>如果選擇 <code>y</code>，則會詢問你要使用的 global varible name 是什麼：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">? Which global variable name should the UMD build set?</div></pre></td></tr></table></figure></p>
+<p>以上面舉的例子，我就輸入 <strong>ReactOCard</strong>，這樣若是使用 UMD 時，就可以直接使用 ReactOCard component！</p>
+<blockquote>
+<p><strong>Note:</strong> 建置時 nwb 會建一個 <code>react-ocard.js</code> 和 <code>react-ocard.min.js</code> 在 <code>umd/</code> 中。</p>
+</blockquote>
+<p>這樣，我們就創建好一個 <strong>react-ocard</strong> 的專案。</p>
+<blockquote>
+<p><code>nwb new</code> 後面除了 <code>react-component</code> 外，還可使用 <code>react-app</code>、<code>preact-app</code> 和 <code>inferno-app</code> 分別創建你想開發的 app</p>
+</blockquote>
+<h3 id="3-認識專案架構"><a href="#3-認識專案架構" class="headerlink" title="3. 認識專案架構"></a>3. 認識專案架構</h3><p>這個專案和平常我們在開發時的架構差不多，所以應該不陌生：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">react-ocard</div><div class="line">  ├ .gitignore</div><div class="line">  ├ .travis.yml</div><div class="line">  ├ CONTRIBUTING.md</div><div class="line">  ├ nwb.config.js</div><div class="line">  ├ package.json</div><div class="line">  ├ README.md</div><div class="line">  ├ demo</div><div class="line">  │  └ src</div><div class="line">  │     └ index.js</div><div class="line">  ├ node_modules</div><div class="line">  ├ src</div><div class="line">  │  └ index.js</div><div class="line">  └tests</div><div class="line">    ├ .eslintrc</div><div class="line">    └ index-test.js</div></pre></td></tr></table></figure></p>
+<ul>
+<li><strong>demo/</strong>: 在此資料夾中放你對於 Component 的 demo，方便在 nwb 的 development server 中作開發和測試 Component。</li>
+<li><strong>src/</strong>: 這裡就是你的 React Component。</li>
+<li><strong>test/</strong>: nwb 會在這個資料夾中找到相對 <code>src/</code> 的測試檔案 (檔名結尾為 <code>.test.js</code>、<code>-test.js</code> 或 <code>.spec.js</code>) 作測試。</li>
+<li><strong>nwb.config.js</strong>: 前面有提到，你可以透過這個設定檔調整或擴展 nwb 所提供的默認配置。</li>
+</ul>
+<h3 id="4-認識指令"><a href="#4-認識指令" class="headerlink" title="4. 認識指令"></a>4. 認識指令</h3><p>從 <code>package.json</code> 可看到相關的 <code>scripts</code>：</p>
+<ul>
+<li><code>npm start</code> - 啟動開發伺服器 run demo app</li>
+<li><code>npm test</code> - 跑測試</li>
+<li><code>npm run test:coverage</code> - 跑測試並在 <code>coverage/</code> 中生成 coverage report</li>
+<li><code>npm run test:watch</code> - 跑測試並監看測試檔 (若測試黨有所變更，就會立即重跑測試，方便測試撰寫)</li>
+<li><code>npm run build</code> - 建置 Component (建置 <code>lib/</code> 以便上傳至 npm)</li>
+<li><code>npm run clean</code> - 將 build 的資料夾清掉 (像是 <code>lib/</code>、<code>es/</code> 和 <code>umd/</code>)</li>
+</ul>
+<p><code>npm start</code> 直接進入開發狀態！</p>
+<h3 id="5-使用-Sass-Scss"><a href="#5-使用-Sass-Scss" class="headerlink" title="5. 使用 Sass/Scss"></a>5. 使用 Sass/Scss</h3><p>如果開發時除了 inline styles 外，有撰寫 <code>.scss</code> 或 <code>.sass</code>，可以使用 plugin <code>nwb-sass</code> 來支援編譯，使用方法很簡單：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm i nwb-sass --save-dev</div></pre></td></tr></table></figure>
+<p>這樣就會自動幫你編譯 <code>.scss</code> 或 <code>.sass</code> 檔囉！</p>
+<blockquote>
+<p>這邊稍微聊一下，不知道對於如果 Component 是包含樣式的，大家是怎麼作的？<br>以目前我的開發習慣來說的話，都是將 <code>.scss</code> 寫在對應的 Component 資料夾中，當作 <code>src/</code> 的一部分，再由 demo 中作 import，這樣 Component 本身就是乾淨沒有引入 styles 檔案的狀況；<br>而打包上傳至 npm 前，會將 <strong>轉譯後 .css</strong> 放在 <code>css/</code> 或 <code>styles/</code> 中。<br>這樣的話，使用 Component 時就是分開引入 (import component 和 styles)，不知道有沒有什麼 <strong>建議</strong> 的作法可供參考。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import MyComponent from &apos;react-mycomponent&apos;</div><div class="line">import &apos;react-mycomponent/styles/react-mycomponent.css&apos;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="6-上傳至-npm"><a href="#6-上傳至-npm" class="headerlink" title="6. 上傳至 npm"></a>6. 上傳至 npm</h3><p>Components/Libraries 開發完成並且 build 完後，就可以上傳至 npm 囉！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm publish</div></pre></td></tr></table></figure></p>
+<p>在 <code>package.json</code> 中可看到，nwb 預設是將 <code>es/</code>、<code>lib/</code> 和 <code>umd/</code> 打包在 npm package 中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&quot;files&quot;: [</div><div class="line">    &quot;es&quot;,</div><div class="line">    &quot;lib&quot;,</div><div class="line">    &quot;umd&quot;</div><div class="line">]</div></pre></td></tr></table></figure></p>
+<p>你可以自行添加要打包上傳的資料夾，像我就多設了 <code>css</code> 以便上傳 Component 的 styles。</p>
+<hr>
+<h1 id="後記"><a href="#後記" class="headerlink" title="# 後記"></a><strong># 後記</strong></h1><p>前一陣子看到 <strong>Yahoo!</strong> 的 <strong>懶人卡</strong>，覺得閱讀起來還不錯，設計簡潔又帶點微微的互動，所以原本就打算來實作看看；<br>再加上看到 <span class="oaspan oaspan-red oaspan-reverse"><a href="https://github.com/insin/nwb" target="_blank" rel="external">nwb</a></span> ，就決定用它來開發看看，沒想到還蠻容易上手的，加上剛好符合我開發環境的需求，所以在開發環境的建置上近乎是無痛使用 🤗🤗🤗</p>
+<p>很久沒打筆記了… 但真心覺得不錯，所以筆記一下分享給大家作參考！</p>
+<p>也跟大家分享一下這次作的練習 <span class="oaspan oaspan-red"><a href="https://github.com/GeorgioWan/react-ocard" target="_blank" rel="external"><strong>react-ocard</strong></a></span>，這是參考 <strong>Yahoo! 懶人卡</strong> 所寫的 React Component，技術上除了 React 外，還使用了 <a href="https://github.com/cubiq/iscroll" target="_blank" rel="external"><strong>iScroll 5</strong></a> (單純綁 iscroll.js)。<br>如果覺得還不錯的話，歡迎給個 ⭐  或 Fork 一起讓它更完美喔！！</p>
+<blockquote>
+<p>可能、也許、Maybe 之後會再打個 <strong>iScroll 用於 React</strong> 的筆記吧… 😋</p>
+</blockquote>
+<p>That’s it, <strong>DONE!</strong></p>
+<hr>
+<p><strong>【參考資料】</strong></p>
+<ul>
+<li>nwb：<a href="https://github.com/insin/nwb" target="_blank" rel="external">https://github.com/insin/nwb</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://i.imgur.com/CaBRleb.jpg&quot; alt=&quot;nwb&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;# 目的&quot;&gt;&lt;/a&gt;&lt;strong&gt;# 目的&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;快速開發 React App or React Components(Libraries)。&lt;/p&gt;
+&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;# 前言&quot;&gt;&lt;/a&gt;&lt;strong&gt;# 前言&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;之前曾經使用 React 寫過幾個 Components 和 Library，但都是自己從頭搭建開發環境或是由 &lt;a href=&quot;https://github.com/facebookincubator/create-react-app&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;create-react-app&lt;/strong&gt;&lt;/a&gt; 開始，要打包上傳 npm 的過程還蠻繁雜的！而前陣子發現 &lt;span class=&quot;oaspan oaspan-red oaspan-reverse&quot;&gt;&lt;a href=&quot;https://github.com/insin/nwb&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;nwb&lt;/a&gt;&lt;/span&gt; 這個 toolkit，立馬寫了一個 Component 作嘗試，體驗還不錯，現在就來筆記分享一下！&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Programmer" scheme="https://oawan.me/categories/programmer/"/>
+    
+    
+      <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
+    
+      <category term="nwb" scheme="https://oawan.me/tags/nwb/"/>
+    
+      <category term="react" scheme="https://oawan.me/tags/react/"/>
+    
+  </entry>
+  
+  <entry>
     <title>[台南中西區] 鬍鬚忠牛肉湯 - 不可錯過的頂級牛肉湯！</title>
     <link href="https://oawan.me/2017/%E5%8F%B0%E5%8D%97%E4%B8%AD%E8%A5%BF%E5%8D%80-%E9%AC%8D%E9%AC%9A%E5%BF%A0%E7%89%9B%E8%82%89%E6%B9%AF-%E4%B8%8D%E5%8F%AF%E9%8C%AF%E9%81%8E%E7%9A%84%E9%A0%82%E7%B4%9A%E7%89%9B%E8%82%89%E6%B9%AF/"/>
     <id>https://oawan.me/2017/台南中西區-鬍鬚忠牛肉湯-不可錯過的頂級牛肉湯/</id>
     <published>2017-05-26T00:52:05.000Z</published>
-    <updated>2017-05-27T07:35:55.389Z</updated>
+    <updated>2017-05-27T07:35:55.000Z</updated>
     
     <content type="html"><![CDATA[<img src="/2017/台南中西區-鬍鬚忠牛肉湯-不可錯過的頂級牛肉湯/img/鬍鬚忠牛肉湯-1.jpg" alt="img/鬍鬚忠牛肉湯-1.jpg" title="">
 <p>今天是快閃台南的第二天，在離開台南前，我和小凱蘿非常有默契地想再來一碗牛肉湯，於是到處奔走，不過在下午四點多有營業的店家並不多… 最後最後還是回來等 <strong>17:00</strong> 開張的 <span class="oaspan oaspan-red oaspan-reverse">鬍鬚忠牛肉湯</span>！</p>
@@ -86,7 +188,7 @@
     <link href="https://oawan.me/2017/%E5%8F%B0%E5%8D%97%E4%B8%AD%E8%A5%BF%E5%8D%80-%E9%98%BF%E6%B1%9F%E7%82%92%E9%B1%94%E9%AD%9A-%E9%80%99%E6%89%8D%E6%98%AF%E6%AD%A3%E6%B8%AF%E7%9A%84%E7%82%92%E9%B1%94%E9%AD%9A%E6%84%8F%E9%BA%B5/"/>
     <id>https://oawan.me/2017/台南中西區-阿江炒鱔魚-這才是正港的炒鱔魚意麵/</id>
     <published>2017-05-25T01:06:37.000Z</published>
-    <updated>2017-05-27T07:39:48.461Z</updated>
+    <updated>2017-05-27T07:39:48.000Z</updated>
     
     <content type="html"><![CDATA[<img src="/2017/台南中西區-阿江炒鱔魚-這才是正港的炒鱔魚意麵/img/阿江炒鱔魚-4.jpg" alt="img/阿江炒鱔魚-4.jpg" title="">
 <p>在離開台南前，想再喝上一碗牛肉湯，所以原本和小凱蘿衝著 <span class="oaspan oaspan-reverse"><a href="/2017/台南中西區-鬍鬚忠牛肉湯-不可錯過的頂級牛肉湯/">鬍鬚忠牛肉湯</a></span> 而來，沒想到意外發現這間 <strong>不能說的鱔魚意麵</strong>！</p>
@@ -149,7 +251,7 @@
     <link href="https://oawan.me/2017/%E5%8F%B0%E5%8D%97%E4%BB%81%E5%BE%B7%E5%8D%80-%E9%98%BF%E8%A3%95%E7%89%9B%E8%82%89%E6%B6%AE%E6%B6%AE%E9%8D%8B-%E8%B6%85%E8%B6%8A%E7%89%9B%E8%82%89%E6%B9%AF%E7%9A%84%E5%A4%A7%E4%BA%AB%E5%8F%97/"/>
     <id>https://oawan.me/2017/台南仁德區-阿裕牛肉涮涮鍋-超越牛肉湯的大享受/</id>
     <published>2017-05-22T23:09:57.000Z</published>
-    <updated>2017-05-27T07:48:54.157Z</updated>
+    <updated>2017-05-27T07:48:54.000Z</updated>
     
     <content type="html"><![CDATA[<img src="/2017/台南仁德區-阿裕牛肉涮涮鍋-超越牛肉湯的大享受/img/阿裕牛肉涮涮鍋-3.jpg" alt="img/阿裕牛肉涮涮鍋-3.jpg" title="">
 <p>到台南有什麼美食是一定要吃？OA 覺得 <strong>牛肉湯</strong> 是絕對要嘗試的！這次感謝在地好朋友的招待，讓我們吃到比 <strong>牛肉湯</strong> 更滿足的大享受 <span class="oaspan oaspan-red oaspan-reverse">阿裕牛肉涮涮鍋</span>！</p>
@@ -230,7 +332,7 @@
     <link href="https://oawan.me/2017/%E5%8F%B0%E5%8D%97%E6%9D%B1%E5%8D%80-%E5%8F%B0%E5%8D%97%E8%80%81%E7%88%BA%E8%A1%8C%E6%97%85-%E9%AB%98%E9%90%B5%E4%B8%89%E9%80%B1%E5%B9%B4%E6%88%BF%E5%9E%8B%E4%B8%89%E7%B4%9A%E8%B7%B3/"/>
     <id>https://oawan.me/2017/台南東區-台南老爺行旅-高鐵三週年房型三級跳/</id>
     <published>2017-05-20T03:21:32.000Z</published>
-    <updated>2017-05-27T07:48:58.073Z</updated>
+    <updated>2017-05-27T07:48:58.000Z</updated>
     
     <content type="html"><![CDATA[<img src="/2017/台南東區-台南老爺行旅-高鐵三週年房型三級跳/img/窗外景緻.jpg" alt="img/窗外景緻.jpg" title="">
 <p>超開心又可以到台南玩啦！這次很突然的決定快閃台南，主要是因為賢慧的小凱蘿，在網路上找到一個 <strong>相當實惠</strong> 的住宿方案，讓我們有幸能在 <span class="oaspan oaspan-red oaspan-reverse">台南老爺行旅</span> 以萬元不到的價格享受超高級房型！難得一次的大享受，是一定要記錄分享一下的啦 😍😍</p>
@@ -343,7 +445,7 @@
     <link href="https://oawan.me/2017/%E5%8F%B0%E5%8D%97%E4%B8%AD%E8%A5%BF%E5%8D%80-%E5%AF%8C%E7%9B%9B%E8%99%9F%E7%A2%97%E7%B2%BF-%E6%B0%B8%E6%A8%82%E5%B8%82%E5%A0%B4%E7%9A%84%E5%8F%A4%E6%97%A9%E5%91%B3%E7%BE%8E%E9%A3%9F/"/>
     <id>https://oawan.me/2017/台南中西區-富盛號碗粿-永樂市場的古早味美食/</id>
     <published>2017-05-18T08:59:32.000Z</published>
-    <updated>2017-05-27T07:44:01.657Z</updated>
+    <updated>2017-05-27T07:44:01.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/img/food/2017/Tainan/West Central District/富盛號碗粿/富盛號-2.jpg" alt="富盛號碗粿"><br>上次來台南，在地的好朋友有推薦這家好吃的 <span class="oaspan oaspan-red oaspan-reverse">富盛號碗粿</span>，但上次來玩真的沒肚子塞，不過不要緊，<strong>上次沒吃到的，這次補回來，阿這次沒吃到的，下次通通來！</strong>身為愛好美食的肥宅，就是要一直來，一直吃 😏😏</p>
 <a id="more"></a>
@@ -402,7 +504,7 @@
     <link href="https://oawan.me/2017/%E5%8F%B0%E5%8D%97%E5%8C%97%E5%8D%80-%E9%98%BF%E6%86%A8%E9%B9%B9%E7%B2%A5-%E5%85%8D%E6%8E%92%E9%9A%8A%E7%9A%84%E5%BA%9C%E5%9F%8E%E5%8F%A4%E6%97%A9%E5%91%B3/"/>
     <id>https://oawan.me/2017/台南北區-阿憨鹹粥-免排隊的府城古早味/</id>
     <published>2017-05-16T15:22:00.000Z</published>
-    <updated>2017-05-27T07:49:09.521Z</updated>
+    <updated>2017-05-27T07:49:09.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/img/food/2017/Tainan/North District/阿憨鹹粥/虱目魚肚粥-1.jpg" alt="阿憨鹹粥"><br>上次來台南飽到沒胃吃的鹹粥，這次要好好補回來！跟 OA 一起來嚐看看這家頗負盛名的 <span class="oaspan oaspan-red oaspan-reverse">阿憨鹹粥</span> 吧！</p>
 <a id="more"></a>
@@ -633,7 +735,7 @@
     <link href="https://oawan.me/2016/%E9%AB%98%E9%9B%84%E5%89%8D%E9%8E%AE-%E8%A0%94%E8%A0%94%E5%85%88%E7%94%9F-%E6%B0%A3%E6%B0%9B%E8%B6%85%E5%A5%BD%E7%9A%84%E7%94%9F%E8%A0%94%E6%B5%B7%E6%99%AF%E7%B4%84%E6%9C%83%E5%9C%B0/"/>
     <id>https://oawan.me/2016/高雄前鎮-蠔蠔先生-氣氛超好的生蠔海景約會地/</id>
     <published>2016-08-13T15:20:05.000Z</published>
-    <updated>2017-05-27T07:49:16.253Z</updated>
+    <updated>2017-05-27T07:49:16.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/img/food/2016/Kaohsiung/Qianzhen/Mr.Oyster/綜合海鮮拼盤-3.jpg" alt="蠔蠔先生"><br>　　今年的 <span class="oaspan oaspan-red">父親節大餐</span> 想來點不一樣的，有別於以往的 <strong>飲茶</strong>、<strong>西餐廳</strong> 等，今年我們一起到新的幽會地點約會囉！</p>
 <a id="more"></a>
@@ -697,7 +799,7 @@
     <link href="https://oawan.me/2016/%E5%8F%B0%E5%8C%97%E6%9D%BE%E5%B1%B1-%E6%BC%81%E8%81%9E%E6%A8%82-%E5%90%8D%E5%AD%97%E5%BE%88%E9%80%97%E8%B6%A3%E7%9A%84%E7%84%A1%E8%8F%9C%E5%96%AE%E6%97%A5%E5%BC%8F%E6%96%99%E7%90%86/"/>
     <id>https://oawan.me/2016/台北松山-漁聞樂-名字很逗趣的無菜單日式料理/</id>
     <published>2016-07-09T06:16:56.000Z</published>
-    <updated>2017-05-27T07:44:37.469Z</updated>
+    <updated>2017-05-27T07:44:37.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/img/food/2016/Taipei/SongShan/漁聞樂/生魚片綜合拼盤.jpg" alt="漁聞樂"><br>　　這個月 (六月) 是小凱蘿爸爸媽媽的結婚紀念日 (實際到店是6/26唷！)，有鑑於兩老直接點名想吃 <strong>日式料理</strong>，於是小凱蘿找到了這家名字很逗趣，網友們又大推 CP 值很高的 <span class="oaspan oaspan-red oaspan-reverse">漁聞樂</span> 來享受享受！</p>
 <a id="more"></a>
@@ -769,7 +871,7 @@
     <link href="https://oawan.me/2016/%E5%8F%B0%E5%8C%97%E5%A4%A7%E5%AE%89-Mamak%E6%AA%94-%E5%B9%B3%E5%83%B9%E5%BF%85%E5%90%83%E7%9A%84%E6%AD%A3%E5%AE%97%E6%98%9F%E9%A6%AC%E6%96%99%E7%90%86%EF%BC%81/"/>
     <id>https://oawan.me/2016/台北大安-Mamak檔-平價必吃的正宗星馬料理！/</id>
     <published>2016-06-19T02:55:33.000Z</published>
-    <updated>2017-05-27T07:50:22.109Z</updated>
+    <updated>2017-05-27T07:50:22.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/img/food/2016/Taipei/Daan/mamak檔/姊弟共騎.jpg" alt="Mamak檔"><br>　　自從試過 <strong>Costco</strong> <del><em>(我都念 Costco，但是我朋友都念 Costco，聽說正解是 Costco)</em></del> 的 <span class="oaspan oaspan-reverse">叻沙鍋</span> 後，就開始喜歡嘗試一些新加坡或大馬料理；有次意外在 <strong>忠孝敦化</strong> 發現這家超道地的星馬料理餐廳，而這次是二訪囉！</p>
 <a id="more"></a>
@@ -824,7 +926,7 @@
     <link href="https://oawan.me/2016/%E5%9F%BA%E9%9A%86-%E9%AE%AE%E6%9E%9C%E6%B1%81%E5%A4%A7%E7%8E%8B%E3%80%81%E9%99%B3%E8%A8%98%E6%B3%A1%E6%B3%A1%E5%86%B0%E3%80%81%E7%87%9F%E9%A4%8A%E4%B8%89%E6%98%8E%E6%B2%BB-%E5%9F%BA%E9%9A%86%E5%BB%9F%E5%8F%A3%E7%9A%84%E5%B0%8F%E9%BB%9E%E5%BF%83/"/>
     <id>https://oawan.me/2016/基隆-鮮果汁大王、陳記泡泡冰、營養三明治-基隆廟口的小點心/</id>
     <published>2016-06-12T06:54:11.000Z</published>
-    <updated>2017-05-27T07:49:44.057Z</updated>
+    <updated>2017-05-27T07:49:44.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/img/food/2016/Keelung/營養三明治.jpg" alt="營養三明治"><br>　　今天來廟口，嘗試了有名的 <span class="oaspan oaspan-red oaspan-reverse">營養三明治</span> 和每次來都一定要吃的 <span class="oaspan oaspan-red oaspan-reverse">陳記泡泡冰</span>，每次吃到泡泡冰都覺得很幸福！</p>
 <a id="more"></a>
@@ -881,7 +983,7 @@
     <link href="https://oawan.me/2016/%E5%9F%BA%E9%9A%86-%E5%8D%81%E6%94%A4%E3%80%82%E8%9E%83%E8%9F%B9%E7%BE%B9%E3%80%81%E6%B2%B9%E9%A3%AF-%E5%9C%A8%E5%9C%B0%E4%BA%BA%E5%A4%A7%E6%8E%A8%E7%9A%84%E5%A5%BD%E5%91%B3%E9%81%93/"/>
     <id>https://oawan.me/2016/基隆-十攤。螃蟹羹、油飯-在地人大推的好味道/</id>
     <published>2016-06-12T06:39:13.000Z</published>
-    <updated>2017-05-27T07:50:04.249Z</updated>
+    <updated>2017-05-27T07:50:04.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/img/food/2016/Keelung/油飯螃蟹羹-3.jpg" alt="十攤。螃蟹羹油飯"><br>　　基隆廟口夜市有別於其他夜市的地方，就在它沒有過多的 <em>連鎖攤販</em>，而且還可以吃到很多特色美食！<strong>螃蟹羹。油飯</strong> 就是一樣特別的好味道。</p>
 <a id="more"></a>
@@ -925,7 +1027,7 @@
     <link href="https://oawan.me/2016/%E5%9F%BA%E9%9A%86-%E5%A4%A9%E4%B8%80%E9%A6%99%E8%82%89%E7%BE%B9%E9%A0%86-%E5%9F%BA%E9%9A%86%E5%BB%9F%E5%8F%A3%E5%BF%85%E5%90%83%E7%BE%8E%E9%A3%9F/"/>
     <id>https://oawan.me/2016/基隆-天一香肉羹順-基隆廟口必吃美食/</id>
     <published>2016-06-12T06:23:59.000Z</published>
-    <updated>2017-05-27T07:49:52.333Z</updated>
+    <updated>2017-05-27T07:49:52.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/img/food/2016/Keelung/天一香肉羹順-3.jpg" alt="天一香肉羹順"><br>　　每次到基隆廟口，都有幾樣 <strong>就算很飽也想要吃上一口</strong> 的美食，沒錯，其中一項就是百年老店 <span class="oaspan oaspan-red oaspan-reverse">天一香肉羹順</span>！喜歡吃滷肉飯嗎？如果你也跟我一樣是 <strong>滷飯客</strong>，到基隆別忘了來這扒上一碗喔！</p>
 <a id="more"></a>
@@ -1348,103 +1450,6 @@
       <category term="韓國" scheme="https://oawan.me/tags/%E9%9F%93%E5%9C%8B/"/>
     
       <category term="旅遊" scheme="https://oawan.me/tags/%E6%97%85%E9%81%8A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[Rails] Devise 使用 Facebook 註冊與登入</title>
-    <link href="https://oawan.me/2016/rails-devise-using-facebook-signup-login/"/>
-    <id>https://oawan.me/2016/rails-devise-using-facebook-signup-login/</id>
-    <published>2016-05-20T11:28:00.000Z</published>
-    <updated>2016-05-27T08:44:47.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/img/program/Facebookcoke.jpg" alt="Devise 使用 Facebook 註冊與登入" title="Pic by Facebookcoke"></p>
-<h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a><strong>目的</strong></h1><p>　　在 Devise 下，使用 Facebook 註冊與登入。</p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p>　　相信大家都很熟練 <a href="https://github.com/plataformatec/devise" target="_blank" rel="external"><strong>Devise</strong></a> 這個 Gem 的使用者機制，當然除了一般的註冊申請帳號外，最方便是要能與各大社交平台有所連結；而 Devise 中透過 <a href="https://github.com/intridea/omniauth" target="_blank" rel="external"><strong>OmniAuth</strong></a> 快速地串接 Facebook、google、github… 等，以下就筆記一下如何使用 Facebook 註冊登入！</p>
-<h1 id="開發版本與環境"><a href="#開發版本與環境" class="headerlink" title="開發版本與環境"></a><strong>開發版本與環境</strong></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">　　Ruby  : v2.3.0</div><div class="line">　　Rails : v4.2.5</div><div class="line">　　IDE   : Cloud 9</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h1 id="筆記"><a href="#筆記" class="headerlink" title="筆記"></a><strong>筆記</strong></h1><h2 id="1-什麼是-OmniAuth"><a href="#1-什麼是-OmniAuth" class="headerlink" title="1. 什麼是 OmniAuth ?"></a>1. 什麼是 OmniAuth ?</h2><p>　　OmniAuth 是一個提供多方認證，且不被限定於特定框架的認證方案，主要架構如下：</p>
-<h3 id="Provider"><a href="#Provider" class="headerlink" title="Provider"></a><em>Provider</em></h3><p>　　OmniAuth 將所有的認證方視為不同的 Provider，而每種 Provider 都有各自的 Strategy。</p>
-<h3 id="Strategy"><a href="#Strategy" class="headerlink" title="Strategy"></a><em>Strategy</em></h3><p>　　每個 Strategy 分為兩個 phase，對應 OmniAuth 提供的 url：</p>
-<ul>
-<li>equest phase　=&gt;　<code>/auth/:provider</code></li>
-<li>callback phase =&gt;　<code>/auth/:provider/callback</code></li>
-</ul>
-<p>　　而它的流程是，透過 <code>/auth/:provider</code> 重導去認證，認證成功後 redirect 到 <code>/auth/:provider/callback</code> 作 session create 動作 ( 透過拿回來的資料 find_or_create user )</p>
-<blockquote>
-<p>註： :provider 就是 facebook、github，所以 url 看起來會是 /auth/facebook、/auth/facebook/callback。</p>
-</blockquote>
-<h2 id="2-一起來實作"><a href="#2-一起來實作" class="headerlink" title="2. 一起來實作"></a>2. 一起來實作</h2><h3 id="步驟零、-Install-gem"><a href="#步驟零、-Install-gem" class="headerlink" title="步驟零、 Install gem"></a><strong>步驟零、 Install gem</strong></h3><figure class="highlight ruby"><figcaption><span>Gemfile</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gem <span class="string">'omniauth'</span></div><div class="line">gem <span class="string">'omniauth-facebook'</span></div><div class="line">gem <span class="string">'koala'</span>, <span class="string">"~-&gt; 2.2"</span>  <span class="comment"># 為了讓授權失敗時，刪除 permission session 使用</span></div></pre></td></tr></table></figure>
-<h3 id="步驟一、-建立-Facebook-Application"><a href="#步驟一、-建立-Facebook-Application" class="headerlink" title="步驟一、 建立 Facebook Application"></a><strong>步驟一、 建立 Facebook Application</strong></h3><p>　　使用 Facebook 應用服務前，需先到 <a href="https://developers.facebook.com/" target="_blank" rel="external">Facebook developer</a> 建立應用程式，只要按照步驟就可以順利建立完成。</p>
-<h3 id="步驟二、-於-devise-rb-中設定-config-omniauth"><a href="#步驟二、-於-devise-rb-中設定-config-omniauth" class="headerlink" title="步驟二、 於 devise.rb 中設定 config.omniauth"></a><strong>步驟二、 於 devise.rb 中設定 config.omniauth</strong></h3><figure class="highlight ruby"><figcaption><span>devise.rb</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">config.omniauth <span class="symbol">:facebook</span>, ENB[<span class="string">'FB_KEY'</span>], ENV[<span class="string">'FB_SECRET'</span>],</div><div class="line">                <span class="symbol">scope:</span> <span class="string">'email'</span>,</div><div class="line">                <span class="symbol">info_fields:</span> <span class="string">'email, name, link'</span>,</div><div class="line">                <span class="symbol">secure_image_url:</span> <span class="literal">true</span>,</div><div class="line">                <span class="symbol">image_size:</span>  <span class="string">'large'</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>這邊使用 Rails_ENV 確保我們的資料隱密性，可參考 <a href="http://georgiowan.logdown.com/notes/732233/rails-send-small-notes-via-actionmailer" target="_blank" rel="external">這篇的 Rails_ENV 小筆記</a></p>
-</blockquote>
-<ul>
-<li><strong>FB_KEY</strong>：Facebook 應用程式<em>編號</em></li>
-<li><strong>FB_SECRET</strong>：Facebook 應用程式<em>密鑰</em></li>
-<li><strong>scope</strong>：表示將取得使用者的什麼<em>權限</em>，email 為預設，即取得使用者公開的資訊 ( public_profile ) 權限</li>
-<li><strong>info_fields</strong>：表示在擁有權限下，取得使用者的什麼<em>資訊</em>，這邊我們取得使用者的 Email、名稱和 FB 連結</li>
-<li><strong>secure_image_url</strong>：為 true，表示我們透過 https 取得使用者大頭貼</li>
-<li><strong>image_size</strong>：此為取得大頭貼的 size，<code>square</code>(50x50)、<code>small</code>(50 px width, ariable height)、<code>normal</code>(100 px width, variable height)、<code>large</code>(約 200 px wide, variable height)</li>
-</ul>
-<blockquote>
-<p>以上設定，我們可以從 <a href="https://github.com/mkdynamic/omniauth-facebook#configuring" target="_blank" rel="external"><strong>omniauth-facebook</strong></a> 清楚的了解。<br>若是想取得其他的<strong>權限與資訊</strong>，可以先到 <a href="https://developers.facebook.com/docs/facebook-login/permissions" target="_blank" rel="external">Facebook developer permissions</a> 查看。</p>
-</blockquote>
-<h3 id="步驟三、-於-user-rb-中設定-omniauth"><a href="#步驟三、-於-user-rb-中設定-omniauth" class="headerlink" title="步驟三、 於 user.rb 中設定 omniauth"></a><strong>步驟三、 於 user.rb 中設定 omniauth</strong></h3><figure class="highlight ruby"><figcaption><span>user.rb</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">devise <span class="symbol">:omniauthable</span>, <span class="symbol">:omniauth_providers</span> =&gt; [<span class="symbol">:facebook</span>]</div></pre></td></tr></table></figure>
-<p>　　定義認證後的創建行為，會在取得使用者 Facebook 權限與資訊後執行：<br><figure class="highlight ruby"><figcaption><span>user.rb</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">self</span>.<span class="title">from_omniauth</span><span class="params">(auth)</span></span></div><div class="line">  where(<span class="symbol">provider:</span> auth.provider, <span class="symbol">uid:</span> auth.uid).first_or_create <span class="keyword">do</span> <span class="params">|user|</span></div><div class="line">    user.provider = auth.provider</div><div class="line">    user.uid      = auth.uid</div><div class="line">    user.email    = auth.info.email</div><div class="line">    user.name     = auth.info.name</div><div class="line">    user.facebook = auth.info.urls.Facebook</div><div class="line">    user.password = Devise.friendly_token[<span class="number">0</span>,<span class="number">20</span>]</div><div class="line">    user.remote_avatar_url   = auth.info.image</div><div class="line">    user.skip_confirmation!  <span class="comment"># 如果 devise 有使用 confirmable，記得 skip！</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
-<p>　　授權失敗時，透過 <code>koala</code> 刪除使用者授權的 session，以便重新授權。<br><figure class="highlight ruby"><figcaption><span>user.rb</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">delete_access_token</span><span class="params">(auth)</span></span></div><div class="line">  @graph <span class="params">||</span>= Koala::Facebook::API.new(auth.credentials.token)</div><div class="line">  @graph.delete_connections(auth.uid, <span class="string">"permissions"</span>)</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
-<h3 id="步驟四、-定義-omniauth-callback-controller"><a href="#步驟四、-定義-omniauth-callback-controller" class="headerlink" title="步驟四、 定義 omniauth callback controller"></a><strong>步驟四、 定義 omniauth callback controller</strong></h3><p>　　新增一個 <code>Users::OmniauthCallBacksController</code>，我們在這個地方定義兩個 action：facebook 和 failure。</p>
-<ul>
-<li><strong>facebook</strong> method 作的三件事：</li>
-</ul>
-<p>　　　1. 使用者授權後，依取得的資訊創建新的 user。<br>　　　2. 如果此使用者已經存在網站中，直接登入。<br>　　　3. 授權後，未取得 email 者，重新要求授權。(這是因為我的網站使用者 email 為必填項目，且為登入憑據)</p>
-<ul>
-<li><strong>failure</strong>：重新導向註冊頁，並告知使用者授權錯誤。</li>
-</ul>
-<figure class="highlight ruby"><figcaption><span>omniauth_callback.rb</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Users::OmniauthCallbacksController</span> &lt; Devise::OmniauthCallbacksController</span></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">facebook</span></span></div><div class="line">    @user = User.from_omniauth(request.env[<span class="string">"omniauth.auth"</span>])  <span class="comment"># 這邊會呼叫我們在 user 中定義的創建行為</span></div><div class="line">    </div><div class="line">    <span class="keyword">if</span> @user.persisted?</div><div class="line">      sign_in_and_redirect @user, <span class="symbol">:event</span> =&gt; <span class="symbol">:authentication</span></div><div class="line">      set_flash_message(<span class="symbol">:notice</span>, <span class="symbol">:success</span>, <span class="symbol">:kind</span> =&gt; <span class="string">"Facebook"</span>) <span class="keyword">if</span> is_navigational_format?</div><div class="line">    <span class="keyword">else</span></div><div class="line">      </div><div class="line">      <span class="keyword">if</span> @user.email.<span class="literal">nil</span>?</div><div class="line">        <span class="comment"># 如果 User 沒有提供 email 刪除 User 的 app 讓 User 重新授權</span></div><div class="line">        @user.delete_access_token(request.env[<span class="string">"omniauth.auth"</span>])</div><div class="line">        redirect_to new_user_registration_url, <span class="symbol">alert:</span> <span class="string">"需要您同意 Email 授權唷！"</span></div><div class="line">      <span class="keyword">else</span></div><div class="line">        session[<span class="string">"devise.facebook_data"</span>] = request.env[<span class="string">"omniauth.auth"</span>]</div><div class="line">        redirect_to new_user_registration_url</div><div class="line">      <span class="keyword">end</span></div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">failure</span></span></div><div class="line">    redirect_to new_user_session_path, <span class="symbol">alert:</span> <span class="string">"無法獲得驗證！"</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<h3 id="步驟五、-到-routes-rb-設定-devise-omniauth-callback-該用哪個-controller"><a href="#步驟五、-到-routes-rb-設定-devise-omniauth-callback-該用哪個-controller" class="headerlink" title="步驟五、 到 routes.rb 設定 devise omniauth callback 該用哪個 controller"></a><strong>步驟五、 到 routes.rb 設定 devise omniauth callback 該用哪個 controller</strong></h3><p>　　我們要讓 omniauth callback 時使用我們定義的 controller：<br><figure class="highlight ruby"><figcaption><span>routes.rb</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">devise_for <span class="symbol">:users</span>, <span class="symbol">controllers:</span> &#123;<span class="symbol">omniauth_callbacks:</span> <span class="string">"users/omniauth_callbacks"</span>&#125;</div></pre></td></tr></table></figure></p>
-<p>Devise 使用 OmniAuth 時，會自動幫你在 <code>registrations#new</code> 產生 provider 登入的 link，所以不必自行添加，或是你也可以在想添加的地方加入：<br>　　<code>&lt;%= link_to &quot;Sign in with Facebook&quot;, user_omniauth_authorize_path(:facebook) %&gt;</code></p>
-<h1 id="後記"><a href="#後記" class="headerlink" title="後記"></a><strong>後記</strong></h1><p>　　授權失敗時，需要重新授權 (Permissions revoke)，這個問題看似很簡單，卻花了我不少時間；原因是不想為了解決這個小問題，而多使用一個 gem，但最終我還是選擇用 koala 解決了，如果有不多加使用 gem 的解法請來信或留言，感激不盡！</p>
-<p>That’s it, <strong>DONE!</strong></p>
-<p><strong>【參考資料】</strong></p>
-<ul>
-<li>XDITE OmniAuth 系列文章：<a href="http://blog.xdite.net/posts/2011/11/19/omniauth-clean-auth-provider-1" target="_blank" rel="external">http://blog.xdite.net/posts/2011/11/19/omniauth-clean-auth-provider-1</a></li>
-<li>devise OmniAuth document：<a href="https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview" target="_blank" rel="external">https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview</a></li>
-<li>Auth Hash Schema：<a href="https://github.com/intridea/omniauth/wiki/Auth-Hash-Schema" target="_blank" rel="external">https://github.com/intridea/omniauth/wiki/Auth-Hash-Schema</a></li>
-<li>OmniAuth Facebook：<a href="https://github.com/mkdynamic/omniauth-facebook" target="_blank" rel="external">https://github.com/mkdynamic/omniauth-facebook</a></li>
-<li>FB Revoking Permissions: <a href="http://azhen.logdown.com/posts/301101-rails-fb-revoking-permissions" target="_blank" rel="external">http://azhen.logdown.com/posts/301101-rails-fb-revoking-permissions</a></li>
-<li>Rails 4 OmniAuth using Devise: <a href="http://sourcey.com/rails-4-omniauth-using-devise-with-twitter-facebook-and-linkedin/" target="_blank" rel="external">有 Facebook, Twitter, Linkedin 的教學文章</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;/img/program/Facebookcoke.jpg&quot; alt=&quot;Devise 使用 Facebook 註冊與登入&quot; title=&quot;Pic by Facebookcoke&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;&lt;strong&gt;目的&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;　　在 Devise 下，使用 Facebook 註冊與登入。&lt;/p&gt;
-&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;&lt;strong&gt;前言&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;　　相信大家都很熟練 &lt;a href=&quot;https://github.com/plataformatec/devise&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;Devise&lt;/strong&gt;&lt;/a&gt; 這個 Gem 的使用者機制，當然除了一般的註冊申請帳號外，最方便是要能與各大社交平台有所連結；而 Devise 中透過 &lt;a href=&quot;https://github.com/intridea/omniauth&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;OmniAuth&lt;/strong&gt;&lt;/a&gt; 快速地串接 Facebook、google、github… 等，以下就筆記一下如何使用 Facebook 註冊登入！&lt;/p&gt;
-&lt;h1 id=&quot;開發版本與環境&quot;&gt;&lt;a href=&quot;#開發版本與環境&quot; class=&quot;headerlink&quot; title=&quot;開發版本與環境&quot;&gt;&lt;/a&gt;&lt;strong&gt;開發版本與環境&lt;/strong&gt;&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;　　Ruby  : v2.3.0&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;　　Rails : v4.2.5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;　　IDE   : Cloud 9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="Programmer" scheme="https://oawan.me/categories/programmer/"/>
-    
-    
-      <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
-    
-      <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
-    
-      <category term="rails" scheme="https://oawan.me/tags/rails/"/>
-    
-      <category term="rubyonrails" scheme="https://oawan.me/tags/rubyonrails/"/>
-    
-      <category term="omniauth" scheme="https://oawan.me/tags/omniauth/"/>
-    
-      <category term="devise" scheme="https://oawan.me/tags/devise/"/>
-    
-      <category term="koala" scheme="https://oawan.me/tags/koala/"/>
-    
-      <category term="facebook" scheme="https://oawan.me/tags/facebook/"/>
     
   </entry>
   
