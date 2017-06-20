@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://oawan.me/"/>
-  <updated>2017-06-16T10:02:02.924Z</updated>
+  <updated>2017-06-20T03:03:25.003Z</updated>
   <id>https://oawan.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://oawan.me/2017/react-nwb-create-react-components-and-libraries/"/>
     <id>https://oawan.me/2017/react-nwb-create-react-components-and-libraries/</id>
     <published>2017-06-16T04:26:33.000Z</published>
-    <updated>2017-06-16T10:02:02.924Z</updated>
+    <updated>2017-06-20T03:03:25.003Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://i.imgur.com/CaBRleb.jpg" alt="nwb"></p>
 <h1 id="目的"><a href="#目的" class="headerlink" title="# 目的"></a><strong># 目的</strong></h1><p>快速開發 React App or React Components(Libraries)。</p>
@@ -40,6 +40,7 @@
 <li><strong>Travis CI</strong>，使用 Travis Continuous Integration 並將 code coverage 結果提供 Coveralls/codecov.io。</li>
 <li><strong>ES5、ES 和 UMD</strong>，nwb 幫你一次打包三種 builds。</li>
 <li><strong>Single Configuration files</strong>，可在 <code>nwb.config.js</code> 中客製 Webpack、Karma 或 npm builds 的設定。</li>
+<li><strong>Autoprefixd CSS</strong>，這個設定可以讓 styles 撰寫時自動生成支援各個瀏覽器的 prefixed。</li>
 </ol>
 <blockquote>
 <p>以上所提及的，是我在原本開發上就會碰到和使用的，當然 nwb 還有 <a href="https://github.com/insin/nwb/blob/master/docs/Features.md#features" target="_blank" rel="external">很多細項的優點</a>！</p>
@@ -90,6 +91,7 @@
 <blockquote>
 <p>可能、也許、Maybe 之後會再打個 <strong>iScroll 用於 React</strong> 的筆記吧… 😋</p>
 </blockquote>
+<h2 id="2017-06-17-大事記"><a href="#2017-06-17-大事記" class="headerlink" title="2017.06.17 大事記"></a>2017.06.17 大事記</h2><p>我為 nwb 寫的這篇文章而設計的<a href="https://github.com/insin/nwb/pull/325" target="_blank" rel="external">封面圖，被原作者採用了！</a>超開心的！！</p>
 <p>That’s it, <strong>DONE!</strong></p>
 <hr>
 <p><strong>【參考資料】</strong></p>
@@ -1379,8 +1381,6 @@
       <category term="Programmer" scheme="https://oawan.me/categories/programmer/"/>
     
     
-      <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
-    
       <category term="Hexo" scheme="https://oawan.me/tags/Hexo/"/>
     
       <category term="NodeJS" scheme="https://oawan.me/tags/NodeJS/"/>
@@ -1388,6 +1388,8 @@
       <category term="Blog" scheme="https://oawan.me/tags/Blog/"/>
     
       <category term="Cloud9" scheme="https://oawan.me/tags/Cloud9/"/>
+    
+      <category term="攻城獅筆記" scheme="https://oawan.me/tags/%E6%94%BB%E5%9F%8E%E7%8D%85%E7%AD%86%E8%A8%98/"/>
     
   </entry>
   
